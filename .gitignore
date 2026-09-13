@@ -1,0 +1,32 @@
+# --- KiCad: служебные файлы ---
+*-backups/
+_autosave-*
+*.lck
+~*.lck
+*.kicad_prl
+fp-info-cache
+# остатки устаревших форматов (KiCad 5/6)
+*.bak
+*.sch-bak
+*-cache.lib
+*-rescue.*
+
+# --- Пересоздаваемые выходные файлы ---
+*.gbr
+*.gbrjob
+*.drl
+*.rpt
+*.net
+*.pdf
+# замороженные артефакты изготовленных ревизий хранятся
+!boards/*/release/**
+
+# --- ОС и редакторы ---
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+*.swp
+
+# заглушки для пустых каталогов никогда не игнорируются
+!.gitkeep
