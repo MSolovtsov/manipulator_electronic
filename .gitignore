@@ -3,6 +3,8 @@
 _autosave-*
 *.lck
 ~*.lck
+# локальная история KiCad 10 (внутри — свой .git)
+.history/
 *.kicad_prl
 fp-info-cache
 # остатки устаревших форматов (KiCad 5/6)
@@ -18,8 +20,14 @@ fp-info-cache
 *.rpt
 *.net
 *.pdf
+# превью платы из scripts/check_pcb.py
+*_preview.png
 # замороженные артефакты изготовленных ревизий хранятся
 !boards/*/release/**
+
+# --- Python ---
+__pycache__/
+*.pyc
 
 # --- ОС и редакторы ---
 .DS_Store

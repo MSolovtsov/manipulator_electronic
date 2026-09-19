@@ -1,0 +1,10427 @@
+(kicad_sch
+	(version 20260306)
+	(generator "eeschema")
+	(generator_version "10.0")
+	(uuid "9d3a5f2c-4b1e-4f0a-8c6d-2e7b1a9f0c11")
+	(paper "A3")
+	(title_block
+		(title "Манипулятор учебный. Плата питания PS. Схема электрическая принципиальная")
+		(date "2026-09-17")
+		(rev "PS-A1")
+		(company "МГТУ им. Н.Э. Баумана, группа СМ7-21М")
+		(comment 1 "--- Э3")
+		(comment 2 "Соловцов")
+		(comment 3 "---")
+		(comment 4 "---")
+		(comment 5 "---")
+		(comment 6 "---")
+	)
+	(lib_symbols
+		(symbol "manipulator:+24V"
+			(power global)
+			(pin_numbers
+				(hide yes)
+			)
+			(pin_names
+				(offset 0)
+				(hide yes)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(in_pos_files yes)
+			(duplicate_pin_numbers_are_jumpers no)
+			(property "Reference" "#PWR"
+				(at 0 -3.81 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(face "GOST 2.304")
+						(size 1.27 1.27)
+						(italic yes)
+					)
+				)
+			)
+			(property "Value" "+24V"
+				(at 0 3.556 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(face "GOST 2.304")
+						(size 1.27 1.27)
+						(italic yes)
+					)
+				)
+			)
+			(property "Footprint" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(face "GOST 2.304")
+						(size 1.27 1.27)
+						(italic yes)
+					)
+				)
+			)
+			(property "Datasheet" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(face "GOST 2.304")
+						(size 1.27 1.27)
+						(italic yes)
+					)
+				)
+			)
+			(property "Description" "Символ питания: глобальная цепь +24V"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(face "GOST 2.304")
+						(size 1.27 1.27)
+						(italic yes)
+					)
+				)
+			)
+			(symbol "+24V_0_1"
+				(polyline
+					(pts
+						(xy -0.762 1.27) (xy 0 2.54)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0 2.54) (xy 0.762 1.27)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0 0) (xy 0 2.54)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+			)
+			(symbol "+24V_1_1"
+				(pin power_in line
+					(at 0 0 90)
+					(length 0)
+					(hide yes)
+					(name "+24V"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
+		(symbol "manipulator:+24V_IN"
+			(power global)
+			(pin_numbers
+				(hide yes)
+			)
+			(pin_names
+				(offset 0)
+				(hide yes)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(in_pos_files yes)
+			(duplicate_pin_numbers_are_jumpers no)
+			(property "Reference" "#PWR"
+				(at 0 -3.81 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(face "GOST 2.304")
+						(size 1.27 1.27)
+						(italic yes)
+					)
+				)
+			)
+			(property "Value" "+24V_IN"
+				(at 0 3.556 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(face "GOST 2.304")
+						(size 1.27 1.27)
+						(italic yes)
+					)
+				)
+			)
+			(property "Footprint" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(face "GOST 2.304")
+						(size 1.27 1.27)
+						(italic yes)
+					)
+				)
+			)
+			(property "Datasheet" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(face "GOST 2.304")
+						(size 1.27 1.27)
+						(italic yes)
+					)
+				)
+			)
+			(property "Description" "Символ питания: глобальная цепь +24V_IN"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(face "GOST 2.304")
+						(size 1.27 1.27)
+						(italic yes)
+					)
+				)
+			)
+			(symbol "+24V_IN_0_1"
+				(polyline
+					(pts
+						(xy -0.762 1.27) (xy 0 2.54)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0 2.54) (xy 0.762 1.27)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0 0) (xy 0 2.54)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+			)
+			(symbol "+24V_IN_1_1"
+				(pin power_in line
+					(at 0 0 90)
+					(length 0)
+					(hide yes)
+					(name "+24V_IN"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
+		(symbol "manipulator:+5P"
+			(power global)
+			(pin_numbers
+				(hide yes)
+			)
+			(pin_names
+				(offset 0)
+				(hide yes)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(in_pos_files yes)
+			(duplicate_pin_numbers_are_jumpers no)
+			(property "Reference" "#PWR"
+				(at 0 -3.81 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(face "GOST 2.304")
+						(size 1.27 1.27)
+						(italic yes)
+					)
+				)
+			)
+			(property "Value" "+5P"
+				(at 0 3.556 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(face "GOST 2.304")
+						(size 1.27 1.27)
+						(italic yes)
+					)
+				)
+			)
+			(property "Footprint" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(face "GOST 2.304")
+						(size 1.27 1.27)
+						(italic yes)
+					)
+				)
+			)
+			(property "Datasheet" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(face "GOST 2.304")
+						(size 1.27 1.27)
+						(italic yes)
+					)
+				)
+			)
+			(property "Description" "Символ питания: глобальная цепь +5P"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(face "GOST 2.304")
+						(size 1.27 1.27)
+						(italic yes)
+					)
+				)
+			)
+			(symbol "+5P_0_1"
+				(polyline
+					(pts
+						(xy -0.762 1.27) (xy 0 2.54)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0 2.54) (xy 0.762 1.27)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0 0) (xy 0 2.54)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+			)
+			(symbol "+5P_1_1"
+				(pin power_in line
+					(at 0 0 90)
+					(length 0)
+					(hide yes)
+					(name "+5P"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
+		(symbol "manipulator:C"
+			(pin_numbers
+				(hide yes)
+			)
+			(pin_names
+				(offset 0.254)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(in_pos_files yes)
+			(duplicate_pin_numbers_are_jumpers no)
+			(property "Reference" "C"
+				(at 5.08 1.27 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(face "GOST 2.304")
+						(size 1.27 1.27)
+						(italic yes)
+					)
+				)
+			)
+			(property "Value" "C"
+				(at 5.08 -1.27 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(face "GOST 2.304")
+						(size 1.27 1.27)
+						(italic yes)
+					)
+					(justify left)
+				)
+			)
+			(property "Footprint" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(face "GOST 2.304")
+						(size 1.27 1.27)
+						(italic yes)
+					)
+				)
+			)
+			(property "Datasheet" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(face "GOST 2.304")
+						(size 1.27 1.27)
+						(italic yes)
+					)
+				)
+			)
+			(property "Description" "Конденсатор (ГОСТ 2.728)"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(face "GOST 2.304")
+						(size 1.27 1.27)
+						(italic yes)
+					)
+				)
+			)
+			(symbol "C_0_1"
+				(polyline
+					(pts
+						(xy -4.064 0.762) (xy 4.064 0.762)
+					)
+					(stroke
+						(width 0.508)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy -4.064 -0.762) (xy 4.064 -0.762)
+					)
+					(stroke
+						(width 0.508)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+			)
+			(symbol "C_1_1"
+				(pin passive line
+					(at 0 3.81 270)
+					(length 3.048)
+					(name ""
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 0 -3.81 90)
+					(length 3.048)
+					(name ""
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
+		(symbol "manipulator:C_Polarized"
+			(pin_numbers
+				(hide yes)
+			)
+			(pin_names
+				(offset 0.254)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(in_pos_files yes)
+			(duplicate_pin_numbers_are_jumpers no)
+			(property "Reference" "C"
+				(at 5.08 1.27 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(face "GOST 2.304")
+						(size 1.27 1.27)
+						(italic yes)
+					)
+				)
+			)
+			(property "Value" "C_Polarized"
+				(at 5.08 -1.27 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(face "GOST 2.304")
+						(size 1.27 1.27)
+						(italic yes)
+					)
+					(justify left)
+				)
+			)
+			(property "Footprint" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(face "GOST 2.304")
+						(size 1.27 1.27)
+						(italic yes)
+					)
+				)
+			)
+			(property "Datasheet" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(face "GOST 2.304")
+						(size 1.27 1.27)
+						(italic yes)
+					)
+				)
+			)
+			(property "Description" "Конденсатор поляризованный (ГОСТ 2.728), «+» у вывода 1"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(face "GOST 2.304")
+						(size 1.27 1.27)
+						(italic yes)
+					)
+				)
+			)
+			(symbol "C_Polarized_0_1"
+				(polyline
+					(pts
+						(xy -6.35 2.286) (xy -5.08 2.286)
+					)
+					(stroke
+						(width 0.3048)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy -5.715 1.651) (xy -5.715 2.921)
+					)
+					(stroke
+						(width 0.3048)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy -4.064 0.762) (xy 4.064 0.762)
+					)
+					(stroke
+						(width 0.508)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy -4.064 -0.762) (xy 4.064 -0.762)
+					)
+					(stroke
+						(width 0.508)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+			)
+			(symbol "C_Polarized_1_1"
+				(pin passive line
+					(at 0 3.81 270)
+					(length 3.048)
+					(name ""
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 0 -3.81 90)
+					(length 3.048)
+					(name ""
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
+		(symbol "manipulator:D"
+			(pin_numbers
+				(hide yes)
+			)
+			(pin_names
+				(hide yes)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(in_pos_files yes)
+			(duplicate_pin_numbers_are_jumpers no)
+			(property "Reference" "VD"
+				(at 0 3.81 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(face "GOST 2.304")
+						(size 1.27 1.27)
+						(italic yes)
+					)
+				)
+			)
+			(property "Value" "D"
+				(at 0 -3.81 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(face "GOST 2.304")
+						(size 1.27 1.27)
+						(italic yes)
+					)
+				)
+			)
+			(property "Footprint" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(face "GOST 2.304")
+						(size 1.27 1.27)
+						(italic yes)
+					)
+				)
+			)
+			(property "Datasheet" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(face "GOST 2.304")
+						(size 1.27 1.27)
+						(italic yes)
+					)
+				)
+			)
+			(property "Description" "Диод (ГОСТ 2.730): 1 — катод, 2 — анод"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(face "GOST 2.304")
+						(size 1.27 1.27)
+						(italic yes)
+					)
+				)
+			)
+			(symbol "D_0_1"
+				(polyline
+					(pts
+						(xy -2.54 2.032) (xy -2.54 -2.032)
+					)
+					(stroke
+						(width 0.3048)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy -2.54 0) (xy 2.54 0)
+					)
+					(stroke
+						(width 0.3048)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 2.54 2.032) (xy 2.54 -2.032) (xy -2.54 0) (xy 2.54 2.032)
+					)
+					(stroke
+						(width 0.3048)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+			)
+			(symbol "D_1_1"
+				(pin passive line
+					(at -5.08 0 0)
+					(length 2.54)
+					(name "K"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 5.08 0 180)
+					(length 2.54)
+					(name "A"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
+		(symbol "manipulator:DCDC_Module"
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(in_pos_files yes)
+			(duplicate_pin_numbers_are_jumpers no)
+			(property "Reference" "U"
+				(at 0 8.89 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(face "GOST 2.304")
+						(size 1.27 1.27)
+						(italic yes)
+					)
+				)
+			)
+			(property "Value" "DCDC_Module"
+				(at 0 -8.89 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(face "GOST 2.304")
+						(size 1.27 1.27)
+						(italic yes)
+					)
+				)
+			)
+			(property "Footprint" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(face "GOST 2.304")
+						(size 1.27 1.27)
+						(italic yes)
+					)
+				)
+			)
+			(property "Datasheet" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(face "GOST 2.304")
+						(size 1.27 1.27)
+						(italic yes)
+					)
+				)
+			)
+			(property "Description" "Модуль DC-DC понижающего преобразователя (устройство, ГОСТ 2.702)"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(face "GOST 2.304")
+						(size 1.27 1.27)
+						(italic yes)
+					)
+				)
+			)
+			(symbol "DCDC_Module_0_1"
+				(rectangle
+					(start -10.16 -6.35)
+					(end 10.16 6.35)
+					(stroke
+						(width 0.3048)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(text "DC/DC"
+					(at 0 0 0)
+					(effects
+						(font
+							(face "GOST 2.304")
+							(size 1.27 1.27)
+							(italic yes)
+						)
+					)
+				)
+			)
+			(symbol "DCDC_Module_1_1"
+				(pin power_in line
+					(at -12.7 2.54 0)
+					(length 2.54)
+					(name "IN+"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin power_in line
+					(at -12.7 -2.54 0)
+					(length 2.54)
+					(name "IN-"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin power_out line
+					(at 12.7 2.54 180)
+					(length 2.54)
+					(name "OUT+"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "3"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin power_out line
+					(at 12.7 -2.54 180)
+					(length 2.54)
+					(name "OUT-"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "4"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
+		(symbol "manipulator:DCDC_VRB_YMD"
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(in_pos_files yes)
+			(duplicate_pin_numbers_are_jumpers no)
+			(property "Reference" "U"
+				(at 0 8.89 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(face "GOST 2.304")
+						(size 1.27 1.27)
+						(italic yes)
+					)
+				)
+			)
+			(property "Value" "DCDC_VRB_YMD"
+				(at 0 -8.89 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(face "GOST 2.304")
+						(size 1.27 1.27)
+						(italic yes)
+					)
+				)
+			)
+			(property "Footprint" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(face "GOST 2.304")
+						(size 1.27 1.27)
+						(italic yes)
+					)
+				)
+			)
+			(property "Datasheet" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(face "GOST 2.304")
+						(size 1.27 1.27)
+						(italic yes)
+					)
+				)
+			)
+			(property "Description" "Изолированный DC-DC Mornsun VRB_YMD-10WR3 (устройство, ГОСТ 2.702); выводы по datasheet: 3 Vin, 2 GND, 4 +Vo, 6 0V, 1 Ctrl"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(face "GOST 2.304")
+						(size 1.27 1.27)
+						(italic yes)
+					)
+				)
+			)
+			(symbol "DCDC_VRB_YMD_0_1"
+				(rectangle
+					(start -10.16 -6.35)
+					(end 10.16 6.35)
+					(stroke
+						(width 0.3048)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0 -6.35) (xy 0 6.35)
+					)
+					(stroke
+						(width 0.1524)
+						(type dash)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(text "DC/DC"
+					(at 0 2.54 0)
+					(effects
+						(font
+							(face "GOST 2.304")
+							(size 1.27 1.27)
+							(italic yes)
+						)
+					)
+				)
+				(text "изолир."
+					(at 0 -2.54 0)
+					(effects
+						(font
+							(face "GOST 2.304")
+							(size 1.27 1.27)
+							(italic yes)
+						)
+					)
+				)
+			)
+			(symbol "DCDC_VRB_YMD_1_1"
+				(pin input line
+					(at -5.08 -8.89 90)
+					(length 2.54)
+					(name "Ctrl"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin power_in line
+					(at -12.7 -2.54 0)
+					(length 2.54)
+					(name "GND"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin power_in line
+					(at -12.7 2.54 0)
+					(length 2.54)
+					(name "Vin"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "3"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin power_out line
+					(at 12.7 2.54 180)
+					(length 2.54)
+					(name "+Vo"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "4"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin power_out line
+					(at 12.7 -2.54 180)
+					(length 2.54)
+					(name "0V"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "6"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
+		(symbol "manipulator:D_TVS"
+			(pin_numbers
+				(hide yes)
+			)
+			(pin_names
+				(hide yes)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(in_pos_files yes)
+			(duplicate_pin_numbers_are_jumpers no)
+			(property "Reference" "VD"
+				(at 0 3.81 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(face "GOST 2.304")
+						(size 1.27 1.27)
+						(italic yes)
+					)
+				)
+			)
+			(property "Value" "D_TVS"
+				(at 0 -3.81 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(face "GOST 2.304")
+						(size 1.27 1.27)
+						(italic yes)
+					)
+				)
+			)
+			(property "Footprint" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(face "GOST 2.304")
+						(size 1.27 1.27)
+						(italic yes)
+					)
+				)
+			)
+			(property "Datasheet" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(face "GOST 2.304")
+						(size 1.27 1.27)
+						(italic yes)
+					)
+				)
+			)
+			(property "Description" "Диод защитный TVS (ГОСТ 2.730): 1 — катод к шине, 2 — анод к земле"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(face "GOST 2.304")
+						(size 1.27 1.27)
+						(italic yes)
+					)
+				)
+			)
+			(symbol "D_TVS_0_1"
+				(polyline
+					(pts
+						(xy -2.54 0) (xy 2.54 0)
+					)
+					(stroke
+						(width 0.3048)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy -1.778 2.032) (xy -2.54 2.032) (xy -2.54 -2.032) (xy -3.302 -2.032)
+					)
+					(stroke
+						(width 0.3048)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 2.54 2.032) (xy 2.54 -2.032) (xy -2.54 0) (xy 2.54 2.032)
+					)
+					(stroke
+						(width 0.3048)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+			)
+			(symbol "D_TVS_1_1"
+				(pin passive line
+					(at -5.08 0 0)
+					(length 2.54)
+					(name "K"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 5.08 0 180)
+					(length 2.54)
+					(name "A"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
+		(symbol "manipulator:GND_P"
+			(power global)
+			(pin_numbers
+				(hide yes)
+			)
+			(pin_names
+				(offset 0)
+				(hide yes)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(in_pos_files yes)
+			(duplicate_pin_numbers_are_jumpers no)
+			(property "Reference" "#PWR"
+				(at 0 3.81 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(face "GOST 2.304")
+						(size 1.27 1.27)
+						(italic yes)
+					)
+				)
+			)
+			(property "Value" "GND_P"
+				(at 0 -3.81 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(face "GOST 2.304")
+						(size 1.27 1.27)
+						(italic yes)
+					)
+				)
+			)
+			(property "Footprint" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(face "GOST 2.304")
+						(size 1.27 1.27)
+						(italic yes)
+					)
+				)
+			)
+			(property "Datasheet" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(face "GOST 2.304")
+						(size 1.27 1.27)
+						(italic yes)
+					)
+				)
+			)
+			(property "Description" "Символ земли: глобальная цепь GND_P"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(face "GOST 2.304")
+						(size 1.27 1.27)
+						(italic yes)
+					)
+				)
+			)
+			(symbol "GND_P_0_1"
+				(polyline
+					(pts
+						(xy -0.635 -1.27) (xy 0 -2.54) (xy 0.635 -1.27)
+					)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0 0) (xy 0 -2.54)
+					)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+			)
+			(symbol "GND_P_1_1"
+				(pin power_in line
+					(at 0 0 0)
+					(length 0)
+					(hide yes)
+					(name "GND_P"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
+		(symbol "manipulator:L"
+			(pin_numbers
+				(hide yes)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(in_pos_files yes)
+			(duplicate_pin_numbers_are_jumpers no)
+			(property "Reference" "L"
+				(at 0 3.81 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(face "GOST 2.304")
+						(size 1.27 1.27)
+						(italic yes)
+					)
+				)
+			)
+			(property "Value" "L"
+				(at 0 -2.54 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(face "GOST 2.304")
+						(size 1.27 1.27)
+						(italic yes)
+					)
+				)
+			)
+			(property "Footprint" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(face "GOST 2.304")
+						(size 1.27 1.27)
+						(italic yes)
+					)
+				)
+			)
+			(property "Datasheet" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(face "GOST 2.304")
+						(size 1.27 1.27)
+						(italic yes)
+					)
+				)
+			)
+			(property "Description" "Дроссель (ГОСТ 2.723)"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(face "GOST 2.304")
+						(size 1.27 1.27)
+						(italic yes)
+					)
+				)
+			)
+			(symbol "L_0_1"
+				(arc
+					(start -5.08 0)
+					(mid -3.81 1.27)
+					(end -2.54 0)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(arc
+					(start -2.54 0)
+					(mid -1.27 1.27)
+					(end 0 0)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(arc
+					(start 0 0)
+					(mid 1.27 1.27)
+					(end 2.54 0)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(arc
+					(start 2.54 0)
+					(mid 3.81 1.27)
+					(end 5.08 0)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+			)
+			(symbol "L_1_1"
+				(pin passive line
+					(at -7.62 0 0)
+					(length 2.54)
+					(name ""
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 7.62 0 180)
+					(length 2.54)
+					(name ""
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
+		(symbol "manipulator:R"
+			(pin_numbers
+				(hide yes)
+			)
+			(pin_names
+				(offset 0)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(in_pos_files yes)
+			(duplicate_pin_numbers_are_jumpers no)
+			(property "Reference" "R"
+				(at 3.175 1.27 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(face "GOST 2.304")
+						(size 1.27 1.27)
+						(italic yes)
+					)
+				)
+			)
+			(property "Value" "R"
+				(at 3.175 -1.27 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(face "GOST 2.304")
+						(size 1.27 1.27)
+						(italic yes)
+					)
+					(justify left)
+				)
+			)
+			(property "Footprint" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(face "GOST 2.304")
+						(size 1.27 1.27)
+						(italic yes)
+					)
+				)
+			)
+			(property "Datasheet" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(face "GOST 2.304")
+						(size 1.27 1.27)
+						(italic yes)
+					)
+				)
+			)
+			(property "Description" "Резистор (ГОСТ 2.728, 10 × 4 мм)"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(face "GOST 2.304")
+						(size 1.27 1.27)
+						(italic yes)
+					)
+				)
+			)
+			(symbol "R_0_1"
+				(rectangle
+					(start -2.032 -5.08)
+					(end 2.032 5.08)
+					(stroke
+						(width 0.3048)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+			)
+			(symbol "R_1_1"
+				(pin passive line
+					(at 0 7.62 270)
+					(length 2.54)
+					(name ""
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 0 -7.62 90)
+					(length 2.54)
+					(name ""
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
+		(symbol "manipulator:Relay_SPDT"
+			(pin_names
+				(hide yes)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(in_pos_files yes)
+			(duplicate_pin_numbers_are_jumpers no)
+			(property "Reference" "K"
+				(at 0 -6.35 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(face "GOST 2.304")
+						(size 1.27 1.27)
+						(italic yes)
+					)
+				)
+			)
+			(property "Value" "Relay_SPDT"
+				(at 0 -8.89 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(face "GOST 2.304")
+						(size 1.27 1.27)
+						(italic yes)
+					)
+				)
+			)
+			(property "Footprint" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(face "GOST 2.304")
+						(size 1.27 1.27)
+						(italic yes)
+					)
+				)
+			)
+			(property "Datasheet" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(face "GOST 2.304")
+						(size 1.27 1.27)
+						(italic yes)
+					)
+				)
+			)
+			(property "Description" "Реле, один переключающий контакт (ГОСТ 2.755, 2.756)"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(face "GOST 2.304")
+						(size 1.27 1.27)
+						(italic yes)
+					)
+				)
+			)
+			(symbol "Relay_SPDT_0_1"
+				(polyline
+					(pts
+						(xy -6.35 8.89) (xy -2.54 8.89)
+					)
+					(stroke
+						(width 0.3048)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(rectangle
+					(start -6.35 -3.175)
+					(end 6.35 3.175)
+					(stroke
+						(width 0.3048)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy -2.54 8.89) (xy 3.81 11.43)
+					)
+					(stroke
+						(width 0.3048)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0 3.175) (xy 0 9.525)
+					)
+					(stroke
+						(width 0.1524)
+						(type dash)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 5.08 11.43) (xy 5.08 10.16)
+					)
+					(stroke
+						(width 0.3048)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 5.08 11.43) (xy 6.35 11.43)
+					)
+					(stroke
+						(width 0.3048)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 5.08 6.35) (xy 5.08 7.62)
+					)
+					(stroke
+						(width 0.3048)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 5.08 6.35) (xy 6.35 6.35)
+					)
+					(stroke
+						(width 0.3048)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(text "A1"
+					(at -5.08 -4.445 0)
+					(effects
+						(font
+							(face "GOST 2.304")
+							(size 1.27 1.27)
+							(italic yes)
+						)
+					)
+				)
+				(text "A2"
+					(at 5.08 -4.445 0)
+					(effects
+						(font
+							(face "GOST 2.304")
+							(size 1.27 1.27)
+							(italic yes)
+						)
+					)
+				)
+			)
+			(symbol "Relay_SPDT_1_1"
+				(pin passive line
+					(at -8.89 0 0)
+					(length 2.54)
+					(name "A1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 8.89 0 180)
+					(length 2.54)
+					(name "A2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at -8.89 8.89 0)
+					(length 2.54)
+					(name "COM"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "3"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 8.89 6.35 180)
+					(length 2.54)
+					(name "NO"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "4"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 8.89 11.43 180)
+					(length 2.54)
+					(name "NC"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "5"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
+		(symbol "manipulator:SIG_+24V_L_in"
+			(power global)
+			(pin_numbers
+				(hide yes)
+			)
+			(pin_names
+				(offset 0)
+				(hide yes)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(in_pos_files yes)
+			(duplicate_pin_numbers_are_jumpers no)
+			(property "Reference" "#PWR"
+				(at 0 3.81 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(face "GOST 2.304")
+						(size 1.27 1.27)
+						(italic yes)
+					)
+				)
+			)
+			(property "Value" "+24V"
+				(at -3.175 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(face "GOST 2.304")
+						(size 1.27 1.27)
+						(italic yes)
+					)
+					(justify right)
+				)
+			)
+			(property "Footprint" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(face "GOST 2.304")
+						(size 1.27 1.27)
+						(italic yes)
+					)
+				)
+			)
+			(property "Datasheet" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(face "GOST 2.304")
+						(size 1.27 1.27)
+						(italic yes)
+					)
+				)
+			)
+			(property "Description" "Порт сигнала: глобальная цепь +24V"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(face "GOST 2.304")
+						(size 1.27 1.27)
+						(italic yes)
+					)
+				)
+			)
+			(symbol "SIG_+24V_L_in_0_1"
+				(polyline
+					(pts
+						(xy -2.54 0) (xy 0 0)
+					)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy -1.27 0.635) (xy 0 0) (xy -1.27 -0.635)
+					)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+			)
+			(symbol "SIG_+24V_L_in_1_1"
+				(pin power_in line
+					(at 0 0 0)
+					(length 0)
+					(hide yes)
+					(name "+24V"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
+		(symbol "manipulator:SIG_GND_P_L_out"
+			(power global)
+			(pin_numbers
+				(hide yes)
+			)
+			(pin_names
+				(offset 0)
+				(hide yes)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(in_pos_files yes)
+			(duplicate_pin_numbers_are_jumpers no)
+			(property "Reference" "#PWR"
+				(at 0 3.81 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(face "GOST 2.304")
+						(size 1.27 1.27)
+						(italic yes)
+					)
+				)
+			)
+			(property "Value" "GND_P"
+				(at -3.175 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(face "GOST 2.304")
+						(size 1.27 1.27)
+						(italic yes)
+					)
+					(justify right)
+				)
+			)
+			(property "Footprint" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(face "GOST 2.304")
+						(size 1.27 1.27)
+						(italic yes)
+					)
+				)
+			)
+			(property "Datasheet" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(face "GOST 2.304")
+						(size 1.27 1.27)
+						(italic yes)
+					)
+				)
+			)
+			(property "Description" "Порт сигнала: глобальная цепь GND_P"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(face "GOST 2.304")
+						(size 1.27 1.27)
+						(italic yes)
+					)
+				)
+			)
+			(symbol "SIG_GND_P_L_out_0_1"
+				(polyline
+					(pts
+						(xy -1.27 0.635) (xy -2.54 0) (xy -1.27 -0.635)
+					)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0 0) (xy -2.54 0)
+					)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+			)
+			(symbol "SIG_GND_P_L_out_1_1"
+				(pin power_in line
+					(at 0 0 0)
+					(length 0)
+					(hide yes)
+					(name "GND_P"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
+		(symbol "manipulator:Tbl_X10_PS"
+			(pin_numbers
+				(hide yes)
+			)
+			(pin_names
+				(offset 0)
+				(hide yes)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(in_pos_files yes)
+			(duplicate_pin_numbers_are_jumpers no)
+			(property "Reference" "X"
+				(at 0 -5.81 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(face "GOST 2.304")
+						(size 1.27 1.27)
+						(italic yes)
+					)
+				)
+			)
+			(property "Value" "Tbl_X10_PS"
+				(at 0 -8.31 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(face "GOST 2.304")
+						(size 1.27 1.27)
+						(italic yes)
+					)
+				)
+			)
+			(property "Footprint" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(face "GOST 2.304")
+						(size 1.27 1.27)
+						(italic yes)
+					)
+				)
+			)
+			(property "Datasheet" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(face "GOST 2.304")
+						(size 1.27 1.27)
+						(italic yes)
+					)
+				)
+			)
+			(property "Description" "Разъём, 2 контактов, таблицей (ГОСТ 2.702): колонки «Контакт», «Цепь»; выводы слева"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(face "GOST 2.304")
+						(size 1.27 1.27)
+						(italic yes)
+					)
+				)
+			)
+			(symbol "Tbl_X10_PS_0_1"
+				(polyline
+					(pts
+						(xy 0 3.81) (xy 27.94 3.81) (xy 27.94 -3.81) (xy 0 -3.81) (xy 0 3.81)
+					)
+					(stroke
+						(width 0.1524)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0 1.27) (xy 27.94 1.27)
+					)
+					(stroke
+						(width 0.1524)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0 -1.27) (xy 27.94 -1.27)
+					)
+					(stroke
+						(width 0.1524)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0 -3.81) (xy 27.94 -3.81)
+					)
+					(stroke
+						(width 0.1524)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 10.16 3.81) (xy 10.16 -3.81)
+					)
+					(stroke
+						(width 0.1524)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(text "Контакт"
+					(at 5.08 2.54 0)
+					(effects
+						(font
+							(face "GOST 2.304")
+							(size 1.27 1.27)
+							(italic yes)
+						)
+					)
+				)
+				(text "1"
+					(at 5.08 0 0)
+					(effects
+						(font
+							(face "GOST 2.304")
+							(size 1.27 1.27)
+							(italic yes)
+						)
+					)
+				)
+				(text "2"
+					(at 5.08 -2.54 0)
+					(effects
+						(font
+							(face "GOST 2.304")
+							(size 1.27 1.27)
+							(italic yes)
+						)
+					)
+				)
+				(text "Цепь"
+					(at 19.05 2.54 0)
+					(effects
+						(font
+							(face "GOST 2.304")
+							(size 1.27 1.27)
+							(italic yes)
+						)
+					)
+				)
+				(text "+24V"
+					(at 19.05 0 0)
+					(effects
+						(font
+							(face "GOST 2.304")
+							(size 1.27 1.27)
+							(italic yes)
+						)
+					)
+				)
+				(text "GND_P"
+					(at 19.05 -2.54 0)
+					(effects
+						(font
+							(face "GOST 2.304")
+							(size 1.27 1.27)
+							(italic yes)
+						)
+					)
+				)
+			)
+			(symbol "Tbl_X10_PS_1_1"
+				(pin passive line
+					(at -2.54 0 0)
+					(length 2.54)
+					(name "+24V"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at -2.54 -2.54 0)
+					(length 2.54)
+					(name "GND_P"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
+		(symbol "manipulator:Tbl_X11_PS"
+			(pin_numbers
+				(hide yes)
+			)
+			(pin_names
+				(offset 0)
+				(hide yes)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(in_pos_files yes)
+			(duplicate_pin_numbers_are_jumpers no)
+			(property "Reference" "X"
+				(at 0 -5.81 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(face "GOST 2.304")
+						(size 1.27 1.27)
+						(italic yes)
+					)
+				)
+			)
+			(property "Value" "Tbl_X11_PS"
+				(at 0 -8.31 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(face "GOST 2.304")
+						(size 1.27 1.27)
+						(italic yes)
+					)
+				)
+			)
+			(property "Footprint" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(face "GOST 2.304")
+						(size 1.27 1.27)
+						(italic yes)
+					)
+				)
+			)
+			(property "Datasheet" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(face "GOST 2.304")
+						(size 1.27 1.27)
+						(italic yes)
+					)
+				)
+			)
+			(property "Description" "Разъём, 2 контактов, таблицей (ГОСТ 2.702): колонки «Контакт», «Цепь»; выводы слева"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(face "GOST 2.304")
+						(size 1.27 1.27)
+						(italic yes)
+					)
+				)
+			)
+			(symbol "Tbl_X11_PS_0_1"
+				(polyline
+					(pts
+						(xy 0 3.81) (xy 27.94 3.81) (xy 27.94 -3.81) (xy 0 -3.81) (xy 0 3.81)
+					)
+					(stroke
+						(width 0.1524)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0 1.27) (xy 27.94 1.27)
+					)
+					(stroke
+						(width 0.1524)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0 -1.27) (xy 27.94 -1.27)
+					)
+					(stroke
+						(width 0.1524)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0 -3.81) (xy 27.94 -3.81)
+					)
+					(stroke
+						(width 0.1524)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 10.16 3.81) (xy 10.16 -3.81)
+					)
+					(stroke
+						(width 0.1524)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(text "Контакт"
+					(at 5.08 2.54 0)
+					(effects
+						(font
+							(face "GOST 2.304")
+							(size 1.27 1.27)
+							(italic yes)
+						)
+					)
+				)
+				(text "1"
+					(at 5.08 0 0)
+					(effects
+						(font
+							(face "GOST 2.304")
+							(size 1.27 1.27)
+							(italic yes)
+						)
+					)
+				)
+				(text "2"
+					(at 5.08 -2.54 0)
+					(effects
+						(font
+							(face "GOST 2.304")
+							(size 1.27 1.27)
+							(italic yes)
+						)
+					)
+				)
+				(text "Цепь"
+					(at 19.05 2.54 0)
+					(effects
+						(font
+							(face "GOST 2.304")
+							(size 1.27 1.27)
+							(italic yes)
+						)
+					)
+				)
+				(text "+24V"
+					(at 19.05 0 0)
+					(effects
+						(font
+							(face "GOST 2.304")
+							(size 1.27 1.27)
+							(italic yes)
+						)
+					)
+				)
+				(text "GND_P"
+					(at 19.05 -2.54 0)
+					(effects
+						(font
+							(face "GOST 2.304")
+							(size 1.27 1.27)
+							(italic yes)
+						)
+					)
+				)
+			)
+			(symbol "Tbl_X11_PS_1_1"
+				(pin passive line
+					(at -2.54 0 0)
+					(length 2.54)
+					(name "+24V"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at -2.54 -2.54 0)
+					(length 2.54)
+					(name "GND_P"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
+		(symbol "manipulator:Tbl_X1_PS"
+			(pin_numbers
+				(hide yes)
+			)
+			(pin_names
+				(offset 0)
+				(hide yes)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(in_pos_files yes)
+			(duplicate_pin_numbers_are_jumpers no)
+			(property "Reference" "X"
+				(at -27.94 -5.81 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(face "GOST 2.304")
+						(size 1.27 1.27)
+						(italic yes)
+					)
+				)
+			)
+			(property "Value" "Tbl_X1_PS"
+				(at 0 -8.31 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(face "GOST 2.304")
+						(size 1.27 1.27)
+						(italic yes)
+					)
+				)
+			)
+			(property "Footprint" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(face "GOST 2.304")
+						(size 1.27 1.27)
+						(italic yes)
+					)
+				)
+			)
+			(property "Datasheet" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(face "GOST 2.304")
+						(size 1.27 1.27)
+						(italic yes)
+					)
+				)
+			)
+			(property "Description" "Разъём, 2 контактов, таблицей (ГОСТ 2.702): колонки «Контакт», «Цепь»; выводы справа"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(face "GOST 2.304")
+						(size 1.27 1.27)
+						(italic yes)
+					)
+				)
+			)
+			(symbol "Tbl_X1_PS_0_1"
+				(polyline
+					(pts
+						(xy -10.16 3.81) (xy -10.16 -3.81)
+					)
+					(stroke
+						(width 0.1524)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0 3.81) (xy -27.94 3.81) (xy -27.94 -3.81) (xy 0 -3.81) (xy 0 3.81)
+					)
+					(stroke
+						(width 0.1524)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0 1.27) (xy -27.94 1.27)
+					)
+					(stroke
+						(width 0.1524)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0 -1.27) (xy -27.94 -1.27)
+					)
+					(stroke
+						(width 0.1524)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0 -3.81) (xy -27.94 -3.81)
+					)
+					(stroke
+						(width 0.1524)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(text "Цепь"
+					(at -19.05 2.54 0)
+					(effects
+						(font
+							(face "GOST 2.304")
+							(size 1.27 1.27)
+							(italic yes)
+						)
+					)
+				)
+				(text "+24V_IN"
+					(at -19.05 0 0)
+					(effects
+						(font
+							(face "GOST 2.304")
+							(size 1.27 1.27)
+							(italic yes)
+						)
+					)
+				)
+				(text "GND_P"
+					(at -19.05 -2.54 0)
+					(effects
+						(font
+							(face "GOST 2.304")
+							(size 1.27 1.27)
+							(italic yes)
+						)
+					)
+				)
+				(text "Контакт"
+					(at -5.08 2.54 0)
+					(effects
+						(font
+							(face "GOST 2.304")
+							(size 1.27 1.27)
+							(italic yes)
+						)
+					)
+				)
+				(text "1"
+					(at -5.08 0 0)
+					(effects
+						(font
+							(face "GOST 2.304")
+							(size 1.27 1.27)
+							(italic yes)
+						)
+					)
+				)
+				(text "2"
+					(at -5.08 -2.54 0)
+					(effects
+						(font
+							(face "GOST 2.304")
+							(size 1.27 1.27)
+							(italic yes)
+						)
+					)
+				)
+			)
+			(symbol "Tbl_X1_PS_1_1"
+				(pin passive line
+					(at 2.54 0 180)
+					(length 2.54)
+					(name "+24V_IN"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 2.54 -2.54 180)
+					(length 2.54)
+					(name "GND_P"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
+		(symbol "manipulator:Tbl_X2_PS"
+			(pin_numbers
+				(hide yes)
+			)
+			(pin_names
+				(offset 0)
+				(hide yes)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(in_pos_files yes)
+			(duplicate_pin_numbers_are_jumpers no)
+			(property "Reference" "X"
+				(at 0 -10.89 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(face "GOST 2.304")
+						(size 1.27 1.27)
+						(italic yes)
+					)
+				)
+			)
+			(property "Value" "Tbl_X2_PS"
+				(at 0 -13.39 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(face "GOST 2.304")
+						(size 1.27 1.27)
+						(italic yes)
+					)
+				)
+			)
+			(property "Footprint" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(face "GOST 2.304")
+						(size 1.27 1.27)
+						(italic yes)
+					)
+				)
+			)
+			(property "Datasheet" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(face "GOST 2.304")
+						(size 1.27 1.27)
+						(italic yes)
+					)
+				)
+			)
+			(property "Description" "Разъём, 4 контактов, таблицей (ГОСТ 2.702): колонки «Контакт», «Цепь»; выводы слева"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(face "GOST 2.304")
+						(size 1.27 1.27)
+						(italic yes)
+					)
+				)
+			)
+			(symbol "Tbl_X2_PS_0_1"
+				(polyline
+					(pts
+						(xy 0 3.81) (xy 27.94 3.81) (xy 27.94 -8.89) (xy 0 -8.89) (xy 0 3.81)
+					)
+					(stroke
+						(width 0.1524)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0 1.27) (xy 27.94 1.27)
+					)
+					(stroke
+						(width 0.1524)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0 -1.27) (xy 27.94 -1.27)
+					)
+					(stroke
+						(width 0.1524)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0 -3.81) (xy 27.94 -3.81)
+					)
+					(stroke
+						(width 0.1524)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0 -6.35) (xy 27.94 -6.35)
+					)
+					(stroke
+						(width 0.1524)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0 -8.89) (xy 27.94 -8.89)
+					)
+					(stroke
+						(width 0.1524)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 10.16 3.81) (xy 10.16 -8.89)
+					)
+					(stroke
+						(width 0.1524)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(text "Контакт"
+					(at 5.08 2.54 0)
+					(effects
+						(font
+							(face "GOST 2.304")
+							(size 1.27 1.27)
+							(italic yes)
+						)
+					)
+				)
+				(text "1"
+					(at 5.08 0 0)
+					(effects
+						(font
+							(face "GOST 2.304")
+							(size 1.27 1.27)
+							(italic yes)
+						)
+					)
+				)
+				(text "2"
+					(at 5.08 -2.54 0)
+					(effects
+						(font
+							(face "GOST 2.304")
+							(size 1.27 1.27)
+							(italic yes)
+						)
+					)
+				)
+				(text "3"
+					(at 5.08 -5.08 0)
+					(effects
+						(font
+							(face "GOST 2.304")
+							(size 1.27 1.27)
+							(italic yes)
+						)
+					)
+				)
+				(text "4"
+					(at 5.08 -7.62 0)
+					(effects
+						(font
+							(face "GOST 2.304")
+							(size 1.27 1.27)
+							(italic yes)
+						)
+					)
+				)
+				(text "Цепь"
+					(at 19.05 2.54 0)
+					(effects
+						(font
+							(face "GOST 2.304")
+							(size 1.27 1.27)
+							(italic yes)
+						)
+					)
+				)
+				(text "K1:A2"
+					(at 19.05 0 0)
+					(effects
+						(font
+							(face "GOST 2.304")
+							(size 1.27 1.27)
+							(italic yes)
+						)
+					)
+				)
+				(text "GND_P"
+					(at 19.05 -2.54 0)
+					(effects
+						(font
+							(face "GOST 2.304")
+							(size 1.27 1.27)
+							(italic yes)
+						)
+					)
+				)
+				(text "GND_P"
+					(at 19.05 -5.08 0)
+					(effects
+						(font
+							(face "GOST 2.304")
+							(size 1.27 1.27)
+							(italic yes)
+						)
+					)
+				)
+				(text "+24V"
+					(at 19.05 -7.62 0)
+					(effects
+						(font
+							(face "GOST 2.304")
+							(size 1.27 1.27)
+							(italic yes)
+						)
+					)
+				)
+			)
+			(symbol "Tbl_X2_PS_1_1"
+				(pin passive line
+					(at -2.54 0 0)
+					(length 2.54)
+					(name "K1:A2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at -2.54 -2.54 0)
+					(length 2.54)
+					(name "GND_P"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at -2.54 -5.08 0)
+					(length 2.54)
+					(name "GND_P"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "3"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at -2.54 -7.62 0)
+					(length 2.54)
+					(name "+24V"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "4"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
+		(symbol "manipulator:Tbl_X3_PS"
+			(pin_numbers
+				(hide yes)
+			)
+			(pin_names
+				(offset 0)
+				(hide yes)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(in_pos_files yes)
+			(duplicate_pin_numbers_are_jumpers no)
+			(property "Reference" "X"
+				(at 0 -5.81 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(face "GOST 2.304")
+						(size 1.27 1.27)
+						(italic yes)
+					)
+				)
+			)
+			(property "Value" "Tbl_X3_PS"
+				(at 0 -8.31 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(face "GOST 2.304")
+						(size 1.27 1.27)
+						(italic yes)
+					)
+				)
+			)
+			(property "Footprint" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(face "GOST 2.304")
+						(size 1.27 1.27)
+						(italic yes)
+					)
+				)
+			)
+			(property "Datasheet" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(face "GOST 2.304")
+						(size 1.27 1.27)
+						(italic yes)
+					)
+				)
+			)
+			(property "Description" "Разъём, 2 контактов, таблицей (ГОСТ 2.702): колонки «Контакт», «Цепь»; выводы слева"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(face "GOST 2.304")
+						(size 1.27 1.27)
+						(italic yes)
+					)
+				)
+			)
+			(symbol "Tbl_X3_PS_0_1"
+				(polyline
+					(pts
+						(xy 0 3.81) (xy 27.94 3.81) (xy 27.94 -3.81) (xy 0 -3.81) (xy 0 3.81)
+					)
+					(stroke
+						(width 0.1524)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0 1.27) (xy 27.94 1.27)
+					)
+					(stroke
+						(width 0.1524)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0 -1.27) (xy 27.94 -1.27)
+					)
+					(stroke
+						(width 0.1524)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0 -3.81) (xy 27.94 -3.81)
+					)
+					(stroke
+						(width 0.1524)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 10.16 3.81) (xy 10.16 -3.81)
+					)
+					(stroke
+						(width 0.1524)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(text "Контакт"
+					(at 5.08 2.54 0)
+					(effects
+						(font
+							(face "GOST 2.304")
+							(size 1.27 1.27)
+							(italic yes)
+						)
+					)
+				)
+				(text "1"
+					(at 5.08 0 0)
+					(effects
+						(font
+							(face "GOST 2.304")
+							(size 1.27 1.27)
+							(italic yes)
+						)
+					)
+				)
+				(text "2"
+					(at 5.08 -2.54 0)
+					(effects
+						(font
+							(face "GOST 2.304")
+							(size 1.27 1.27)
+							(italic yes)
+						)
+					)
+				)
+				(text "Цепь"
+					(at 19.05 2.54 0)
+					(effects
+						(font
+							(face "GOST 2.304")
+							(size 1.27 1.27)
+							(italic yes)
+						)
+					)
+				)
+				(text "+5P"
+					(at 19.05 0 0)
+					(effects
+						(font
+							(face "GOST 2.304")
+							(size 1.27 1.27)
+							(italic yes)
+						)
+					)
+				)
+				(text "GND_P"
+					(at 19.05 -2.54 0)
+					(effects
+						(font
+							(face "GOST 2.304")
+							(size 1.27 1.27)
+							(italic yes)
+						)
+					)
+				)
+			)
+			(symbol "Tbl_X3_PS_1_1"
+				(pin passive line
+					(at -2.54 0 0)
+					(length 2.54)
+					(name "+5P"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at -2.54 -2.54 0)
+					(length 2.54)
+					(name "GND_P"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
+		(symbol "manipulator:Tbl_X4_PS"
+			(pin_numbers
+				(hide yes)
+			)
+			(pin_names
+				(offset 0)
+				(hide yes)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(in_pos_files yes)
+			(duplicate_pin_numbers_are_jumpers no)
+			(property "Reference" "X"
+				(at 0 -5.81 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(face "GOST 2.304")
+						(size 1.27 1.27)
+						(italic yes)
+					)
+				)
+			)
+			(property "Value" "Tbl_X4_PS"
+				(at 0 -8.31 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(face "GOST 2.304")
+						(size 1.27 1.27)
+						(italic yes)
+					)
+				)
+			)
+			(property "Footprint" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(face "GOST 2.304")
+						(size 1.27 1.27)
+						(italic yes)
+					)
+				)
+			)
+			(property "Datasheet" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(face "GOST 2.304")
+						(size 1.27 1.27)
+						(italic yes)
+					)
+				)
+			)
+			(property "Description" "Разъём, 2 контактов, таблицей (ГОСТ 2.702): колонки «Контакт», «Цепь»; выводы слева"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(face "GOST 2.304")
+						(size 1.27 1.27)
+						(italic yes)
+					)
+				)
+			)
+			(symbol "Tbl_X4_PS_0_1"
+				(polyline
+					(pts
+						(xy 0 3.81) (xy 27.94 3.81) (xy 27.94 -3.81) (xy 0 -3.81) (xy 0 3.81)
+					)
+					(stroke
+						(width 0.1524)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0 1.27) (xy 27.94 1.27)
+					)
+					(stroke
+						(width 0.1524)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0 -1.27) (xy 27.94 -1.27)
+					)
+					(stroke
+						(width 0.1524)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0 -3.81) (xy 27.94 -3.81)
+					)
+					(stroke
+						(width 0.1524)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 10.16 3.81) (xy 10.16 -3.81)
+					)
+					(stroke
+						(width 0.1524)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(text "Контакт"
+					(at 5.08 2.54 0)
+					(effects
+						(font
+							(face "GOST 2.304")
+							(size 1.27 1.27)
+							(italic yes)
+						)
+					)
+				)
+				(text "1"
+					(at 5.08 0 0)
+					(effects
+						(font
+							(face "GOST 2.304")
+							(size 1.27 1.27)
+							(italic yes)
+						)
+					)
+				)
+				(text "2"
+					(at 5.08 -2.54 0)
+					(effects
+						(font
+							(face "GOST 2.304")
+							(size 1.27 1.27)
+							(italic yes)
+						)
+					)
+				)
+				(text "Цепь"
+					(at 19.05 2.54 0)
+					(effects
+						(font
+							(face "GOST 2.304")
+							(size 1.27 1.27)
+							(italic yes)
+						)
+					)
+				)
+				(text "+5V_L"
+					(at 19.05 0 0)
+					(effects
+						(font
+							(face "GOST 2.304")
+							(size 1.27 1.27)
+							(italic yes)
+						)
+					)
+				)
+				(text "GND_L"
+					(at 19.05 -2.54 0)
+					(effects
+						(font
+							(face "GOST 2.304")
+							(size 1.27 1.27)
+							(italic yes)
+						)
+					)
+				)
+			)
+			(symbol "Tbl_X4_PS_1_1"
+				(pin passive line
+					(at -2.54 0 0)
+					(length 2.54)
+					(name "+5V_L"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at -2.54 -2.54 0)
+					(length 2.54)
+					(name "GND_L"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
+		(symbol "manipulator:Tbl_X5_PS"
+			(pin_numbers
+				(hide yes)
+			)
+			(pin_names
+				(offset 0)
+				(hide yes)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(in_pos_files yes)
+			(duplicate_pin_numbers_are_jumpers no)
+			(property "Reference" "X"
+				(at 0 -5.81 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(face "GOST 2.304")
+						(size 1.27 1.27)
+						(italic yes)
+					)
+				)
+			)
+			(property "Value" "Tbl_X5_PS"
+				(at 0 -8.31 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(face "GOST 2.304")
+						(size 1.27 1.27)
+						(italic yes)
+					)
+				)
+			)
+			(property "Footprint" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(face "GOST 2.304")
+						(size 1.27 1.27)
+						(italic yes)
+					)
+				)
+			)
+			(property "Datasheet" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(face "GOST 2.304")
+						(size 1.27 1.27)
+						(italic yes)
+					)
+				)
+			)
+			(property "Description" "Разъём, 2 контактов, таблицей (ГОСТ 2.702): колонки «Контакт», «Цепь»; выводы слева"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(face "GOST 2.304")
+						(size 1.27 1.27)
+						(italic yes)
+					)
+				)
+			)
+			(symbol "Tbl_X5_PS_0_1"
+				(polyline
+					(pts
+						(xy 0 3.81) (xy 27.94 3.81) (xy 27.94 -3.81) (xy 0 -3.81) (xy 0 3.81)
+					)
+					(stroke
+						(width 0.1524)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0 1.27) (xy 27.94 1.27)
+					)
+					(stroke
+						(width 0.1524)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0 -1.27) (xy 27.94 -1.27)
+					)
+					(stroke
+						(width 0.1524)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0 -3.81) (xy 27.94 -3.81)
+					)
+					(stroke
+						(width 0.1524)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 10.16 3.81) (xy 10.16 -3.81)
+					)
+					(stroke
+						(width 0.1524)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(text "Контакт"
+					(at 5.08 2.54 0)
+					(effects
+						(font
+							(face "GOST 2.304")
+							(size 1.27 1.27)
+							(italic yes)
+						)
+					)
+				)
+				(text "1"
+					(at 5.08 0 0)
+					(effects
+						(font
+							(face "GOST 2.304")
+							(size 1.27 1.27)
+							(italic yes)
+						)
+					)
+				)
+				(text "2"
+					(at 5.08 -2.54 0)
+					(effects
+						(font
+							(face "GOST 2.304")
+							(size 1.27 1.27)
+							(italic yes)
+						)
+					)
+				)
+				(text "Цепь"
+					(at 19.05 2.54 0)
+					(effects
+						(font
+							(face "GOST 2.304")
+							(size 1.27 1.27)
+							(italic yes)
+						)
+					)
+				)
+				(text "LED"
+					(at 19.05 0 0)
+					(effects
+						(font
+							(face "GOST 2.304")
+							(size 1.27 1.27)
+							(italic yes)
+						)
+					)
+				)
+				(text "GND_P"
+					(at 19.05 -2.54 0)
+					(effects
+						(font
+							(face "GOST 2.304")
+							(size 1.27 1.27)
+							(italic yes)
+						)
+					)
+				)
+			)
+			(symbol "Tbl_X5_PS_1_1"
+				(pin passive line
+					(at -2.54 0 0)
+					(length 2.54)
+					(name "LED"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at -2.54 -2.54 0)
+					(length 2.54)
+					(name "GND_P"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
+		(symbol "manipulator:Tbl_X6_PS"
+			(pin_numbers
+				(hide yes)
+			)
+			(pin_names
+				(offset 0)
+				(hide yes)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(in_pos_files yes)
+			(duplicate_pin_numbers_are_jumpers no)
+			(property "Reference" "X"
+				(at 0 -5.81 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(face "GOST 2.304")
+						(size 1.27 1.27)
+						(italic yes)
+					)
+				)
+			)
+			(property "Value" "Tbl_X6_PS"
+				(at 0 -8.31 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(face "GOST 2.304")
+						(size 1.27 1.27)
+						(italic yes)
+					)
+				)
+			)
+			(property "Footprint" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(face "GOST 2.304")
+						(size 1.27 1.27)
+						(italic yes)
+					)
+				)
+			)
+			(property "Datasheet" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(face "GOST 2.304")
+						(size 1.27 1.27)
+						(italic yes)
+					)
+				)
+			)
+			(property "Description" "Разъём, 2 контактов, таблицей (ГОСТ 2.702): колонки «Контакт», «Цепь»; выводы слева"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(face "GOST 2.304")
+						(size 1.27 1.27)
+						(italic yes)
+					)
+				)
+			)
+			(symbol "Tbl_X6_PS_0_1"
+				(polyline
+					(pts
+						(xy 0 3.81) (xy 27.94 3.81) (xy 27.94 -3.81) (xy 0 -3.81) (xy 0 3.81)
+					)
+					(stroke
+						(width 0.1524)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0 1.27) (xy 27.94 1.27)
+					)
+					(stroke
+						(width 0.1524)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0 -1.27) (xy 27.94 -1.27)
+					)
+					(stroke
+						(width 0.1524)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0 -3.81) (xy 27.94 -3.81)
+					)
+					(stroke
+						(width 0.1524)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 10.16 3.81) (xy 10.16 -3.81)
+					)
+					(stroke
+						(width 0.1524)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(text "Контакт"
+					(at 5.08 2.54 0)
+					(effects
+						(font
+							(face "GOST 2.304")
+							(size 1.27 1.27)
+							(italic yes)
+						)
+					)
+				)
+				(text "1"
+					(at 5.08 0 0)
+					(effects
+						(font
+							(face "GOST 2.304")
+							(size 1.27 1.27)
+							(italic yes)
+						)
+					)
+				)
+				(text "2"
+					(at 5.08 -2.54 0)
+					(effects
+						(font
+							(face "GOST 2.304")
+							(size 1.27 1.27)
+							(italic yes)
+						)
+					)
+				)
+				(text "Цепь"
+					(at 19.05 2.54 0)
+					(effects
+						(font
+							(face "GOST 2.304")
+							(size 1.27 1.27)
+							(italic yes)
+						)
+					)
+				)
+				(text "+24V"
+					(at 19.05 0 0)
+					(effects
+						(font
+							(face "GOST 2.304")
+							(size 1.27 1.27)
+							(italic yes)
+						)
+					)
+				)
+				(text "GND_P"
+					(at 19.05 -2.54 0)
+					(effects
+						(font
+							(face "GOST 2.304")
+							(size 1.27 1.27)
+							(italic yes)
+						)
+					)
+				)
+			)
+			(symbol "Tbl_X6_PS_1_1"
+				(pin passive line
+					(at -2.54 0 0)
+					(length 2.54)
+					(name "+24V"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at -2.54 -2.54 0)
+					(length 2.54)
+					(name "GND_P"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
+		(symbol "manipulator:Tbl_X7_PS"
+			(pin_numbers
+				(hide yes)
+			)
+			(pin_names
+				(offset 0)
+				(hide yes)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(in_pos_files yes)
+			(duplicate_pin_numbers_are_jumpers no)
+			(property "Reference" "X"
+				(at 0 -5.81 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(face "GOST 2.304")
+						(size 1.27 1.27)
+						(italic yes)
+					)
+				)
+			)
+			(property "Value" "Tbl_X7_PS"
+				(at 0 -8.31 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(face "GOST 2.304")
+						(size 1.27 1.27)
+						(italic yes)
+					)
+				)
+			)
+			(property "Footprint" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(face "GOST 2.304")
+						(size 1.27 1.27)
+						(italic yes)
+					)
+				)
+			)
+			(property "Datasheet" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(face "GOST 2.304")
+						(size 1.27 1.27)
+						(italic yes)
+					)
+				)
+			)
+			(property "Description" "Разъём, 2 контактов, таблицей (ГОСТ 2.702): колонки «Контакт», «Цепь»; выводы слева"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(face "GOST 2.304")
+						(size 1.27 1.27)
+						(italic yes)
+					)
+				)
+			)
+			(symbol "Tbl_X7_PS_0_1"
+				(polyline
+					(pts
+						(xy 0 3.81) (xy 27.94 3.81) (xy 27.94 -3.81) (xy 0 -3.81) (xy 0 3.81)
+					)
+					(stroke
+						(width 0.1524)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0 1.27) (xy 27.94 1.27)
+					)
+					(stroke
+						(width 0.1524)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0 -1.27) (xy 27.94 -1.27)
+					)
+					(stroke
+						(width 0.1524)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0 -3.81) (xy 27.94 -3.81)
+					)
+					(stroke
+						(width 0.1524)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 10.16 3.81) (xy 10.16 -3.81)
+					)
+					(stroke
+						(width 0.1524)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(text "Контакт"
+					(at 5.08 2.54 0)
+					(effects
+						(font
+							(face "GOST 2.304")
+							(size 1.27 1.27)
+							(italic yes)
+						)
+					)
+				)
+				(text "1"
+					(at 5.08 0 0)
+					(effects
+						(font
+							(face "GOST 2.304")
+							(size 1.27 1.27)
+							(italic yes)
+						)
+					)
+				)
+				(text "2"
+					(at 5.08 -2.54 0)
+					(effects
+						(font
+							(face "GOST 2.304")
+							(size 1.27 1.27)
+							(italic yes)
+						)
+					)
+				)
+				(text "Цепь"
+					(at 19.05 2.54 0)
+					(effects
+						(font
+							(face "GOST 2.304")
+							(size 1.27 1.27)
+							(italic yes)
+						)
+					)
+				)
+				(text "+24V"
+					(at 19.05 0 0)
+					(effects
+						(font
+							(face "GOST 2.304")
+							(size 1.27 1.27)
+							(italic yes)
+						)
+					)
+				)
+				(text "GND_P"
+					(at 19.05 -2.54 0)
+					(effects
+						(font
+							(face "GOST 2.304")
+							(size 1.27 1.27)
+							(italic yes)
+						)
+					)
+				)
+			)
+			(symbol "Tbl_X7_PS_1_1"
+				(pin passive line
+					(at -2.54 0 0)
+					(length 2.54)
+					(name "+24V"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at -2.54 -2.54 0)
+					(length 2.54)
+					(name "GND_P"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
+		(symbol "manipulator:Tbl_X8_PS"
+			(pin_numbers
+				(hide yes)
+			)
+			(pin_names
+				(offset 0)
+				(hide yes)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(in_pos_files yes)
+			(duplicate_pin_numbers_are_jumpers no)
+			(property "Reference" "X"
+				(at 0 -5.81 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(face "GOST 2.304")
+						(size 1.27 1.27)
+						(italic yes)
+					)
+				)
+			)
+			(property "Value" "Tbl_X8_PS"
+				(at 0 -8.31 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(face "GOST 2.304")
+						(size 1.27 1.27)
+						(italic yes)
+					)
+				)
+			)
+			(property "Footprint" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(face "GOST 2.304")
+						(size 1.27 1.27)
+						(italic yes)
+					)
+				)
+			)
+			(property "Datasheet" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(face "GOST 2.304")
+						(size 1.27 1.27)
+						(italic yes)
+					)
+				)
+			)
+			(property "Description" "Разъём, 2 контактов, таблицей (ГОСТ 2.702): колонки «Контакт», «Цепь»; выводы слева"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(face "GOST 2.304")
+						(size 1.27 1.27)
+						(italic yes)
+					)
+				)
+			)
+			(symbol "Tbl_X8_PS_0_1"
+				(polyline
+					(pts
+						(xy 0 3.81) (xy 27.94 3.81) (xy 27.94 -3.81) (xy 0 -3.81) (xy 0 3.81)
+					)
+					(stroke
+						(width 0.1524)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0 1.27) (xy 27.94 1.27)
+					)
+					(stroke
+						(width 0.1524)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0 -1.27) (xy 27.94 -1.27)
+					)
+					(stroke
+						(width 0.1524)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0 -3.81) (xy 27.94 -3.81)
+					)
+					(stroke
+						(width 0.1524)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 10.16 3.81) (xy 10.16 -3.81)
+					)
+					(stroke
+						(width 0.1524)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(text "Контакт"
+					(at 5.08 2.54 0)
+					(effects
+						(font
+							(face "GOST 2.304")
+							(size 1.27 1.27)
+							(italic yes)
+						)
+					)
+				)
+				(text "1"
+					(at 5.08 0 0)
+					(effects
+						(font
+							(face "GOST 2.304")
+							(size 1.27 1.27)
+							(italic yes)
+						)
+					)
+				)
+				(text "2"
+					(at 5.08 -2.54 0)
+					(effects
+						(font
+							(face "GOST 2.304")
+							(size 1.27 1.27)
+							(italic yes)
+						)
+					)
+				)
+				(text "Цепь"
+					(at 19.05 2.54 0)
+					(effects
+						(font
+							(face "GOST 2.304")
+							(size 1.27 1.27)
+							(italic yes)
+						)
+					)
+				)
+				(text "+24V"
+					(at 19.05 0 0)
+					(effects
+						(font
+							(face "GOST 2.304")
+							(size 1.27 1.27)
+							(italic yes)
+						)
+					)
+				)
+				(text "GND_P"
+					(at 19.05 -2.54 0)
+					(effects
+						(font
+							(face "GOST 2.304")
+							(size 1.27 1.27)
+							(italic yes)
+						)
+					)
+				)
+			)
+			(symbol "Tbl_X8_PS_1_1"
+				(pin passive line
+					(at -2.54 0 0)
+					(length 2.54)
+					(name "+24V"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at -2.54 -2.54 0)
+					(length 2.54)
+					(name "GND_P"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
+		(symbol "manipulator:Tbl_X9_PS"
+			(pin_numbers
+				(hide yes)
+			)
+			(pin_names
+				(offset 0)
+				(hide yes)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(in_pos_files yes)
+			(duplicate_pin_numbers_are_jumpers no)
+			(property "Reference" "X"
+				(at 0 -5.81 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(face "GOST 2.304")
+						(size 1.27 1.27)
+						(italic yes)
+					)
+				)
+			)
+			(property "Value" "Tbl_X9_PS"
+				(at 0 -8.31 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(face "GOST 2.304")
+						(size 1.27 1.27)
+						(italic yes)
+					)
+				)
+			)
+			(property "Footprint" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(face "GOST 2.304")
+						(size 1.27 1.27)
+						(italic yes)
+					)
+				)
+			)
+			(property "Datasheet" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(face "GOST 2.304")
+						(size 1.27 1.27)
+						(italic yes)
+					)
+				)
+			)
+			(property "Description" "Разъём, 2 контактов, таблицей (ГОСТ 2.702): колонки «Контакт», «Цепь»; выводы слева"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(face "GOST 2.304")
+						(size 1.27 1.27)
+						(italic yes)
+					)
+				)
+			)
+			(symbol "Tbl_X9_PS_0_1"
+				(polyline
+					(pts
+						(xy 0 3.81) (xy 27.94 3.81) (xy 27.94 -3.81) (xy 0 -3.81) (xy 0 3.81)
+					)
+					(stroke
+						(width 0.1524)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0 1.27) (xy 27.94 1.27)
+					)
+					(stroke
+						(width 0.1524)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0 -1.27) (xy 27.94 -1.27)
+					)
+					(stroke
+						(width 0.1524)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0 -3.81) (xy 27.94 -3.81)
+					)
+					(stroke
+						(width 0.1524)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 10.16 3.81) (xy 10.16 -3.81)
+					)
+					(stroke
+						(width 0.1524)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(text "Контакт"
+					(at 5.08 2.54 0)
+					(effects
+						(font
+							(face "GOST 2.304")
+							(size 1.27 1.27)
+							(italic yes)
+						)
+					)
+				)
+				(text "1"
+					(at 5.08 0 0)
+					(effects
+						(font
+							(face "GOST 2.304")
+							(size 1.27 1.27)
+							(italic yes)
+						)
+					)
+				)
+				(text "2"
+					(at 5.08 -2.54 0)
+					(effects
+						(font
+							(face "GOST 2.304")
+							(size 1.27 1.27)
+							(italic yes)
+						)
+					)
+				)
+				(text "Цепь"
+					(at 19.05 2.54 0)
+					(effects
+						(font
+							(face "GOST 2.304")
+							(size 1.27 1.27)
+							(italic yes)
+						)
+					)
+				)
+				(text "+24V"
+					(at 19.05 0 0)
+					(effects
+						(font
+							(face "GOST 2.304")
+							(size 1.27 1.27)
+							(italic yes)
+						)
+					)
+				)
+				(text "GND_P"
+					(at 19.05 -2.54 0)
+					(effects
+						(font
+							(face "GOST 2.304")
+							(size 1.27 1.27)
+							(italic yes)
+						)
+					)
+				)
+			)
+			(symbol "Tbl_X9_PS_1_1"
+				(pin passive line
+					(at -2.54 0 0)
+					(length 2.54)
+					(name "+24V"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at -2.54 -2.54 0)
+					(length 2.54)
+					(name "GND_P"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
+	)
+	(text "6. Типы разъёмов (см. перечень элементов): X1, X6…X10 — DG301-5.0-02P-12 (E-017); X2 — JST B4B-XH-A (E-092);"
+		(exclude_from_sim no)
+		(at 43.18 238.76 0)
+		(effects
+			(font
+				(face "GOST 2.304")
+				(size 1.5 1.5)
+				(italic yes)
+			)
+			(justify left bottom)
+		)
+		(uuid "06e102d9-4cf2-466b-ae2f-812880b43f59")
+	)
+	(text "   X5, X11 — JST B2B-XH-A (E-018); X3, X4 — JST B2P-VH (E-019)."
+		(exclude_from_sim no)
+		(at 43.18 243.205 0)
+		(effects
+			(font
+				(face "GOST 2.304")
+				(size 1.5 1.5)
+				(italic yes)
+			)
+			(justify left bottom)
+		)
+		(uuid "095c4e2c-0628-45e0-aa09-6a99caa05164")
+	)
+	(text "2. Граница гальванической развязки — U2: цепи GND_P и GND_L на плате не соединять."
+		(exclude_from_sim no)
+		(at 43.18 216.535 0)
+		(effects
+			(font
+				(face "GOST 2.304")
+				(size 1.5 1.5)
+				(italic yes)
+			)
+			(justify left bottom)
+		)
+		(uuid "2fdf7c35-12f2-4917-a54a-2e7ec96dde04")
+	)
+	(text "   в проводе 18 AWG → X1. Контакты гнезда: 1+2 — +24, 3+4 — GND, каждая пара параллельно (7,5 А/контакт"
+		(exclude_from_sim no)
+		(at 43.18 207.645 0)
+		(effects
+			(font
+				(face "GOST 2.304")
+				(size 1.5 1.5)
+				(italic yes)
+			)
+			(justify left bottom)
+		)
+		(uuid "3c53a12d-766a-47b0-bd25-a8e3e309c031")
+	)
+	(text "7. K1: контакт 1C — 20 А при 28 В DC (datasheet NCR); NC (вывод 5) не используется. Перед пайкой прозвонить COM–NC"
+		(exclude_from_sim no)
+		(at 43.18 247.65 0)
+		(effects
+			(font
+				(face "GOST 2.304")
+				(size 1.5 1.5)
+				(italic yes)
+			)
+			(justify left bottom)
+		)
+		(uuid "65b29658-b6f2-4f24-9cb5-db3cd3e8dec3")
+	)
+	(text "   обесточенного реле и сверить с посадочным местом (расположение выводов принято по виду снизу из datasheet)."
+		(exclude_from_sim no)
+		(at 43.18 252.095 0)
+		(effects
+			(font
+				(face "GOST 2.304")
+				(size 1.5 1.5)
+				(italic yes)
+			)
+			(justify left bottom)
+		)
+		(uuid "6f15253f-a4d7-4b76-8916-1fc116d4f689")
+	)
+	(text "1. Вне платы: адаптер GST220A24-R7B (E-001) → гнездо KPJX-PM-4S (E-014) → предохранитель ATO 10 А (E-003)"
+		(exclude_from_sim no)
+		(at 43.18 203.2 0)
+		(effects
+			(font
+				(face "GOST 2.304")
+				(size 1.5 1.5)
+				(italic yes)
+			)
+			(justify left bottom)
+		)
+		(uuid "73af48d3-c92c-4d33-9337-cfd711a3b911")
+	)
+	(text "3. Выходы +24: X6…X9 — платы каналов CH1…CH4, X10 — схват; провод 20–22 AWG (E-081)."
+		(exclude_from_sim no)
+		(at 43.18 220.98 0)
+		(effects
+			(font
+				(face "GOST 2.304")
+				(size 1.5 1.5)
+				(italic yes)
+			)
+			(justify left bottom)
+		)
+		(uuid "7cdf1694-30b4-433f-8ff9-3aaa8c538097")
+	)
+	(text "8. Позиции с полем Status = Предложение ждут решения (VD2)."
+		(exclude_from_sim no)
+		(at 43.18 256.54 0)
+		(effects
+			(font
+				(face "GOST 2.304")
+				(size 1.5 1.5)
+				(italic yes)
+			)
+			(justify left bottom)
+		)
+		(uuid "a18a1270-cc9c-4be2-b141-a0535c2b280f")
+	)
+	(text "   кнопка KH E-024 — от X11 кабелем к кнопке (минуя LR). Индикатор «+5P есть» E-008 — на панели, на плате R2 и X5."
+		(exclude_from_sim no)
+		(at 43.18 234.315 0)
+		(effects
+			(font
+				(face "GOST 2.304")
+				(size 1.5 1.5)
+				(italic yes)
+			)
+			(justify left bottom)
+		)
+		(uuid "e1d64b7e-b172-4484-83ea-45dee0cbb953")
+	)
+	(text "   при токе до 9,2 А); распайку сверить с datasheet штекера R7B адаптера."
+		(exclude_from_sim no)
+		(at 43.18 212.09 0)
+		(effects
+			(font
+				(face "GOST 2.304")
+				(size 1.5 1.5)
+				(italic yes)
+			)
+			(justify left bottom)
+		)
+		(uuid "eeae909f-f56a-49ee-91b5-8b937f45602a")
+	)
+	(text "4. Фильтр +5P: L1 — Talema DPO-3.0-22 (E-012), C1 — 470 мкФ 16 В (E-093), C2 — 100 нФ X7R (E-094); f₀ ≈ 1,6 кГц."
+		(exclude_from_sim no)
+		(at 43.18 225.425 0)
+		(effects
+			(font
+				(face "GOST 2.304")
+				(size 1.5 1.5)
+				(italic yes)
+			)
+			(justify left bottom)
+		)
+		(uuid "fedaf126-2cd3-423d-a93a-fe5ab28c368a")
+	)
+	(text "5. Подсветка кнопок — встроенные индикаторы 24 В, резисторов нет: кнопка питания E-002 — X2 (4: +24V, 3: GND_P),"
+		(exclude_from_sim no)
+		(at 43.18 229.87 0)
+		(effects
+			(font
+				(face "GOST 2.304")
+				(size 1.5 1.5)
+				(italic yes)
+			)
+			(justify left bottom)
+		)
+		(uuid "ff59cd58-a2dd-4d2e-ae70-b13c1821a708")
+	)
+	(junction
+		(at 88.9 180)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "04f7ba44-313b-4151-89d7-08b206b055c0")
+	)
+	(junction
+		(at 195.58 180)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "17d0da13-eb42-42ef-b820-a80408505409")
+	)
+	(junction
+		(at 48.26 180)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "1d3e5788-aa0f-4435-8651-738520b04d42")
+	)
+	(junction
+		(at 142.24 127)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "1dfd320a-716a-4995-81de-1a1891406173")
+	)
+	(junction
+		(at 213.36 100)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "62c532d8-6d01-43d9-9335-bcd39e5f6cc8")
+	)
+	(junction
+		(at 154.94 180)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "65b5044c-6d07-4d46-b286-7d3dadf42ffb")
+	)
+	(junction
+		(at 172.72 100)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "6745f7f0-67ab-420e-bef8-10ff0fe72d70")
+	)
+	(junction
+		(at 158.75 60.96)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "68f4d0cd-02a6-4c8c-ab64-9c69205de3fe")
+	)
+	(junction
+		(at 167.64 71.12)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "7edb9a96-1dc3-42f1-b845-897ff9eb786f")
+	)
+	(junction
+		(at 142.24 180)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "7fcc835f-d5ee-4e38-8fdf-b9dccc396ac6")
+	)
+	(junction
+		(at 66.04 30)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "82ec7bbd-5906-424a-9ad9-cdd9de03bc41")
+	)
+	(junction
+		(at 106.68 88)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "860044d7-e2be-4c0e-b62c-2ccb5cf952ec")
+	)
+	(junction
+		(at 116.84 180)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "8abbcaee-1b88-471f-a53c-735f95cd1360")
+	)
+	(junction
+		(at 195.58 100)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "8aedd238-eb15-48aa-9914-cdf9d8fa7078")
+	)
+	(junction
+		(at 133.35 52.07)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "b97af3a8-b037-44ef-8a77-bba9454e1a9d")
+	)
+	(junction
+		(at 91.44 30)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "bb2e3425-a438-46d5-8089-7778a6b02522")
+	)
+	(junction
+		(at 133.35 60.96)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "cf6f2d1e-f4b1-47a5-9025-b8e39552a8ae")
+	)
+	(junction
+		(at 152.4 127)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "e7b1b362-b55b-4c41-8132-2a70a2eaacbf")
+	)
+	(junction
+		(at 116.84 127)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "f36497f9-3c76-4e05-b993-6a27ffe43d13")
+	)
+	(junction
+		(at 55.88 180)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "f4ae6cea-44c3-4fa3-935d-e9d2f7d755aa")
+	)
+	(junction
+		(at 68.58 88)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "f89c6bcf-2a6d-4693-bc3f-7c274e53ba68")
+	)
+	(no_connect
+		(at 153.67 49.53)
+		(uuid "0cc91bf0-622f-47ad-9cc1-eaed3997aada")
+	)
+	(no_connect
+		(at 208.28 138.43)
+		(uuid "9ac706cd-453c-4746-809f-234d9b003bdd")
+	)
+	(wire
+		(pts
+			(xy 314.96 142.24) (xy 320.04 142.24)
+		)
+		(stroke
+			(width 0.3048)
+			(type default)
+		)
+		(uuid "016e4935-7fb6-46dd-8559-c6e66bd0004d")
+	)
+	(wire
+		(pts
+			(xy 195.58 100) (xy 213.36 100)
+		)
+		(stroke
+			(width 0.3048)
+			(type default)
+		)
+		(uuid "03e298fa-8ec4-4c3d-a1cb-8aa979f685be")
+	)
+	(wire
+		(pts
+			(xy 157.48 129.54) (xy 154.94 129.54)
+		)
+		(stroke
+			(width 0.3048)
+			(type default)
+		)
+		(uuid "056ebdd2-f3a0-42f1-aa5f-8f62093e6e45")
+	)
+	(wire
+		(pts
+			(xy 91.44 30) (xy 133.35 30)
+		)
+		(stroke
+			(width 0.3048)
+			(type default)
+		)
+		(uuid "0765900b-96f3-4cfb-ac69-53de10a2cc96")
+	)
+	(wire
+		(pts
+			(xy 271.78 129.54) (xy 266.7 129.54)
+		)
+		(stroke
+			(width 0.3048)
+			(type default)
+		)
+		(uuid "07ed673a-7c6a-44a6-b579-f8835fbf22a3")
+	)
+	(wire
+		(pts
+			(xy 88.9 132.08) (xy 88.9 180)
+		)
+		(stroke
+			(width 0.3048)
+			(type default)
+		)
+		(uuid "082348e3-ec2a-43b9-af34-9c193975531c")
+	)
+	(wire
+		(pts
+			(xy 162.56 66.04) (xy 177.8 66.04)
+		)
+		(stroke
+			(width 0.3048)
+			(type default)
+		)
+		(uuid "0ce716a7-26f2-40a8-b219-47b769d81d7b")
+	)
+	(wire
+		(pts
+			(xy 116.84 127) (xy 116.84 132.08)
+		)
+		(stroke
+			(width 0.3048)
+			(type default)
+		)
+		(uuid "116b8a99-8f74-4f0b-96b4-db5401a263f1")
+	)
+	(wire
+		(pts
+			(xy 86.36 127) (xy 91.44 127)
+		)
+		(stroke
+			(width 0.3048)
+			(type default)
+		)
+		(uuid "134b71f3-c8fd-4169-a193-4b10ef598212")
+	)
+	(wire
+		(pts
+			(xy 200.66 132.08) (xy 195.58 132.08)
+		)
+		(stroke
+			(width 0.3048)
+			(type default)
+		)
+		(uuid "140f1faa-e9f2-432f-94c2-48b8fe3427e9")
+	)
+	(wire
+		(pts
+			(xy 48.26 88) (xy 48.26 180)
+		)
+		(stroke
+			(width 0.3048)
+			(type default)
+		)
+		(uuid "1487cab5-1bc9-452a-8953-1cf0335946ab")
+	)
+	(wire
+		(pts
+			(xy 365.76 114.3) (xy 370.84 114.3)
+		)
+		(stroke
+			(width 0.3048)
+			(type default)
+		)
+		(uuid "1f075fdf-3841-47c4-8634-de1be6828a0a")
+	)
+	(wire
+		(pts
+			(xy 48.26 88) (xy 68.58 88)
+		)
+		(stroke
+			(width 0.3048)
+			(type default)
+		)
+		(uuid "225a78a5-83bb-4104-8d1a-dd8b50d2e5c8")
+	)
+	(wire
+		(pts
+			(xy 153.67 54.61) (xy 213.36 54.61)
+		)
+		(stroke
+			(width 0.3048)
+			(type default)
+		)
+		(uuid "23e68225-e181-476d-980a-184e892fed4b")
+	)
+	(wire
+		(pts
+			(xy 195.58 132.08) (xy 195.58 180)
+		)
+		(stroke
+			(width 0.3048)
+			(type default)
+		)
+		(uuid "24860758-5e5d-4737-b88d-15593d0b1cc6")
+	)
+	(wire
+		(pts
+			(xy 167.64 68.58) (xy 167.64 71.12)
+		)
+		(stroke
+			(width 0.3048)
+			(type default)
+		)
+		(uuid "24dbdc15-73fd-4cb6-b9fe-dd4680fefe98")
+	)
+	(wire
+		(pts
+			(xy 55.88 132.08) (xy 55.88 180)
+		)
+		(stroke
+			(width 0.3048)
+			(type default)
+		)
+		(uuid "254f387f-e6d7-4bb9-9ad3-8b5fdc5ffbea")
+	)
+	(wire
+		(pts
+			(xy 228.6 129.54) (xy 231.14 129.54)
+		)
+		(stroke
+			(width 0.3048)
+			(type default)
+		)
+		(uuid "260ba1f8-ddb4-4ab7-bf0f-0bde9cf1ae99")
+	)
+	(wire
+		(pts
+			(xy 86.36 132.08) (xy 88.9 132.08)
+		)
+		(stroke
+			(width 0.3048)
+			(type default)
+		)
+		(uuid "2ab39b48-2a08-4cd6-874c-e3b7dea083b1")
+	)
+	(wire
+		(pts
+			(xy 266.7 129.54) (xy 266.7 180)
+		)
+		(stroke
+			(width 0.3048)
+			(type default)
+		)
+		(uuid "2e2e0f73-cd94-4bbc-9455-a7f9b452d296")
+	)
+	(wire
+		(pts
+			(xy 142.24 180) (xy 154.94 180)
+		)
+		(stroke
+			(width 0.3048)
+			(type default)
+		)
+		(uuid "2fa151fc-54ef-49fb-a3a7-06e9c06920f0")
+	)
+	(wire
+		(pts
+			(xy 177.8 68.58) (xy 167.64 68.58)
+		)
+		(stroke
+			(width 0.3048)
+			(type default)
+		)
+		(uuid "347854bf-ee65-4165-a706-1f09ab5ec187")
+	)
+	(wire
+		(pts
+			(xy 130.81 80.01) (xy 130.81 60.96)
+		)
+		(stroke
+			(width 0.3048)
+			(type default)
+		)
+		(uuid "36379100-d761-4eec-8bed-168af3b84dc5")
+	)
+	(wire
+		(pts
+			(xy 60.96 30) (xy 66.04 30)
+		)
+		(stroke
+			(width 0.3048)
+			(type default)
+		)
+		(uuid "37a912f2-c677-4a45-a1ae-821a1fa799e0")
+	)
+	(wire
+		(pts
+			(xy 314.96 114.3) (xy 320.04 114.3)
+		)
+		(stroke
+			(width 0.3048)
+			(type default)
+		)
+		(uuid "3a9dbc67-308d-4a3d-b8b1-169996405eec")
+	)
+	(wire
+		(pts
+			(xy 195.58 127) (xy 195.58 100)
+		)
+		(stroke
+			(width 0.3048)
+			(type default)
+		)
+		(uuid "3fbac6a8-2358-4142-9281-6138d7c3d8d3")
+	)
+	(wire
+		(pts
+			(xy 162.56 60.96) (xy 162.56 66.04)
+		)
+		(stroke
+			(width 0.3048)
+			(type default)
+		)
+		(uuid "44607b3d-06ac-44f1-ab97-f1e84980479c")
+	)
+	(wire
+		(pts
+			(xy 158.75 60.96) (xy 162.56 60.96)
+		)
+		(stroke
+			(width 0.3048)
+			(type default)
+		)
+		(uuid "476cd984-f4ec-4585-a38a-8b84a22fd4b0")
+	)
+	(wire
+		(pts
+			(xy 195.58 180) (xy 266.7 180)
+		)
+		(stroke
+			(width 0.3048)
+			(type default)
+		)
+		(uuid "47c0f25f-51f7-4da0-8d8f-320edf15eb3a")
+	)
+	(wire
+		(pts
+			(xy 314.96 111.76) (xy 320.04 111.76)
+		)
+		(stroke
+			(width 0.3048)
+			(type default)
+		)
+		(uuid "4b9a7439-01a5-454c-8fe6-2780c79601b7")
+	)
+	(wire
+		(pts
+			(xy 172.72 100) (xy 195.58 100)
+		)
+		(stroke
+			(width 0.3048)
+			(type default)
+		)
+		(uuid "4fed7cf0-fc09-426b-ba0c-26dd8aa9e706")
+	)
+	(wire
+		(pts
+			(xy 167.64 71.12) (xy 167.64 88)
+		)
+		(stroke
+			(width 0.3048)
+			(type default)
+		)
+		(uuid "5234460c-0aed-4474-8158-07318381162b")
+	)
+	(wire
+		(pts
+			(xy 154.94 129.54) (xy 154.94 180)
+		)
+		(stroke
+			(width 0.3048)
+			(type default)
+		)
+		(uuid "52b13e5f-ddbf-4eb1-92a4-70b86619e176")
+	)
+	(wire
+		(pts
+			(xy 228.6 132.08) (xy 228.6 129.54)
+		)
+		(stroke
+			(width 0.3048)
+			(type default)
+		)
+		(uuid "55a93411-48bd-475c-b56d-cf3fda8e264c")
+	)
+	(wire
+		(pts
+			(xy 314.96 129.54) (xy 320.04 129.54)
+		)
+		(stroke
+			(width 0.3048)
+			(type default)
+		)
+		(uuid "577a82e4-6772-4da3-99bd-d47c3a2fa6f1")
+	)
+	(wire
+		(pts
+			(xy 177.8 73.66) (xy 172.72 73.66)
+		)
+		(stroke
+			(width 0.3048)
+			(type default)
+		)
+		(uuid "58232725-8721-4f38-a9b0-168dcfe8340f")
+	)
+	(wire
+		(pts
+			(xy 55.88 100) (xy 172.72 100)
+		)
+		(stroke
+			(width 0.3048)
+			(type default)
+		)
+		(uuid "59e4d268-e303-4952-ba63-301aa200e3e8")
+	)
+	(wire
+		(pts
+			(xy 142.24 127) (xy 142.24 132.08)
+		)
+		(stroke
+			(width 0.3048)
+			(type default)
+		)
+		(uuid "5dc4ea52-e89e-4be8-9b1e-f7556a8654a9")
+	)
+	(wire
+		(pts
+			(xy 133.35 52.07) (xy 135.89 52.07)
+		)
+		(stroke
+			(width 0.3048)
+			(type default)
+		)
+		(uuid "5ebc5a6b-55c7-4c73-af03-e5a1719a6705")
+	)
+	(wire
+		(pts
+			(xy 66.04 30) (xy 91.44 30)
+		)
+		(stroke
+			(width 0.3048)
+			(type default)
+		)
+		(uuid "5f5b9416-1584-4783-8925-f7df5325763e")
+	)
+	(wire
+		(pts
+			(xy 133.35 52.07) (xy 133.35 60.96)
+		)
+		(stroke
+			(width 0.3048)
+			(type default)
+		)
+		(uuid "5ffe3c2f-bbd6-46d7-bf71-0664b5af952e")
+	)
+	(wire
+		(pts
+			(xy 154.94 180) (xy 195.58 180)
+		)
+		(stroke
+			(width 0.3048)
+			(type default)
+		)
+		(uuid "607e9d12-7f1c-49d1-8590-6e45b81b7dd0")
+	)
+	(wire
+		(pts
+			(xy 152.4 127) (xy 157.48 127)
+		)
+		(stroke
+			(width 0.3048)
+			(type default)
+		)
+		(uuid "6c81297b-0933-42d2-acb1-f855a2c1b9e4")
+	)
+	(wire
+		(pts
+			(xy 269.24 127) (xy 271.78 127)
+		)
+		(stroke
+			(width 0.3048)
+			(type default)
+		)
+		(uuid "70b328f8-ab17-4630-a256-13ebab4bb219")
+	)
+	(wire
+		(pts
+			(xy 104.14 45.72) (xy 106.68 45.72)
+		)
+		(stroke
+			(width 0.3048)
+			(type default)
+		)
+		(uuid "79cbb5b6-8fba-4690-b093-d33b028bd1bc")
+	)
+	(wire
+		(pts
+			(xy 106.68 45.72) (xy 106.68 88)
+		)
+		(stroke
+			(width 0.3048)
+			(type default)
+		)
+		(uuid "7d208ebd-c03d-47fa-a4aa-4ba6b71ce1a5")
+	)
+	(wire
+		(pts
+			(xy 48.26 180) (xy 55.88 180)
+		)
+		(stroke
+			(width 0.3048)
+			(type default)
+		)
+		(uuid "7d3bfcce-3882-4dcd-9bd2-89eee8b73af4")
+	)
+	(wire
+		(pts
+			(xy 106.68 127) (xy 116.84 127)
+		)
+		(stroke
+			(width 0.3048)
+			(type default)
+		)
+		(uuid "81223a85-866b-4364-b805-2bbd1fc0a3cd")
+	)
+	(wire
+		(pts
+			(xy 55.88 180) (xy 88.9 180)
+		)
+		(stroke
+			(width 0.3048)
+			(type default)
+		)
+		(uuid "8156ffeb-49eb-4270-9880-a1e4f8450860")
+	)
+	(wire
+		(pts
+			(xy 55.88 127) (xy 55.88 100)
+		)
+		(stroke
+			(width 0.3048)
+			(type default)
+		)
+		(uuid "816a58a3-0ec3-44aa-bff0-4b4dc6353acd")
+	)
+	(wire
+		(pts
+			(xy 60.96 43.18) (xy 68.58 43.18)
+		)
+		(stroke
+			(width 0.3048)
+			(type default)
+		)
+		(uuid "81eb9014-1011-4901-9dd6-23e05f3ed6b5")
+	)
+	(wire
+		(pts
+			(xy 60.96 127) (xy 55.88 127)
+		)
+		(stroke
+			(width 0.3048)
+			(type default)
+		)
+		(uuid "8399af27-fd51-4a23-8bb0-dacce0b58f6a")
+	)
+	(wire
+		(pts
+			(xy 213.36 100) (xy 220.98 100)
+		)
+		(stroke
+			(width 0.3048)
+			(type default)
+		)
+		(uuid "85422a05-cf03-4596-a037-189f676acdf8")
+	)
+	(wire
+		(pts
+			(xy 66.04 40.64) (xy 66.04 30)
+		)
+		(stroke
+			(width 0.3048)
+			(type default)
+		)
+		(uuid "856a51d3-7b49-4b15-9305-543a0fbee653")
+	)
+	(wire
+		(pts
+			(xy 149.86 80.01) (xy 158.75 80.01)
+		)
+		(stroke
+			(width 0.3048)
+			(type default)
+		)
+		(uuid "8fbe7dff-d1ff-46bc-bb3e-fcef7e57f4b6")
+	)
+	(wire
+		(pts
+			(xy 365.76 144.78) (xy 370.84 144.78)
+		)
+		(stroke
+			(width 0.3048)
+			(type default)
+		)
+		(uuid "9829e029-826b-4b30-8182-8feb2c9fbf2d")
+	)
+	(wire
+		(pts
+			(xy 133.35 30) (xy 133.35 52.07)
+		)
+		(stroke
+			(width 0.3048)
+			(type default)
+		)
+		(uuid "9ab84301-816c-4338-adc0-067484eb7775")
+	)
+	(wire
+		(pts
+			(xy 130.81 60.96) (xy 133.35 60.96)
+		)
+		(stroke
+			(width 0.3048)
+			(type default)
+		)
+		(uuid "9c01ee02-809d-41a3-9cdc-be9891500ebc")
+	)
+	(wire
+		(pts
+			(xy 365.76 129.54) (xy 370.84 129.54)
+		)
+		(stroke
+			(width 0.3048)
+			(type default)
+		)
+		(uuid "a198eeac-be9c-45c1-9a41-0b989bd097c9")
+	)
+	(wire
+		(pts
+			(xy 68.58 43.18) (xy 68.58 88)
+		)
+		(stroke
+			(width 0.3048)
+			(type default)
+		)
+		(uuid "a1ec8c8f-8492-4433-8d70-2b58993a261c")
+	)
+	(wire
+		(pts
+			(xy 68.58 88) (xy 106.68 88)
+		)
+		(stroke
+			(width 0.3048)
+			(type default)
+		)
+		(uuid "a389062b-71cc-466c-b72d-3a461241b8ce")
+	)
+	(wire
+		(pts
+			(xy 365.76 127) (xy 370.84 127)
+		)
+		(stroke
+			(width 0.3048)
+			(type default)
+		)
+		(uuid "a3c6f7a8-fba1-4b5d-84f4-1dbcea1b1835")
+	)
+	(wire
+		(pts
+			(xy 153.67 60.96) (xy 158.75 60.96)
+		)
+		(stroke
+			(width 0.3048)
+			(type default)
+		)
+		(uuid "abf7c542-f0f1-4aed-a35d-de359d770b16")
+	)
+	(wire
+		(pts
+			(xy 200.66 127) (xy 195.58 127)
+		)
+		(stroke
+			(width 0.3048)
+			(type default)
+		)
+		(uuid "ad45928b-fed2-4b27-8785-3ca199fd239b")
+	)
+	(wire
+		(pts
+			(xy 213.36 54.61) (xy 213.36 100)
+		)
+		(stroke
+			(width 0.3048)
+			(type default)
+		)
+		(uuid "ae6c19dc-674c-4d9b-8ae9-037ebb4c9480")
+	)
+	(wire
+		(pts
+			(xy 172.72 73.66) (xy 172.72 100)
+		)
+		(stroke
+			(width 0.3048)
+			(type default)
+		)
+		(uuid "b1d9a08b-38bf-456a-8362-3c9257193f87")
+	)
+	(wire
+		(pts
+			(xy 116.84 127) (xy 142.24 127)
+		)
+		(stroke
+			(width 0.3048)
+			(type default)
+		)
+		(uuid "b27ec697-1c52-49d0-b857-1ac7bf00a6ac")
+	)
+	(wire
+		(pts
+			(xy 158.75 80.01) (xy 158.75 60.96)
+		)
+		(stroke
+			(width 0.3048)
+			(type default)
+		)
+		(uuid "b69419c3-4ae9-4914-a112-9afd38d17b66")
+	)
+	(wire
+		(pts
+			(xy 177.8 71.12) (xy 167.64 71.12)
+		)
+		(stroke
+			(width 0.3048)
+			(type default)
+		)
+		(uuid "b6ff9a97-7b1c-49eb-b3b4-55a74674de77")
+	)
+	(wire
+		(pts
+			(xy 116.84 139.7) (xy 116.84 180)
+		)
+		(stroke
+			(width 0.3048)
+			(type default)
+		)
+		(uuid "bbba5c58-1015-46bd-9849-6e8487762ab0")
+	)
+	(wire
+		(pts
+			(xy 106.68 88) (xy 167.64 88)
+		)
+		(stroke
+			(width 0.3048)
+			(type default)
+		)
+		(uuid "bcbbc96b-fe38-4616-8592-4fafa964e68a")
+	)
+	(wire
+		(pts
+			(xy 93.98 45.72) (xy 91.44 45.72)
+		)
+		(stroke
+			(width 0.3048)
+			(type default)
+		)
+		(uuid "c4b929f2-25e1-4ee3-9d6f-70d94022a8f8")
+	)
+	(wire
+		(pts
+			(xy 116.84 180) (xy 142.24 180)
+		)
+		(stroke
+			(width 0.3048)
+			(type default)
+		)
+		(uuid "cb0bcec7-debf-4027-8957-294692948074")
+	)
+	(wire
+		(pts
+			(xy 226.06 127) (xy 231.14 127)
+		)
+		(stroke
+			(width 0.3048)
+			(type default)
+		)
+		(uuid "cc35bb7e-d570-4764-a9fb-478ac682c7cd")
+	)
+	(wire
+		(pts
+			(xy 365.76 111.76) (xy 370.84 111.76)
+		)
+		(stroke
+			(width 0.3048)
+			(type default)
+		)
+		(uuid "d0106c2e-fb8b-4dc7-9f64-f793b8c62325")
+	)
+	(wire
+		(pts
+			(xy 269.24 111.76) (xy 269.24 106.68)
+		)
+		(stroke
+			(width 0.3048)
+			(type default)
+		)
+		(uuid "d7c15931-6d74-4dc4-ba26-bd7620d7c795")
+	)
+	(wire
+		(pts
+			(xy 60.96 40.64) (xy 66.04 40.64)
+		)
+		(stroke
+			(width 0.3048)
+			(type default)
+		)
+		(uuid "d8026e9a-bd3b-467f-813c-77a4b5947d25")
+	)
+	(wire
+		(pts
+			(xy 142.24 139.7) (xy 142.24 180)
+		)
+		(stroke
+			(width 0.3048)
+			(type default)
+		)
+		(uuid "ddc50d79-a735-47ee-b783-592ce29fb90b")
+	)
+	(wire
+		(pts
+			(xy 314.96 127) (xy 320.04 127)
+		)
+		(stroke
+			(width 0.3048)
+			(type default)
+		)
+		(uuid "de2e3846-5d99-4c29-b4dc-6c68d19a4c7c")
+	)
+	(wire
+		(pts
+			(xy 139.7 80.01) (xy 130.81 80.01)
+		)
+		(stroke
+			(width 0.3048)
+			(type default)
+		)
+		(uuid "de8b1ef9-a170-486b-b1b5-c5c5f41ae6a8")
+	)
+	(wire
+		(pts
+			(xy 226.06 132.08) (xy 228.6 132.08)
+		)
+		(stroke
+			(width 0.3048)
+			(type default)
+		)
+		(uuid "e57989f2-1ea1-4649-ace7-bb3a008baf3f")
+	)
+	(wire
+		(pts
+			(xy 41.91 180) (xy 48.26 180)
+		)
+		(stroke
+			(width 0.3048)
+			(type default)
+		)
+		(uuid "e7d72d53-58b6-4254-98c2-6537e41aebab")
+	)
+	(wire
+		(pts
+			(xy 142.24 127) (xy 152.4 127)
+		)
+		(stroke
+			(width 0.3048)
+			(type default)
+		)
+		(uuid "ee1920c1-eecf-4549-bf6d-d375b1591e5d")
+	)
+	(wire
+		(pts
+			(xy 133.35 60.96) (xy 135.89 60.96)
+		)
+		(stroke
+			(width 0.3048)
+			(type default)
+		)
+		(uuid "f08e466f-f228-4543-a497-40eaa5b45e0b")
+	)
+	(wire
+		(pts
+			(xy 60.96 132.08) (xy 55.88 132.08)
+		)
+		(stroke
+			(width 0.3048)
+			(type default)
+		)
+		(uuid "f201926d-ca54-4604-a074-b812d1d98f29")
+	)
+	(wire
+		(pts
+			(xy 314.96 144.78) (xy 320.04 144.78)
+		)
+		(stroke
+			(width 0.3048)
+			(type default)
+		)
+		(uuid "f2a8a29b-88fc-4aab-a06a-0570513bfa7b")
+	)
+	(wire
+		(pts
+			(xy 365.76 142.24) (xy 370.84 142.24)
+		)
+		(stroke
+			(width 0.3048)
+			(type default)
+		)
+		(uuid "f91f1f55-107d-4076-91c1-b51afd941681")
+	)
+	(wire
+		(pts
+			(xy 88.9 180) (xy 116.84 180)
+		)
+		(stroke
+			(width 0.3048)
+			(type default)
+		)
+		(uuid "fbd252a8-b710-4faf-80ff-354d8ef2e1f0")
+	)
+	(wire
+		(pts
+			(xy 91.44 45.72) (xy 91.44 30)
+		)
+		(stroke
+			(width 0.3048)
+			(type default)
+		)
+		(uuid "fc6d87a8-b8ac-499e-9ce5-c405fada48ca")
+	)
+	(symbol
+		(lib_id "manipulator:Tbl_X7_PS")
+		(at 373.38 111.76 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "09697b37-9019-57a8-a476-d8652db173d2")
+		(property "Reference" "X7"
+			(at 376.42 117.47 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(face "GOST 2.304")
+					(size 1.27 1.27)
+					(italic yes)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "DG301-5.0-02P-12"
+			(at 375.92 120.07 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(face "GOST 2.304")
+					(size 1.27 1.27)
+					(italic yes)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "manipulator:TB_DG301-5.0_2P_V"
+			(at 373.38 111.76 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(face "GOST 2.304")
+					(size 1.27 1.27)
+					(italic yes)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 373.38 111.76 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(face "GOST 2.304")
+					(size 1.27 1.27)
+					(italic yes)
+				)
+			)
+		)
+		(property "Description" ""
+			(at 373.38 111.76 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(face "GOST 2.304")
+					(size 1.27 1.27)
+					(italic yes)
+				)
+			)
+		)
+		(property "BaseID" "E-017"
+			(at 373.38 111.76 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(face "GOST 2.304")
+					(size 1.27 1.27)
+					(italic yes)
+				)
+			)
+		)
+		(property "Status" "Утверждено"
+			(at 373.38 111.76 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(face "GOST 2.304")
+					(size 1.27 1.27)
+					(italic yes)
+				)
+			)
+		)
+		(property "Назначение" "+24 → плата CH2: 1 — +24V, 2 — GND_P"
+			(at 373.38 111.76 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(face "GOST 2.304")
+					(size 1.27 1.27)
+					(italic yes)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "c067ba9c-d42d-4719-9964-5355c64f86c5")
+		)
+		(pin "2"
+			(uuid "4944e8ae-179d-449c-8300-4e5bde9d0174")
+		)
+		(instances
+			(project "PS"
+				(path "/9d3a5f2c-4b1e-4f0a-8c6d-2e7b1a9f0c11"
+					(reference "X7")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "manipulator:+5P")
+		(at 269.24 106.68 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "0c2fd157-29f3-5772-9ff7-93afc5b8620f")
+		(property "Reference" "#PWR003"
+			(at 271.78 104.14 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(face "GOST 2.304")
+					(size 1.27 1.27)
+					(italic yes)
+				)
+			)
+		)
+		(property "Value" "+5P"
+			(at 269.24 103.124 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(face "GOST 2.304")
+					(size 1.27 1.27)
+					(italic yes)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 269.24 106.68 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(face "GOST 2.304")
+					(size 1.27 1.27)
+					(italic yes)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 269.24 106.68 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(face "GOST 2.304")
+					(size 1.27 1.27)
+					(italic yes)
+				)
+			)
+		)
+		(property "Description" ""
+			(at 269.24 106.68 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(face "GOST 2.304")
+					(size 1.27 1.27)
+					(italic yes)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "19b3cd92-5ab6-43c6-9112-bae8e3093852")
+		)
+		(instances
+			(project "PS"
+				(path "/9d3a5f2c-4b1e-4f0a-8c6d-2e7b1a9f0c11"
+					(reference "#PWR003")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "manipulator:D_TVS")
+		(at 99.06 45.72 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "0fa87779-02bd-56a0-9c5b-a8456e4dab39")
+		(property "Reference" "VD1"
+			(at 99.06 41.275 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(face "GOST 2.304")
+					(size 1.27 1.27)
+					(italic yes)
+				)
+			)
+		)
+		(property "Value" "SMCJ26A"
+			(at 99.06 50.165 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(face "GOST 2.304")
+					(size 1.27 1.27)
+					(italic yes)
+				)
+			)
+		)
+		(property "Footprint" "manipulator:D_SMC"
+			(at 99.06 45.72 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(face "GOST 2.304")
+					(size 1.27 1.27)
+					(italic yes)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 99.06 45.72 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(face "GOST 2.304")
+					(size 1.27 1.27)
+					(italic yes)
+				)
+			)
+		)
+		(property "Description" ""
+			(at 99.06 45.72 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(face "GOST 2.304")
+					(size 1.27 1.27)
+					(italic yes)
+				)
+			)
+		)
+		(property "BaseID" "E-004"
+			(at 99.06 45.72 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(face "GOST 2.304")
+					(size 1.27 1.27)
+					(italic yes)
+				)
+			)
+		)
+		(property "Status" "Утверждено"
+			(at 99.06 45.72 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(face "GOST 2.304")
+					(size 1.27 1.27)
+					(italic yes)
+				)
+			)
+		)
+		(property "Note" "Катод к +24V_IN, анод к GND_P"
+			(at 99.06 45.72 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(face "GOST 2.304")
+					(size 1.27 1.27)
+					(italic yes)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "b7386f9f-37ec-4d91-ae1c-83dd277b8a11")
+		)
+		(pin "2"
+			(uuid "033ca91c-88e4-4bfb-b6cf-71830d56ead3")
+		)
+		(instances
+			(project "PS"
+				(path "/9d3a5f2c-4b1e-4f0a-8c6d-2e7b1a9f0c11"
+					(reference "VD1")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "manipulator:SIG_+24V_L_in")
+		(at 365.76 111.76 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "125798ff-7dd2-54f1-866c-0e155871b67d")
+		(property "Reference" "#PWR006"
+			(at 368.3 109.22 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(face "GOST 2.304")
+					(size 1.27 1.27)
+					(italic yes)
+				)
+				(justify right)
+			)
+		)
+		(property "Value" "+24V"
+			(at 362.585 111.76 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(face "GOST 2.304")
+					(size 1.27 1.27)
+					(italic yes)
+				)
+				(justify right)
+			)
+		)
+		(property "Footprint" ""
+			(at 365.76 111.76 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(face "GOST 2.304")
+					(size 1.27 1.27)
+					(italic yes)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 365.76 111.76 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(face "GOST 2.304")
+					(size 1.27 1.27)
+					(italic yes)
+				)
+			)
+		)
+		(property "Description" ""
+			(at 365.76 111.76 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(face "GOST 2.304")
+					(size 1.27 1.27)
+					(italic yes)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "84a1d607-cf5b-4ea8-a83c-de15a5c7e00a")
+		)
+		(instances
+			(project "PS"
+				(path "/9d3a5f2c-4b1e-4f0a-8c6d-2e7b1a9f0c11"
+					(reference "#PWR006")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "manipulator:SIG_+24V_L_in")
+		(at 314.96 142.24 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "1ca57233-3e6d-5728-bbf2-377664af20c4")
+		(property "Reference" "#PWR012"
+			(at 317.5 139.7 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(face "GOST 2.304")
+					(size 1.27 1.27)
+					(italic yes)
+				)
+				(justify right)
+			)
+		)
+		(property "Value" "+24V"
+			(at 311.785 142.24 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(face "GOST 2.304")
+					(size 1.27 1.27)
+					(italic yes)
+				)
+				(justify right)
+			)
+		)
+		(property "Footprint" ""
+			(at 314.96 142.24 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(face "GOST 2.304")
+					(size 1.27 1.27)
+					(italic yes)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 314.96 142.24 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(face "GOST 2.304")
+					(size 1.27 1.27)
+					(italic yes)
+				)
+			)
+		)
+		(property "Description" ""
+			(at 314.96 142.24 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(face "GOST 2.304")
+					(size 1.27 1.27)
+					(italic yes)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "b38799d9-8e18-4d39-b616-14ce94f798a3")
+		)
+		(instances
+			(project "PS"
+				(path "/9d3a5f2c-4b1e-4f0a-8c6d-2e7b1a9f0c11"
+					(reference "#PWR012")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "manipulator:Tbl_X10_PS")
+		(at 322.58 142.24 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "2e3f5c3a-2aa6-5098-9b1d-13594b4ab618")
+		(property "Reference" "X10"
+			(at 325.62 147.95 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(face "GOST 2.304")
+					(size 1.27 1.27)
+					(italic yes)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "DG301-5.0-02P-12"
+			(at 325.12 150.55 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(face "GOST 2.304")
+					(size 1.27 1.27)
+					(italic yes)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "manipulator:TB_DG301-5.0_2P_V"
+			(at 322.58 142.24 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(face "GOST 2.304")
+					(size 1.27 1.27)
+					(italic yes)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 322.58 142.24 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(face "GOST 2.304")
+					(size 1.27 1.27)
+					(italic yes)
+				)
+			)
+		)
+		(property "Description" ""
+			(at 322.58 142.24 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(face "GOST 2.304")
+					(size 1.27 1.27)
+					(italic yes)
+				)
+			)
+		)
+		(property "BaseID" "E-017"
+			(at 322.58 142.24 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(face "GOST 2.304")
+					(size 1.27 1.27)
+					(italic yes)
+				)
+			)
+		)
+		(property "Status" "Утверждено"
+			(at 322.58 142.24 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(face "GOST 2.304")
+					(size 1.27 1.27)
+					(italic yes)
+				)
+			)
+		)
+		(property "Назначение" "+24 → схват (через кольцо), 2 А: 1 — +24V, 2 — GND_P"
+			(at 322.58 142.24 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(face "GOST 2.304")
+					(size 1.27 1.27)
+					(italic yes)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "93a56b90-76fe-43c3-8521-265ce645eb6d")
+		)
+		(pin "2"
+			(uuid "09d3d4d4-dffe-4c42-b0d3-736118200922")
+		)
+		(instances
+			(project "PS"
+				(path "/9d3a5f2c-4b1e-4f0a-8c6d-2e7b1a9f0c11"
+					(reference "X10")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "manipulator:C_Polarized")
+		(at 116.84 135.89 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "2e5e0b95-9e12-5644-a3b9-f4cb6094354c")
+		(property "Reference" "C1"
+			(at 121.92 134.62 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(face "GOST 2.304")
+					(size 1.27 1.27)
+					(italic yes)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "470 мкФ 16 В"
+			(at 121.92 137.16 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(face "GOST 2.304")
+					(size 1.27 1.27)
+					(italic yes)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "manipulator:CP_Radial_D8.0mm_P3.50mm"
+			(at 116.84 135.89 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(face "GOST 2.304")
+					(size 1.27 1.27)
+					(italic yes)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 116.84 135.89 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(face "GOST 2.304")
+					(size 1.27 1.27)
+					(italic yes)
+				)
+			)
+		)
+		(property "Description" ""
+			(at 116.84 135.89 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(face "GOST 2.304")
+					(size 1.27 1.27)
+					(italic yes)
+				)
+			)
+		)
+		(property "BaseID" "E-093"
+			(at 116.84 135.89 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(face "GOST 2.304")
+					(size 1.27 1.27)
+					(italic yes)
+				)
+			)
+		)
+		(property "Status" "Утверждено"
+			(at 116.84 135.89 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(face "GOST 2.304")
+					(size 1.27 1.27)
+					(italic yes)
+				)
+			)
+		)
+		(property "Note" "Электролит 105 °C, low ESR, ⌀8 мм, шаг 3,5 мм"
+			(at 116.84 135.89 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(face "GOST 2.304")
+					(size 1.27 1.27)
+					(italic yes)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "03d6633c-5f79-4442-8a5f-c0b9a2c914b7")
+		)
+		(pin "2"
+			(uuid "ef41b1d6-6422-40f3-b8f4-e93c0f6db192")
+		)
+		(instances
+			(project "PS"
+				(path "/9d3a5f2c-4b1e-4f0a-8c6d-2e7b1a9f0c11"
+					(reference "C1")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "manipulator:SIG_+24V_L_in")
+		(at 314.96 111.76 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "35acc12d-7f8b-50fc-bd97-10e6aa950425")
+		(property "Reference" "#PWR004"
+			(at 317.5 109.22 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(face "GOST 2.304")
+					(size 1.27 1.27)
+					(italic yes)
+				)
+				(justify right)
+			)
+		)
+		(property "Value" "+24V"
+			(at 311.785 111.76 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(face "GOST 2.304")
+					(size 1.27 1.27)
+					(italic yes)
+				)
+				(justify right)
+			)
+		)
+		(property "Footprint" ""
+			(at 314.96 111.76 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(face "GOST 2.304")
+					(size 1.27 1.27)
+					(italic yes)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 314.96 111.76 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(face "GOST 2.304")
+					(size 1.27 1.27)
+					(italic yes)
+				)
+			)
+		)
+		(property "Description" ""
+			(at 314.96 111.76 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(face "GOST 2.304")
+					(size 1.27 1.27)
+					(italic yes)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "2410c308-d167-45d7-bbd3-20547df8a416")
+		)
+		(instances
+			(project "PS"
+				(path "/9d3a5f2c-4b1e-4f0a-8c6d-2e7b1a9f0c11"
+					(reference "#PWR004")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "manipulator:Tbl_X4_PS")
+		(at 233.68 127 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "3dd2e4d7-8aa4-5d31-b204-2ca963812e43")
+		(property "Reference" "X4"
+			(at 236.72 132.71 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(face "GOST 2.304")
+					(size 1.27 1.27)
+					(italic yes)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "B2P-VH"
+			(at 236.22 135.31 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(face "GOST 2.304")
+					(size 1.27 1.27)
+					(italic yes)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "manipulator:JST_VH_B2P-VH_V"
+			(at 233.68 127 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(face "GOST 2.304")
+					(size 1.27 1.27)
+					(italic yes)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 233.68 127 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(face "GOST 2.304")
+					(size 1.27 1.27)
+					(italic yes)
+				)
+			)
+		)
+		(property "Description" ""
+			(at 233.68 127 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(face "GOST 2.304")
+					(size 1.27 1.27)
+					(italic yes)
+				)
+			)
+		)
+		(property "BaseID" "E-019"
+			(at 233.68 127 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(face "GOST 2.304")
+					(size 1.27 1.27)
+					(italic yes)
+				)
+			)
+		)
+		(property "Status" "Утверждено"
+			(at 233.68 127 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(face "GOST 2.304")
+					(size 1.27 1.27)
+					(italic yes)
+				)
+			)
+		)
+		(property "Назначение" "+5 остров → плата MC (X5 MC): 1 — +5V_L (+Vo U2, вывод 4), 2 — GND_L (0V U2, вывод 6)"
+			(at 233.68 127 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(face "GOST 2.304")
+					(size 1.27 1.27)
+					(italic yes)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "89ef3e41-a0c7-4977-b4d4-232af690389e")
+		)
+		(pin "2"
+			(uuid "ca6931d1-1c54-4dd5-9dee-7a6eadd3032b")
+		)
+		(instances
+			(project "PS"
+				(path "/9d3a5f2c-4b1e-4f0a-8c6d-2e7b1a9f0c11"
+					(reference "X4")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "manipulator:Tbl_X8_PS")
+		(at 322.58 127 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "46755fd2-79bb-5bb4-8036-5c623c08623c")
+		(property "Reference" "X8"
+			(at 325.62 132.71 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(face "GOST 2.304")
+					(size 1.27 1.27)
+					(italic yes)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "DG301-5.0-02P-12"
+			(at 325.12 135.31 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(face "GOST 2.304")
+					(size 1.27 1.27)
+					(italic yes)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "manipulator:TB_DG301-5.0_2P_V"
+			(at 322.58 127 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(face "GOST 2.304")
+					(size 1.27 1.27)
+					(italic yes)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 322.58 127 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(face "GOST 2.304")
+					(size 1.27 1.27)
+					(italic yes)
+				)
+			)
+		)
+		(property "Description" ""
+			(at 322.58 127 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(face "GOST 2.304")
+					(size 1.27 1.27)
+					(italic yes)
+				)
+			)
+		)
+		(property "BaseID" "E-017"
+			(at 322.58 127 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(face "GOST 2.304")
+					(size 1.27 1.27)
+					(italic yes)
+				)
+			)
+		)
+		(property "Status" "Утверждено"
+			(at 322.58 127 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(face "GOST 2.304")
+					(size 1.27 1.27)
+					(italic yes)
+				)
+			)
+		)
+		(property "Назначение" "+24 → плата CH3: 1 — +24V, 2 — GND_P"
+			(at 322.58 127 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(face "GOST 2.304")
+					(size 1.27 1.27)
+					(italic yes)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "7b1a0966-98df-43dc-bc4a-83f746f33baf")
+		)
+		(pin "2"
+			(uuid "0af4feae-c87b-4379-b62c-7d5dc8a2bc6b")
+		)
+		(instances
+			(project "PS"
+				(path "/9d3a5f2c-4b1e-4f0a-8c6d-2e7b1a9f0c11"
+					(reference "X8")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "manipulator:SIG_+24V_L_in")
+		(at 314.96 127 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "4a4fa032-773d-5290-839a-a5f9110e2e67")
+		(property "Reference" "#PWR008"
+			(at 317.5 124.46 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(face "GOST 2.304")
+					(size 1.27 1.27)
+					(italic yes)
+				)
+				(justify right)
+			)
+		)
+		(property "Value" "+24V"
+			(at 311.785 127 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(face "GOST 2.304")
+					(size 1.27 1.27)
+					(italic yes)
+				)
+				(justify right)
+			)
+		)
+		(property "Footprint" ""
+			(at 314.96 127 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(face "GOST 2.304")
+					(size 1.27 1.27)
+					(italic yes)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 314.96 127 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(face "GOST 2.304")
+					(size 1.27 1.27)
+					(italic yes)
+				)
+			)
+		)
+		(property "Description" ""
+			(at 314.96 127 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(face "GOST 2.304")
+					(size 1.27 1.27)
+					(italic yes)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "b3ccdde7-cc87-4454-81f7-a08529c3df0e")
+		)
+		(instances
+			(project "PS"
+				(path "/9d3a5f2c-4b1e-4f0a-8c6d-2e7b1a9f0c11"
+					(reference "#PWR008")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "manipulator:Tbl_X11_PS")
+		(at 373.38 142.24 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "4f15fec0-9296-559a-b9e1-1f4dc5390e77")
+		(property "Reference" "X11"
+			(at 376.42 147.95 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(face "GOST 2.304")
+					(size 1.27 1.27)
+					(italic yes)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "B2B-XH-A"
+			(at 375.92 150.55 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(face "GOST 2.304")
+					(size 1.27 1.27)
+					(italic yes)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "manipulator:JST_XH_B2B-XH-A"
+			(at 373.38 142.24 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(face "GOST 2.304")
+					(size 1.27 1.27)
+					(italic yes)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 373.38 142.24 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(face "GOST 2.304")
+					(size 1.27 1.27)
+					(italic yes)
+				)
+			)
+		)
+		(property "Description" ""
+			(at 373.38 142.24 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(face "GOST 2.304")
+					(size 1.27 1.27)
+					(italic yes)
+				)
+			)
+		)
+		(property "BaseID" "E-018"
+			(at 373.38 142.24 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(face "GOST 2.304")
+					(size 1.27 1.27)
+					(italic yes)
+				)
+			)
+		)
+		(property "Status" "Утверждено"
+			(at 373.38 142.24 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(face "GOST 2.304")
+					(size 1.27 1.27)
+					(italic yes)
+				)
+			)
+		)
+		(property "Назначение" "+24 → подсветка кнопки KH (E-024), кабель к кнопке минуя LR: 1 — +24V, 2 — GND_P"
+			(at 373.38 142.24 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(face "GOST 2.304")
+					(size 1.27 1.27)
+					(italic yes)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "fedf3f51-82d3-4ba2-bf0a-ade0559666e4")
+		)
+		(pin "2"
+			(uuid "a60253fa-ae33-44d0-a372-dc89ec57c1e0")
+		)
+		(instances
+			(project "PS"
+				(path "/9d3a5f2c-4b1e-4f0a-8c6d-2e7b1a9f0c11"
+					(reference "X11")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "manipulator:GND_P")
+		(at 41.91 180 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "55d58e63-6384-5c4e-921a-03371a49b812")
+		(property "Reference" "#PWR017"
+			(at 44.45 177.46 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(face "GOST 2.304")
+					(size 1.27 1.27)
+					(italic yes)
+				)
+			)
+		)
+		(property "Value" "GND_P"
+			(at 41.91 183.81 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(face "GOST 2.304")
+					(size 1.27 1.27)
+					(italic yes)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 41.91 180 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(face "GOST 2.304")
+					(size 1.27 1.27)
+					(italic yes)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 41.91 180 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(face "GOST 2.304")
+					(size 1.27 1.27)
+					(italic yes)
+				)
+			)
+		)
+		(property "Description" ""
+			(at 41.91 180 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(face "GOST 2.304")
+					(size 1.27 1.27)
+					(italic yes)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "f94decc8-a069-4bdd-971d-fc6210628d54")
+		)
+		(instances
+			(project "PS"
+				(path "/9d3a5f2c-4b1e-4f0a-8c6d-2e7b1a9f0c11"
+					(reference "#PWR017")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "manipulator:Tbl_X3_PS")
+		(at 160.02 127 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "56c1eb92-4f30-5fd3-af43-eea0940a4d44")
+		(property "Reference" "X3"
+			(at 163.06 132.71 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(face "GOST 2.304")
+					(size 1.27 1.27)
+					(italic yes)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "B2P-VH"
+			(at 162.56 135.31 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(face "GOST 2.304")
+					(size 1.27 1.27)
+					(italic yes)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "manipulator:JST_VH_B2P-VH_V"
+			(at 160.02 127 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(face "GOST 2.304")
+					(size 1.27 1.27)
+					(italic yes)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 160.02 127 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(face "GOST 2.304")
+					(size 1.27 1.27)
+					(italic yes)
+				)
+			)
+		)
+		(property "Description" ""
+			(at 160.02 127 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(face "GOST 2.304")
+					(size 1.27 1.27)
+					(italic yes)
+				)
+			)
+		)
+		(property "BaseID" "E-019"
+			(at 160.02 127 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(face "GOST 2.304")
+					(size 1.27 1.27)
+					(italic yes)
+				)
+			)
+		)
+		(property "Status" "Утверждено"
+			(at 160.02 127 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(face "GOST 2.304")
+					(size 1.27 1.27)
+					(italic yes)
+				)
+			)
+		)
+		(property "Назначение" "+5P → плата MC (X2 MC): 1 — +5P, 2 — GND_P"
+			(at 160.02 127 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(face "GOST 2.304")
+					(size 1.27 1.27)
+					(italic yes)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "c0d6793c-ac03-44da-8954-8e3e23ec4244")
+		)
+		(pin "2"
+			(uuid "418da908-4415-4d09-a7e5-e813a2731cb8")
+		)
+		(instances
+			(project "PS"
+				(path "/9d3a5f2c-4b1e-4f0a-8c6d-2e7b1a9f0c11"
+					(reference "X3")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "manipulator:C")
+		(at 142.24 135.89 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "596f39d6-bf93-5eca-a6c2-081c3095a0a3")
+		(property "Reference" "C2"
+			(at 147.32 134.62 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(face "GOST 2.304")
+					(size 1.27 1.27)
+					(italic yes)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "100 нФ"
+			(at 147.32 137.16 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(face "GOST 2.304")
+					(size 1.27 1.27)
+					(italic yes)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "manipulator:C_Disc_P5.00mm"
+			(at 142.24 135.89 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(face "GOST 2.304")
+					(size 1.27 1.27)
+					(italic yes)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 142.24 135.89 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(face "GOST 2.304")
+					(size 1.27 1.27)
+					(italic yes)
+				)
+			)
+		)
+		(property "Description" ""
+			(at 142.24 135.89 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(face "GOST 2.304")
+					(size 1.27 1.27)
+					(italic yes)
+				)
+			)
+		)
+		(property "BaseID" "E-094"
+			(at 142.24 135.89 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(face "GOST 2.304")
+					(size 1.27 1.27)
+					(italic yes)
+				)
+			)
+		)
+		(property "Status" "Утверждено"
+			(at 142.24 135.89 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(face "GOST 2.304")
+					(size 1.27 1.27)
+					(italic yes)
+				)
+			)
+		)
+		(property "Note" "Керамика X7R 50 В, выводной, шаг 5 мм"
+			(at 142.24 135.89 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(face "GOST 2.304")
+					(size 1.27 1.27)
+					(italic yes)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "4473c6ea-b02b-4a51-9b29-b1e8fdeef34f")
+		)
+		(pin "2"
+			(uuid "582e7996-c7c3-4401-b436-37b12c80f35d")
+		)
+		(instances
+			(project "PS"
+				(path "/9d3a5f2c-4b1e-4f0a-8c6d-2e7b1a9f0c11"
+					(reference "C2")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "manipulator:Tbl_X2_PS")
+		(at 180.34 66.04 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "6df735da-d3c4-5ba0-afe1-4a91d968bc20")
+		(property "Reference" "X2"
+			(at 183.38 76.83 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(face "GOST 2.304")
+					(size 1.27 1.27)
+					(italic yes)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "B4B-XH-A"
+			(at 182.88 79.43 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(face "GOST 2.304")
+					(size 1.27 1.27)
+					(italic yes)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "manipulator:JST_XH_B4B-XH-A"
+			(at 180.34 66.04 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(face "GOST 2.304")
+					(size 1.27 1.27)
+					(italic yes)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 180.34 66.04 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(face "GOST 2.304")
+					(size 1.27 1.27)
+					(italic yes)
+				)
+			)
+		)
+		(property "Description" ""
+			(at 180.34 66.04 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(face "GOST 2.304")
+					(size 1.27 1.27)
+					(italic yes)
+				)
+			)
+		)
+		(property "BaseID" "E-092"
+			(at 180.34 66.04 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(face "GOST 2.304")
+					(size 1.27 1.27)
+					(italic yes)
+				)
+			)
+		)
+		(property "Status" "Утверждено"
+			(at 180.34 66.04 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(face "GOST 2.304")
+					(size 1.27 1.27)
+					(italic yes)
+				)
+			)
+		)
+		(property "Назначение" "Кнопка питания E-002: 1 — катушка K1 (A2), 2 — GND_P (контакт кнопки замыкает 1–2); 3 — подсветка GND_P, 4 — подсветка +24V (после реле)"
+			(at 180.34 66.04 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(face "GOST 2.304")
+					(size 1.27 1.27)
+					(italic yes)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "aa581a44-909f-4f86-aff8-8411bbba335e")
+		)
+		(pin "2"
+			(uuid "2c88cc19-122d-4669-a1cc-75639882a8ce")
+		)
+		(pin "3"
+			(uuid "07fde9d6-67d1-4953-bd6f-f3a2a871f84e")
+		)
+		(pin "4"
+			(uuid "f9e1bf9f-8817-4555-9198-e25ae10bac9f")
+		)
+		(instances
+			(project "PS"
+				(path "/9d3a5f2c-4b1e-4f0a-8c6d-2e7b1a9f0c11"
+					(reference "X2")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "manipulator:SIG_GND_P_L_out")
+		(at 365.76 114.3 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "72c77ae5-c86f-5d3a-a407-24ea4fa8e2d5")
+		(property "Reference" "#PWR007"
+			(at 368.3 111.76 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(face "GOST 2.304")
+					(size 1.27 1.27)
+					(italic yes)
+				)
+				(justify right)
+			)
+		)
+		(property "Value" "GND_P"
+			(at 362.585 114.3 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(face "GOST 2.304")
+					(size 1.27 1.27)
+					(italic yes)
+				)
+				(justify right)
+			)
+		)
+		(property "Footprint" ""
+			(at 365.76 114.3 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(face "GOST 2.304")
+					(size 1.27 1.27)
+					(italic yes)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 365.76 114.3 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(face "GOST 2.304")
+					(size 1.27 1.27)
+					(italic yes)
+				)
+			)
+		)
+		(property "Description" ""
+			(at 365.76 114.3 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(face "GOST 2.304")
+					(size 1.27 1.27)
+					(italic yes)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "959d6c98-3a87-43f4-96f6-08081b10326d")
+		)
+		(instances
+			(project "PS"
+				(path "/9d3a5f2c-4b1e-4f0a-8c6d-2e7b1a9f0c11"
+					(reference "#PWR007")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "manipulator:Tbl_X6_PS")
+		(at 322.58 111.76 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "7a082fa1-1435-57a9-bfd3-5651585368f7")
+		(property "Reference" "X6"
+			(at 325.62 117.47 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(face "GOST 2.304")
+					(size 1.27 1.27)
+					(italic yes)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "DG301-5.0-02P-12"
+			(at 325.12 120.07 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(face "GOST 2.304")
+					(size 1.27 1.27)
+					(italic yes)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "manipulator:TB_DG301-5.0_2P_V"
+			(at 322.58 111.76 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(face "GOST 2.304")
+					(size 1.27 1.27)
+					(italic yes)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 322.58 111.76 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(face "GOST 2.304")
+					(size 1.27 1.27)
+					(italic yes)
+				)
+			)
+		)
+		(property "Description" ""
+			(at 322.58 111.76 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(face "GOST 2.304")
+					(size 1.27 1.27)
+					(italic yes)
+				)
+			)
+		)
+		(property "BaseID" "E-017"
+			(at 322.58 111.76 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(face "GOST 2.304")
+					(size 1.27 1.27)
+					(italic yes)
+				)
+			)
+		)
+		(property "Status" "Утверждено"
+			(at 322.58 111.76 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(face "GOST 2.304")
+					(size 1.27 1.27)
+					(italic yes)
+				)
+			)
+		)
+		(property "Назначение" "+24 → плата CH1: 1 — +24V, 2 — GND_P"
+			(at 322.58 111.76 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(face "GOST 2.304")
+					(size 1.27 1.27)
+					(italic yes)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "6e644448-c8f9-49f5-b461-8765dfe4ac2f")
+		)
+		(pin "2"
+			(uuid "ff32b070-30ad-4a40-9112-e4a802088314")
+		)
+		(instances
+			(project "PS"
+				(path "/9d3a5f2c-4b1e-4f0a-8c6d-2e7b1a9f0c11"
+					(reference "X6")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "manipulator:R")
+		(at 269.24 119.38 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "9f71e5e2-66e5-5c99-a116-29f39bcb986f")
+		(property "Reference" "R2"
+			(at 272.415 118.11 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(face "GOST 2.304")
+					(size 1.27 1.27)
+					(italic yes)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "150 Ом"
+			(at 272.415 120.65 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(face "GOST 2.304")
+					(size 1.27 1.27)
+					(italic yes)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "manipulator:R_Axial_P10.16mm_V"
+			(at 269.24 119.38 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(face "GOST 2.304")
+					(size 1.27 1.27)
+					(italic yes)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 269.24 119.38 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(face "GOST 2.304")
+					(size 1.27 1.27)
+					(italic yes)
+				)
+			)
+		)
+		(property "Description" ""
+			(at 269.24 119.38 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(face "GOST 2.304")
+					(size 1.27 1.27)
+					(italic yes)
+				)
+			)
+		)
+		(property "BaseID" "E-009"
+			(at 269.24 119.38 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(face "GOST 2.304")
+					(size 1.27 1.27)
+					(italic yes)
+				)
+			)
+		)
+		(property "Status" "Утверждено"
+			(at 269.24 119.38 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(face "GOST 2.304")
+					(size 1.27 1.27)
+					(italic yes)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "49e603c1-cb7d-41fb-a780-41b873ff276e")
+		)
+		(pin "2"
+			(uuid "11ed6311-f7d1-4f77-8b17-c2b79f3ee8b8")
+		)
+		(instances
+			(project "PS"
+				(path "/9d3a5f2c-4b1e-4f0a-8c6d-2e7b1a9f0c11"
+					(reference "R2")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "manipulator:+5P")
+		(at 152.4 127 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "a69869d3-3581-5176-b019-e0efbf6123c6")
+		(property "Reference" "#PWR002"
+			(at 154.94 124.46 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(face "GOST 2.304")
+					(size 1.27 1.27)
+					(italic yes)
+				)
+			)
+		)
+		(property "Value" "+5P"
+			(at 152.4 123.444 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(face "GOST 2.304")
+					(size 1.27 1.27)
+					(italic yes)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 152.4 127 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(face "GOST 2.304")
+					(size 1.27 1.27)
+					(italic yes)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 152.4 127 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(face "GOST 2.304")
+					(size 1.27 1.27)
+					(italic yes)
+				)
+			)
+		)
+		(property "Description" ""
+			(at 152.4 127 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(face "GOST 2.304")
+					(size 1.27 1.27)
+					(italic yes)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "a4430da3-8890-42b7-98fa-d6e862797d24")
+		)
+		(instances
+			(project "PS"
+				(path "/9d3a5f2c-4b1e-4f0a-8c6d-2e7b1a9f0c11"
+					(reference "#PWR002")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "manipulator:D")
+		(at 144.78 80.01 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "ab1a3d56-c485-5552-973f-53bb4d6d1785")
+		(property "Reference" "VD2"
+			(at 144.78 75.565 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(face "GOST 2.304")
+					(size 1.27 1.27)
+					(italic yes)
+				)
+			)
+		)
+		(property "Value" "1N4007"
+			(at 144.78 84.455 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(face "GOST 2.304")
+					(size 1.27 1.27)
+					(italic yes)
+				)
+			)
+		)
+		(property "Footprint" "manipulator:D_DO-41_P10.16mm"
+			(at 144.78 80.01 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(face "GOST 2.304")
+					(size 1.27 1.27)
+					(italic yes)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 144.78 80.01 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(face "GOST 2.304")
+					(size 1.27 1.27)
+					(italic yes)
+				)
+			)
+		)
+		(property "Description" ""
+			(at 144.78 80.01 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(face "GOST 2.304")
+					(size 1.27 1.27)
+					(italic yes)
+				)
+			)
+		)
+		(property "BaseID" "E-015"
+			(at 144.78 80.01 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(face "GOST 2.304")
+					(size 1.27 1.27)
+					(italic yes)
+				)
+			)
+		)
+		(property "Status" "Предложение"
+			(at 144.78 80.01 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(face "GOST 2.304")
+					(size 1.27 1.27)
+					(italic yes)
+				)
+			)
+		)
+		(property "Note" "Катод к стороне +24 (A1), анод к коммутируемой стороне (A2)"
+			(at 144.78 80.01 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(face "GOST 2.304")
+					(size 1.27 1.27)
+					(italic yes)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "f15f4ed4-fd32-44c4-afa2-f4a9b262c751")
+		)
+		(pin "2"
+			(uuid "0cf4c168-f399-400e-9140-89e29ddafb7c")
+		)
+		(instances
+			(project "PS"
+				(path "/9d3a5f2c-4b1e-4f0a-8c6d-2e7b1a9f0c11"
+					(reference "VD2")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "manipulator:SIG_GND_P_L_out")
+		(at 314.96 129.54 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "abea5b0a-cccb-5f57-9616-15677841ad92")
+		(property "Reference" "#PWR009"
+			(at 317.5 127 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(face "GOST 2.304")
+					(size 1.27 1.27)
+					(italic yes)
+				)
+				(justify right)
+			)
+		)
+		(property "Value" "GND_P"
+			(at 311.785 129.54 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(face "GOST 2.304")
+					(size 1.27 1.27)
+					(italic yes)
+				)
+				(justify right)
+			)
+		)
+		(property "Footprint" ""
+			(at 314.96 129.54 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(face "GOST 2.304")
+					(size 1.27 1.27)
+					(italic yes)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 314.96 129.54 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(face "GOST 2.304")
+					(size 1.27 1.27)
+					(italic yes)
+				)
+			)
+		)
+		(property "Description" ""
+			(at 314.96 129.54 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(face "GOST 2.304")
+					(size 1.27 1.27)
+					(italic yes)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "2c896fc8-a223-4b70-9afe-de71867dd511")
+		)
+		(instances
+			(project "PS"
+				(path "/9d3a5f2c-4b1e-4f0a-8c6d-2e7b1a9f0c11"
+					(reference "#PWR009")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "manipulator:SIG_GND_P_L_out")
+		(at 365.76 129.54 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "b999768c-8eda-53d3-8d10-594de030583b")
+		(property "Reference" "#PWR011"
+			(at 368.3 127 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(face "GOST 2.304")
+					(size 1.27 1.27)
+					(italic yes)
+				)
+				(justify right)
+			)
+		)
+		(property "Value" "GND_P"
+			(at 362.585 129.54 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(face "GOST 2.304")
+					(size 1.27 1.27)
+					(italic yes)
+				)
+				(justify right)
+			)
+		)
+		(property "Footprint" ""
+			(at 365.76 129.54 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(face "GOST 2.304")
+					(size 1.27 1.27)
+					(italic yes)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 365.76 129.54 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(face "GOST 2.304")
+					(size 1.27 1.27)
+					(italic yes)
+				)
+			)
+		)
+		(property "Description" ""
+			(at 365.76 129.54 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(face "GOST 2.304")
+					(size 1.27 1.27)
+					(italic yes)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "fa983b86-8822-4a42-b677-250b84e62144")
+		)
+		(instances
+			(project "PS"
+				(path "/9d3a5f2c-4b1e-4f0a-8c6d-2e7b1a9f0c11"
+					(reference "#PWR011")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "manipulator:DCDC_Module")
+		(at 73.66 129.54 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "be51fa66-be92-5f7c-9012-8ece752e29fd")
+		(property "Reference" "U1"
+			(at 63.5 115.57 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(face "GOST 2.304")
+					(size 1.27 1.27)
+					(italic yes)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "Модуль XL4015E"
+			(at 63.5 118.11 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(face "GOST 2.304")
+					(size 1.27 1.27)
+					(italic yes)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "manipulator:Module_XL4015E_zone"
+			(at 73.66 129.54 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(face "GOST 2.304")
+					(size 1.27 1.27)
+					(italic yes)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 73.66 129.54 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(face "GOST 2.304")
+					(size 1.27 1.27)
+					(italic yes)
+				)
+			)
+		)
+		(property "Description" ""
+			(at 73.66 129.54 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(face "GOST 2.304")
+					(size 1.27 1.27)
+					(italic yes)
+				)
+			)
+		)
+		(property "BaseID" "E-007"
+			(at 73.66 129.54 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(face "GOST 2.304")
+					(size 1.27 1.27)
+					(italic yes)
+				)
+			)
+		)
+		(property "Status" "Утверждено"
+			(at 73.66 129.54 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(face "GOST 2.304")
+					(size 1.27 1.27)
+					(italic yes)
+				)
+			)
+		)
+		(property "Note" "24 → 5,0 В, 5 А; выставить 5,0 В и зафиксировать подстроечник"
+			(at 73.66 129.54 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(face "GOST 2.304")
+					(size 1.27 1.27)
+					(italic yes)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "09c09e7e-53e1-4c4e-aed6-03cb906438b6")
+		)
+		(pin "2"
+			(uuid "bc06d6ee-4604-4daf-89be-1213c73f9e75")
+		)
+		(pin "3"
+			(uuid "b3faca9a-2da2-47f4-a850-116c0796eb5d")
+		)
+		(pin "4"
+			(uuid "76e19604-36ee-46e6-8db2-8e510ae250c8")
+		)
+		(instances
+			(project "PS"
+				(path "/9d3a5f2c-4b1e-4f0a-8c6d-2e7b1a9f0c11"
+					(reference "U1")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "manipulator:Tbl_X9_PS")
+		(at 373.38 127 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "c68a143b-46e9-5f16-af1b-815cbd2117b0")
+		(property "Reference" "X9"
+			(at 376.42 132.71 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(face "GOST 2.304")
+					(size 1.27 1.27)
+					(italic yes)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "DG301-5.0-02P-12"
+			(at 375.92 135.31 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(face "GOST 2.304")
+					(size 1.27 1.27)
+					(italic yes)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "manipulator:TB_DG301-5.0_2P_V"
+			(at 373.38 127 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(face "GOST 2.304")
+					(size 1.27 1.27)
+					(italic yes)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 373.38 127 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(face "GOST 2.304")
+					(size 1.27 1.27)
+					(italic yes)
+				)
+			)
+		)
+		(property "Description" ""
+			(at 373.38 127 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(face "GOST 2.304")
+					(size 1.27 1.27)
+					(italic yes)
+				)
+			)
+		)
+		(property "BaseID" "E-017"
+			(at 373.38 127 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(face "GOST 2.304")
+					(size 1.27 1.27)
+					(italic yes)
+				)
+			)
+		)
+		(property "Status" "Утверждено"
+			(at 373.38 127 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(face "GOST 2.304")
+					(size 1.27 1.27)
+					(italic yes)
+				)
+			)
+		)
+		(property "Назначение" "+24 → плата CH4: 1 — +24V, 2 — GND_P"
+			(at 373.38 127 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(face "GOST 2.304")
+					(size 1.27 1.27)
+					(italic yes)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "94c3d225-de50-4727-bb18-6e59e5e46b02")
+		)
+		(pin "2"
+			(uuid "f24e851a-79d7-4b9e-8cbf-e0abc1567c1e")
+		)
+		(instances
+			(project "PS"
+				(path "/9d3a5f2c-4b1e-4f0a-8c6d-2e7b1a9f0c11"
+					(reference "X9")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "manipulator:SIG_+24V_L_in")
+		(at 365.76 142.24 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "c7681fb4-729c-526d-9f2c-60d9df2ec33e")
+		(property "Reference" "#PWR014"
+			(at 368.3 139.7 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(face "GOST 2.304")
+					(size 1.27 1.27)
+					(italic yes)
+				)
+				(justify right)
+			)
+		)
+		(property "Value" "+24V"
+			(at 362.585 142.24 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(face "GOST 2.304")
+					(size 1.27 1.27)
+					(italic yes)
+				)
+				(justify right)
+			)
+		)
+		(property "Footprint" ""
+			(at 365.76 142.24 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(face "GOST 2.304")
+					(size 1.27 1.27)
+					(italic yes)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 365.76 142.24 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(face "GOST 2.304")
+					(size 1.27 1.27)
+					(italic yes)
+				)
+			)
+		)
+		(property "Description" ""
+			(at 365.76 142.24 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(face "GOST 2.304")
+					(size 1.27 1.27)
+					(italic yes)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "202bfe63-fbf4-4cdf-ba38-f3d33690efe9")
+		)
+		(instances
+			(project "PS"
+				(path "/9d3a5f2c-4b1e-4f0a-8c6d-2e7b1a9f0c11"
+					(reference "#PWR014")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "manipulator:+24V")
+		(at 220.98 100 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "ce46089f-cd89-5ae6-a2e2-7c194afe9587")
+		(property "Reference" "#PWR016"
+			(at 223.52 97.46 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(face "GOST 2.304")
+					(size 1.27 1.27)
+					(italic yes)
+				)
+			)
+		)
+		(property "Value" "+24V"
+			(at 220.98 96.444 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(face "GOST 2.304")
+					(size 1.27 1.27)
+					(italic yes)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 220.98 100 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(face "GOST 2.304")
+					(size 1.27 1.27)
+					(italic yes)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 220.98 100 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(face "GOST 2.304")
+					(size 1.27 1.27)
+					(italic yes)
+				)
+			)
+		)
+		(property "Description" ""
+			(at 220.98 100 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(face "GOST 2.304")
+					(size 1.27 1.27)
+					(italic yes)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "3f44276f-3e46-4f91-a654-1e34be304039")
+		)
+		(instances
+			(project "PS"
+				(path "/9d3a5f2c-4b1e-4f0a-8c6d-2e7b1a9f0c11"
+					(reference "#PWR016")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "manipulator:+24V_IN")
+		(at 60.96 30 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "d4aa643a-0ac3-5e10-9411-8e3375aa138d")
+		(property "Reference" "#PWR001"
+			(at 63.5 27.46 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(face "GOST 2.304")
+					(size 1.27 1.27)
+					(italic yes)
+				)
+			)
+		)
+		(property "Value" "+24V_IN"
+			(at 60.96 26.444 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(face "GOST 2.304")
+					(size 1.27 1.27)
+					(italic yes)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 60.96 30 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(face "GOST 2.304")
+					(size 1.27 1.27)
+					(italic yes)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 60.96 30 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(face "GOST 2.304")
+					(size 1.27 1.27)
+					(italic yes)
+				)
+			)
+		)
+		(property "Description" ""
+			(at 60.96 30 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(face "GOST 2.304")
+					(size 1.27 1.27)
+					(italic yes)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "2b80f813-8827-4733-ad68-b3fdf99a9a43")
+		)
+		(instances
+			(project "PS"
+				(path "/9d3a5f2c-4b1e-4f0a-8c6d-2e7b1a9f0c11"
+					(reference "#PWR001")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "manipulator:Relay_SPDT")
+		(at 144.78 60.96 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "d5720783-c7f0-5665-b415-e0eaec073b84")
+		(property "Reference" "K1"
+			(at 142.875 67.31 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(face "GOST 2.304")
+					(size 1.27 1.27)
+					(italic yes)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "NRP-15-C-24D"
+			(at 135.89 69.85 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(face "GOST 2.304")
+					(size 1.27 1.27)
+					(italic yes)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "manipulator:Relay_NRP-15_1C"
+			(at 144.78 60.96 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(face "GOST 2.304")
+					(size 1.27 1.27)
+					(italic yes)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 144.78 60.96 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(face "GOST 2.304")
+					(size 1.27 1.27)
+					(italic yes)
+				)
+			)
+		)
+		(property "Description" ""
+			(at 144.78 60.96 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(face "GOST 2.304")
+					(size 1.27 1.27)
+					(italic yes)
+				)
+			)
+		)
+		(property "BaseID" "E-013"
+			(at 144.78 60.96 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(face "GOST 2.304")
+					(size 1.27 1.27)
+					(italic yes)
+				)
+			)
+		)
+		(property "Status" "Утверждено"
+			(at 144.78 60.96 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(face "GOST 2.304")
+					(size 1.27 1.27)
+					(italic yes)
+				)
+			)
+		)
+		(property "Note" "Контакт COM–NO рвёт шину +24; катушка 24 В: A1 — +24V_IN, A2 — на GND_P через контакт кнопки E-002 (X2)"
+			(at 144.78 60.96 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(face "GOST 2.304")
+					(size 1.27 1.27)
+					(italic yes)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "4bc85e98-222a-41a9-b634-bb71880d3a58")
+		)
+		(pin "2"
+			(uuid "ce788794-7ae4-41bb-ba78-a970170f0394")
+		)
+		(pin "3"
+			(uuid "3e5b87a7-f2c9-4081-bc20-8822f619f13a")
+		)
+		(pin "4"
+			(uuid "ab37bfa8-fc64-4845-81dc-80aa893677c9")
+		)
+		(pin "5"
+			(uuid "f34fa0f2-dd80-43ec-b69a-993bf35c080d")
+		)
+		(instances
+			(project "PS"
+				(path "/9d3a5f2c-4b1e-4f0a-8c6d-2e7b1a9f0c11"
+					(reference "K1")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "manipulator:SIG_+24V_L_in")
+		(at 365.76 127 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "d8d10297-7339-5fd2-9a54-f00ff6e4775f")
+		(property "Reference" "#PWR010"
+			(at 368.3 124.46 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(face "GOST 2.304")
+					(size 1.27 1.27)
+					(italic yes)
+				)
+				(justify right)
+			)
+		)
+		(property "Value" "+24V"
+			(at 362.585 127 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(face "GOST 2.304")
+					(size 1.27 1.27)
+					(italic yes)
+				)
+				(justify right)
+			)
+		)
+		(property "Footprint" ""
+			(at 365.76 127 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(face "GOST 2.304")
+					(size 1.27 1.27)
+					(italic yes)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 365.76 127 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(face "GOST 2.304")
+					(size 1.27 1.27)
+					(italic yes)
+				)
+			)
+		)
+		(property "Description" ""
+			(at 365.76 127 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(face "GOST 2.304")
+					(size 1.27 1.27)
+					(italic yes)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "768e0b0f-bcf1-44e2-aeab-2af90e9c0219")
+		)
+		(instances
+			(project "PS"
+				(path "/9d3a5f2c-4b1e-4f0a-8c6d-2e7b1a9f0c11"
+					(reference "#PWR010")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "manipulator:Tbl_X1_PS")
+		(at 58.42 40.64 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "df36590a-74bc-5423-931b-e45c3bb9f102")
+		(property "Reference" "X1"
+			(at 28.44 46.35 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(face "GOST 2.304")
+					(size 1.27 1.27)
+					(italic yes)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "DG301-5.0-02P-12"
+			(at 27.94 48.95 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(face "GOST 2.304")
+					(size 1.27 1.27)
+					(italic yes)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "manipulator:TB_DG301-5.0_2P"
+			(at 58.42 40.64 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(face "GOST 2.304")
+					(size 1.27 1.27)
+					(italic yes)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 58.42 40.64 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(face "GOST 2.304")
+					(size 1.27 1.27)
+					(italic yes)
+				)
+			)
+		)
+		(property "Description" ""
+			(at 58.42 40.64 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(face "GOST 2.304")
+					(size 1.27 1.27)
+					(italic yes)
+				)
+			)
+		)
+		(property "BaseID" "E-017"
+			(at 58.42 40.64 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(face "GOST 2.304")
+					(size 1.27 1.27)
+					(italic yes)
+				)
+			)
+		)
+		(property "Status" "Утверждено"
+			(at 58.42 40.64 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(face "GOST 2.304")
+					(size 1.27 1.27)
+					(italic yes)
+				)
+			)
+		)
+		(property "Назначение" "Вход +24 от гнезда через предохранитель: 1 — +24, 2 — GND"
+			(at 58.42 40.64 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(face "GOST 2.304")
+					(size 1.27 1.27)
+					(italic yes)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "3477803f-2207-485b-8f6f-ce0ce53ab0c2")
+		)
+		(pin "2"
+			(uuid "7cdb0d8d-98d4-4ce2-9db4-fb9e51018601")
+		)
+		(instances
+			(project "PS"
+				(path "/9d3a5f2c-4b1e-4f0a-8c6d-2e7b1a9f0c11"
+					(reference "X1")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "manipulator:SIG_GND_P_L_out")
+		(at 365.76 144.78 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "e364b0be-ff86-5fa5-9bdf-707c85e4ca25")
+		(property "Reference" "#PWR015"
+			(at 368.3 142.24 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(face "GOST 2.304")
+					(size 1.27 1.27)
+					(italic yes)
+				)
+				(justify right)
+			)
+		)
+		(property "Value" "GND_P"
+			(at 362.585 144.78 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(face "GOST 2.304")
+					(size 1.27 1.27)
+					(italic yes)
+				)
+				(justify right)
+			)
+		)
+		(property "Footprint" ""
+			(at 365.76 144.78 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(face "GOST 2.304")
+					(size 1.27 1.27)
+					(italic yes)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 365.76 144.78 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(face "GOST 2.304")
+					(size 1.27 1.27)
+					(italic yes)
+				)
+			)
+		)
+		(property "Description" ""
+			(at 365.76 144.78 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(face "GOST 2.304")
+					(size 1.27 1.27)
+					(italic yes)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "79626ddf-b203-44fe-a0f2-1e9d246ff4af")
+		)
+		(instances
+			(project "PS"
+				(path "/9d3a5f2c-4b1e-4f0a-8c6d-2e7b1a9f0c11"
+					(reference "#PWR015")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "manipulator:DCDC_VRB_YMD")
+		(at 213.36 129.54 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "e53f6ba7-325c-5d49-9003-70803e790a43")
+		(property "Reference" "U2"
+			(at 203.2 115.57 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(face "GOST 2.304")
+					(size 1.27 1.27)
+					(italic yes)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "VRB2405YMD-10WR3"
+			(at 203.2 118.11 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(face "GOST 2.304")
+					(size 1.27 1.27)
+					(italic yes)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "manipulator:DCDC_Mornsun_YMD_25.4x25.4"
+			(at 213.36 129.54 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(face "GOST 2.304")
+					(size 1.27 1.27)
+					(italic yes)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 213.36 129.54 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(face "GOST 2.304")
+					(size 1.27 1.27)
+					(italic yes)
+				)
+			)
+		)
+		(property "Description" ""
+			(at 213.36 129.54 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(face "GOST 2.304")
+					(size 1.27 1.27)
+					(italic yes)
+				)
+			)
+		)
+		(property "BaseID" "E-010"
+			(at 213.36 129.54 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(face "GOST 2.304")
+					(size 1.27 1.27)
+					(italic yes)
+				)
+			)
+		)
+		(property "Status" "Утверждено"
+			(at 213.36 129.54 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(face "GOST 2.304")
+					(size 1.27 1.27)
+					(italic yes)
+				)
+			)
+		)
+		(property "Note" "Mornsun, 24 → 5 В, 10 Вт / 2 А; граница развязки: 0V (вывод 6) = GND_L, не соединять с GND_P; Ctrl (1) свободен — модуль включён"
+			(at 213.36 129.54 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(face "GOST 2.304")
+					(size 1.27 1.27)
+					(italic yes)
+				)
+			)
+		)
+		(pin "3"
+			(uuid "366441c6-c492-4dda-934a-1a515ef33445")
+		)
+		(pin "2"
+			(uuid "b1cd9632-7aac-497d-8c8f-7a56d6531548")
+		)
+		(pin "4"
+			(uuid "6cb5f6f0-06b7-48dc-bbde-1d4acccb578c")
+		)
+		(pin "6"
+			(uuid "27189a56-b2ac-4a63-8ee2-4d6f68bddc88")
+		)
+		(pin "1"
+			(uuid "48713c95-461b-4264-82c7-6c27ffdebe37")
+		)
+		(instances
+			(project "PS"
+				(path "/9d3a5f2c-4b1e-4f0a-8c6d-2e7b1a9f0c11"
+					(reference "U2")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "manipulator:Tbl_X5_PS")
+		(at 274.32 127 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "e667dd8c-5ca4-53e6-991f-01764aa19721")
+		(property "Reference" "X5"
+			(at 277.36 132.71 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(face "GOST 2.304")
+					(size 1.27 1.27)
+					(italic yes)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "B2B-XH-A"
+			(at 276.86 135.31 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(face "GOST 2.304")
+					(size 1.27 1.27)
+					(italic yes)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "manipulator:JST_XH_B2B-XH-A"
+			(at 274.32 127 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(face "GOST 2.304")
+					(size 1.27 1.27)
+					(italic yes)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 274.32 127 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(face "GOST 2.304")
+					(size 1.27 1.27)
+					(italic yes)
+				)
+			)
+		)
+		(property "Description" ""
+			(at 274.32 127 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(face "GOST 2.304")
+					(size 1.27 1.27)
+					(italic yes)
+				)
+			)
+		)
+		(property "BaseID" "E-018"
+			(at 274.32 127 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(face "GOST 2.304")
+					(size 1.27 1.27)
+					(italic yes)
+				)
+			)
+		)
+		(property "Status" "Утверждено"
+			(at 274.32 127 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(face "GOST 2.304")
+					(size 1.27 1.27)
+					(italic yes)
+				)
+			)
+		)
+		(property "Назначение" "LED «+5P есть» на панели (E-008): 1 — анод (через R2), 2 — катод (GND_P)"
+			(at 274.32 127 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(face "GOST 2.304")
+					(size 1.27 1.27)
+					(italic yes)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "c8e05001-bca6-435a-b075-d07ac9cb27fc")
+		)
+		(pin "2"
+			(uuid "6df015d4-6fae-40e1-8b44-50d12517ac06")
+		)
+		(instances
+			(project "PS"
+				(path "/9d3a5f2c-4b1e-4f0a-8c6d-2e7b1a9f0c11"
+					(reference "X5")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "manipulator:SIG_GND_P_L_out")
+		(at 314.96 144.78 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "e9aa6715-26f1-5dd5-b91a-49e87978dbf0")
+		(property "Reference" "#PWR013"
+			(at 317.5 142.24 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(face "GOST 2.304")
+					(size 1.27 1.27)
+					(italic yes)
+				)
+				(justify right)
+			)
+		)
+		(property "Value" "GND_P"
+			(at 311.785 144.78 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(face "GOST 2.304")
+					(size 1.27 1.27)
+					(italic yes)
+				)
+				(justify right)
+			)
+		)
+		(property "Footprint" ""
+			(at 314.96 144.78 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(face "GOST 2.304")
+					(size 1.27 1.27)
+					(italic yes)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 314.96 144.78 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(face "GOST 2.304")
+					(size 1.27 1.27)
+					(italic yes)
+				)
+			)
+		)
+		(property "Description" ""
+			(at 314.96 144.78 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(face "GOST 2.304")
+					(size 1.27 1.27)
+					(italic yes)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "97c6c1a9-adcc-4349-bf0f-45f3bbe946da")
+		)
+		(instances
+			(project "PS"
+				(path "/9d3a5f2c-4b1e-4f0a-8c6d-2e7b1a9f0c11"
+					(reference "#PWR013")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "manipulator:L")
+		(at 99.06 127 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "ebc06ddc-dffc-5ed9-86f4-7f9b5128eab1")
+		(property "Reference" "L1"
+			(at 99.06 123.19 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(face "GOST 2.304")
+					(size 1.27 1.27)
+					(italic yes)
+				)
+			)
+		)
+		(property "Value" "DPO-3.0-22"
+			(at 99.06 130.81 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(face "GOST 2.304")
+					(size 1.27 1.27)
+					(italic yes)
+				)
+			)
+		)
+		(property "Footprint" "manipulator:L_Toroid_D20_P10.16mm"
+			(at 99.06 127 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(face "GOST 2.304")
+					(size 1.27 1.27)
+					(italic yes)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 99.06 127 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(face "GOST 2.304")
+					(size 1.27 1.27)
+					(italic yes)
+				)
+			)
+		)
+		(property "Description" ""
+			(at 99.06 127 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(face "GOST 2.304")
+					(size 1.27 1.27)
+					(italic yes)
+				)
+			)
+		)
+		(property "BaseID" "E-012"
+			(at 99.06 127 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(face "GOST 2.304")
+					(size 1.27 1.27)
+					(italic yes)
+				)
+			)
+		)
+		(property "Status" "Утверждено"
+			(at 99.06 127 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(face "GOST 2.304")
+					(size 1.27 1.27)
+					(italic yes)
+				)
+			)
+		)
+		(property "Note" "Talema, тороид 22 мкГн, 3 А, 50 мОм"
+			(at 99.06 127 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(face "GOST 2.304")
+					(size 1.27 1.27)
+					(italic yes)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "9d1633dd-ac5f-4c98-8f6f-589a3a683760")
+		)
+		(pin "2"
+			(uuid "0f2828c5-7710-4dc3-a678-a83be5ef74bb")
+		)
+		(instances
+			(project "PS"
+				(path "/9d3a5f2c-4b1e-4f0a-8c6d-2e7b1a9f0c11"
+					(reference "L1")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "manipulator:SIG_GND_P_L_out")
+		(at 314.96 114.3 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "f8e7d717-a945-5bfc-bfe3-f784920d46c0")
+		(property "Reference" "#PWR005"
+			(at 317.5 111.76 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(face "GOST 2.304")
+					(size 1.27 1.27)
+					(italic yes)
+				)
+				(justify right)
+			)
+		)
+		(property "Value" "GND_P"
+			(at 311.785 114.3 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(face "GOST 2.304")
+					(size 1.27 1.27)
+					(italic yes)
+				)
+				(justify right)
+			)
+		)
+		(property "Footprint" ""
+			(at 314.96 114.3 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(face "GOST 2.304")
+					(size 1.27 1.27)
+					(italic yes)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 314.96 114.3 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(face "GOST 2.304")
+					(size 1.27 1.27)
+					(italic yes)
+				)
+			)
+		)
+		(property "Description" ""
+			(at 314.96 114.3 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(face "GOST 2.304")
+					(size 1.27 1.27)
+					(italic yes)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "029d632b-0aee-49f6-8101-fadb35d4f2d0")
+		)
+		(instances
+			(project "PS"
+				(path "/9d3a5f2c-4b1e-4f0a-8c6d-2e7b1a9f0c11"
+					(reference "#PWR005")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(sheet_instances
+		(path "/"
+			(page "1")
+		)
+	)
+	(embedded_fonts no)
+)
