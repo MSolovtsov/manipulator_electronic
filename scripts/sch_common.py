@@ -16,8 +16,8 @@ WKS_SRC = Path(__file__).resolve().parent / "gost_portrait.kicad_wks"  # ряд�
 
 SCH_VER = "20260306"
 SCH_GEN_VER = "10.0"
-LIB_VER = "20231120"
-LIB_GEN_VER = "8.0"
+LIB_VER = "20251024"     # формат библиотек KiCad 10.0 (снят с файла, сохранённого KiCad 10, 2026-10-03)
+LIB_GEN_VER = "10.0"
 LIB = "manipulator"
 PROJECT = "PS"        # переопределяется генератором
 ROOT_UUID = "9d3a5f2c-4b1e-4f0a-8c6d-2e7b1a9f0c11"   # переопределяется генератором (uuid листа)
@@ -30,26 +30,31 @@ def U():
 
 
 FACE = "GOST 2.304"   # ГОСТ 2.304 тип Б (lib/fonts/); курсив — свойство italic
+# Высота шрифта по ряду ГОСТ 2.304: основной текст листа 2,5 мм, позиционные обозначения 3,5 мм.
+TXT = 2.5   # подписи выводов, номиналы, содержимое и заголовки таблиц, примечания
+REF = 3.5   # позиционные обозначения (R1, C1, A1, K1, X1 …)
 
 
-def font(size=1.27, justify=None):
+def font(size=TXT, justify=None):
     j = f" (justify {justify})" if justify else ""
     return f'(effects (font (face "{FACE}") (size {size} {size}) (italic yes)){j})'
 
 
 
-def prop(name, value, x, y, rot=0, hide=False, justify=None, size=1.27):
+def prop(name, value, x, y, rot=0, hide=False, justify=None, size=TXT):
     h = " (hide yes)" if hide else ""
     return f'(property "{name}" "{value}" (at {x} {y} {rot}) (show_name no) (do_not_autoplace no){h} {font(size, justify)})'
 
 
 # ----------------------------------------------------------------------------
-# Библиотека символов (формат KiCad 10 внутри схемы; в .kicad_sym — KiCad 8)
+# Библиотека символов (формат KiCad 10 — и внутри схемы, и в .kicad_sym)
 # ----------------------------------------------------------------------------
 def pin(kind, x, y, ang, num, name="", length=2.54, hide=False):
     h = " (hide yes)" if hide else ""
+    # шрифт имени/номера вывода — без face/italic: KiCad 10 их у выводов не хранит и при сохранении отбрасывает
+    pf = "(effects (font (size 2.5 2.5)))"
     return (f'(pin {kind} line (at {x} {y} {ang}) (length {length}){h} '
-            f'(name "{name}" {font()}) (number "{num}" {font()}))')
+            f'(name "{name}" {pf}) (number "{num}" {pf}))')
 
 
 def rect(x1, y1, x2, y2, fill="none", w=0.254):
@@ -65,18 +70,19 @@ def arc(sx, sy, mx, my, ex, ey):
     return f'(arc (start {sx} {sy}) (mid {mx} {my}) (end {ex} {ey}) (stroke (width 0.254) (type default)) (fill (type none)))'
 
 
-def text(t, x, y, ang=0):
-    return f'(text "{t}" (at {x} {y} {ang}) {font()})'
+def text(t, x, y, ang=0, size=TXT):
+    return f'(text "{t}" (at {x} {y} {ang}) {font(size)})'
 
 
 def lib_symbol(name, ref, value, graphics, pins, desc, power=False, hide_pin_numbers=False,
                hide_pin_names=False, ref_at=(0, 3.81), val_at=(0, -3.81), val_justify=None, offset=0.508):
     pw = " (power global)" if power else ""
     pn = " (pin_numbers (hide yes))" if hide_pin_numbers else ""
-    pnames = f'(pin_names (offset {offset}){" (hide yes)" if hide_pin_names else ""})'
+    off = "" if abs(offset - 0.508) < 1e-9 else f" (offset {offset})"   # 0,508 — значение по умолчанию, KiCad его не пишет
+    pnames = f'(pin_names{off}{" (hide yes)" if hide_pin_names else ""})' if (off or hide_pin_names) else ""
     body = "\n".join(f"      {g}" for g in graphics)
     pins_s = "\n".join(f"      {p}" for p in pins)
-    return f'''  (symbol "{LIB}:{name}"{pw}{pn} {pnames} (exclude_from_sim no) (in_bom yes) (on_board yes) (in_pos_files yes) (duplicate_pin_numbers_are_jumpers no)
+    return f'''  (symbol "{LIB}:{name}"{pw}{pn}{(" " + pnames) if pnames else ""} (exclude_from_sim no) (in_bom yes) (on_board yes) (in_pos_files yes) (duplicate_pin_numbers_are_jumpers no)
     {prop("Reference", ref, ref_at[0], ref_at[1], hide=power)}
     {prop("Value", value, val_at[0], val_at[1], justify=val_justify)}
     {prop("Footprint", "", 0, 0, hide=True)}
@@ -270,7 +276,7 @@ def sym_uuid(ref):
     return str(uuid.uuid5(SYM_NS, f"{PROJECT}:{ref}"))
 
 
-def place(lib, ref, value, x, y, rot=0, fields=None, ref_off=(2.54, -2.54), val_off=(2.54, 0),
+def place(lib, ref, value, x, y, rot=0, fields=None, ref_off=(2.54, -3.81), val_off=(2.54, 1.27),
           hide_ref=False, hide_val=False, justify="left"):
     """Ставит символ, возвращает {номер вывода: (x, y)} на листе."""
     used.add(lib)
@@ -279,7 +285,7 @@ def place(lib, ref, value, x, y, rot=0, fields=None, ref_off=(2.54, -2.54), val_
     if ref.startswith("#"):
         pwr_counter[0] += 1
         ref = f"{ref}0{pwr_counter[0]:02d}"
-    props = [prop("Reference", ref, r2(x + ref_off[0]), r2(y + ref_off[1]), hide=hide_ref, justify=justify),
+    props = [prop("Reference", ref, r2(x + ref_off[0]), r2(y + ref_off[1]), hide=hide_ref, justify=justify, size=REF),
              prop("Value", value, r2(x + val_off[0]), r2(y + val_off[1]), hide=hide_val, justify=justify),
              prop("Footprint", FOOTPRINTS.get(ref, ""), x, y, hide=True), prop("Datasheet", "", x, y, hide=True),
              prop("Description", "", x, y, hide=True)]
@@ -322,7 +328,7 @@ def path(*pts):
         wire(a, b)
 
 
-def note(t, x, y, size=1.27):
+def note(t, x, y, size=TXT):
     items.append(f'  (text "{t}" (exclude_from_sim no) (at {r2(x + OX)} {r2(y + OY)} 0) (effects (font (face "{FACE}") (size {size} {size}) (italic yes)) (justify left bottom)) (uuid "{U()}"))')
 
 
@@ -423,30 +429,170 @@ for i, (num, nm) in enumerate(_right):
 for i, (num, nm) in enumerate(_left):
     y = round(19.05 - i * 2.54, 2)
     _p.append(pin("passive", -15.24, y, 0, num, nm, 2.54)); _pos[num] = (-15.24, y)
-SYMBOLS["Module_TCA9548"] = lib_symbol("Module_TCA9548", "U", "Module_TCA9548", _g, _p,
+SYMBOLS["Module_TCA9548"] = lib_symbol("Module_TCA9548", "DD", "Module_TCA9548", _g, _p,
                                           "Модуль мультиплексора I2C CJMCU-9548 (TCA9548A/PCA9548A), устройство по ГОСТ 2.702; нумерация выводов условная",
                                           ref_at=(0, 25.4), val_at=(0, -25.4))
 PINS["Module_TCA9548"] = _pos
 
-# оптореле КР293КП2Б: светодиод (1 анод, 2 катод) и выходной ключ (4, 6). Номера выводов — по ТУ сверить
-_g = [rect(-6.35, -5.08, 6.35, 5.08, w=W),
-      poly([(-4.445, 3.556), (-4.445, 1.524)], w=W), poly([(-2.921, 3.556), (-2.921, 1.524), (-4.445, 2.54), (-2.921, 3.556)], w=W),
-      poly([(-4.445, 2.54), (-6.35, 2.54)], w=0), poly([(-2.921, 2.54), (-2.921, -2.54), (-6.35, -2.54)], w=W),          # LED: анод сверху, катод снизу
-      poly([(-1.27, 1.0), (1.27, -0.5)], w=W), poly([(0.508, -0.2), (1.27, -0.5), (1.0, 0.3)], w=W),                   # излучение
-      poly([(-1.27, -0.5), (1.27, -2.0)], w=W), poly([(0.508, -1.7), (1.27, -2.0), (1.0, -1.2)], w=W),
-      poly([(6.35, 2.54), (3.81, 2.54), (2.032, -1.27)], w=W), poly([(3.81, -2.54), (6.35, -2.54)], w=W)]           # ключ
-_p = [pin("passive", -8.89, 2.54, 0, "1", "A", 2.54), pin("passive", -8.89, -2.54, 0, "2", "K", 2.54),
-      pin("passive", 8.89, 2.54, 180, "4", "OUT", 2.54), pin("passive", 8.89, -2.54, 180, "6", "OUT", 2.54)]
+# оптореле КР293КП2Б — по образцу кафедры «оптрон» ГОСТ 2.730 (капсула 30 × 12, выводы вверх/вниз, светодиод слева,
+# два указателя излучения, приёмник справа); приёмник — замыкающий контакт ГОСТ 2.755 (у КР293 выход — MOSFET-ключ,
+# в ГОСТ 2.730 такого типа оптрона нет). Размеры 30,48 × 12,7 — образец, приведённый к сетке 1,27.
+# Выводы: 1 — анод (вверху слева), 2 — катод (внизу слева), 4 и 6 — ключ (справа); номера — по ТУ сверить.
+_g = [poly([(-8.89, 6.35), (8.89, 6.35)], w=W), poly([(-8.89, -6.35), (8.89, -6.35)], w=W),                       # капсула
+      arc(-8.89, 6.35, -15.24, 0, -8.89, -6.35), arc(8.89, -6.35, 15.24, 0, 8.89, 6.35),
+      poly([(-8.89, 6.35), (-8.89, 1.524)], w=W), poly([(-8.89, -1.524), (-8.89, -6.35)], w=W),                   # выводы светодиода
+      poly([(-10.414, 1.524), (-7.366, 1.524), (-8.89, -1.524), (-10.414, 1.524)], w=W),                          # треугольник, анод сверху
+      poly([(-10.414, -1.524), (-7.366, -1.524)], w=W),                                                          # черта катода
+      poly([(-5.08, 1.524), (2.54, 1.524)], w=W), poly([(1.27, 2.159), (2.54, 1.524), (1.27, 0.889)], w=W),      # указатели излучения
+      poly([(-5.08, -1.524), (2.54, -1.524)], w=W), poly([(1.27, -0.889), (2.54, -1.524), (1.27, -2.159)], w=W),
+      poly([(8.89, 6.35), (8.89, 1.905)], w=W), poly([(8.89, -6.35), (8.89, -1.905), (7.239, 2.413)], w=W)]      # контакт ГОСТ 2.755
+_p = [pin("passive", -8.89, 8.89, 270, "1", "A", 2.54), pin("passive", -8.89, -8.89, 90, "2", "K", 2.54),
+      pin("passive", 8.89, 8.89, 270, "4", "OUT", 2.54), pin("passive", 8.89, -8.89, 90, "6", "OUT", 2.54)]
 SYMBOLS["OptoRelay_KR293"] = lib_symbol("OptoRelay_KR293", "U", "OptoRelay_KR293", _g, _p,
-                                           "Оптореле КР293КП2Б (ГОСТ 2.730/2.755): вход — светодиод 1 (+), 2 (−); выход — ключ 4–6; номера выводов сверить по ТУ",
-                                           hide_pin_names=True, ref_at=(0, 7.62), val_at=(0, -7.62))
-PINS["OptoRelay_KR293"] = {"1": (-8.89, 2.54), "2": (-8.89, -2.54), "4": (8.89, 2.54), "6": (8.89, -2.54)}
+                                           "Оптореле КР293КП2Б: оптрон ГОСТ 2.730 (капсула) с замыкающим контактом ГОСТ 2.755; вход — светодиод 1 (анод), 2 (катод); выход — ключ 4–6; номера выводов сверить по ТУ",
+                                           hide_pin_names=True, ref_at=(0, 11.43), val_at=(0, -11.43))
+PINS["OptoRelay_KR293"] = {"1": (-8.89, 8.89), "2": (-8.89, -8.89), "4": (8.89, 8.89), "6": (8.89, -8.89)}
 
 # предохранитель (ГОСТ 2.727): прямоугольник 10 × 4 с линией по оси; горизонтально, 1 — слева
 SYMBOLS["Fuse"] = lib_symbol("Fuse", "FU", "Fuse", [rect(-5.08, -2.032, 5.08, 2.032, w=W), poly([(-7.62, 0), (7.62, 0)], w=W)],
                                 [pin("passive", -7.62, 0, 0, "1", "", 2.54), pin("passive", 7.62, 0, 180, "2", "", 2.54)],
                                 "Предохранитель самовосстанавливающийся (ГОСТ 2.727)", hide_pin_numbers=True, ref_at=(0, 3.81), val_at=(0, -3.81))
 PINS["Fuse"] = {"1": (-7.62, 0), "2": (7.62, 0)}
+
+
+# ---- символы платы CH: оптопара 6N137, реле с одним замыкающим контактом, модули DRV8871 и ACS712 ---------------
+
+# 6N137 (DIP-8, нумерация по datasheet Broadcom/Lite-On): 2 — анод, 3 — катод, 5 — GND, 6 — VO, 7 — VE, 8 — VCC;
+# выводы 1 и 4 у микросхемы свободны и на схеме не показаны.
+# УГО — оптрон по образцу кафедры (ГОСТ 2.730, капсула, светодиод слева, два указателя излучения), приёмник —
+# усилитель с логическим выходом (ГОСТ 2.759, треугольник) с выводами питания VCC/GND вверх/вниз и VE справа;
+# капсула 40,64 × 15,24 — шире образца, чтобы развести шесть выводов.
+_g = [poly([(-12.7, 7.62), (12.7, 7.62)], w=W), poly([(-12.7, -7.62), (12.7, -7.62)], w=W),                       # капсула
+      arc(-12.7, 7.62, -20.32, 0, -12.7, -7.62), arc(12.7, -7.62, 20.32, 0, 12.7, 7.62),
+      poly([(-12.7, 7.62), (-12.7, 1.524)], w=W), poly([(-12.7, -1.524), (-12.7, -7.62)], w=W),                   # выводы светодиода
+      poly([(-14.224, 1.524), (-11.176, 1.524), (-12.7, -1.524), (-14.224, 1.524)], w=W),                          # треугольник, анод сверху
+      poly([(-14.224, -1.524), (-11.176, -1.524)], w=W),                                                          # черта катода
+      poly([(-8.89, 1.524), (-1.27, 1.524)], w=W), poly([(-2.54, 2.159), (-1.27, 1.524), (-2.54, 0.889)], w=W),   # указатели излучения
+      poly([(-8.89, -1.524), (-1.27, -1.524)], w=W), poly([(-2.54, -0.889), (-1.27, -1.524), (-2.54, -2.159)], w=W),
+      poly([(2.54, 3.81), (2.54, -3.81), (10.16, 0), (2.54, 3.81)], w=W),                                         # усилитель (ГОСТ 2.759)
+      poly([(10.16, 0), (20.32, 0)], w=W),                                                                       # выход VO (6)
+      poly([(3.81, 7.62), (3.81, 3.175)], w=W), poly([(3.81, -7.62), (3.81, -3.175)], w=W),                       # VCC (8) сверху, GND (5) снизу
+      poly([(20.32, 3.81), (7.62, 3.81), (7.62, 1.27)], w=W)]                                                     # VE (7) справа
+_p = [pin("passive", -12.7, 10.16, 270, "2", "A", 2.54), pin("passive", -12.7, -10.16, 90, "3", "K", 2.54),
+      pin("power_in", 3.81, 10.16, 270, "8", "VCC", 2.54), pin("power_in", 3.81, -10.16, 90, "5", "GND", 2.54),
+      pin("output", 22.86, 0, 180, "6", "VO", 2.54), pin("input", 22.86, 3.81, 180, "7", "VE", 2.54)]
+SYMBOLS["Opto_6N137"] = lib_symbol("Opto_6N137", "U", "Opto_6N137", _g, _p,
+    "Оптопара 6N137 (DIP-8): оптрон ГОСТ 2.730 с усилителем на выходе; 2 — анод, 3 — катод, 5 — GND, 6 — выход (открытый коллектор), 7 — VE, 8 — VCC; выводы 1, 4 свободны",
+    hide_pin_names=True, ref_at=(0, 12.7), val_at=(0, -12.7))
+PINS["Opto_6N137"] = {"2": (-12.7, 10.16), "3": (-12.7, -10.16), "8": (3.81, 10.16), "5": (3.81, -10.16),
+                      "6": (22.86, 0), "7": (22.86, 3.81)}
+
+# ГОСТ 2.756 + 2.755, совмещённый способ: реле с одним замыкающим контактом (обесточенное положение — разомкнуто)
+SYMBOLS["Relay_SPST_NO"] = lib_symbol("Relay_SPST_NO", "K", "Relay_SPST_NO",
+    [rect(-6.35, -3.175, 6.35, 3.175, w=W),
+     poly([(-6.35, 8.89), (-2.54, 8.89)], w=W),                                            # COM
+     poly([(-2.54, 8.89), (3.81, 11.43)], w=W),                                            # подвижный контакт (разомкнут)
+     poly([(5.08, 8.89), (6.35, 8.89)], w=W), poly([(5.08, 8.89), (5.08, 10.16)], w=W),    # NO
+     '(polyline (pts (xy 0 3.175) (xy 0 9.525)) (stroke (width 0.1524) (type dash)) (fill (type none)))',
+     text("A1", -5.08, -4.445), text("A2", 5.08, -4.445)],
+    [pin("passive", -8.89, 0, 0, "1", "A1", 2.54), pin("passive", 8.89, 0, 180, "2", "A2", 2.54),
+     pin("passive", -8.89, 8.89, 0, "3", "COM", 2.54), pin("passive", 8.89, 8.89, 180, "4", "NO", 2.54)],
+    "Реле с одним замыкающим контактом (ГОСТ 2.755, 2.756); нумерация выводов условная, сверить по datasheet",
+    hide_pin_names=True, ref_at=(0, -6.35), val_at=(0, -8.89))
+PINS["Relay_SPST_NO"] = {"1": (-8.89, 0), "2": (8.89, 0), "3": (-8.89, 8.89), "4": (8.89, 8.89)}
+
+# модуль драйвера ДПТ DRV8871 (устройство по ГОСТ 2.702); нумерация выводов условная — сверить по шелкографии
+_g = [rect(-11.43, -10.16, 11.43, 10.16, w=W), text("DRV8871", 0, 2.54), text("драйвер ДПТ", 0, -1.27)]
+_p = [pin("input", -13.97, 5.08, 0, "3", "IN1", 2.54), pin("input", -13.97, 0, 0, "4", "IN2", 2.54),
+      pin("power_in", 0, 12.7, 270, "1", "VM", 2.54), pin("power_in", 0, -12.7, 90, "2", "GND", 2.54),
+      pin("output", 13.97, 5.08, 180, "5", "OUT1", 2.54), pin("output", 13.97, 0, 180, "6", "OUT2", 2.54)]
+SYMBOLS["Module_DRV8871"] = lib_symbol("Module_DRV8871", "DA", "Module_DRV8871", _g, _p,
+    "Модуль драйвера ДПТ DRV8871 (устройство, ГОСТ 2.702): 1 VM, 2 GND, 3 IN1, 4 IN2, 5 OUT1, 6 OUT2; нумерация условная",
+    ref_at=(0, 12.7), val_at=(0, -15.24), offset=0.762)
+PINS["Module_DRV8871"] = {"3": (-13.97, 5.08), "4": (-13.97, 0), "1": (0, 12.7), "2": (0, -12.7),
+                          "5": (13.97, 5.08), "6": (13.97, 0)}
+
+# модуль датчика тока ACS712-20A: силовая цепь IP+ — IP- проходит насквозь (слева направо), сигнальные выводы снизу;
+# штриховая линия — гальваническая развязка внутри микросхемы (2,1 кВ по datasheet Allegro)
+_g = [rect(-12.7, -7.62, 12.7, 7.62, w=W), text("ACS712", 0, 3.81), text("20 А", 0, 1.27),
+      '(polyline (pts (xy -12.7 -1.27) (xy 12.7 -1.27)) (stroke (width 0.1524) (type dash)) (fill (type none)))',
+      poly([(-12.7, 3.81), (12.7, 3.81)], w=W)]
+_p = [pin("passive", -15.24, 3.81, 0, "4", "IP+", 2.54), pin("passive", 15.24, 3.81, 180, "5", "IP-", 2.54),
+      pin("power_in", -7.62, -10.16, 90, "1", "VCC", 2.54), pin("output", 0, -10.16, 90, "2", "OUT", 2.54),
+      pin("power_in", 7.62, -10.16, 90, "3", "GND", 2.54)]
+SYMBOLS["Module_ACS712"] = lib_symbol("Module_ACS712", "DA", "Module_ACS712", _g, _p,
+    "Модуль датчика тока ACS712-20A (устройство, ГОСТ 2.702): 4 IP+, 5 IP- — измеряемая цепь; 1 VCC, 2 OUT, 3 GND — сигнальная часть; нумерация условная",
+    ref_at=(0, 10.16), val_at=(0, -13.97), offset=0.762)
+PINS["Module_ACS712"] = {"4": (-15.24, 3.81), "5": (15.24, 3.81), "1": (-7.62, -10.16), "2": (0, -10.16),
+                         "3": (7.62, -10.16)}
+
+
+# то же реле, но зеркально: контакты слева (источники), COM справа (потребитель) — чтобы не поворачивать символ
+SYMBOLS["Relay_SPDT_R"] = lib_symbol("Relay_SPDT_R", "K", "Relay_SPDT_R",
+    [rect(-6.35, -3.175, 6.35, 3.175, w=W),
+     poly([(6.35, 8.89), (2.54, 8.89)], w=W),                                              # COM
+     poly([(2.54, 8.89), (-3.81, 11.43)], w=W),                                            # подвижный контакт (на NC)
+     poly([(-5.08, 11.43), (-6.35, 11.43)], w=W), poly([(-5.08, 11.43), (-5.08, 10.16)], w=W),   # NC
+     poly([(-5.08, 6.35), (-6.35, 6.35)], w=W), poly([(-5.08, 6.35), (-5.08, 7.62)], w=W),       # NO
+     '(polyline (pts (xy 0 3.175) (xy 0 9.525)) (stroke (width 0.1524) (type dash)) (fill (type none)))',
+     text("A2", -5.08, -4.445), text("A1", 5.08, -4.445)],
+    [pin("passive", 8.89, 0, 180, "1", "A1", 2.54), pin("passive", -8.89, 0, 0, "2", "A2", 2.54),
+     pin("passive", 8.89, 8.89, 180, "3", "COM", 2.54), pin("passive", -8.89, 6.35, 0, "4", "NO", 2.54),
+     pin("passive", -8.89, 11.43, 0, "5", "NC", 2.54)],
+    "Реле, один переключающий контакт, зеркальное исполнение (ГОСТ 2.755, 2.756): контакты NC, NO слева, COM справа",
+    hide_pin_names=True, ref_at=(0, -6.35), val_at=(0, -8.89))
+PINS["Relay_SPDT_R"] = {"1": (8.89, 0), "2": (-8.89, 0), "3": (8.89, 8.89), "4": (-8.89, 6.35), "5": (-8.89, 11.43)}
+
+
+# ---- символы платы LR: расширитель портов PCF8574, ограничитель BAT54S, двухцветный светодиод ------------------
+
+# PCF8574 в DIP-16 (нумерация по datasheet NXP/TI): 1 A0, 2 A1, 3 A2, 4…7 P0…P3, 8 VSS, 9…12 P4…P7,
+# 13 INT, 14 SCL, 15 SDA, 16 VDD
+_left = [("4", "P0"), ("5", "P1"), ("6", "P2"), ("7", "P3"), ("9", "P4"), ("10", "P5"), ("11", "P6"), ("12", "P7")]
+_right = [("16", "VDD"), ("14", "SCL"), ("15", "SDA"), ("13", "INT"), ("1", "A0"), ("2", "A1"), ("3", "A2"), ("8", "VSS")]
+_g = [rect(-10.16, -20.32, 10.16, 20.32, w=W), text("PCF8574", 0, 2.54), text("8 бит I2C", 0, -2.54)]
+_p, _pos = [], {}
+for _i, (_num, _nm) in enumerate(_left):
+    _y = 17.78 - _i * 5.08
+    _p.append(pin("passive", -12.7, _y, 0, _num, _nm, 2.54)); _pos[_num] = (-12.7, _y)
+for _i, (_num, _nm) in enumerate(_right):
+    _y = 17.78 - _i * 5.08
+    _k = "power_in" if _nm in ("VDD", "VSS") else "passive"
+    _p.append(pin(_k, 12.7, _y, 180, _num, _nm, 2.54)); _pos[_num] = (12.7, _y)
+SYMBOLS["IC_PCF8574"] = lib_symbol("IC_PCF8574", "DD", "IC_PCF8574", _g, _p,
+    "Расширитель портов PCF8574 (DIP-16, ГОСТ 2.702): 1–3 A0…A2, 4–7 и 9–12 — выходы P0…P7, 8 VSS, 13 INT, 14 SCL, 15 SDA, 16 VDD",
+    ref_at=(0, 22.86), val_at=(0, -22.86), offset=0.762)
+PINS["IC_PCF8574"] = _pos
+
+# BAT54S (SOT-23, сборка из двух диодов Шоттки последовательно): 3 — общая точка (сигнал), 2 — катод верхнего
+# диода (к 3,3 В), 1 — анод нижнего (к земле). Нумерация по datasheet — сверить перед платой
+_g = [poly([(-7.62, 0), (-2.54, 0)], w=W), poly([(-2.54, -3.81), (-2.54, 3.81)], w=W),
+      poly([(-1.27, 2.54), (-1.27, 5.08), (1.27, 3.81), (-1.27, 2.54)], w=W), poly([(1.27, 2.54), (1.27, 5.08)], w=W),
+      poly([(1.27, 3.81), (7.62, 3.81)], w=W), poly([(-2.54, 3.81), (-1.27, 3.81)], w=W),
+      poly([(1.27, -2.54), (1.27, -5.08), (-1.27, -3.81), (1.27, -2.54)], w=W), poly([(-1.27, -2.54), (-1.27, -5.08)], w=W),
+      poly([(1.27, -3.81), (7.62, -3.81)], w=W), poly([(-2.54, -3.81), (-1.27, -3.81)], w=W)]
+_p = [pin("passive", -10.16, 0, 0, "3", "IN", 2.54), pin("passive", 10.16, 3.81, 180, "2", "K", 2.54),
+      pin("passive", 10.16, -3.81, 180, "1", "A", 2.54)]
+SYMBOLS["D_BAT54S"] = lib_symbol("D_BAT54S", "VD", "D_BAT54S", _g, _p,
+    "Сборка BAT54S (ГОСТ 2.730): ограничитель сигнала на шины; 3 — сигнал, 2 — к 3,3 В, 1 — к земле; нумерация по datasheet, сверить",
+    hide_pin_names=True, ref_at=(0, 7.62), val_at=(0, -7.62))
+PINS["D_BAT54S"] = {"3": (-10.16, 0), "2": (10.16, 3.81), "1": (10.16, -3.81)}
+
+# Светодиод двухцветный с общим анодом (3 вывода): 1 — анод (сверху), 2 и 3 — катоды (снизу)
+_g = [poly([(0, 7.62), (0, 3.81)], w=W),
+      poly([(-2.54, 3.81), (2.54, 3.81)], w=W),
+      poly([(-4.445, 0.0), (-0.635, 0.0), (-2.54, -2.54), (-4.445, 0.0)], w=W), poly([(-4.445, -2.54), (-0.635, -2.54)], w=W),
+      poly([(-2.54, 3.81), (-2.54, 0.0)], w=W), poly([(-2.54, -2.54), (-2.54, -7.62)], w=W),
+      poly([(0.635, 0.0), (4.445, 0.0), (2.54, -2.54), (0.635, 0.0)], w=W), poly([(0.635, -2.54), (4.445, -2.54)], w=W),
+      poly([(2.54, 3.81), (2.54, 0.0)], w=W), poly([(2.54, -2.54), (2.54, -7.62)], w=W),
+      poly([(-5.715, 2.54), (-4.445, 3.81)], w=W), poly([(-4.445, 3.81), (-5.08, 3.175)], w=W),
+      poly([(4.445, 2.54), (5.715, 3.81)], w=W), poly([(5.715, 3.81), (5.08, 3.175)], w=W)]
+_p = [pin("passive", 0, 10.16, 270, "1", "A", 2.54), pin("passive", -2.54, -10.16, 90, "2", "K1", 2.54),
+      pin("passive", 2.54, -10.16, 90, "3", "K2", 2.54)]
+SYMBOLS["LED_Bicolor_CA"] = lib_symbol("LED_Bicolor_CA", "HL", "LED_Bicolor_CA", _g, _p,
+    "Светодиод двухцветный с общим анодом (ГОСТ 2.730): 1 — анод, 2 — катод зелёного, 3 — катод красного; цоколёвку сверить",
+    hide_pin_names=True, ref_at=(6.35, 5.08), val_at=(6.35, 2.54), val_justify="left")
+PINS["LED_Bicolor_CA"] = {"1": (0, 10.16), "2": (-2.54, -10.16), "3": (2.54, -10.16)}
 
 
 def port(net, x, y, wire_dir, incoming):
@@ -481,7 +627,7 @@ def gnd_dn(net, x, y):
 
 # ---- разъём таблицей (ГОСТ 2.702, стиль курсового проекта кафедры): колонки «Контакт» и «Цепь», строка на контакт,
 # обозначение X под таблицей слева; выводы — со стороны, обращённой к схеме ----------------------------------------
-COL_N, COL_NET, ROW = 10.16, 17.78, 2.54     # ширина колонок и шаг строк
+COL_N, COL_NET, ROW = 17.78, 20.32, 5.08     # ширина колонок и шаг строк (кегль 2,5 мм: «Контакт» ~16,6 мм)
 TBL_W = COL_N + COL_NET
 
 
@@ -599,18 +745,50 @@ def sig(net, x, y, right=True):
 import re
 
 
-def to_v8(sym):
-    """Символ в формат библиотеки KiCad 8: убираем токены, которых в 8.0 не было."""
-    sym = sym.replace(f'"{LIB}:', '"', 1)
-    sym = sym.replace(" (in_pos_files yes) (duplicate_pin_numbers_are_jumpers no)", "")
-    sym = sym.replace(" (power global)", " (power)")
-    sym = sym.replace("(pin_numbers (hide yes))", "(pin_numbers hide)")
-    sym = sym.replace(" (hide yes))", " hide)")            # pin_names (... (hide yes)) → hide)
-    sym = sym.replace(" (show_name no) (do_not_autoplace no)", "")
-    sym = re.sub(r" \(hide yes\) (\(effects \(font \(face \"[^\"]+\"\) \(size [\d.]+ [\d.]+\)(?: \(italic yes\))?\)(?: \(justify \w+\))?)\)", r" \1 hide)", sym)
-    sym = sym.replace("(hide yes) (name", "hide (name")
-    sym = sym.replace("\n    (embedded_fonts no)", "")
-    return sym
+def _clean_numbers(text):
+    """Числа в s-выражениях — как их пишет KiCad: без хвостов двоичного представления (…000001) и без «.0»."""
+    def f(m):
+        v = round(float(m.group(0)), 4)
+        return str(int(v)) if v == int(v) else repr(v)
+    parts = text.split('"')                       # чётные части — вне кавычек; строки не трогаем
+    for i in range(0, len(parts), 2):
+        parts[i] = re.sub(r'(?<=[ (])-?\d+\.\d+(?=[ )])', f, parts[i])
+    return '"'.join(parts)
+
+
+def to_lib(sym):
+    """Символ для файла библиотеки KiCad 10: тот же текст, что в lib_symbols схемы, без префикса библиотеки."""
+    return sym.replace(f'"{LIB}:', '"', 1)
+
+
+def _top_symbols(text):
+    """Блоки (symbol "имя" …) верхнего уровня из текста библиотеки любой разметки (генератор или KiCad):
+    скобки считаются с учётом кавычек. Возвращает {имя: исходный текст блока}."""
+    out, i, n = {}, 0, len(text)
+    while True:
+        j = text.find('(symbol "', i)
+        if j < 0:
+            break
+        depth, k, q = 0, j, False
+        while k < n:
+            c = text[k]
+            if q:
+                if c == '\\': k += 1
+                elif c == '"': q = False
+            elif c == '"': q = True
+            elif c == '(': depth += 1
+            elif c == ')':
+                depth -= 1
+                if depth == 0:
+                    break
+            k += 1
+        block = text[j:k + 1]
+        name = re.match(r'\(symbol "([^"]+)"', block).group(1)
+        # вложенные (symbol "X_0_1") пропускаем: они внутри блока верхнего уровня
+        if ':' not in name and not re.search(r'_\d+_\d+$', name):
+            out[name] = block
+        i = k + 1
+    return out
 
 
 def sch_text(paper, title_block):
@@ -619,25 +797,25 @@ def sch_text(paper, title_block):
     tb = "\n".join([f'    (title "{title_block["title"]}")', f'    (date "{title_block.get("date", DATE)}")',
                     f'    (rev "{title_block["rev"]}")', f'    (company "{title_block.get("company", "МГТУ им. Н.Э. Баумана, группа СМ7-21М")}")'] +
                    [f'    (comment {i} "{title_block.get(f"comment{i}", "---")}")' for i in range(1, 7)])
-    return (f'(kicad_sch (version {SCH_VER}) (generator "eeschema") (generator_version "{SCH_GEN_VER}")\n'
+    return _clean_numbers(f'(kicad_sch (version {SCH_VER}) (generator "eeschema") (generator_version "{SCH_GEN_VER}")\n'
             f'  (uuid "{ROOT_UUID}")\n  (paper "{paper}")\n  (title_block\n{tb}\n  )\n  (lib_symbols\n{lib_symbols_sch}\n  )\n'
             + "\n".join(items) + '\n  (sheet_instances (path "/" (page "1")))\n  (embedded_fonts no)\n)\n')
 
 
 def lib_text():
     """Библиотека — объединение: символы этого генератора + символы из файла, которые использует схема другой
-    платы (порты/таблицы создаются каждым генератором отдельно; неиспользуемые символы отбрасываются)."""
-    syms = {n: to_v8(SYMBOLS[n]) for n in SYMBOLS}
+    платы (порты/таблицы создаются каждым генератором отдельно; неиспользуемые символы отбрасываются).
+    Формат — KiCad 10 (LIB_VER); KiCad при сохранении лишь переразмечает отступы."""
+    syms = {n: "  " + to_lib(SYMBOLS[n]).strip() for n in SYMBOLS}
     used_elsewhere = set()
     for sch in (ROOT / "boards").glob("*/*.kicad_sch"):
         if sch.stem != PROJECT:
             used_elsewhere |= set(re.findall(rf'\(lib_id "{LIB}:([^"]+)"\)', sch.read_text(encoding="utf-8")))
     if OUT_LIB.exists():
-        old = OUT_LIB.read_text(encoding="utf-8")
-        for m in re.finditer(r'\n  \(symbol "([^"]+)"(?: \(power\))?(?: \(pin_numbers hide\))? \(pin_names.*?\n  \)(?=\n)', old, re.S):
-            if m.group(1) in used_elsewhere:
-                syms.setdefault(m.group(1), m.group(0)[1:])
-    return (f'(kicad_symbol_lib (version {LIB_VER}) (generator "kicad_symbol_editor") (generator_version "{LIB_GEN_VER}")\n'
+        for name, block in _top_symbols(OUT_LIB.read_text(encoding="utf-8")).items():
+            if name in used_elsewhere:
+                syms.setdefault(name, "  " + re.sub(r"\n\t*", "\n    ", block.strip()))
+    return _clean_numbers(f'(kicad_symbol_lib (version {LIB_VER}) (generator "kicad_symbol_editor") (generator_version "{LIB_GEN_VER}")\n'
             + "\n".join(syms[n] for n in sorted(syms)) + "\n)\n")
 
 

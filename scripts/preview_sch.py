@@ -59,9 +59,24 @@ for inst in re.finditer(r'\n  \(symbol \(lib_id "manipulator:([^"]+)"\) \(at ([-
         elif kind == "circ":
             cx, cy, r = data; c = T(x, y, cx, cy, rot)
             ax.add_patch(Circle(c, r, fill=False, lw=0.7, ec=col))
-        elif kind == "arc":
-            pts = [T(x, y, data[i], data[i + 1], rot) for i in (0, 2, 4)]
-            ax.plot([p[0] for p in pts], [p[1] for p in pts], color=col, lw=0.7)
+        elif kind == "arc":                      # дуга по трём точкам (start, mid, end): центр — пересечение серединных перпендикуляров
+            (x1, y1), (x2, y2), (x3, y3) = [T(x, y, data[i], data[i + 1], rot) for i in (0, 2, 4)]
+            d = 2 * (x1 * (y2 - y3) + x2 * (y3 - y1) + x3 * (y1 - y2))
+            if abs(d) < 1e-9:
+                ax.plot([x1, x2, x3], [y1, y2, y3], color=col, lw=0.7)
+            else:
+                import math
+                ux = ((x1**2 + y1**2) * (y2 - y3) + (x2**2 + y2**2) * (y3 - y1) + (x3**2 + y3**2) * (y1 - y2)) / d
+                uy = ((x1**2 + y1**2) * (x3 - x2) + (x2**2 + y2**2) * (x1 - x3) + (x3**2 + y3**2) * (x2 - x1)) / d
+                r = math.hypot(x1 - ux, y1 - uy)
+                a1, am, a3 = (math.atan2(py - uy, px - ux) for px, py in ((x1, y1), (x2, y2), (x3, y3)))
+                # идём от a1 к a3 в ту сторону, где лежит am
+                def ccw(a, b): return (b - a) % (2 * math.pi)
+                if ccw(a1, am) <= ccw(a1, a3):
+                    angs = [a1 + ccw(a1, a3) * k / 24 for k in range(25)]
+                else:
+                    angs = [a1 - ccw(a3, a1) * k / 24 for k in range(25)]
+                ax.plot([ux + r * math.cos(a) for a in angs], [uy + r * math.sin(a) for a in angs], color=col, lw=0.7)
     for px, py, ang, ln, hidden in pins:
         if hidden:
             continue
