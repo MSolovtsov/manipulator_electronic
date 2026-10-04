@@ -6,13 +6,16 @@
   * подписи не накладываются друг на друга, на корпуса других символов и на провода;
     провода не проходят сквозь корпуса;
   * всё содержимое — внутри рабочего поля рамки ГОСТ (lib/worksheets/gost_portrait.kicad_wks)
-    с запасом MARGIN и вне основной надписи (185 × 55 мм справа внизу).
+    с запасом MARGIN и вне основной надписи (185 × 55 мм справа внизу);
+  * символы, концы проводов, junction и no_connect стоят в узлах сетки GRID (1,27 мм);
+  * у каждого символа (кроме #PWR) поле Footprint заполнено, и файл footprint'а
+    существует в lib/footprints/manipulator.pretty/ (план проверки, п. 2 и п. 6 CLAUDE.md).
 Ширина текста оценивается как 0,95·размер шрифта на символ — оценка, не точный рендер.
 
 Запуск: python3 scripts/check_sch.py boards/PS/PS.kicad_sch
 Код возврата 1, если найдены проблемы.
 """
-import re, sys
+import re, sys, os
 
 path = sys.argv[1] if len(sys.argv) > 1 else "boards/PS/PS.kicad_sch"
 s = open(path, encoding="utf-8").read()
@@ -21,6 +24,8 @@ pw, ph = PAPER[re.search(r'\(paper "(A\d)"', s).group(1)]
 FRAME = (20.0, 5.0, pw - 5.0, ph - 5.0)      # рабочее поле рамки: слева поле 8 + графы 12
 TITLE = (pw - 5.0 - 185.0, ph - 5.0 - 55.0)  # левый верхний угол основной надписи
 MARGIN = 8.0
+GRID = 1.27
+FP_DIR = os.path.join(os.path.dirname(os.path.abspath(path)), "..", "..", "lib", "footprints", "manipulator.pretty")
 
 # ---- геометрия и связность ----
 libpins={}
@@ -76,7 +81,8 @@ for m in re.finditer(r'\n  \(symbol "manipulator:([^"]+)"(.*?)\n  \)', s, re.S):
     for a,b,c,d in re.findall(r'\(pin \w+ line \(at ([-\d.]+) ([-\d.]+) (\d+)\) \(length ([-\d.]+)\)',body):
         xs.append(float(a)); ys.append(float(b))
     libbox[name]=(min(xs),min(ys),max(xs),max(ys)) if xs else (0,0,0,0)
-    libtexts[name]=[(t,float(x),float(y)) for t,x,y in re.findall(r'\(text "([^"]+)" \(at ([-\d.]+) ([-\d.]+) \d+\)',body)]
+    libtexts[name]=[(t,float(x),float(y),float(sz)) for t,x,y,sz in re.findall(
+        r'\(text "([^"]+)" \(at ([-\d.]+) ([-\d.]+) \d+\) \(effects \(font \(face "[^"]*"\) \(size ([-\d.]+)',body)]
 W=0.95  # ширина символа ≈ 0.95·size (шрифт KiCad)
 boxes=[]  # (x1,y1,x2,y2, label)
 bodies=[]
@@ -97,9 +103,9 @@ for name,x,y,rot,body in inst:
         elif just=='right': x1,x2=px-w,px
         else: x1,x2=px-w/2,px+w/2
         boxes.append((x1,py-h/2,x2,py+h/2,f'{ref}.{pname}={val}'))
-    for t,tx,ty in libtexts[name]:
-        X,Y=(x+tx,y-ty) if rot==0 else (x-tx,y+ty); w=len(t)*1.27*W
-        boxes.append((X-w/2,Y-0.635,X+w/2,Y+0.635,f'{ref}.text={t}'))
+    for t,tx,ty,sz in libtexts[name]:
+        X,Y=(x+tx,y-ty) if rot==0 else (x-tx,y+ty); w=len(t)*sz*W
+        boxes.append((X-w/2,Y-sz/2,X+w/2,Y+sz/2,f'{ref}.text={t}'))
 for m in re.finditer(r'\n  \(text "([^"]*)" \(exclude_from_sim no\) \(at ([-\d.]+) ([-\d.]+) 0\) \(effects \(font (?:\(face "[^"]*"\) )?\(size ([-\d.]+) [-\d.]+\)(?: \(italic yes\))?\) \(justify left bottom\)\)',s):
     t,x,y,size=m.group(1),float(m.group(2)),float(m.group(3)),float(m.group(4))
     boxes.append((x,y-size,x+len(t)*size*W,y,f'note={t[:30]}'))
@@ -149,4 +155,32 @@ for w in wires:
     for (x, y) in ((w[0], w[1]), (w[2], w[3])):
         if not in_field(x, y): frame_bad.append(('провод у рамки/на основной надписи', (round(x,1), round(y,1)))); break
 print('поля рамки — проблем:', len(frame_bad)); [print(' ', b) for b in frame_bad]
-sys.exit(1 if (geo_bad or bad or frame_bad) else 0)
+
+# ---- сетка ----
+def off_grid(v): return round(float(v) * 100) % round(GRID * 100) != 0
+grid_bad = []
+for name, x, y, rot, body in inst:
+    ref = re.search(r'\(property "Reference" "([^"]+)"', body).group(1)
+    if off_grid(x) or off_grid(y): grid_bad.append(('символ вне сетки', ref, (x, y)))
+for w in wires:
+    for (x, y) in ((w[0], w[1]), (w[2], w[3])):
+        if off_grid(x) or off_grid(y): grid_bad.append(('конец провода вне сетки', (x, y))); break
+for j in juncs:
+    if off_grid(j[0]) or off_grid(j[1]): grid_bad.append(('junction вне сетки', j))
+for n in ncs:
+    if off_grid(n[0]) or off_grid(n[1]): grid_bad.append(('no_connect вне сетки', n))
+print('сетка %.2f — проблем:' % GRID, len(grid_bad)); [print(' ', b) for b in grid_bad]
+
+# ---- посадочные места ----
+fp_bad = []
+for name, x, y, rot, body in inst:
+    ref = re.search(r'\(property "Reference" "([^"]+)"', body).group(1)
+    if ref.startswith('#'): continue
+    m = re.search(r'\(property "Footprint" "([^"]*)"', body)
+    fp = m.group(1) if m else ''
+    if not fp: fp_bad.append(('Footprint не назначен', ref)); continue
+    lib, _, fname = fp.partition(':')
+    if lib != 'manipulator': fp_bad.append(('Footprint не из библиотеки manipulator', ref, fp)); continue
+    if not os.path.exists(os.path.join(FP_DIR, fname + '.kicad_mod')): fp_bad.append(('файл footprint отсутствует в lib', ref, fp))
+print('посадочные места — проблем:', len(fp_bad)); [print(' ', b) for b in fp_bad]
+sys.exit(1 if (geo_bad or bad or frame_bad or grid_bad or fp_bad) else 0)
