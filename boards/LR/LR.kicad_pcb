@@ -1,0 +1,8875 @@
+(kicad_pcb
+	(version 20260206)
+	(generator "pcbnew")
+	(generator_version "10.0")
+	(general
+		(thickness 1.6)
+		(legacy_teardrops no)
+	)
+	(paper "A4")
+	(layers
+		(0 "F.Cu" signal)
+		(2 "B.Cu" signal)
+		(9 "F.Adhes" user "F.Adhesive")
+		(11 "B.Adhes" user "B.Adhesive")
+		(13 "F.Paste" user)
+		(15 "B.Paste" user)
+		(5 "F.SilkS" user "F.Silkscreen")
+		(7 "B.SilkS" user "B.Silkscreen")
+		(1 "F.Mask" user)
+		(3 "B.Mask" user)
+		(17 "Dwgs.User" user "User.Drawings")
+		(19 "Cmts.User" user "User.Comments")
+		(21 "Eco1.User" user "User.Eco1")
+		(23 "Eco2.User" user "User.Eco2")
+		(25 "Edge.Cuts" user)
+		(27 "Margin" user)
+		(31 "F.CrtYd" user "F.Courtyard")
+		(29 "B.CrtYd" user "B.Courtyard")
+		(35 "F.Fab" user)
+		(33 "B.Fab" user)
+		(39 "User.1" user)
+		(41 "User.2" user)
+		(43 "User.3" user)
+		(45 "User.4" user)
+	)
+	(setup
+		(pad_to_mask_clearance 0)
+		(allow_soldermask_bridges_in_footprints no)
+		(tenting
+			(front yes)
+			(back yes)
+		)
+		(covering
+			(front no)
+			(back no)
+		)
+		(plugging
+			(front no)
+			(back no)
+		)
+		(capping no)
+		(filling no)
+		(pcbplotparams
+			(layerselection 0x00000000_00000000_55555555_5755f5ff)
+			(plot_on_all_layers_selection 0x00000000_00000000_00000000_00000000)
+			(disableapertmacros no)
+			(usegerberextensions no)
+			(usegerberattributes yes)
+			(usegerberadvancedattributes yes)
+			(creategerberjobfile yes)
+			(dashed_line_dash_ratio 12)
+			(dashed_line_gap_ratio 3)
+			(svgprecision 4)
+			(plotframeref no)
+			(mode 1)
+			(useauxorigin no)
+			(pdf_front_fp_property_popups yes)
+			(pdf_back_fp_property_popups yes)
+			(pdf_metadata yes)
+			(pdf_single_document no)
+			(dxfpolygonmode yes)
+			(dxfimperialunits yes)
+			(dxfusepcbnewfont yes)
+			(psnegative no)
+			(psa4output no)
+			(plot_black_and_white yes)
+			(sketchpadsonfab no)
+			(plotpadnumbers no)
+			(hidednponfab no)
+			(sketchdnponfab yes)
+			(crossoutdnponfab yes)
+			(subtractmaskfromsilk no)
+			(outputformat 1)
+			(mirror no)
+			(drillshape 1)
+			(scaleselection 1)
+			(outputdirectory "")
+		)
+	)
+	(footprint "manipulator:TermGroup_5x_Banana4"
+		(layer "F.Cu")
+		(uuid "03951ef5-ede7-4ee0-9583-afb93daa3cb7")
+		(at 61.575 110.75)
+		(descr "Группа из 5 комбинированных приборных клемм E-051 (винт + гнездо 4 мм), раскладка 3 × 2: ПРЕДВАРИТЕЛЬНОЕ место, модель клеммы не выбрана — сверить шаг и отверстие")
+		(tags "terminal banana 4mm")
+		(property "Reference" "X7"
+			(at 0 -17.325 0)
+			(layer "F.SilkS")
+			(uuid "c508fa74-e662-4909-a6f7-a6baf3d2f0c2")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Value" "клеммы"
+			(at 0 17.325 0)
+			(layer "F.Fab")
+			(uuid "653d3d8e-1fa9-4c4a-a022-44b1dd597ca2")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "77c4b0f0-724e-4094-91af-93c61224b17c")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Description" ""
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "2766f412-b7d4-4d1b-9ac5-6d60928a39a0")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "BaseID" "E-051"
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "a83367e2-aa79-4476-bb71-936999965329")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Status" "Предложение"
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "e51529f5-369c-489c-a771-1a949bbeb916")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Назначение" "Клеммы группы M3 (5 шт. E-051, винт + гнездо «банан» 4 мм): 1 IN1, 2 IN2, 3 SDA, 4 SCL, 5 GND_L"
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "a79cda55-822a-445f-99c2-b672e0eaa2b9")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(path "/eb82f605-9196-5d95-805f-040e4571440f")
+		(sheetname "/")
+		(sheetfile "LR.kicad_sch")
+		(units
+			(unit
+				(name "A")
+				(pins "1" "2" "3" "4" "5")
+			)
+		)
+		(attr through_hole)
+		(duplicate_pad_numbers_are_jumpers no)
+		(fp_circle
+			(center -19.05 -9.525)
+			(end -13.05 -9.525)
+			(stroke
+				(width 0.15)
+				(type default)
+			)
+			(fill no)
+			(layer "F.SilkS")
+			(uuid "3118d2b1-cbbb-4b28-b9fb-9952cc60672f")
+		)
+		(fp_circle
+			(center -19.05 9.525)
+			(end -13.05 9.525)
+			(stroke
+				(width 0.15)
+				(type default)
+			)
+			(fill no)
+			(layer "F.SilkS")
+			(uuid "72559da2-9ed8-45f9-830f-aba7680a7fe5")
+		)
+		(fp_circle
+			(center 0 -9.525)
+			(end 6 -9.525)
+			(stroke
+				(width 0.15)
+				(type default)
+			)
+			(fill no)
+			(layer "F.SilkS")
+			(uuid "ef49ff64-6b61-453d-93c4-75d8d9a5151f")
+		)
+		(fp_circle
+			(center 0 9.525)
+			(end 6 9.525)
+			(stroke
+				(width 0.15)
+				(type default)
+			)
+			(fill no)
+			(layer "F.SilkS")
+			(uuid "76367295-2685-4a3d-8d86-651cd3633c69")
+		)
+		(fp_circle
+			(center 19.05 -9.525)
+			(end 25.05 -9.525)
+			(stroke
+				(width 0.15)
+				(type default)
+			)
+			(fill no)
+			(layer "F.SilkS")
+			(uuid "ddb88411-a9de-4049-9d1e-a7aae3f9cc4f")
+		)
+		(fp_circle
+			(center -19.05 -9.525)
+			(end -12.55 -9.525)
+			(stroke
+				(width 0.05)
+				(type default)
+			)
+			(fill no)
+			(layer "F.CrtYd")
+			(uuid "2cf6fc18-6a2d-444b-b2bd-60684f4024a5")
+		)
+		(fp_circle
+			(center -19.05 9.525)
+			(end -12.55 9.525)
+			(stroke
+				(width 0.05)
+				(type default)
+			)
+			(fill no)
+			(layer "F.CrtYd")
+			(uuid "7be01aef-e89c-4b06-9194-fcbe7f9f4b1e")
+		)
+		(fp_circle
+			(center 0 -9.525)
+			(end 6.5 -9.525)
+			(stroke
+				(width 0.05)
+				(type default)
+			)
+			(fill no)
+			(layer "F.CrtYd")
+			(uuid "cdb95a37-19a8-4247-9c44-78ecbb586c89")
+		)
+		(fp_circle
+			(center 0 9.525)
+			(end 6.5 9.525)
+			(stroke
+				(width 0.05)
+				(type default)
+			)
+			(fill no)
+			(layer "F.CrtYd")
+			(uuid "33abec9b-6b2d-411a-bc62-e885b47f4918")
+		)
+		(fp_circle
+			(center 19.05 -9.525)
+			(end 25.55 -9.525)
+			(stroke
+				(width 0.05)
+				(type default)
+			)
+			(fill no)
+			(layer "F.CrtYd")
+			(uuid "a4adaac4-b884-4cf3-8b31-bc785cb7bfd8")
+		)
+		(pad "1" thru_hole rect
+			(at -19.05 9.525)
+			(size 8.5 8.5)
+			(drill 6.5)
+			(layers "*.Cu" "*.Mask")
+			(remove_unused_layers no)
+			(net "Net-(VD5-K)")
+			(pinfunction "M3_IN1_1")
+			(pintype "passive")
+			(uuid "618cc911-4adb-4a21-b5d5-78e54c345ebf")
+		)
+		(pad "2" thru_hole circle
+			(at 0 9.525)
+			(size 8.5 8.5)
+			(drill 6.5)
+			(layers "*.Cu" "*.Mask")
+			(remove_unused_layers no)
+			(net "Net-(VD6-K)")
+			(pinfunction "M3_IN2_2")
+			(pintype "passive")
+			(uuid "8504957f-eb7e-4b00-9992-3a3a9b3584f4")
+		)
+		(pad "3" thru_hole circle
+			(at 0 -9.525)
+			(size 8.5 8.5)
+			(drill 6.5)
+			(layers "*.Cu" "*.Mask")
+			(remove_unused_layers no)
+			(net "Net-(X7-M3_SDA)")
+			(pinfunction "M3_SDA_3")
+			(pintype "passive")
+			(uuid "50c8c18a-6b5e-496b-9fa6-8e387ac89b99")
+		)
+		(pad "4" thru_hole circle
+			(at -19.05 -9.525)
+			(size 8.5 8.5)
+			(drill 6.5)
+			(layers "*.Cu" "*.Mask")
+			(remove_unused_layers no)
+			(net "Net-(X7-M3_SCL)")
+			(pinfunction "M3_SCL_4")
+			(pintype "passive")
+			(uuid "04531709-5638-44dd-9f03-4c183074d286")
+		)
+		(pad "5" thru_hole circle
+			(at 19.05 -9.525)
+			(size 8.5 8.5)
+			(drill 6.5)
+			(layers "*.Cu" "*.Mask")
+			(remove_unused_layers no)
+			(net "GND_L")
+			(pinfunction "GND_L_5")
+			(pintype "passive")
+			(uuid "d441182a-3a2e-4200-ab43-94ddd10ff2fb")
+		)
+		(embedded_fonts no)
+	)
+	(footprint "manipulator:D_DO-35_P7.62mm"
+		(layer "F.Cu")
+		(uuid "0cc6c193-2113-4d16-8872-84de309e3dc1")
+		(at 93.175 62.535)
+		(descr "Диод 1N4148 в корпусе DO-35, шаг 7,62 мм; вывод 1 — катод")
+		(tags "diode do-35 1n4148")
+		(property "Reference" "VD5"
+			(at 0 -2.6 0)
+			(layer "F.SilkS")
+			(uuid "deb09b91-1cad-4d55-a67b-397a4565df29")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Value" "1N4148"
+			(at 0 2.6 0)
+			(layer "F.Fab")
+			(uuid "57dd4211-5639-4911-88c0-33819365a88c")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "c9233e63-6de7-4f03-bcaf-a57efc8c6241")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Description" ""
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "a18ca30a-be5b-454a-9a00-d61d9dd13ad0")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "BaseID" "E-054"
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "3c2d0f5b-455d-4515-a2e4-476a66bf3021")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Status" "Утверждено"
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "3139030a-2ce4-4eef-8e62-20042710f129")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Note" "Встречный диод линии IN1 группы M1: ограничивает отрицательное напряжение с клеммы"
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "f1123d8b-1638-41ff-af92-738ce3d4e08e")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(path "/fdad0e1b-10ab-482d-8bb6-2ca8f3bdca36")
+		(sheetname "/")
+		(sheetfile "LR.kicad_sch")
+		(units
+			(unit
+				(name "A")
+				(pins "1" "2")
+			)
+		)
+		(attr through_hole)
+		(duplicate_pad_numbers_are_jumpers no)
+		(fp_line
+			(start -1.4 -1.2)
+			(end -1.4 1.2)
+			(stroke
+				(width 0.15)
+				(type default)
+			)
+			(layer "F.SilkS")
+			(uuid "a156af03-990d-4997-85b4-9e3262f9142b")
+		)
+		(fp_rect
+			(start -2.2 -1.2)
+			(end 2.2 1.2)
+			(stroke
+				(width 0.15)
+				(type default)
+			)
+			(fill no)
+			(layer "F.SilkS")
+			(uuid "2a4d0afe-774e-418b-b20d-7cf554221029")
+		)
+		(fp_rect
+			(start -5 -1.8)
+			(end 5 1.8)
+			(stroke
+				(width 0.05)
+				(type default)
+			)
+			(fill no)
+			(layer "F.CrtYd")
+			(uuid "ad582309-68f5-42e5-996c-bde232480c6c")
+		)
+		(fp_rect
+			(start -2 -1)
+			(end 2 1)
+			(stroke
+				(width 0.1)
+				(type default)
+			)
+			(fill no)
+			(layer "F.Fab")
+			(uuid "d7a8462f-ef91-49e1-b6f0-9defd2392c10")
+		)
+		(pad "1" thru_hole rect
+			(at -3.81 0)
+			(size 1.6 1.6)
+			(drill 0.8)
+			(layers "*.Cu" "*.Mask")
+			(remove_unused_layers no)
+			(net "Net-(VD5-K)")
+			(pinfunction "K_1")
+			(pintype "passive")
+			(uuid "1195fd29-5044-4955-8f48-f512520fe092")
+		)
+		(pad "2" thru_hole circle
+			(at 3.81 0)
+			(size 1.6 1.6)
+			(drill 0.8)
+			(layers "*.Cu" "*.Mask")
+			(remove_unused_layers no)
+			(net "GND_L")
+			(pinfunction "A_2")
+			(pintype "passive")
+			(uuid "316cdff8-5f34-4440-9377-fe964323ab10")
+		)
+		(embedded_fonts no)
+		(model "${KIPRJMOD}/../../lib/3dmodels/D_DO-35_SOD27_P7.62mm_Horizontal.step"
+			(offset
+				(xyz -3.81 0 0)
+			)
+			(scale
+				(xyz 1 1 1)
+			)
+			(rotate
+				(xyz 0 0 0)
+			)
+		)
+	)
+	(footprint "manipulator:JST_XH_B5B-XH-A_L"
+		(layer "F.Cu")
+		(uuid "0f86a230-a99e-42e8-a607-557f15129c3a")
+		(at 117.675 50.085)
+		(descr "Вилка JST B5B-XH-A, 5 конт., шаг 2,5 мм, 3 А (размеры KiCad — проверить по JST)")
+		(tags "connector jst xh")
+		(property "Reference" "X3"
+			(at 0 -8.95 0)
+			(layer "F.SilkS")
+			(uuid "bf79a54d-3773-4091-af96-acf648a7e07a")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Value" "B5B-XH-A"
+			(at 0 8.95 0)
+			(layer "F.Fab")
+			(uuid "ab0cfdbb-520c-4c4a-8707-82042d43b6cc")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "a6e468f3-5802-4486-a4db-510d6761f121")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Description" ""
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "cb381843-ba9f-4122-a6ff-d8b557207fd4")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "BaseID" "—"
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "e2d037eb-d680-4a62-a467-ebf94ae26dba")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Status" "Предложение"
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "a741920e-c6da-457a-a949-6e5f89fbbf38")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Назначение" "К плате CH3 (ответная часть X2 CH): 1 IN1, 2 IN2, 3 SDA, 4 SCL, 5 GND_L"
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "e5f874e5-4a40-4d90-8c88-4ceee71956f3")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(path "/7851e55e-4a6a-5316-9a4e-ff3f9dd59fbb")
+		(sheetname "/")
+		(sheetfile "LR.kicad_sch")
+		(units
+			(unit
+				(name "A")
+				(pins "1" "2" "3" "4" "5")
+			)
+		)
+		(attr through_hole)
+		(duplicate_pad_numbers_are_jumpers no)
+		(fp_rect
+			(start -2.55 -7.65)
+			(end 3.6 7.65)
+			(stroke
+				(width 0.15)
+				(type default)
+			)
+			(fill no)
+			(layer "F.SilkS")
+			(uuid "e7011d04-ab84-43e7-8888-e2332c4509de")
+		)
+		(fp_rect
+			(start -2.85 -7.95)
+			(end 3.9 7.95)
+			(stroke
+				(width 0.05)
+				(type default)
+			)
+			(fill no)
+			(layer "F.CrtYd")
+			(uuid "be217154-8ade-45ae-a126-86c83bd1896f")
+		)
+		(fp_rect
+			(start -2.35 -7.45)
+			(end 3.4 7.45)
+			(stroke
+				(width 0.1)
+				(type default)
+			)
+			(fill no)
+			(layer "F.Fab")
+			(uuid "afd6c4fb-608d-44a1-a610-0ef2210983b8")
+		)
+		(fp_text user "1"
+			(at 0 7.4 0)
+			(layer "F.SilkS")
+			(uuid "fec5b881-e438-47a0-9f7d-08c22931feb9")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(pad "1" thru_hole rect
+			(at 0 5)
+			(size 1.8 1.8)
+			(drill 1)
+			(layers "*.Cu" "*.Mask")
+			(remove_unused_layers no)
+			(net "Net-(VD5-K)")
+			(pinfunction "M3_IN1_1")
+			(pintype "passive")
+			(uuid "702446a1-58d7-4741-91a2-0f845b3a1718")
+		)
+		(pad "2" thru_hole circle
+			(at 0 2.5)
+			(size 1.8 1.8)
+			(drill 1)
+			(layers "*.Cu" "*.Mask")
+			(remove_unused_layers no)
+			(net "Net-(VD6-K)")
+			(pinfunction "M3_IN2_2")
+			(pintype "passive")
+			(uuid "e4be2a92-e8fd-4f28-8592-a6d32f4c4d64")
+		)
+		(pad "3" thru_hole circle
+			(at 0 0)
+			(size 1.8 1.8)
+			(drill 1)
+			(layers "*.Cu" "*.Mask")
+			(remove_unused_layers no)
+			(net "Net-(VD13-IN)")
+			(pinfunction "M3_SDA_3")
+			(pintype "passive")
+			(uuid "63c5f722-9047-4a42-8660-e33b2875b890")
+		)
+		(pad "4" thru_hole circle
+			(at 0 -2.5)
+			(size 1.8 1.8)
+			(drill 1)
+			(layers "*.Cu" "*.Mask")
+			(remove_unused_layers no)
+			(net "Net-(VD14-IN)")
+			(pinfunction "M3_SCL_4")
+			(pintype "passive")
+			(uuid "34d5a645-d4eb-42c4-9376-ae5ec7b99da3")
+		)
+		(pad "5" thru_hole circle
+			(at 0 -5)
+			(size 1.8 1.8)
+			(drill 1)
+			(layers "*.Cu" "*.Mask")
+			(remove_unused_layers no)
+			(net "GND_L")
+			(pinfunction "GND_L_5")
+			(pintype "passive")
+			(uuid "4ec6fef4-a31b-4e45-aa89-fe8dc6d31952")
+		)
+		(embedded_fonts no)
+		(model "${KIPRJMOD}/../../lib/3dmodels/JST_XH_B5B-XH-A_1x05_P2.50mm_Vertical.step"
+			(offset
+				(xyz 0 -5 0)
+			)
+			(scale
+				(xyz 1 1 1)
+			)
+			(rotate
+				(xyz 0 0 -90)
+			)
+		)
+	)
+	(footprint "manipulator:R_Axial_P10.16mm_V"
+		(layer "F.Cu")
+		(uuid "162277bc-bb61-42a6-9cd1-90aca212219e")
+		(at 133.075 34.805)
+		(descr "Резистор 0,25 Вт, выводной, шаг 10,16")
+		(tags "resistor axial")
+		(property "Reference" "R12"
+			(at 2.6 0 0)
+			(layer "F.SilkS")
+			(uuid "c592b2c4-6226-415e-b1f7-6018d7c35100")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Value" "150 Ом"
+			(at -2.6 0 0)
+			(layer "F.Fab")
+			(uuid "308fcc3c-6a41-4e3d-a0e5-77fbbe5b9201")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "80527caa-28ae-453e-97c6-f8c305bdde13")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Description" ""
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "a5b2ec23-5feb-406a-9c51-a0fab8fc156f")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "BaseID" "E-062"
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "bafd3f28-6b2a-47f9-9070-ee2d69d2b3df")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Status" "Утверждено"
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "b4159fff-7600-450d-97b9-0ffcdbf84350")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Note" "Ток зелёного светодиода HL4"
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "f14dc1b9-3bff-43ae-80e7-f56269628ea6")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(path "/8b33a295-3f24-5502-9023-eb8901abac87")
+		(sheetname "/")
+		(sheetfile "LR.kicad_sch")
+		(units
+			(unit
+				(name "A")
+				(pins "1" "2")
+			)
+		)
+		(attr through_hole)
+		(duplicate_pad_numbers_are_jumpers no)
+		(fp_rect
+			(start -1.4 -3.4)
+			(end 1.4 3.4)
+			(stroke
+				(width 0.15)
+				(type default)
+			)
+			(fill no)
+			(layer "F.SilkS")
+			(uuid "92db1609-5a30-4619-94d9-2c04c7b6b7d1")
+		)
+		(fp_rect
+			(start -1.2 -6.28)
+			(end 1.2 6.28)
+			(stroke
+				(width 0.05)
+				(type default)
+			)
+			(fill no)
+			(layer "F.CrtYd")
+			(uuid "cce9b78b-9482-4f00-9b02-af1f06429544")
+		)
+		(fp_rect
+			(start -1.2 -3.2)
+			(end 1.2 3.2)
+			(stroke
+				(width 0.1)
+				(type default)
+			)
+			(fill no)
+			(layer "F.Fab")
+			(uuid "0684c076-5044-4ed1-b8a0-a64086d925ba")
+		)
+		(pad "1" thru_hole circle
+			(at 0 5.08)
+			(size 1.8 1.8)
+			(drill 0.9)
+			(layers "*.Cu" "*.Mask")
+			(remove_unused_layers no)
+			(net "Net-(HL4-K1)")
+			(pintype "passive")
+			(uuid "62d5b7fa-01f8-463f-a397-ffe1ba38b939")
+		)
+		(pad "2" thru_hole circle
+			(at 0 -5.08)
+			(size 1.8 1.8)
+			(drill 0.9)
+			(layers "*.Cu" "*.Mask")
+			(remove_unused_layers no)
+			(net "Net-(DD1-P7)")
+			(pintype "passive")
+			(uuid "4e2e51e2-afbe-4384-b212-b34806bfa439")
+		)
+		(embedded_fonts no)
+		(model "${KIPRJMOD}/../../lib/3dmodels/R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal.step"
+			(offset
+				(xyz 0 -5.08 0)
+			)
+			(scale
+				(xyz 1 1 1)
+			)
+			(rotate
+				(xyz 0 0 -90)
+			)
+		)
+	)
+	(footprint "manipulator:R_Axial_P10.16mm_V"
+		(layer "F.Cu")
+		(uuid "1880737d-45ce-4386-8127-908f2f24d2e6")
+		(at 113.325 34.805)
+		(descr "Резистор 0,25 Вт, выводной, шаг 10,16")
+		(tags "resistor axial")
+		(property "Reference" "R7"
+			(at 2.6 0 0)
+			(layer "F.SilkS")
+			(uuid "79f7b99c-0607-4cec-983b-503e1d03a12d")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Value" "100 Ом"
+			(at -2.6 0 0)
+			(layer "F.Fab")
+			(uuid "09d27491-2d87-4ccf-b33d-f76bf0521ba7")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "6375df16-0e88-4747-b18a-8b10531b2c9f")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Description" ""
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "05c1b3f2-b57a-4e2b-bda7-6f0f3ef62763")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "BaseID" "E-052"
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "18a3ddfc-0d3f-45d5-9367-2c0f8596db9a")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Status" "Утверждено"
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "9553e09d-7d72-42a8-8314-0814b47ff9c2")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Note" "Последовательная защита линии SCL группы M1 со стороны клемм"
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "77b0952c-c5f2-4c02-8264-ddd7ec9819ca")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(path "/c5899d48-e1d7-4b03-b581-eb92a3823b31")
+		(sheetname "/")
+		(sheetfile "LR.kicad_sch")
+		(units
+			(unit
+				(name "A")
+				(pins "1" "2")
+			)
+		)
+		(attr through_hole)
+		(duplicate_pad_numbers_are_jumpers no)
+		(fp_rect
+			(start -1.4 -3.4)
+			(end 1.4 3.4)
+			(stroke
+				(width 0.15)
+				(type default)
+			)
+			(fill no)
+			(layer "F.SilkS")
+			(uuid "18bc93d4-44ad-4aeb-817b-8bbfd63e1a07")
+		)
+		(fp_rect
+			(start -1.2 -6.28)
+			(end 1.2 6.28)
+			(stroke
+				(width 0.05)
+				(type default)
+			)
+			(fill no)
+			(layer "F.CrtYd")
+			(uuid "b1d1cc69-4a0f-4aac-b779-06488e806a37")
+		)
+		(fp_rect
+			(start -1.2 -3.2)
+			(end 1.2 3.2)
+			(stroke
+				(width 0.1)
+				(type default)
+			)
+			(fill no)
+			(layer "F.Fab")
+			(uuid "01e1c703-9532-4037-b1b0-c85e8302428f")
+		)
+		(pad "1" thru_hole circle
+			(at 0 5.08)
+			(size 1.8 1.8)
+			(drill 0.9)
+			(layers "*.Cu" "*.Mask")
+			(remove_unused_layers no)
+			(net "Net-(VD14-IN)")
+			(pintype "passive")
+			(uuid "2d7fc6be-93f5-4ac9-b1ac-a1711470623f")
+		)
+		(pad "2" thru_hole circle
+			(at 0 -5.08)
+			(size 1.8 1.8)
+			(drill 0.9)
+			(layers "*.Cu" "*.Mask")
+			(remove_unused_layers no)
+			(net "Net-(X7-M3_SCL)")
+			(pintype "passive")
+			(uuid "80a940d4-882a-4d9a-a283-a996cae2a506")
+		)
+		(embedded_fonts no)
+		(model "${KIPRJMOD}/../../lib/3dmodels/R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal.step"
+			(offset
+				(xyz 0 -5.08 0)
+			)
+			(scale
+				(xyz 1 1 1)
+			)
+			(rotate
+				(xyz 0 0 -90)
+			)
+		)
+	)
+	(footprint "manipulator:JST_XH_B5B-XH-A_L"
+		(layer "F.Cu")
+		(uuid "1d15e899-d125-4b4e-b01f-9a595bd6f5b7")
+		(at 109.875 50.085)
+		(descr "Вилка JST B5B-XH-A, 5 конт., шаг 2,5 мм, 3 А (размеры KiCad — проверить по JST)")
+		(tags "connector jst xh")
+		(property "Reference" "X2"
+			(at 0 -8.95 0)
+			(layer "F.SilkS")
+			(uuid "e4451085-4b6e-48b4-bc5b-2e29af01a4ad")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Value" "B5B-XH-A"
+			(at 0 8.95 0)
+			(layer "F.Fab")
+			(uuid "29a1e92a-e3be-49f8-80ed-678af1362c08")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "da1a3aa6-d12b-49a2-aa9f-1c573da3d041")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Description" ""
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "1b02c3b7-e0c1-4001-90b3-ff6a059ac900")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "BaseID" "—"
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "c7fad6b0-7675-438c-b209-3e9c876464cb")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Status" "Предложение"
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "f9d4e1ab-3a07-459f-b5d1-8f0a090fd40c")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Назначение" "К плате CH2 (ответная часть X2 CH): 1 IN1, 2 IN2, 3 SDA, 4 SCL, 5 GND_L"
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "e520e0e8-3068-4537-8aae-469a62cf825b")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(path "/d507d576-16aa-540d-9677-769b51f26c77")
+		(sheetname "/")
+		(sheetfile "LR.kicad_sch")
+		(units
+			(unit
+				(name "A")
+				(pins "1" "2" "3" "4" "5")
+			)
+		)
+		(attr through_hole)
+		(duplicate_pad_numbers_are_jumpers no)
+		(fp_rect
+			(start -2.55 -7.65)
+			(end 3.6 7.65)
+			(stroke
+				(width 0.15)
+				(type default)
+			)
+			(fill no)
+			(layer "F.SilkS")
+			(uuid "391ae3ef-3897-4d80-a390-aefceebcdede")
+		)
+		(fp_rect
+			(start -2.85 -7.95)
+			(end 3.9 7.95)
+			(stroke
+				(width 0.05)
+				(type default)
+			)
+			(fill no)
+			(layer "F.CrtYd")
+			(uuid "553af040-45ed-4911-bbf3-5cfb32fa998a")
+		)
+		(fp_rect
+			(start -2.35 -7.45)
+			(end 3.4 7.45)
+			(stroke
+				(width 0.1)
+				(type default)
+			)
+			(fill no)
+			(layer "F.Fab")
+			(uuid "eb31267f-f852-400c-9689-6beb1a7f60d1")
+		)
+		(fp_text user "1"
+			(at 0 7.4 0)
+			(layer "F.SilkS")
+			(uuid "2ddb0110-aa14-4ce5-b21b-774cb0c70b19")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(pad "1" thru_hole rect
+			(at 0 5)
+			(size 1.8 1.8)
+			(drill 1)
+			(layers "*.Cu" "*.Mask")
+			(remove_unused_layers no)
+			(net "Net-(VD3-K)")
+			(pinfunction "M2_IN1_1")
+			(pintype "passive")
+			(uuid "1c710c4e-5149-481f-807f-aa81eafb1853")
+		)
+		(pad "2" thru_hole circle
+			(at 0 2.5)
+			(size 1.8 1.8)
+			(drill 1)
+			(layers "*.Cu" "*.Mask")
+			(remove_unused_layers no)
+			(net "Net-(VD4-K)")
+			(pinfunction "M2_IN2_2")
+			(pintype "passive")
+			(uuid "065b7d2d-5382-4b4d-b993-47f47b420c82")
+		)
+		(pad "3" thru_hole circle
+			(at 0 0)
+			(size 1.8 1.8)
+			(drill 1)
+			(layers "*.Cu" "*.Mask")
+			(remove_unused_layers no)
+			(net "Net-(VD11-IN)")
+			(pinfunction "M2_SDA_3")
+			(pintype "passive")
+			(uuid "8192cc0f-985b-46b4-8816-a1edbb9db5bf")
+		)
+		(pad "4" thru_hole circle
+			(at 0 -2.5)
+			(size 1.8 1.8)
+			(drill 1)
+			(layers "*.Cu" "*.Mask")
+			(remove_unused_layers no)
+			(net "Net-(VD12-IN)")
+			(pinfunction "M2_SCL_4")
+			(pintype "passive")
+			(uuid "3e3e5ae6-0c25-47dd-a5f9-b8518090475d")
+		)
+		(pad "5" thru_hole circle
+			(at 0 -5)
+			(size 1.8 1.8)
+			(drill 1)
+			(layers "*.Cu" "*.Mask")
+			(remove_unused_layers no)
+			(net "GND_L")
+			(pinfunction "GND_L_5")
+			(pintype "passive")
+			(uuid "c7bc8940-1d87-49d3-a8d7-ab40e4e81742")
+		)
+		(embedded_fonts no)
+		(model "${KIPRJMOD}/../../lib/3dmodels/JST_XH_B5B-XH-A_1x05_P2.50mm_Vertical.step"
+			(offset
+				(xyz 0 -5 0)
+			)
+			(scale
+				(xyz 1 1 1)
+			)
+			(rotate
+				(xyz 0 0 -90)
+			)
+		)
+	)
+	(footprint "manipulator:R_Axial_P10.16mm_V"
+		(layer "F.Cu")
+		(uuid "21d0f123-ddbb-4d61-85a3-9342984683c8")
+		(at 101.475 34.805)
+		(descr "Резистор 0,25 Вт, выводной, шаг 10,16")
+		(tags "resistor axial")
+		(property "Reference" "R4"
+			(at 2.6 0 0)
+			(layer "F.SilkS")
+			(uuid "e0477cca-491e-40de-9430-7368c1188dd2")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Value" "100 Ом"
+			(at -2.6 0 0)
+			(layer "F.Fab")
+			(uuid "5c3ac44b-2ab4-4e9d-adf4-84bac1b52309")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "876c503a-9d04-4145-8575-d6a5692b2032")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Description" ""
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "fa028be9-7956-4768-bb90-855ece672ad3")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "BaseID" "E-052"
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "ba9e127a-b83e-49c3-8120-9f15dd4caabb")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Status" "Утверждено"
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "f0d8eba9-0551-472f-9f01-61c8203328f3")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Note" "Последовательная защита линии SDA группы M1 со стороны клемм"
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "e5e6c082-f226-47c1-924a-be3cfded0598")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(path "/2a692ad4-55b2-4fb6-9944-bbd02eae280b")
+		(sheetname "/")
+		(sheetfile "LR.kicad_sch")
+		(units
+			(unit
+				(name "A")
+				(pins "1" "2")
+			)
+		)
+		(attr through_hole)
+		(duplicate_pad_numbers_are_jumpers no)
+		(fp_rect
+			(start -1.4 -3.4)
+			(end 1.4 3.4)
+			(stroke
+				(width 0.15)
+				(type default)
+			)
+			(fill no)
+			(layer "F.SilkS")
+			(uuid "bf6ac621-9e91-43af-bb28-3cb7ab281700")
+		)
+		(fp_rect
+			(start -1.2 -6.28)
+			(end 1.2 6.28)
+			(stroke
+				(width 0.05)
+				(type default)
+			)
+			(fill no)
+			(layer "F.CrtYd")
+			(uuid "f95cc7f3-e85e-4a33-85d3-a6c5cb6ba288")
+		)
+		(fp_rect
+			(start -1.2 -3.2)
+			(end 1.2 3.2)
+			(stroke
+				(width 0.1)
+				(type default)
+			)
+			(fill no)
+			(layer "F.Fab")
+			(uuid "edc8020a-9877-4941-8abe-503a8668ec25")
+		)
+		(pad "1" thru_hole circle
+			(at 0 5.08)
+			(size 1.8 1.8)
+			(drill 0.9)
+			(layers "*.Cu" "*.Mask")
+			(remove_unused_layers no)
+			(net "Net-(VD15-IN)")
+			(pintype "passive")
+			(uuid "ab33fd40-ae87-4a0e-9a59-be8716ebac82")
+		)
+		(pad "2" thru_hole circle
+			(at 0 -5.08)
+			(size 1.8 1.8)
+			(drill 0.9)
+			(layers "*.Cu" "*.Mask")
+			(remove_unused_layers no)
+			(net "Net-(X8-M4_SDA)")
+			(pintype "passive")
+			(uuid "adebf2ab-10f4-4f55-8dcc-4f9c03087059")
+		)
+		(embedded_fonts no)
+		(model "${KIPRJMOD}/../../lib/3dmodels/R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal.step"
+			(offset
+				(xyz 0 -5.08 0)
+			)
+			(scale
+				(xyz 1 1 1)
+			)
+			(rotate
+				(xyz 0 0 -90)
+			)
+		)
+	)
+	(footprint "manipulator:R_Axial_P10.16mm_V"
+		(layer "F.Cu")
+		(uuid "2c81a416-1ff9-4541-afa3-9812542b918a")
+		(at 117.275 34.805)
+		(descr "Резистор 0,25 Вт, выводной, шаг 10,16")
+		(tags "resistor axial")
+		(property "Reference" "R8"
+			(at 2.6 0 0)
+			(layer "F.SilkS")
+			(uuid "6e157557-c4db-4f58-bd0a-06632a7c8d22")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Value" "100 Ом"
+			(at -2.6 0 0)
+			(layer "F.Fab")
+			(uuid "53585da6-b60c-41b4-a38a-3a43816859cd")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "6b477311-46d4-43ba-ab61-6ae524d80e38")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Description" ""
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "1c039e53-e9b2-46ef-bb0e-1e62d656c740")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "BaseID" "E-052"
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "0f887b36-2dfa-4984-9679-7303f1fe0c18")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Status" "Утверждено"
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "efa04fc2-64dc-4066-a353-fa54b42081be")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Note" "Последовательная защита линии SCL группы M1 со стороны клемм"
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "dddef01b-740d-4e87-a228-9ab21b2c6f02")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(path "/e9845394-f3f7-4cca-b7bf-e40e6a3d47d2")
+		(sheetname "/")
+		(sheetfile "LR.kicad_sch")
+		(units
+			(unit
+				(name "A")
+				(pins "1" "2")
+			)
+		)
+		(attr through_hole)
+		(duplicate_pad_numbers_are_jumpers no)
+		(fp_rect
+			(start -1.4 -3.4)
+			(end 1.4 3.4)
+			(stroke
+				(width 0.15)
+				(type default)
+			)
+			(fill no)
+			(layer "F.SilkS")
+			(uuid "d46d3219-af76-44c9-8c0e-160120e1c398")
+		)
+		(fp_rect
+			(start -1.2 -6.28)
+			(end 1.2 6.28)
+			(stroke
+				(width 0.05)
+				(type default)
+			)
+			(fill no)
+			(layer "F.CrtYd")
+			(uuid "96ace1d5-24e1-45c4-9b74-35ed0fbffa49")
+		)
+		(fp_rect
+			(start -1.2 -3.2)
+			(end 1.2 3.2)
+			(stroke
+				(width 0.1)
+				(type default)
+			)
+			(fill no)
+			(layer "F.Fab")
+			(uuid "6e8346dc-88c3-4135-8956-b24247e1b5e9")
+		)
+		(pad "1" thru_hole circle
+			(at 0 5.08)
+			(size 1.8 1.8)
+			(drill 0.9)
+			(layers "*.Cu" "*.Mask")
+			(remove_unused_layers no)
+			(net "Net-(VD16-IN)")
+			(pintype "passive")
+			(uuid "c3d7e2de-5f72-4880-b6e6-172524b94379")
+		)
+		(pad "2" thru_hole circle
+			(at 0 -5.08)
+			(size 1.8 1.8)
+			(drill 0.9)
+			(layers "*.Cu" "*.Mask")
+			(remove_unused_layers no)
+			(net "Net-(X8-M4_SCL)")
+			(pintype "passive")
+			(uuid "4867aaa9-fead-46d7-8220-8261ce25d8db")
+		)
+		(embedded_fonts no)
+		(model "${KIPRJMOD}/../../lib/3dmodels/R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal.step"
+			(offset
+				(xyz 0 -5.08 0)
+			)
+			(scale
+				(xyz 1 1 1)
+			)
+			(rotate
+				(xyz 0 0 -90)
+			)
+		)
+	)
+	(footprint "manipulator:R_Axial_P10.16mm_V"
+		(layer "F.Cu")
+		(uuid "2cdad549-0147-4cf5-8401-a7da2bdd4cf7")
+		(at 105.425 34.805)
+		(descr "Резистор 0,25 Вт, выводной, шаг 10,16")
+		(tags "resistor axial")
+		(property "Reference" "R5"
+			(at 2.6 0 0)
+			(layer "F.SilkS")
+			(uuid "ed013b5b-a4f5-4f72-a166-5c2bedb21d38")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Value" "100 Ом"
+			(at -2.6 0 0)
+			(layer "F.Fab")
+			(uuid "e1576160-0e86-4483-a599-cde4cadcb21c")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "5ea6e212-5503-4408-bb09-904cf109a5fa")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Description" ""
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "fe4ce59f-e9db-40e4-b586-699c58b3fe7b")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "BaseID" "E-052"
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "156f64c9-ae25-4fd4-8c1d-785daccf50ed")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Status" "Утверждено"
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "c289ddbe-3242-42a9-a709-8c6709ad5bc0")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Note" "Последовательная защита линии SCL группы M1 со стороны клемм"
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "8485e18d-e291-4218-a13b-57e6fcc7fad2")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(path "/381ef8f9-dd86-5c42-ba30-2852af0176eb")
+		(sheetname "/")
+		(sheetfile "LR.kicad_sch")
+		(units
+			(unit
+				(name "A")
+				(pins "1" "2")
+			)
+		)
+		(attr through_hole)
+		(duplicate_pad_numbers_are_jumpers no)
+		(fp_rect
+			(start -1.4 -3.4)
+			(end 1.4 3.4)
+			(stroke
+				(width 0.15)
+				(type default)
+			)
+			(fill no)
+			(layer "F.SilkS")
+			(uuid "6cbe7364-207b-4495-a51f-58db2199d4a7")
+		)
+		(fp_rect
+			(start -1.2 -6.28)
+			(end 1.2 6.28)
+			(stroke
+				(width 0.05)
+				(type default)
+			)
+			(fill no)
+			(layer "F.CrtYd")
+			(uuid "8a9147d0-e7fc-4149-9501-e3db7475feae")
+		)
+		(fp_rect
+			(start -1.2 -3.2)
+			(end 1.2 3.2)
+			(stroke
+				(width 0.1)
+				(type default)
+			)
+			(fill no)
+			(layer "F.Fab")
+			(uuid "2ad83fdf-cd6c-41d8-87d0-666517699a85")
+		)
+		(pad "1" thru_hole circle
+			(at 0 5.08)
+			(size 1.8 1.8)
+			(drill 0.9)
+			(layers "*.Cu" "*.Mask")
+			(remove_unused_layers no)
+			(net "Net-(VD10-IN)")
+			(pintype "passive")
+			(uuid "4dbbc300-8f7a-4f3c-b30f-fda92254ef7e")
+		)
+		(pad "2" thru_hole circle
+			(at 0 -5.08)
+			(size 1.8 1.8)
+			(drill 0.9)
+			(layers "*.Cu" "*.Mask")
+			(remove_unused_layers no)
+			(net "Net-(X5-M1_SCL)")
+			(pintype "passive")
+			(uuid "f944387a-dac2-4d84-a01e-1ab2d3f6706e")
+		)
+		(embedded_fonts no)
+		(model "${KIPRJMOD}/../../lib/3dmodels/R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal.step"
+			(offset
+				(xyz 0 -5.08 0)
+			)
+			(scale
+				(xyz 1 1 1)
+			)
+			(rotate
+				(xyz 0 0 -90)
+			)
+		)
+	)
+	(footprint "manipulator:LED_Bicolor_5mm"
+		(layer "F.Cu")
+		(uuid "347c84c1-ef50-44e8-8f2a-d90581e2f2b1")
+		(at 134.025 52.485)
+		(descr "Светодиод двухцветный 5 мм, общий анод, 3 вывода 2,54; порядок выводов сверить")
+		(tags "led bicolor 5mm")
+		(property "Reference" "HL2"
+			(at 0 4.2 0)
+			(layer "F.SilkS")
+			(uuid "e755cb38-5548-4e05-84d7-3e0fdb465b98")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Value" "зел/красн"
+			(at 0 5.8 0)
+			(layer "F.Fab")
+			(uuid "d7b2aafc-424b-45b4-9a8b-84be70a5cf23")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "53554062-ab5f-41b9-a934-7477a286d18a")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Description" ""
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "7a7b549a-1c66-45e6-98bb-4e566ae25f59")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "BaseID" "E-061"
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "61833095-d6f5-4ba6-9570-1d14bc9f64be")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Status" "Утверждено"
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "dd4791f2-1cdf-46d4-aed5-170981a8023b")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Note" "Состояние звена M2: зелёный — норма, красный — авария (цоколёвку сверить)"
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "28f11607-0462-4943-89e7-9773a0f6884f")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(path "/db2c0c8a-b001-58bd-a58c-9d7066d09245")
+		(sheetname "/")
+		(sheetfile "LR.kicad_sch")
+		(units
+			(unit
+				(name "A")
+				(pins "2" "1" "3")
+			)
+		)
+		(attr through_hole)
+		(duplicate_pad_numbers_are_jumpers no)
+		(fp_circle
+			(center 0 0)
+			(end 2.7 0)
+			(stroke
+				(width 0.15)
+				(type default)
+			)
+			(fill no)
+			(layer "F.SilkS")
+			(uuid "fec8793a-9459-4d26-bc56-02813a7bcbe4")
+		)
+		(fp_rect
+			(start -3.6 -3.1)
+			(end 3.6 3.1)
+			(stroke
+				(width 0.05)
+				(type default)
+			)
+			(fill no)
+			(layer "F.CrtYd")
+			(uuid "82b09196-bf74-49aa-b204-e8b7b7c79493")
+		)
+		(fp_circle
+			(center 0 0)
+			(end 2.5 0)
+			(stroke
+				(width 0.1)
+				(type default)
+			)
+			(fill no)
+			(layer "F.Fab")
+			(uuid "cd5e7bf6-6986-484a-93be-d79c71104120")
+		)
+		(fp_text user "A"
+			(at 0 -3.6 0)
+			(layer "F.SilkS")
+			(uuid "481cbc89-dc61-40a6-8eb7-bff4778ec91a")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(pad "1" thru_hole rect
+			(at 0 0)
+			(size 1.8 1.8)
+			(drill 0.9)
+			(layers "*.Cu" "*.Mask")
+			(remove_unused_layers no)
+			(net "3V3")
+			(pinfunction "A_1")
+			(pintype "passive")
+			(uuid "a87e522f-8958-4dbf-b51c-f04eb69c6b7a")
+		)
+		(pad "2" thru_hole circle
+			(at -2.54 0)
+			(size 1.8 1.8)
+			(drill 0.9)
+			(layers "*.Cu" "*.Mask")
+			(remove_unused_layers no)
+			(net "Net-(HL2-K1)")
+			(pinfunction "K1_2")
+			(pintype "passive")
+			(uuid "bf6847bc-f8c4-4797-a3e7-698fd00c57a2")
+		)
+		(pad "3" thru_hole circle
+			(at 2.54 0)
+			(size 1.8 1.8)
+			(drill 0.9)
+			(layers "*.Cu" "*.Mask")
+			(remove_unused_layers no)
+			(net "Net-(HL2-K2)")
+			(pinfunction "K2_3")
+			(pintype "passive")
+			(uuid "ca21ece5-4773-47a7-8287-2c6a3855e751")
+		)
+		(embedded_fonts no)
+		(model "${KIPRJMOD}/../../lib/3dmodels/LED_D5.0mm-3.step"
+			(offset
+				(xyz -2.54 0 0)
+			)
+			(scale
+				(xyz 1 1 1)
+			)
+			(rotate
+				(xyz 0 0 0)
+			)
+		)
+	)
+	(footprint "manipulator:JST_XH_B4B-XH-A_R"
+		(layer "F.Cu")
+		(uuid "3cbb03a4-7186-4af9-bfff-9d06a87df376")
+		(at 112.825 65.785)
+		(descr "Вилка JST B4B-XH-A, 4 конт., шаг 2,5 мм, 3 А (размеры KiCad — проверить по JST)")
+		(tags "connector jst xh")
+		(property "Reference" "X9"
+			(at 0 -7.7 0)
+			(layer "F.SilkS")
+			(uuid "772e7b28-c6f0-4dd3-9291-1c7e2068745b")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Value" "B4B-XH-A"
+			(at 0 7.7 0)
+			(layer "F.Fab")
+			(uuid "126aa807-5836-4cb3-8940-ee750237ac04")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "44857efc-1c0b-49f7-9d8c-338ff9d86298")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Description" ""
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "e1e12d87-899b-47d7-867d-3a424fc183bd")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "BaseID" "E-092"
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "1c690717-3984-4724-8caf-0d753461f3a3")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Status" "Предложение"
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "d30d8806-1a84-4485-b659-9cb560dcd630")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Назначение" "К плате MC (ответная часть X10 MC, шина I2C до мультиплексора): 1 3V3, 2 SCL, 3 SDA, 4 GND_L"
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "7546d846-3dda-4a6f-bb82-bd8c0dbabcbe")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(path "/6d612afd-beb6-5ff8-a41c-71e3bb792ecd")
+		(sheetname "/")
+		(sheetfile "LR.kicad_sch")
+		(units
+			(unit
+				(name "A")
+				(pins "1" "2" "3" "4")
+			)
+		)
+		(attr through_hole)
+		(duplicate_pad_numbers_are_jumpers no)
+		(fp_rect
+			(start -3.6 -6.4)
+			(end 2.55 6.4)
+			(stroke
+				(width 0.15)
+				(type default)
+			)
+			(fill no)
+			(layer "F.SilkS")
+			(uuid "c40c553e-2260-4466-9035-02f9097066f2")
+		)
+		(fp_rect
+			(start -3.9 -6.7)
+			(end 2.85 6.7)
+			(stroke
+				(width 0.05)
+				(type default)
+			)
+			(fill no)
+			(layer "F.CrtYd")
+			(uuid "54abbc88-3dd5-4eaf-b4de-731b9700d4e8")
+		)
+		(fp_rect
+			(start -3.4 -6.2)
+			(end 2.35 6.2)
+			(stroke
+				(width 0.1)
+				(type default)
+			)
+			(fill no)
+			(layer "F.Fab")
+			(uuid "8bbbceab-1e7f-4fbf-9f1a-807897c04863")
+		)
+		(fp_text user "1"
+			(at 0 -6.15 0)
+			(layer "F.SilkS")
+			(uuid "57dc0b3d-590f-4060-9765-37d25136d807")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(pad "1" thru_hole rect
+			(at 0 -3.75)
+			(size 1.8 1.8)
+			(drill 1)
+			(layers "*.Cu" "*.Mask")
+			(remove_unused_layers no)
+			(net "3V3")
+			(pinfunction "3V3_1")
+			(pintype "passive")
+			(uuid "82618916-87f1-4d75-aa93-86f064559e25")
+		)
+		(pad "2" thru_hole circle
+			(at 0 -1.25)
+			(size 1.8 1.8)
+			(drill 1)
+			(layers "*.Cu" "*.Mask")
+			(remove_unused_layers no)
+			(net "SCL")
+			(pinfunction "SCL_2")
+			(pintype "passive")
+			(uuid "f68c8b4a-383d-41d4-9a31-4bb47be07be9")
+		)
+		(pad "3" thru_hole circle
+			(at 0 1.25)
+			(size 1.8 1.8)
+			(drill 1)
+			(layers "*.Cu" "*.Mask")
+			(remove_unused_layers no)
+			(net "SDA")
+			(pinfunction "SDA_3")
+			(pintype "passive")
+			(uuid "5add3170-e046-401d-8654-36a34c1d44f3")
+		)
+		(pad "4" thru_hole circle
+			(at 0 3.75)
+			(size 1.8 1.8)
+			(drill 1)
+			(layers "*.Cu" "*.Mask")
+			(remove_unused_layers no)
+			(net "GND_L")
+			(pinfunction "GND_L_4")
+			(pintype "passive")
+			(uuid "fb0caa22-53a7-49e2-970a-aa999787bc74")
+		)
+		(embedded_fonts no)
+		(model "${KIPRJMOD}/../../lib/3dmodels/JST_XH_B4B-XH-A_1x04_P2.50mm_Vertical.step"
+			(offset
+				(xyz 0 3.75 0)
+			)
+			(scale
+				(xyz 1 1 1)
+			)
+			(rotate
+				(xyz 0 0 90)
+			)
+		)
+	)
+	(footprint "manipulator:R_Axial_P10.16mm_V"
+		(layer "F.Cu")
+		(uuid "3d8dcd2b-298d-42b0-a327-4241835fd797")
+		(at 144.925 34.805)
+		(descr "Резистор 0,25 Вт, выводной, шаг 10,16")
+		(tags "resistor axial")
+		(property "Reference" "R15"
+			(at 2.6 0 0)
+			(layer "F.SilkS")
+			(uuid "37262f16-3c1b-4cb2-96f7-070d1ed23d2d")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Value" "150 Ом"
+			(at -2.6 0 0)
+			(layer "F.Fab")
+			(uuid "c46d620c-6f69-4a14-87c8-282866f10f47")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "1f77b7a6-db46-477a-8a49-827e48eb7bba")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Description" ""
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "43ebd3ae-baa9-42a4-84c7-dca18bd98272")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "BaseID" "E-062"
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "5362a444-b9d4-4976-9bc5-184bec459029")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Status" "Утверждено"
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "3a82fe3b-e5fb-4841-b31f-8162699d7f50")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Note" "Ток красного светодиода HL3"
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "23013700-7647-4cb3-a957-96e4e99a81da")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(path "/9fbdff49-70b3-547c-9eaf-081ef330ee09")
+		(sheetname "/")
+		(sheetfile "LR.kicad_sch")
+		(units
+			(unit
+				(name "A")
+				(pins "1" "2")
+			)
+		)
+		(attr through_hole)
+		(duplicate_pad_numbers_are_jumpers no)
+		(fp_rect
+			(start -1.4 -3.4)
+			(end 1.4 3.4)
+			(stroke
+				(width 0.15)
+				(type default)
+			)
+			(fill no)
+			(layer "F.SilkS")
+			(uuid "c9a5cd25-90cb-4b79-bc1c-21b698f6b74e")
+		)
+		(fp_rect
+			(start -1.2 -6.28)
+			(end 1.2 6.28)
+			(stroke
+				(width 0.05)
+				(type default)
+			)
+			(fill no)
+			(layer "F.CrtYd")
+			(uuid "c1de1ffb-c43c-4bcb-9faf-98460651e34c")
+		)
+		(fp_rect
+			(start -1.2 -3.2)
+			(end 1.2 3.2)
+			(stroke
+				(width 0.1)
+				(type default)
+			)
+			(fill no)
+			(layer "F.Fab")
+			(uuid "c16032b6-5683-4ae6-93ed-e55e364b18cf")
+		)
+		(pad "1" thru_hole circle
+			(at 0 5.08)
+			(size 1.8 1.8)
+			(drill 0.9)
+			(layers "*.Cu" "*.Mask")
+			(remove_unused_layers no)
+			(net "Net-(HL3-K2)")
+			(pintype "passive")
+			(uuid "28057d64-11c9-4782-9953-0d6c6a851c6e")
+		)
+		(pad "2" thru_hole circle
+			(at 0 -5.08)
+			(size 1.8 1.8)
+			(drill 0.9)
+			(layers "*.Cu" "*.Mask")
+			(remove_unused_layers no)
+			(net "Net-(DD1-P4)")
+			(pintype "passive")
+			(uuid "57983440-b6c1-46c2-9199-ad9740f7f3c9")
+		)
+		(embedded_fonts no)
+		(model "${KIPRJMOD}/../../lib/3dmodels/R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal.step"
+			(offset
+				(xyz 0 -5.08 0)
+			)
+			(scale
+				(xyz 1 1 1)
+			)
+			(rotate
+				(xyz 0 0 -90)
+			)
+		)
+	)
+	(footprint "manipulator:D_DO-35_P7.62mm"
+		(layer "F.Cu")
+		(uuid "4a65fed9-ae75-436d-908a-bc5c7d044047")
+		(at 93.175 53.235)
+		(descr "Диод 1N4148 в корпусе DO-35, шаг 7,62 мм; вывод 1 — катод")
+		(tags "diode do-35 1n4148")
+		(property "Reference" "VD3"
+			(at 0 -2.6 0)
+			(layer "F.SilkS")
+			(uuid "da48dab2-7696-470a-a532-bbd2044ad871")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Value" "1N4148"
+			(at 0 2.6 0)
+			(layer "F.Fab")
+			(uuid "11c2fcf9-61be-471e-8218-3d9217af80b4")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "53f77701-94e2-4a8d-9d31-b2d28ce153ea")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Description" ""
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "cd84370e-7a48-4729-b972-17af86453d20")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "BaseID" "E-054"
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "9ac7d2a4-4a79-4925-883f-bef979caa614")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Status" "Утверждено"
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "148d6b56-3d06-40cf-86e5-c5290e935818")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Note" "Встречный диод линии IN1 группы M1: ограничивает отрицательное напряжение с клеммы"
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "48b8d89c-1ad2-4089-997b-5050a73504f7")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(path "/57450e8d-63dd-4b0d-8c7f-7bdbb458680f")
+		(sheetname "/")
+		(sheetfile "LR.kicad_sch")
+		(units
+			(unit
+				(name "A")
+				(pins "1" "2")
+			)
+		)
+		(attr through_hole)
+		(duplicate_pad_numbers_are_jumpers no)
+		(fp_line
+			(start -1.4 -1.2)
+			(end -1.4 1.2)
+			(stroke
+				(width 0.15)
+				(type default)
+			)
+			(layer "F.SilkS")
+			(uuid "4085bca6-675c-4237-94fd-c4d2a78ced50")
+		)
+		(fp_rect
+			(start -2.2 -1.2)
+			(end 2.2 1.2)
+			(stroke
+				(width 0.15)
+				(type default)
+			)
+			(fill no)
+			(layer "F.SilkS")
+			(uuid "2457ffc0-3f6c-4f4d-8dde-9f468c3d82ff")
+		)
+		(fp_rect
+			(start -5 -1.8)
+			(end 5 1.8)
+			(stroke
+				(width 0.05)
+				(type default)
+			)
+			(fill no)
+			(layer "F.CrtYd")
+			(uuid "40657c69-923d-4290-bd66-7c4d16a7ce9b")
+		)
+		(fp_rect
+			(start -2 -1)
+			(end 2 1)
+			(stroke
+				(width 0.1)
+				(type default)
+			)
+			(fill no)
+			(layer "F.Fab")
+			(uuid "b3aaa5e7-3d82-4d73-8868-bf0685860cd3")
+		)
+		(pad "1" thru_hole rect
+			(at -3.81 0)
+			(size 1.6 1.6)
+			(drill 0.8)
+			(layers "*.Cu" "*.Mask")
+			(remove_unused_layers no)
+			(net "Net-(VD3-K)")
+			(pinfunction "K_1")
+			(pintype "passive")
+			(uuid "71253e7b-d3ae-450e-8751-3097875ec45d")
+		)
+		(pad "2" thru_hole circle
+			(at 3.81 0)
+			(size 1.6 1.6)
+			(drill 0.8)
+			(layers "*.Cu" "*.Mask")
+			(remove_unused_layers no)
+			(net "GND_L")
+			(pinfunction "A_2")
+			(pintype "passive")
+			(uuid "54509fcf-e660-446f-9abd-2b1b3d500381")
+		)
+		(embedded_fonts no)
+		(model "${KIPRJMOD}/../../lib/3dmodels/D_DO-35_SOD27_P7.62mm_Horizontal.step"
+			(offset
+				(xyz -3.81 0 0)
+			)
+			(scale
+				(xyz 1 1 1)
+			)
+			(rotate
+				(xyz 0 0 0)
+			)
+		)
+	)
+	(footprint "manipulator:SOT-23"
+		(layer "F.Cu")
+		(uuid "4deb8fd7-1e22-42f4-ba5b-503fb6fb049a")
+		(at 101.125 66.135)
+		(descr "Корпус SOT-23 (BAT54S): 1 — анод D1, 2 — катод D2, 3 — средняя точка")
+		(tags "sot-23 bat54s")
+		(property "Reference" "VD11"
+			(at 0 -2.7 0)
+			(layer "F.SilkS")
+			(uuid "850b4f72-2d5a-415d-9803-e10179943005")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Value" "BAT54S"
+			(at 0 2.7 0)
+			(layer "F.Fab")
+			(uuid "89bc8254-36ba-40f2-95e9-8991bf1eb2bc")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "234e0242-87bd-4a96-b652-b245daab2736")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Description" ""
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "3d483a1a-94f4-4131-8614-5036b0639e50")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "BaseID" "E-053"
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "506b4028-27eb-4a9a-b740-a413ae4e0ae4")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Status" "Утверждено"
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "1a9dc968-a086-4c03-b4d2-8a4d13e203a6")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Note" "Ограничитель линии SDA группы M1 на 3,3 В и GND_L"
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "672ed0fb-8ac5-4406-98bf-4a8b31f74eb9")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(path "/642cdddb-20d5-456b-a0ca-36f0881baf87")
+		(sheetname "/")
+		(sheetfile "LR.kicad_sch")
+		(units
+			(unit
+				(name "A")
+				(pins "3" "2" "1")
+			)
+		)
+		(attr smd)
+		(duplicate_pad_numbers_are_jumpers no)
+		(fp_line
+			(start -1.7 -0.3)
+			(end -1.7 0.3)
+			(stroke
+				(width 0.15)
+				(type default)
+			)
+			(layer "F.SilkS")
+			(uuid "7c6af969-4f4d-4579-b385-0c38e29345c9")
+		)
+		(fp_rect
+			(start -1.9 -2)
+			(end 1.9 2)
+			(stroke
+				(width 0.05)
+				(type default)
+			)
+			(fill no)
+			(layer "F.CrtYd")
+			(uuid "e37da871-f0d0-4844-93de-dd31dd50b9e1")
+		)
+		(fp_rect
+			(start -0.8 -0.65)
+			(end 0.8 0.65)
+			(stroke
+				(width 0.1)
+				(type default)
+			)
+			(fill no)
+			(layer "F.Fab")
+			(uuid "09b6a2f4-0cea-438b-be32-ff903733d70b")
+		)
+		(pad "1" smd roundrect
+			(at -0.95 1.1)
+			(size 1 1.2)
+			(layers "F.Cu" "F.Mask" "F.Paste")
+			(roundrect_rratio 0.2)
+			(net "GND_L")
+			(pinfunction "A_1")
+			(pintype "passive")
+			(uuid "88b7ae3e-da6f-4e60-917e-26336245ba1e")
+		)
+		(pad "2" smd roundrect
+			(at 0.95 1.1)
+			(size 1 1.2)
+			(layers "F.Cu" "F.Mask" "F.Paste")
+			(roundrect_rratio 0.2)
+			(net "3V3")
+			(pinfunction "K_2")
+			(pintype "passive")
+			(uuid "6b021561-98c0-4f8a-964d-660660203b71")
+		)
+		(pad "3" smd roundrect
+			(at 0 -1.1)
+			(size 1 1.2)
+			(layers "F.Cu" "F.Mask" "F.Paste")
+			(roundrect_rratio 0.2)
+			(net "Net-(VD11-IN)")
+			(pinfunction "IN_3")
+			(pintype "passive")
+			(uuid "d63e8422-a76d-4395-b240-d2fb51f68bff")
+		)
+		(embedded_fonts no)
+		(model "${KIPRJMOD}/../../lib/3dmodels/SOT-23.step"
+			(offset
+				(xyz 0 0 0)
+			)
+			(scale
+				(xyz 1 1 1)
+			)
+			(rotate
+				(xyz 0 0 0)
+			)
+		)
+	)
+	(footprint "manipulator:JST_XH_B5B-XH-A_L"
+		(layer "F.Cu")
+		(uuid "58c3106d-fa9e-42d6-851b-7a4396ff6263")
+		(at 125.475 50.085)
+		(descr "Вилка JST B5B-XH-A, 5 конт., шаг 2,5 мм, 3 А (размеры KiCad — проверить по JST)")
+		(tags "connector jst xh")
+		(property "Reference" "X4"
+			(at 0 -8.95 0)
+			(layer "F.SilkS")
+			(uuid "b8d2c1b2-414a-4789-8c01-5191ef977799")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Value" "B5B-XH-A"
+			(at 0 8.95 0)
+			(layer "F.Fab")
+			(uuid "a030dfbf-94c9-4901-9c88-5001db6f7199")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "53a4ec8a-144d-4b0e-be41-6c095b935c5c")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Description" ""
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "1a63e7b5-f85c-40a8-a325-84150d9743ed")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "BaseID" "—"
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "4273940f-725e-4908-8918-90cfd6bca85f")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Status" "Предложение"
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "01430d5a-a1f4-4b2a-b744-3c115370d1ec")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Назначение" "К плате CH4 (ответная часть X2 CH): 1 IN1, 2 IN2, 3 SDA, 4 SCL, 5 GND_L"
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "411acf0d-6a61-4a84-aaea-b679b9836664")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(path "/9af804b2-4dbc-5cd0-9f1d-6a5057d1ad97")
+		(sheetname "/")
+		(sheetfile "LR.kicad_sch")
+		(units
+			(unit
+				(name "A")
+				(pins "1" "2" "3" "4" "5")
+			)
+		)
+		(attr through_hole)
+		(duplicate_pad_numbers_are_jumpers no)
+		(fp_rect
+			(start -2.55 -7.65)
+			(end 3.6 7.65)
+			(stroke
+				(width 0.15)
+				(type default)
+			)
+			(fill no)
+			(layer "F.SilkS")
+			(uuid "68178c53-d20e-4c51-a4df-c98dd4a7c133")
+		)
+		(fp_rect
+			(start -2.85 -7.95)
+			(end 3.9 7.95)
+			(stroke
+				(width 0.05)
+				(type default)
+			)
+			(fill no)
+			(layer "F.CrtYd")
+			(uuid "b055bba1-1efb-486e-a769-21aa98380054")
+		)
+		(fp_rect
+			(start -2.35 -7.45)
+			(end 3.4 7.45)
+			(stroke
+				(width 0.1)
+				(type default)
+			)
+			(fill no)
+			(layer "F.Fab")
+			(uuid "afdffabe-c753-4dd2-bf9c-395dec64e041")
+		)
+		(fp_text user "1"
+			(at 0 7.4 0)
+			(layer "F.SilkS")
+			(uuid "f2ce0951-98b4-4c4a-8e80-99ac700afc85")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(pad "1" thru_hole rect
+			(at 0 5)
+			(size 1.8 1.8)
+			(drill 1)
+			(layers "*.Cu" "*.Mask")
+			(remove_unused_layers no)
+			(net "Net-(VD7-K)")
+			(pinfunction "M4_IN1_1")
+			(pintype "passive")
+			(uuid "25f30c9b-cac8-4dae-b1f9-c845913bf990")
+		)
+		(pad "2" thru_hole circle
+			(at 0 2.5)
+			(size 1.8 1.8)
+			(drill 1)
+			(layers "*.Cu" "*.Mask")
+			(remove_unused_layers no)
+			(net "Net-(VD8-K)")
+			(pinfunction "M4_IN2_2")
+			(pintype "passive")
+			(uuid "eb826832-1a62-49d8-a1e2-1221c1c3ecb9")
+		)
+		(pad "3" thru_hole circle
+			(at 0 0)
+			(size 1.8 1.8)
+			(drill 1)
+			(layers "*.Cu" "*.Mask")
+			(remove_unused_layers no)
+			(net "Net-(VD15-IN)")
+			(pinfunction "M4_SDA_3")
+			(pintype "passive")
+			(uuid "45aeb2aa-c3cf-4316-88a5-deced4030f08")
+		)
+		(pad "4" thru_hole circle
+			(at 0 -2.5)
+			(size 1.8 1.8)
+			(drill 1)
+			(layers "*.Cu" "*.Mask")
+			(remove_unused_layers no)
+			(net "Net-(VD16-IN)")
+			(pinfunction "M4_SCL_4")
+			(pintype "passive")
+			(uuid "08c0dbe9-4f83-469d-a908-efcc02af80e2")
+		)
+		(pad "5" thru_hole circle
+			(at 0 -5)
+			(size 1.8 1.8)
+			(drill 1)
+			(layers "*.Cu" "*.Mask")
+			(remove_unused_layers no)
+			(net "GND_L")
+			(pinfunction "GND_L_5")
+			(pintype "passive")
+			(uuid "a7d98f71-121f-4d7c-9de4-3042eb926b42")
+		)
+		(embedded_fonts no)
+		(model "${KIPRJMOD}/../../lib/3dmodels/JST_XH_B5B-XH-A_1x05_P2.50mm_Vertical.step"
+			(offset
+				(xyz 0 -5 0)
+			)
+			(scale
+				(xyz 1 1 1)
+			)
+			(rotate
+				(xyz 0 0 -90)
+			)
+		)
+	)
+	(footprint "manipulator:R_Axial_P10.16mm_V"
+		(layer "F.Cu")
+		(uuid "59cbb3ce-32c6-4e18-b8ac-ee60ee59c464")
+		(at 129.125 34.805)
+		(descr "Резистор 0,25 Вт, выводной, шаг 10,16")
+		(tags "resistor axial")
+		(property "Reference" "R11"
+			(at 2.6 0 0)
+			(layer "F.SilkS")
+			(uuid "11e59e39-3b2a-4c22-82b5-3c744fe5f1b0")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Value" "150 Ом"
+			(at -2.6 0 0)
+			(layer "F.Fab")
+			(uuid "8e512198-c533-4346-a031-f506e877696f")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "34709216-66b4-429a-b963-e35847891d93")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Description" ""
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "95e6b36b-3634-485f-96a5-527977e1a4aa")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "BaseID" "E-062"
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "bf644482-96d7-4698-a805-b8d114a4e8e8")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Status" "Утверждено"
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "1f1081fc-b14b-46b5-9a0a-cbd7376e8720")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Note" "Ток зелёного светодиода HL3"
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "49778f85-e3ab-4e28-9cbd-a7cfab827d65")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(path "/a721f0fa-cafe-5265-9240-540057dc0f45")
+		(sheetname "/")
+		(sheetfile "LR.kicad_sch")
+		(units
+			(unit
+				(name "A")
+				(pins "1" "2")
+			)
+		)
+		(attr through_hole)
+		(duplicate_pad_numbers_are_jumpers no)
+		(fp_rect
+			(start -1.4 -3.4)
+			(end 1.4 3.4)
+			(stroke
+				(width 0.15)
+				(type default)
+			)
+			(fill no)
+			(layer "F.SilkS")
+			(uuid "f5d83131-349d-4797-9c9f-818f1c378dd1")
+		)
+		(fp_rect
+			(start -1.2 -6.28)
+			(end 1.2 6.28)
+			(stroke
+				(width 0.05)
+				(type default)
+			)
+			(fill no)
+			(layer "F.CrtYd")
+			(uuid "a1523fd3-544f-4f36-8305-9b2b992edc35")
+		)
+		(fp_rect
+			(start -1.2 -3.2)
+			(end 1.2 3.2)
+			(stroke
+				(width 0.1)
+				(type default)
+			)
+			(fill no)
+			(layer "F.Fab")
+			(uuid "1b46998c-2849-46b4-8742-fcd5a4a88a9b")
+		)
+		(pad "1" thru_hole circle
+			(at 0 5.08)
+			(size 1.8 1.8)
+			(drill 0.9)
+			(layers "*.Cu" "*.Mask")
+			(remove_unused_layers no)
+			(net "Net-(HL3-K1)")
+			(pintype "passive")
+			(uuid "67dbf0c1-fc84-41aa-9463-5d5fb84aa88f")
+		)
+		(pad "2" thru_hole circle
+			(at 0 -5.08)
+			(size 1.8 1.8)
+			(drill 0.9)
+			(layers "*.Cu" "*.Mask")
+			(remove_unused_layers no)
+			(net "Net-(DD1-P5)")
+			(pintype "passive")
+			(uuid "31883597-63d7-4b41-bf56-fb6bfca88bde")
+		)
+		(embedded_fonts no)
+		(model "${KIPRJMOD}/../../lib/3dmodels/R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal.step"
+			(offset
+				(xyz 0 -5.08 0)
+			)
+			(scale
+				(xyz 1 1 1)
+			)
+			(rotate
+				(xyz 0 0 -90)
+			)
+		)
+	)
+	(footprint "manipulator:SOT-23"
+		(layer "F.Cu")
+		(uuid "65b7f49e-d9d1-4ace-8ce8-7117a33ae657")
+		(at 101.125 61.085)
+		(descr "Корпус SOT-23 (BAT54S): 1 — анод D1, 2 — катод D2, 3 — средняя точка")
+		(tags "sot-23 bat54s")
+		(property "Reference" "VD9"
+			(at 0 -2.7 0)
+			(layer "F.SilkS")
+			(uuid "32c5f4e8-bcfc-424f-892e-48f85a0288ba")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Value" "BAT54S"
+			(at 0 2.7 0)
+			(layer "F.Fab")
+			(uuid "2f859e2a-df22-4bf8-be06-8bf0f33a94e1")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "ab9f4bf0-2613-47f3-ba6d-353c70959ce3")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Description" ""
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "bf088b92-ae19-48e8-9c65-16a4c451c5db")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "BaseID" "E-053"
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "9178abeb-40f9-4df8-a4a3-7a20c2ac0360")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Status" "Утверждено"
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "2d1c4b93-7778-42a6-8b1b-34632ce40b88")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Note" "Ограничитель линии SDA группы M1 на 3,3 В и GND_L"
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "a55f1930-6b2c-4ebc-a9b0-00347e75545e")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(path "/3ea1e5ec-7b6b-5459-9c07-d36eb7fac12a")
+		(sheetname "/")
+		(sheetfile "LR.kicad_sch")
+		(units
+			(unit
+				(name "A")
+				(pins "3" "2" "1")
+			)
+		)
+		(attr smd)
+		(duplicate_pad_numbers_are_jumpers no)
+		(fp_line
+			(start -1.7 -0.3)
+			(end -1.7 0.3)
+			(stroke
+				(width 0.15)
+				(type default)
+			)
+			(layer "F.SilkS")
+			(uuid "27dfa683-da94-4a9e-be34-be8dc701d8c0")
+		)
+		(fp_rect
+			(start -1.9 -2)
+			(end 1.9 2)
+			(stroke
+				(width 0.05)
+				(type default)
+			)
+			(fill no)
+			(layer "F.CrtYd")
+			(uuid "ce18a3f6-9eb9-4aad-85a9-0301e24e07d2")
+		)
+		(fp_rect
+			(start -0.8 -0.65)
+			(end 0.8 0.65)
+			(stroke
+				(width 0.1)
+				(type default)
+			)
+			(fill no)
+			(layer "F.Fab")
+			(uuid "98b67b85-7132-4b42-98e1-be34f88a4b3c")
+		)
+		(pad "1" smd roundrect
+			(at -0.95 1.1)
+			(size 1 1.2)
+			(layers "F.Cu" "F.Mask" "F.Paste")
+			(roundrect_rratio 0.2)
+			(net "GND_L")
+			(pinfunction "A_1")
+			(pintype "passive")
+			(uuid "8f17206e-0e5a-47be-b59b-1cabdc0f9e6f")
+		)
+		(pad "2" smd roundrect
+			(at 0.95 1.1)
+			(size 1 1.2)
+			(layers "F.Cu" "F.Mask" "F.Paste")
+			(roundrect_rratio 0.2)
+			(net "3V3")
+			(pinfunction "K_2")
+			(pintype "passive")
+			(uuid "ea6a7df3-b259-4b5d-84fc-f3fa087afea4")
+		)
+		(pad "3" smd roundrect
+			(at 0 -1.1)
+			(size 1 1.2)
+			(layers "F.Cu" "F.Mask" "F.Paste")
+			(roundrect_rratio 0.2)
+			(net "Net-(VD9-IN)")
+			(pinfunction "IN_3")
+			(pintype "passive")
+			(uuid "7dc4238b-cbb1-4355-acb3-ad15b14c58d7")
+		)
+		(embedded_fonts no)
+		(model "${KIPRJMOD}/../../lib/3dmodels/SOT-23.step"
+			(offset
+				(xyz 0 0 0)
+			)
+			(scale
+				(xyz 1 1 1)
+			)
+			(rotate
+				(xyz 0 0 0)
+			)
+		)
+	)
+	(footprint "manipulator:R_Axial_P10.16mm_V"
+		(layer "F.Cu")
+		(uuid "673a8708-737c-4cfa-a512-87dfa9f28b48")
+		(at 125.175 34.805)
+		(descr "Резистор 0,25 Вт, выводной, шаг 10,16")
+		(tags "resistor axial")
+		(property "Reference" "R10"
+			(at 2.6 0 0)
+			(layer "F.SilkS")
+			(uuid "3ffe98cb-5cff-4dc0-a72f-475ed251b1a5")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Value" "150 Ом"
+			(at -2.6 0 0)
+			(layer "F.Fab")
+			(uuid "798cbec9-67b5-4e7c-9f42-20932b3b0f1d")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "e97def3d-7c8a-4452-9b31-8479ed40bab4")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Description" ""
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "cf553692-6914-4eba-9284-ec392d9eaf7d")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "BaseID" "E-062"
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "d2102ad9-3789-4dc7-b1ca-5921bb775a69")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Status" "Утверждено"
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "22d06532-0743-4964-b9b9-850b6ccce066")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Note" "Ток зелёного светодиода HL2"
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "845d928a-1bdd-41b2-adcd-4646f338324d")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(path "/5ebb722d-e853-52e9-b263-c3beb3391d42")
+		(sheetname "/")
+		(sheetfile "LR.kicad_sch")
+		(units
+			(unit
+				(name "A")
+				(pins "1" "2")
+			)
+		)
+		(attr through_hole)
+		(duplicate_pad_numbers_are_jumpers no)
+		(fp_rect
+			(start -1.4 -3.4)
+			(end 1.4 3.4)
+			(stroke
+				(width 0.15)
+				(type default)
+			)
+			(fill no)
+			(layer "F.SilkS")
+			(uuid "974bd197-c0b9-41c8-a885-011419c0651a")
+		)
+		(fp_rect
+			(start -1.2 -6.28)
+			(end 1.2 6.28)
+			(stroke
+				(width 0.05)
+				(type default)
+			)
+			(fill no)
+			(layer "F.CrtYd")
+			(uuid "0b316104-d2ed-4c05-a6da-945ac9bbe1bf")
+		)
+		(fp_rect
+			(start -1.2 -3.2)
+			(end 1.2 3.2)
+			(stroke
+				(width 0.1)
+				(type default)
+			)
+			(fill no)
+			(layer "F.Fab")
+			(uuid "5fa29248-952b-438e-9791-a21a6fe272fc")
+		)
+		(pad "1" thru_hole circle
+			(at 0 5.08)
+			(size 1.8 1.8)
+			(drill 0.9)
+			(layers "*.Cu" "*.Mask")
+			(remove_unused_layers no)
+			(net "Net-(HL2-K1)")
+			(pintype "passive")
+			(uuid "504c5706-ddfc-42c2-bce8-f9cbf071928e")
+		)
+		(pad "2" thru_hole circle
+			(at 0 -5.08)
+			(size 1.8 1.8)
+			(drill 0.9)
+			(layers "*.Cu" "*.Mask")
+			(remove_unused_layers no)
+			(net "Net-(DD1-P3)")
+			(pintype "passive")
+			(uuid "e0632fdc-6844-49a7-a477-828742087f9c")
+		)
+		(embedded_fonts no)
+		(model "${KIPRJMOD}/../../lib/3dmodels/R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal.step"
+			(offset
+				(xyz 0 -5.08 0)
+			)
+			(scale
+				(xyz 1 1 1)
+			)
+			(rotate
+				(xyz 0 0 -90)
+			)
+		)
+	)
+	(footprint "manipulator:R_Axial_P10.16mm_V"
+		(layer "F.Cu")
+		(uuid "682e0a40-4588-4046-a8cd-54d0415f948e")
+		(at 89.625 34.805)
+		(descr "Резистор 0,25 Вт, выводной, шаг 10,16")
+		(tags "resistor axial")
+		(property "Reference" "R1"
+			(at 2.6 0 0)
+			(layer "F.SilkS")
+			(uuid "f5468b5c-df91-4c0b-b99b-9c2847cf83aa")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Value" "100 Ом"
+			(at -2.6 0 0)
+			(layer "F.Fab")
+			(uuid "561b70a2-9623-462a-a39b-ac60b4cd7ffb")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "684898da-c1f4-4a99-b26a-5615e1d0c1ea")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Description" ""
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "0de00789-c4db-4cd2-aa8b-2f3dfd093648")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "BaseID" "E-052"
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "02eb7c8c-d0ee-4dd6-be27-cb025d12e8c3")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Status" "Утверждено"
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "99959d6d-c6a8-4b3a-85c7-f1fc23c2b17c")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Note" "Последовательная защита линии SDA группы M1 со стороны клемм"
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "cbc86050-16e2-4807-be27-9fad2ef1eb02")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(path "/b66ccaa0-2388-5aba-b4ad-6a30b8882c10")
+		(sheetname "/")
+		(sheetfile "LR.kicad_sch")
+		(units
+			(unit
+				(name "A")
+				(pins "1" "2")
+			)
+		)
+		(attr through_hole)
+		(duplicate_pad_numbers_are_jumpers no)
+		(fp_rect
+			(start -1.4 -3.4)
+			(end 1.4 3.4)
+			(stroke
+				(width 0.15)
+				(type default)
+			)
+			(fill no)
+			(layer "F.SilkS")
+			(uuid "99bd14bc-a550-4653-83ee-2e27d6757cd1")
+		)
+		(fp_rect
+			(start -1.2 -6.28)
+			(end 1.2 6.28)
+			(stroke
+				(width 0.05)
+				(type default)
+			)
+			(fill no)
+			(layer "F.CrtYd")
+			(uuid "67382ef5-27a0-4585-ade1-a1c114ee4625")
+		)
+		(fp_rect
+			(start -1.2 -3.2)
+			(end 1.2 3.2)
+			(stroke
+				(width 0.1)
+				(type default)
+			)
+			(fill no)
+			(layer "F.Fab")
+			(uuid "b1b0f000-c797-42c7-aa99-fa6ddf7671b3")
+		)
+		(pad "1" thru_hole circle
+			(at 0 5.08)
+			(size 1.8 1.8)
+			(drill 0.9)
+			(layers "*.Cu" "*.Mask")
+			(remove_unused_layers no)
+			(net "Net-(VD9-IN)")
+			(pintype "passive")
+			(uuid "a820ed07-cb60-4b32-912c-7f8bc23176ad")
+		)
+		(pad "2" thru_hole circle
+			(at 0 -5.08)
+			(size 1.8 1.8)
+			(drill 0.9)
+			(layers "*.Cu" "*.Mask")
+			(remove_unused_layers no)
+			(net "Net-(X5-M1_SDA)")
+			(pintype "passive")
+			(uuid "f73bd3f4-55fd-4e9c-bedd-3b4f64b0df5a")
+		)
+		(embedded_fonts no)
+		(model "${KIPRJMOD}/../../lib/3dmodels/R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal.step"
+			(offset
+				(xyz 0 -5.08 0)
+			)
+			(scale
+				(xyz 1 1 1)
+			)
+			(rotate
+				(xyz 0 0 -90)
+			)
+		)
+	)
+	(footprint "manipulator:SOT-23"
+		(layer "F.Cu")
+		(uuid "694b2db9-b1c8-4575-905b-444c2845ac9a")
+		(at 101.125 71.185)
+		(descr "Корпус SOT-23 (BAT54S): 1 — анод D1, 2 — катод D2, 3 — средняя точка")
+		(tags "sot-23 bat54s")
+		(property "Reference" "VD13"
+			(at 0 -2.7 0)
+			(layer "F.SilkS")
+			(uuid "79c68b5e-fcdc-44c0-ae29-648b3a660cd0")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Value" "BAT54S"
+			(at 0 2.7 0)
+			(layer "F.Fab")
+			(uuid "095fff41-a4ab-49c0-b4f4-6ea7c25db56d")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "77ac6e07-b812-4be6-bdd2-517baaf9b563")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Description" ""
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "ff41ce83-8b3a-4280-aa02-41bb5ee89ccb")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "BaseID" "E-053"
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "2d1d87e0-ab05-439f-a9d1-82ca5a713df8")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Status" "Утверждено"
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "ae126b02-a710-4e3e-b348-40df3428e045")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Note" "Ограничитель линии SDA группы M1 на 3,3 В и GND_L"
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "db931428-d048-4179-b234-d998cddc826b")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(path "/2ee7bda4-eade-4d08-b230-4783d235a1be")
+		(sheetname "/")
+		(sheetfile "LR.kicad_sch")
+		(units
+			(unit
+				(name "A")
+				(pins "3" "2" "1")
+			)
+		)
+		(attr smd)
+		(duplicate_pad_numbers_are_jumpers no)
+		(fp_line
+			(start -1.7 -0.3)
+			(end -1.7 0.3)
+			(stroke
+				(width 0.15)
+				(type default)
+			)
+			(layer "F.SilkS")
+			(uuid "cd26c2ea-dedf-42f7-8fb2-d6bd1462eb8e")
+		)
+		(fp_rect
+			(start -1.9 -2)
+			(end 1.9 2)
+			(stroke
+				(width 0.05)
+				(type default)
+			)
+			(fill no)
+			(layer "F.CrtYd")
+			(uuid "729b73ba-7f8f-4414-b4ce-361cc90a497a")
+		)
+		(fp_rect
+			(start -0.8 -0.65)
+			(end 0.8 0.65)
+			(stroke
+				(width 0.1)
+				(type default)
+			)
+			(fill no)
+			(layer "F.Fab")
+			(uuid "f75424a7-cada-456c-be42-4053165d8cb3")
+		)
+		(pad "1" smd roundrect
+			(at -0.95 1.1)
+			(size 1 1.2)
+			(layers "F.Cu" "F.Mask" "F.Paste")
+			(roundrect_rratio 0.2)
+			(net "GND_L")
+			(pinfunction "A_1")
+			(pintype "passive")
+			(uuid "d501cf7a-c6aa-4f8d-b2bf-0ce118d46d02")
+		)
+		(pad "2" smd roundrect
+			(at 0.95 1.1)
+			(size 1 1.2)
+			(layers "F.Cu" "F.Mask" "F.Paste")
+			(roundrect_rratio 0.2)
+			(net "3V3")
+			(pinfunction "K_2")
+			(pintype "passive")
+			(uuid "6ecbb030-b649-458f-9627-a232682c0cf6")
+		)
+		(pad "3" smd roundrect
+			(at 0 -1.1)
+			(size 1 1.2)
+			(layers "F.Cu" "F.Mask" "F.Paste")
+			(roundrect_rratio 0.2)
+			(net "Net-(VD13-IN)")
+			(pinfunction "IN_3")
+			(pintype "passive")
+			(uuid "66df7b84-7d8f-4bb0-889f-9f6167b7597f")
+		)
+		(embedded_fonts no)
+		(model "${KIPRJMOD}/../../lib/3dmodels/SOT-23.step"
+			(offset
+				(xyz 0 0 0)
+			)
+			(scale
+				(xyz 1 1 1)
+			)
+			(rotate
+				(xyz 0 0 0)
+			)
+		)
+	)
+	(footprint "manipulator:SOT-23"
+		(layer "F.Cu")
+		(uuid "6e227851-ef76-40b7-ae40-981ee6ef9175")
+		(at 105.975 71.185)
+		(descr "Корпус SOT-23 (BAT54S): 1 — анод D1, 2 — катод D2, 3 — средняя точка")
+		(tags "sot-23 bat54s")
+		(property "Reference" "VD14"
+			(at 0 -2.7 0)
+			(layer "F.SilkS")
+			(uuid "e0e68d2d-ce3d-43d4-abdd-a2833e0842e1")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Value" "BAT54S"
+			(at 0 2.7 0)
+			(layer "F.Fab")
+			(uuid "2ed861b3-f3a2-4b64-8691-9add7a92a15c")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "61969ccd-c1d2-4a72-a3a0-a3ff65d6aa1e")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Description" ""
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "9182effd-58c2-44cd-b270-ff76a4d8aeb0")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "BaseID" "E-053"
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "2236b69a-c8f0-4de6-aa1a-685506b82712")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Status" "Утверждено"
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "8f96e652-57ba-4c4e-a4a7-22b8c8d7d0f8")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Note" "Ограничитель линии SCL группы M1 на 3,3 В и GND_L"
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "e58b778d-2053-4cbc-bf02-ef653cae010c")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(path "/df28ef81-f7e9-4405-adf4-2d45fdfe72e6")
+		(sheetname "/")
+		(sheetfile "LR.kicad_sch")
+		(units
+			(unit
+				(name "A")
+				(pins "3" "2" "1")
+			)
+		)
+		(attr smd)
+		(duplicate_pad_numbers_are_jumpers no)
+		(fp_line
+			(start -1.7 -0.3)
+			(end -1.7 0.3)
+			(stroke
+				(width 0.15)
+				(type default)
+			)
+			(layer "F.SilkS")
+			(uuid "10135c4a-d061-4760-84b6-0811ccbc9e9e")
+		)
+		(fp_rect
+			(start -1.9 -2)
+			(end 1.9 2)
+			(stroke
+				(width 0.05)
+				(type default)
+			)
+			(fill no)
+			(layer "F.CrtYd")
+			(uuid "96a88106-1f2e-405e-b268-8c8a224365c4")
+		)
+		(fp_rect
+			(start -0.8 -0.65)
+			(end 0.8 0.65)
+			(stroke
+				(width 0.1)
+				(type default)
+			)
+			(fill no)
+			(layer "F.Fab")
+			(uuid "33cc617c-b773-418d-9821-5c164d1b570c")
+		)
+		(pad "1" smd roundrect
+			(at -0.95 1.1)
+			(size 1 1.2)
+			(layers "F.Cu" "F.Mask" "F.Paste")
+			(roundrect_rratio 0.2)
+			(net "GND_L")
+			(pinfunction "A_1")
+			(pintype "passive")
+			(uuid "827d04ce-c05c-460a-9f48-a75cc9f55321")
+		)
+		(pad "2" smd roundrect
+			(at 0.95 1.1)
+			(size 1 1.2)
+			(layers "F.Cu" "F.Mask" "F.Paste")
+			(roundrect_rratio 0.2)
+			(net "3V3")
+			(pinfunction "K_2")
+			(pintype "passive")
+			(uuid "1fdae513-5159-43bc-950e-e374330f9d93")
+		)
+		(pad "3" smd roundrect
+			(at 0 -1.1)
+			(size 1 1.2)
+			(layers "F.Cu" "F.Mask" "F.Paste")
+			(roundrect_rratio 0.2)
+			(net "Net-(VD14-IN)")
+			(pinfunction "IN_3")
+			(pintype "passive")
+			(uuid "90fa3094-b132-47f6-9203-64beed7a5aa4")
+		)
+		(embedded_fonts no)
+		(model "${KIPRJMOD}/../../lib/3dmodels/SOT-23.step"
+			(offset
+				(xyz 0 0 0)
+			)
+			(scale
+				(xyz 1 1 1)
+			)
+			(rotate
+				(xyz 0 0 0)
+			)
+		)
+	)
+	(footprint "manipulator:R_Axial_P10.16mm_V"
+		(layer "F.Cu")
+		(uuid "71bea145-2a63-4d93-97e5-797798f7977f")
+		(at 140.975 34.805)
+		(descr "Резистор 0,25 Вт, выводной, шаг 10,16")
+		(tags "resistor axial")
+		(property "Reference" "R14"
+			(at 2.6 0 0)
+			(layer "F.SilkS")
+			(uuid "778a02a3-8f0a-4aec-8438-6389310cf9de")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Value" "150 Ом"
+			(at -2.6 0 0)
+			(layer "F.Fab")
+			(uuid "54605735-0a4f-4c9a-8a61-19349b17400a")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "4ab13c61-d805-453f-a29d-960de02bf9d0")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Description" ""
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "afa95da3-51d4-4da1-99af-32de11a547c6")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "BaseID" "E-062"
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "f2a186e4-777e-4258-94c9-449b11fddefa")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Status" "Утверждено"
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "6231e446-e606-4a56-840d-45939e4eec60")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Note" "Ток красного светодиода HL2"
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "777c9e42-b79b-4501-883d-f6b2bb8b1946")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(path "/0cb47294-c133-5f9d-a201-4be410bb9db8")
+		(sheetname "/")
+		(sheetfile "LR.kicad_sch")
+		(units
+			(unit
+				(name "A")
+				(pins "1" "2")
+			)
+		)
+		(attr through_hole)
+		(duplicate_pad_numbers_are_jumpers no)
+		(fp_rect
+			(start -1.4 -3.4)
+			(end 1.4 3.4)
+			(stroke
+				(width 0.15)
+				(type default)
+			)
+			(fill no)
+			(layer "F.SilkS")
+			(uuid "48a8c8d7-02bb-4048-aef4-a0a9e853f169")
+		)
+		(fp_rect
+			(start -1.2 -6.28)
+			(end 1.2 6.28)
+			(stroke
+				(width 0.05)
+				(type default)
+			)
+			(fill no)
+			(layer "F.CrtYd")
+			(uuid "618c7d18-5543-464f-b866-563763eb4b35")
+		)
+		(fp_rect
+			(start -1.2 -3.2)
+			(end 1.2 3.2)
+			(stroke
+				(width 0.1)
+				(type default)
+			)
+			(fill no)
+			(layer "F.Fab")
+			(uuid "5ba69c62-7b3b-46b9-96ef-72a09c4d83ff")
+		)
+		(pad "1" thru_hole circle
+			(at 0 5.08)
+			(size 1.8 1.8)
+			(drill 0.9)
+			(layers "*.Cu" "*.Mask")
+			(remove_unused_layers no)
+			(net "Net-(HL2-K2)")
+			(pintype "passive")
+			(uuid "dce00060-9009-4f9d-b9c0-6b168416aa9c")
+		)
+		(pad "2" thru_hole circle
+			(at 0 -5.08)
+			(size 1.8 1.8)
+			(drill 0.9)
+			(layers "*.Cu" "*.Mask")
+			(remove_unused_layers no)
+			(net "Net-(DD1-P2)")
+			(pintype "passive")
+			(uuid "b9de10a3-abb1-4168-a6b6-8f1ea5cb6563")
+		)
+		(embedded_fonts no)
+		(model "${KIPRJMOD}/../../lib/3dmodels/R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal.step"
+			(offset
+				(xyz 0 -5.08 0)
+			)
+			(scale
+				(xyz 1 1 1)
+			)
+			(rotate
+				(xyz 0 0 -90)
+			)
+		)
+	)
+	(footprint "manipulator:TermGroup_5x_Banana4"
+		(layer "F.Cu")
+		(uuid "73dcd480-1f23-45ff-90fb-e1b403cd9707")
+		(at 61.575 44.55)
+		(descr "Группа из 5 комбинированных приборных клемм E-051 (винт + гнездо 4 мм), раскладка 3 × 2: ПРЕДВАРИТЕЛЬНОЕ место, модель клеммы не выбрана — сверить шаг и отверстие")
+		(tags "terminal banana 4mm")
+		(property "Reference" "X5"
+			(at 0 -17.325 0)
+			(layer "F.SilkS")
+			(uuid "11a30388-6cc0-4f70-8add-44080e658572")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Value" "клеммы"
+			(at 0 17.325 0)
+			(layer "F.Fab")
+			(uuid "a2389e36-9dc1-4592-b4f4-22f87a8695bd")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "d0659022-5c21-4c7f-9f2a-bf41b6061a57")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Description" ""
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "67243a9c-6465-4824-bc3c-9bc47a59b3f5")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "BaseID" "E-051"
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "cbce5dd3-1f16-49fc-adb0-d9f179559d06")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Status" "Предложение"
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "8120b414-918a-438c-b2d8-3fbd01f8ad8f")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Назначение" "Клеммы группы M1 (5 шт. E-051, винт + гнездо «банан» 4 мм): 1 IN1, 2 IN2, 3 SDA, 4 SCL, 5 GND_L"
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "ac5416e6-7e88-4fc6-8110-8e936f6bfc87")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(path "/0630f3d8-e7f9-592c-9851-554149ede682")
+		(sheetname "/")
+		(sheetfile "LR.kicad_sch")
+		(units
+			(unit
+				(name "A")
+				(pins "1" "2" "3" "4" "5")
+			)
+		)
+		(attr through_hole)
+		(duplicate_pad_numbers_are_jumpers no)
+		(fp_circle
+			(center -19.05 -9.525)
+			(end -13.05 -9.525)
+			(stroke
+				(width 0.15)
+				(type default)
+			)
+			(fill no)
+			(layer "F.SilkS")
+			(uuid "3a577a9b-74c1-4b47-b282-7d9adef52c4d")
+		)
+		(fp_circle
+			(center -19.05 9.525)
+			(end -13.05 9.525)
+			(stroke
+				(width 0.15)
+				(type default)
+			)
+			(fill no)
+			(layer "F.SilkS")
+			(uuid "bb97207e-bccc-4d57-bb64-b4f6931a257b")
+		)
+		(fp_circle
+			(center 0 -9.525)
+			(end 6 -9.525)
+			(stroke
+				(width 0.15)
+				(type default)
+			)
+			(fill no)
+			(layer "F.SilkS")
+			(uuid "419bc1fc-019d-41fd-a4d3-f494be315a75")
+		)
+		(fp_circle
+			(center 0 9.525)
+			(end 6 9.525)
+			(stroke
+				(width 0.15)
+				(type default)
+			)
+			(fill no)
+			(layer "F.SilkS")
+			(uuid "966bfb41-9993-408c-ae08-515d0ae51ce3")
+		)
+		(fp_circle
+			(center 19.05 -9.525)
+			(end 25.05 -9.525)
+			(stroke
+				(width 0.15)
+				(type default)
+			)
+			(fill no)
+			(layer "F.SilkS")
+			(uuid "af2316e9-65ab-478e-b645-e396a2f23f08")
+		)
+		(fp_circle
+			(center -19.05 -9.525)
+			(end -12.55 -9.525)
+			(stroke
+				(width 0.05)
+				(type default)
+			)
+			(fill no)
+			(layer "F.CrtYd")
+			(uuid "6a94a45c-2bba-40ee-880c-3b965bfa1436")
+		)
+		(fp_circle
+			(center -19.05 9.525)
+			(end -12.55 9.525)
+			(stroke
+				(width 0.05)
+				(type default)
+			)
+			(fill no)
+			(layer "F.CrtYd")
+			(uuid "3f33f476-8aea-449c-ba24-209d5d554d6a")
+		)
+		(fp_circle
+			(center 0 -9.525)
+			(end 6.5 -9.525)
+			(stroke
+				(width 0.05)
+				(type default)
+			)
+			(fill no)
+			(layer "F.CrtYd")
+			(uuid "bd603de4-10f7-47cc-90eb-0cf0f6c23c5a")
+		)
+		(fp_circle
+			(center 0 9.525)
+			(end 6.5 9.525)
+			(stroke
+				(width 0.05)
+				(type default)
+			)
+			(fill no)
+			(layer "F.CrtYd")
+			(uuid "0df7bbc2-9548-4284-8ad3-311df2ef3890")
+		)
+		(fp_circle
+			(center 19.05 -9.525)
+			(end 25.55 -9.525)
+			(stroke
+				(width 0.05)
+				(type default)
+			)
+			(fill no)
+			(layer "F.CrtYd")
+			(uuid "4b1d663b-1400-4df7-bdad-2e9b40746c05")
+		)
+		(pad "1" thru_hole rect
+			(at -19.05 9.525)
+			(size 8.5 8.5)
+			(drill 6.5)
+			(layers "*.Cu" "*.Mask")
+			(remove_unused_layers no)
+			(net "Net-(VD1-K)")
+			(pinfunction "M1_IN1_1")
+			(pintype "passive")
+			(uuid "f0f883a9-0083-48be-b40c-6c7d628b2011")
+		)
+		(pad "2" thru_hole circle
+			(at 0 9.525)
+			(size 8.5 8.5)
+			(drill 6.5)
+			(layers "*.Cu" "*.Mask")
+			(remove_unused_layers no)
+			(net "Net-(VD2-K)")
+			(pinfunction "M1_IN2_2")
+			(pintype "passive")
+			(uuid "d5271e12-5321-4672-a84b-1e20ab74effa")
+		)
+		(pad "3" thru_hole circle
+			(at 0 -9.525)
+			(size 8.5 8.5)
+			(drill 6.5)
+			(layers "*.Cu" "*.Mask")
+			(remove_unused_layers no)
+			(net "Net-(X5-M1_SDA)")
+			(pinfunction "M1_SDA_3")
+			(pintype "passive")
+			(uuid "798875a1-17e7-4b3c-9ef6-153c62adc060")
+		)
+		(pad "4" thru_hole circle
+			(at -19.05 -9.525)
+			(size 8.5 8.5)
+			(drill 6.5)
+			(layers "*.Cu" "*.Mask")
+			(remove_unused_layers no)
+			(net "Net-(X5-M1_SCL)")
+			(pinfunction "M1_SCL_4")
+			(pintype "passive")
+			(uuid "5859e3d2-7461-42bf-88b5-a3f8f710ac4e")
+		)
+		(pad "5" thru_hole circle
+			(at 19.05 -9.525)
+			(size 8.5 8.5)
+			(drill 6.5)
+			(layers "*.Cu" "*.Mask")
+			(remove_unused_layers no)
+			(net "GND_L")
+			(pinfunction "GND_L_5")
+			(pintype "passive")
+			(uuid "9a50f96e-9282-4ec6-abdc-bc9dec8c4194")
+		)
+		(embedded_fonts no)
+	)
+	(footprint "manipulator:LED_Bicolor_5mm"
+		(layer "F.Cu")
+		(uuid "76d6dabf-66f4-491c-a1df-62d8d0b90daa")
+		(at 134.025 59.735)
+		(descr "Светодиод двухцветный 5 мм, общий анод, 3 вывода 2,54; порядок выводов сверить")
+		(tags "led bicolor 5mm")
+		(property "Reference" "HL3"
+			(at 0 4.2 0)
+			(layer "F.SilkS")
+			(uuid "e187ff62-1141-4c89-8036-3461fca91a5c")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Value" "зел/красн"
+			(at 0 5.8 0)
+			(layer "F.Fab")
+			(uuid "90aeee97-564e-4bce-ad11-364fb4b92b07")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "c456817d-323b-4a58-af5e-daa9d97d721c")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Description" ""
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "4c9feede-baec-463d-bb79-c8c622410cd1")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "BaseID" "E-061"
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "e737dc09-008e-4271-a8b0-392412039b19")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Status" "Утверждено"
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "002cb6e0-4b0e-4325-b2ce-89a1562cc0bf")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Note" "Состояние звена M3: зелёный — норма, красный — авария (цоколёвку сверить)"
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "90a23ba4-56d5-44f0-a0c1-d253f821acc6")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(path "/062f7e0b-aae2-5115-97f8-ed645f1d8b58")
+		(sheetname "/")
+		(sheetfile "LR.kicad_sch")
+		(units
+			(unit
+				(name "A")
+				(pins "2" "1" "3")
+			)
+		)
+		(attr through_hole)
+		(duplicate_pad_numbers_are_jumpers no)
+		(fp_circle
+			(center 0 0)
+			(end 2.7 0)
+			(stroke
+				(width 0.15)
+				(type default)
+			)
+			(fill no)
+			(layer "F.SilkS")
+			(uuid "5a1e9c85-35cf-4315-90bf-9c30d9c37799")
+		)
+		(fp_rect
+			(start -3.6 -3.1)
+			(end 3.6 3.1)
+			(stroke
+				(width 0.05)
+				(type default)
+			)
+			(fill no)
+			(layer "F.CrtYd")
+			(uuid "9d3efc0a-a5d4-4b03-a91e-b8a15c1a7e53")
+		)
+		(fp_circle
+			(center 0 0)
+			(end 2.5 0)
+			(stroke
+				(width 0.1)
+				(type default)
+			)
+			(fill no)
+			(layer "F.Fab")
+			(uuid "ccae78ec-ebe5-4f98-9f94-57cd7d26328e")
+		)
+		(fp_text user "A"
+			(at 0 -3.6 0)
+			(layer "F.SilkS")
+			(uuid "acf111ff-9743-4fbf-a8cc-d3db9ca6d05e")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(pad "1" thru_hole rect
+			(at 0 0)
+			(size 1.8 1.8)
+			(drill 0.9)
+			(layers "*.Cu" "*.Mask")
+			(remove_unused_layers no)
+			(net "3V3")
+			(pinfunction "A_1")
+			(pintype "passive")
+			(uuid "6840c728-f4ec-4320-9b86-f5ad3217779b")
+		)
+		(pad "2" thru_hole circle
+			(at -2.54 0)
+			(size 1.8 1.8)
+			(drill 0.9)
+			(layers "*.Cu" "*.Mask")
+			(remove_unused_layers no)
+			(net "Net-(HL3-K1)")
+			(pinfunction "K1_2")
+			(pintype "passive")
+			(uuid "a0a99057-e7c6-435c-a297-1b6b9370ec95")
+		)
+		(pad "3" thru_hole circle
+			(at 2.54 0)
+			(size 1.8 1.8)
+			(drill 0.9)
+			(layers "*.Cu" "*.Mask")
+			(remove_unused_layers no)
+			(net "Net-(HL3-K2)")
+			(pinfunction "K2_3")
+			(pintype "passive")
+			(uuid "3700e212-3551-48b6-ade8-7ffaabfd2c97")
+		)
+		(embedded_fonts no)
+		(model "${KIPRJMOD}/../../lib/3dmodels/LED_D5.0mm-3.step"
+			(offset
+				(xyz -2.54 0 0)
+			)
+			(scale
+				(xyz 1 1 1)
+			)
+			(rotate
+				(xyz 0 0 0)
+			)
+		)
+	)
+	(footprint "manipulator:TermGroup_5x_Banana4"
+		(layer "F.Cu")
+		(uuid "7c0ab10a-8c8e-4f2f-aebc-3b58c1e31491")
+		(at 61.575 143.85)
+		(descr "Группа из 5 комбинированных приборных клемм E-051 (винт + гнездо 4 мм), раскладка 3 × 2: ПРЕДВАРИТЕЛЬНОЕ место, модель клеммы не выбрана — сверить шаг и отверстие")
+		(tags "terminal banana 4mm")
+		(property "Reference" "X8"
+			(at 0 -17.325 0)
+			(layer "F.SilkS")
+			(uuid "59d406fb-c309-4e00-8bd6-c80b6e3b434c")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Value" "клеммы"
+			(at 0 17.325 0)
+			(layer "F.Fab")
+			(uuid "3ed3e206-dbc6-4e69-aa85-3473f447110d")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "8657c804-9483-45e8-9f90-6a9dcaed87c9")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Description" ""
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "db566e54-c6b1-4100-ab64-b01ef79b7f2c")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "BaseID" "E-051"
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "8cb8b47e-af10-49a5-8405-e605032a7d6a")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Status" "Предложение"
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "f7f70d1d-75a1-4645-bad3-01900095cc5c")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Назначение" "Клеммы группы M4 (5 шт. E-051, винт + гнездо «банан» 4 мм): 1 IN1, 2 IN2, 3 SDA, 4 SCL, 5 GND_L"
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "0be724cc-363d-4da6-845b-d86a94e639e9")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(path "/45ec7303-f1b3-5948-81a0-e03bd3e9c277")
+		(sheetname "/")
+		(sheetfile "LR.kicad_sch")
+		(units
+			(unit
+				(name "A")
+				(pins "1" "2" "3" "4" "5")
+			)
+		)
+		(attr through_hole)
+		(duplicate_pad_numbers_are_jumpers no)
+		(fp_circle
+			(center -19.05 -9.525)
+			(end -13.05 -9.525)
+			(stroke
+				(width 0.15)
+				(type default)
+			)
+			(fill no)
+			(layer "F.SilkS")
+			(uuid "45115175-d9b5-4746-aeab-2384bc91bf41")
+		)
+		(fp_circle
+			(center -19.05 9.525)
+			(end -13.05 9.525)
+			(stroke
+				(width 0.15)
+				(type default)
+			)
+			(fill no)
+			(layer "F.SilkS")
+			(uuid "96f013d6-b34e-4dbc-a256-e8c9f0ed00b8")
+		)
+		(fp_circle
+			(center 0 -9.525)
+			(end 6 -9.525)
+			(stroke
+				(width 0.15)
+				(type default)
+			)
+			(fill no)
+			(layer "F.SilkS")
+			(uuid "fc1a21b8-5d42-49c5-904d-a853072586dc")
+		)
+		(fp_circle
+			(center 0 9.525)
+			(end 6 9.525)
+			(stroke
+				(width 0.15)
+				(type default)
+			)
+			(fill no)
+			(layer "F.SilkS")
+			(uuid "f6e222c0-f236-4c1c-820f-146bb1887d81")
+		)
+		(fp_circle
+			(center 19.05 -9.525)
+			(end 25.05 -9.525)
+			(stroke
+				(width 0.15)
+				(type default)
+			)
+			(fill no)
+			(layer "F.SilkS")
+			(uuid "b4466bbf-c63b-479c-8549-0ae4fabe2c0c")
+		)
+		(fp_circle
+			(center -19.05 -9.525)
+			(end -12.55 -9.525)
+			(stroke
+				(width 0.05)
+				(type default)
+			)
+			(fill no)
+			(layer "F.CrtYd")
+			(uuid "1d749a7b-2a0d-4abc-8997-2fc578dea79e")
+		)
+		(fp_circle
+			(center -19.05 9.525)
+			(end -12.55 9.525)
+			(stroke
+				(width 0.05)
+				(type default)
+			)
+			(fill no)
+			(layer "F.CrtYd")
+			(uuid "758049f1-7ba4-4822-9066-89b88df4d764")
+		)
+		(fp_circle
+			(center 0 -9.525)
+			(end 6.5 -9.525)
+			(stroke
+				(width 0.05)
+				(type default)
+			)
+			(fill no)
+			(layer "F.CrtYd")
+			(uuid "24a17c28-9ca5-4647-baf3-662ddfb4edd7")
+		)
+		(fp_circle
+			(center 0 9.525)
+			(end 6.5 9.525)
+			(stroke
+				(width 0.05)
+				(type default)
+			)
+			(fill no)
+			(layer "F.CrtYd")
+			(uuid "3e74ebc7-34a0-41ad-83e0-ce7edd5351a1")
+		)
+		(fp_circle
+			(center 19.05 -9.525)
+			(end 25.55 -9.525)
+			(stroke
+				(width 0.05)
+				(type default)
+			)
+			(fill no)
+			(layer "F.CrtYd")
+			(uuid "10ede1a7-8875-4fd3-9b4f-70e6bb88a4dc")
+		)
+		(pad "1" thru_hole rect
+			(at -19.05 9.525)
+			(size 8.5 8.5)
+			(drill 6.5)
+			(layers "*.Cu" "*.Mask")
+			(remove_unused_layers no)
+			(net "Net-(VD7-K)")
+			(pinfunction "M4_IN1_1")
+			(pintype "passive")
+			(uuid "2f94d38b-ccbf-472e-a22a-cd27a499e120")
+		)
+		(pad "2" thru_hole circle
+			(at 0 9.525)
+			(size 8.5 8.5)
+			(drill 6.5)
+			(layers "*.Cu" "*.Mask")
+			(remove_unused_layers no)
+			(net "Net-(VD8-K)")
+			(pinfunction "M4_IN2_2")
+			(pintype "passive")
+			(uuid "116da50f-5a1a-4eca-bfff-1a995e8cf664")
+		)
+		(pad "3" thru_hole circle
+			(at 0 -9.525)
+			(size 8.5 8.5)
+			(drill 6.5)
+			(layers "*.Cu" "*.Mask")
+			(remove_unused_layers no)
+			(net "Net-(X8-M4_SDA)")
+			(pinfunction "M4_SDA_3")
+			(pintype "passive")
+			(uuid "8edb33f6-5f3d-4d34-94c8-786d13b872fb")
+		)
+		(pad "4" thru_hole circle
+			(at -19.05 -9.525)
+			(size 8.5 8.5)
+			(drill 6.5)
+			(layers "*.Cu" "*.Mask")
+			(remove_unused_layers no)
+			(net "Net-(X8-M4_SCL)")
+			(pinfunction "M4_SCL_4")
+			(pintype "passive")
+			(uuid "792e606c-1619-46c5-8c4d-a14318ed2c40")
+		)
+		(pad "5" thru_hole circle
+			(at 19.05 -9.525)
+			(size 8.5 8.5)
+			(drill 6.5)
+			(layers "*.Cu" "*.Mask")
+			(remove_unused_layers no)
+			(net "GND_L")
+			(pinfunction "GND_L_5")
+			(pintype "passive")
+			(uuid "756eb09f-6a85-4ede-90b0-bdc888de3a82")
+		)
+		(embedded_fonts no)
+	)
+	(footprint "manipulator:R_Axial_P10.16mm_V"
+		(layer "F.Cu")
+		(uuid "82ccf66b-a480-4c02-a83b-44eb0985522f")
+		(at 109.375 34.805)
+		(descr "Резистор 0,25 Вт, выводной, шаг 10,16")
+		(tags "resistor axial")
+		(property "Reference" "R6"
+			(at 2.6 0 0)
+			(layer "F.SilkS")
+			(uuid "ac5cf605-68e8-479d-9c1f-da5647d96ad1")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Value" "100 Ом"
+			(at -2.6 0 0)
+			(layer "F.Fab")
+			(uuid "2ebd53e4-9462-460a-8bae-4ee49f6a6846")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "c1bbd619-8350-4fc2-8ee2-e7bd6aea7806")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Description" ""
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "21ba1b59-893c-46fe-808c-9bb8d05c6054")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "BaseID" "E-052"
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "6bd72f00-0320-4020-adc7-7069acd6b75e")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Status" "Утверждено"
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "216eeb94-f5ed-4b93-b954-b4044d2c6abb")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Note" "Последовательная защита линии SCL группы M1 со стороны клемм"
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "d669b4ef-734b-4151-8454-0f9de2f47895")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(path "/d9706240-1397-4ae4-9da0-d5815dbc920b")
+		(sheetname "/")
+		(sheetfile "LR.kicad_sch")
+		(units
+			(unit
+				(name "A")
+				(pins "1" "2")
+			)
+		)
+		(attr through_hole)
+		(duplicate_pad_numbers_are_jumpers no)
+		(fp_rect
+			(start -1.4 -3.4)
+			(end 1.4 3.4)
+			(stroke
+				(width 0.15)
+				(type default)
+			)
+			(fill no)
+			(layer "F.SilkS")
+			(uuid "a3d56ede-de34-431d-99c1-be099ddd7bc9")
+		)
+		(fp_rect
+			(start -1.2 -6.28)
+			(end 1.2 6.28)
+			(stroke
+				(width 0.05)
+				(type default)
+			)
+			(fill no)
+			(layer "F.CrtYd")
+			(uuid "7b4d7e12-63db-426c-8f35-6b3b4a024eca")
+		)
+		(fp_rect
+			(start -1.2 -3.2)
+			(end 1.2 3.2)
+			(stroke
+				(width 0.1)
+				(type default)
+			)
+			(fill no)
+			(layer "F.Fab")
+			(uuid "6d15f618-b43c-4517-88c8-9d6a5e7a61c9")
+		)
+		(pad "1" thru_hole circle
+			(at 0 5.08)
+			(size 1.8 1.8)
+			(drill 0.9)
+			(layers "*.Cu" "*.Mask")
+			(remove_unused_layers no)
+			(net "Net-(VD12-IN)")
+			(pintype "passive")
+			(uuid "f6efd266-bf25-442a-b45d-feb0bc612a2c")
+		)
+		(pad "2" thru_hole circle
+			(at 0 -5.08)
+			(size 1.8 1.8)
+			(drill 0.9)
+			(layers "*.Cu" "*.Mask")
+			(remove_unused_layers no)
+			(net "Net-(X6-M2_SCL)")
+			(pintype "passive")
+			(uuid "667d7971-94b0-4d1b-a319-3d0ee1b8ccba")
+		)
+		(embedded_fonts no)
+		(model "${KIPRJMOD}/../../lib/3dmodels/R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal.step"
+			(offset
+				(xyz 0 -5.08 0)
+			)
+			(scale
+				(xyz 1 1 1)
+			)
+			(rotate
+				(xyz 0 0 -90)
+			)
+		)
+	)
+	(footprint "manipulator:D_DO-35_P7.62mm"
+		(layer "F.Cu")
+		(uuid "8529d732-d2e4-4b06-b840-5e58b53af82d")
+		(at 93.175 76.485)
+		(descr "Диод 1N4148 в корпусе DO-35, шаг 7,62 мм; вывод 1 — катод")
+		(tags "diode do-35 1n4148")
+		(property "Reference" "VD8"
+			(at 0 -2.6 0)
+			(layer "F.SilkS")
+			(uuid "94129cee-a5d2-4d9a-ae66-1fd95ededc0b")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Value" "1N4148"
+			(at 0 2.6 0)
+			(layer "F.Fab")
+			(uuid "97d5bd43-a3c1-4a95-a7be-5b40f2d26606")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "2538b2ef-625d-4aa8-978b-43523947c7ab")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Description" ""
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "820a1b52-5ab6-4437-870b-4de954d549aa")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "BaseID" "E-054"
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "a49a6a3d-b117-40a1-a5d5-1f26d6f55066")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Status" "Утверждено"
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "24cbc727-322a-44da-ad04-6d1a3b749394")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Note" "Встречный диод линии IN2 группы M1: ограничивает отрицательное напряжение с клеммы"
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "d68f3179-2487-4df1-a4b3-826b4061bc73")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(path "/c7600137-bd3a-45ba-a894-1adc50f0f866")
+		(sheetname "/")
+		(sheetfile "LR.kicad_sch")
+		(units
+			(unit
+				(name "A")
+				(pins "1" "2")
+			)
+		)
+		(attr through_hole)
+		(duplicate_pad_numbers_are_jumpers no)
+		(fp_line
+			(start -1.4 -1.2)
+			(end -1.4 1.2)
+			(stroke
+				(width 0.15)
+				(type default)
+			)
+			(layer "F.SilkS")
+			(uuid "45d315bd-1494-4fdd-9de7-2df91bff7524")
+		)
+		(fp_rect
+			(start -2.2 -1.2)
+			(end 2.2 1.2)
+			(stroke
+				(width 0.15)
+				(type default)
+			)
+			(fill no)
+			(layer "F.SilkS")
+			(uuid "d55455d5-b189-49f7-a14b-c55fa0ee00cc")
+		)
+		(fp_rect
+			(start -5 -1.8)
+			(end 5 1.8)
+			(stroke
+				(width 0.05)
+				(type default)
+			)
+			(fill no)
+			(layer "F.CrtYd")
+			(uuid "18d22459-422a-4b8b-a1ec-45647dda1b91")
+		)
+		(fp_rect
+			(start -2 -1)
+			(end 2 1)
+			(stroke
+				(width 0.1)
+				(type default)
+			)
+			(fill no)
+			(layer "F.Fab")
+			(uuid "55330cef-3a34-48bc-b24d-1ab1699fa899")
+		)
+		(pad "1" thru_hole rect
+			(at -3.81 0)
+			(size 1.6 1.6)
+			(drill 0.8)
+			(layers "*.Cu" "*.Mask")
+			(remove_unused_layers no)
+			(net "Net-(VD8-K)")
+			(pinfunction "K_1")
+			(pintype "passive")
+			(uuid "d1baf1e6-c75c-43dc-bc55-5d5dada46b44")
+		)
+		(pad "2" thru_hole circle
+			(at 3.81 0)
+			(size 1.6 1.6)
+			(drill 0.8)
+			(layers "*.Cu" "*.Mask")
+			(remove_unused_layers no)
+			(net "GND_L")
+			(pinfunction "A_2")
+			(pintype "passive")
+			(uuid "5b1bbe6a-0240-47cc-afd8-71eb451fec40")
+		)
+		(embedded_fonts no)
+		(model "${KIPRJMOD}/../../lib/3dmodels/D_DO-35_SOD27_P7.62mm_Horizontal.step"
+			(offset
+				(xyz -3.81 0 0)
+			)
+			(scale
+				(xyz 1 1 1)
+			)
+			(rotate
+				(xyz 0 0 0)
+			)
+		)
+	)
+	(footprint "manipulator:SOT-23"
+		(layer "F.Cu")
+		(uuid "8e118e60-ff83-4449-9549-1d946913635e")
+		(at 101.125 76.235)
+		(descr "Корпус SOT-23 (BAT54S): 1 — анод D1, 2 — катод D2, 3 — средняя точка")
+		(tags "sot-23 bat54s")
+		(property "Reference" "VD15"
+			(at 0 -2.7 0)
+			(layer "F.SilkS")
+			(uuid "9a1ae51f-69bf-42ba-be4e-baa999c8701c")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Value" "BAT54S"
+			(at 0 2.7 0)
+			(layer "F.Fab")
+			(uuid "3409abef-77a0-4e09-abe7-9480cc182ae4")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "66ca8a13-684c-4eef-861d-02bb13a04bd9")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Description" ""
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "9dc53ec1-8f2c-48c5-9db5-b831490a6e25")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "BaseID" "E-053"
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "4d6cccd2-28b6-423f-b584-f3d3feb96d2f")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Status" "Утверждено"
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "eefa3ca7-7364-4312-a64d-9579b066c48b")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Note" "Ограничитель линии SDA группы M1 на 3,3 В и GND_L"
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "5f1e0775-f9f6-4f0a-aa6d-bf5bab93d0ed")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(path "/f8b64260-2844-4099-b5f3-ea3bb94ff641")
+		(sheetname "/")
+		(sheetfile "LR.kicad_sch")
+		(units
+			(unit
+				(name "A")
+				(pins "3" "2" "1")
+			)
+		)
+		(attr smd)
+		(duplicate_pad_numbers_are_jumpers no)
+		(fp_line
+			(start -1.7 -0.3)
+			(end -1.7 0.3)
+			(stroke
+				(width 0.15)
+				(type default)
+			)
+			(layer "F.SilkS")
+			(uuid "5eb138f3-b3c9-492a-8f6a-6307f82d9870")
+		)
+		(fp_rect
+			(start -1.9 -2)
+			(end 1.9 2)
+			(stroke
+				(width 0.05)
+				(type default)
+			)
+			(fill no)
+			(layer "F.CrtYd")
+			(uuid "627bb9aa-073b-4cd3-8212-8ecbaac766f0")
+		)
+		(fp_rect
+			(start -0.8 -0.65)
+			(end 0.8 0.65)
+			(stroke
+				(width 0.1)
+				(type default)
+			)
+			(fill no)
+			(layer "F.Fab")
+			(uuid "79badc71-31f0-4dd1-9656-92e6a43a8663")
+		)
+		(pad "1" smd roundrect
+			(at -0.95 1.1)
+			(size 1 1.2)
+			(layers "F.Cu" "F.Mask" "F.Paste")
+			(roundrect_rratio 0.2)
+			(net "GND_L")
+			(pinfunction "A_1")
+			(pintype "passive")
+			(uuid "21c57b90-28d2-4c8d-911b-cca088b20814")
+		)
+		(pad "2" smd roundrect
+			(at 0.95 1.1)
+			(size 1 1.2)
+			(layers "F.Cu" "F.Mask" "F.Paste")
+			(roundrect_rratio 0.2)
+			(net "3V3")
+			(pinfunction "K_2")
+			(pintype "passive")
+			(uuid "432be7e7-f131-4c6f-9252-c1ddb7c452ad")
+		)
+		(pad "3" smd roundrect
+			(at 0 -1.1)
+			(size 1 1.2)
+			(layers "F.Cu" "F.Mask" "F.Paste")
+			(roundrect_rratio 0.2)
+			(net "Net-(VD15-IN)")
+			(pinfunction "IN_3")
+			(pintype "passive")
+			(uuid "8d65103e-1e91-47e6-bed0-8f3400e0d7f0")
+		)
+		(embedded_fonts no)
+		(model "${KIPRJMOD}/../../lib/3dmodels/SOT-23.step"
+			(offset
+				(xyz 0 0 0)
+			)
+			(scale
+				(xyz 1 1 1)
+			)
+			(rotate
+				(xyz 0 0 0)
+			)
+		)
+	)
+	(footprint "manipulator:R_Axial_P10.16mm_V"
+		(layer "F.Cu")
+		(uuid "974e3ad9-44b3-4283-8191-a8039d67fb67")
+		(at 137.025 34.805)
+		(descr "Резистор 0,25 Вт, выводной, шаг 10,16")
+		(tags "resistor axial")
+		(property "Reference" "R13"
+			(at 2.6 0 0)
+			(layer "F.SilkS")
+			(uuid "32adc314-a985-4f86-aec9-945aaa7cbd55")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Value" "150 Ом"
+			(at -2.6 0 0)
+			(layer "F.Fab")
+			(uuid "03e03462-e874-4cfb-beab-28949f5050b8")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "8caf6b0a-0858-4555-920b-ad06b0a18f78")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Description" ""
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "46f26d28-779a-452f-9218-f47d36ffd2bc")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "BaseID" "E-062"
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "ec9b3c4d-5db6-4034-a0a1-ed28c8d31047")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Status" "Утверждено"
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "bd32bd83-bf41-484d-a723-7b1e80fb5d9a")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Note" "Ток красного светодиода HL1"
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "e7ce2915-5f2f-47cb-b13a-41c59babdb1a")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(path "/4733fb5f-51bd-5743-9a33-741d4aa3835d")
+		(sheetname "/")
+		(sheetfile "LR.kicad_sch")
+		(units
+			(unit
+				(name "A")
+				(pins "1" "2")
+			)
+		)
+		(attr through_hole)
+		(duplicate_pad_numbers_are_jumpers no)
+		(fp_rect
+			(start -1.4 -3.4)
+			(end 1.4 3.4)
+			(stroke
+				(width 0.15)
+				(type default)
+			)
+			(fill no)
+			(layer "F.SilkS")
+			(uuid "f0c065ba-c348-464c-befd-55dc91f4e38b")
+		)
+		(fp_rect
+			(start -1.2 -6.28)
+			(end 1.2 6.28)
+			(stroke
+				(width 0.05)
+				(type default)
+			)
+			(fill no)
+			(layer "F.CrtYd")
+			(uuid "292312ba-81fb-48d8-bf0f-bdd7cdd2437d")
+		)
+		(fp_rect
+			(start -1.2 -3.2)
+			(end 1.2 3.2)
+			(stroke
+				(width 0.1)
+				(type default)
+			)
+			(fill no)
+			(layer "F.Fab")
+			(uuid "facd44b8-8d29-4f35-8213-3025f9f9c197")
+		)
+		(pad "1" thru_hole circle
+			(at 0 5.08)
+			(size 1.8 1.8)
+			(drill 0.9)
+			(layers "*.Cu" "*.Mask")
+			(remove_unused_layers no)
+			(net "Net-(HL1-K2)")
+			(pintype "passive")
+			(uuid "f4c15fb1-b14c-4d87-ac0b-c57913dbbced")
+		)
+		(pad "2" thru_hole circle
+			(at 0 -5.08)
+			(size 1.8 1.8)
+			(drill 0.9)
+			(layers "*.Cu" "*.Mask")
+			(remove_unused_layers no)
+			(net "Net-(DD1-P0)")
+			(pintype "passive")
+			(uuid "2e81a8c9-c22a-4232-b0d4-38b819cccda1")
+		)
+		(embedded_fonts no)
+		(model "${KIPRJMOD}/../../lib/3dmodels/R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal.step"
+			(offset
+				(xyz 0 -5.08 0)
+			)
+			(scale
+				(xyz 1 1 1)
+			)
+			(rotate
+				(xyz 0 0 -90)
+			)
+		)
+	)
+	(footprint "manipulator:R_Axial_P10.16mm_V"
+		(layer "F.Cu")
+		(uuid "9d684d4d-8adc-4695-9489-c51dd3971a70")
+		(at 97.525 34.805)
+		(descr "Резистор 0,25 Вт, выводной, шаг 10,16")
+		(tags "resistor axial")
+		(property "Reference" "R3"
+			(at 2.6 0 0)
+			(layer "F.SilkS")
+			(uuid "284b04be-9041-4d15-a8ef-c7f290874bb1")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Value" "100 Ом"
+			(at -2.6 0 0)
+			(layer "F.Fab")
+			(uuid "bbe9ce15-9a27-4bb8-9bb2-799961c2ae10")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "8491aa70-19a8-4abb-b10c-3861a9e35672")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Description" ""
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "a8b97631-845b-4617-9d92-f28f37d7b3e3")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "BaseID" "E-052"
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "dcf6eac6-6985-4b97-bb3d-4ecee181cb73")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Status" "Утверждено"
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "b1561e87-ab1d-4ba2-a302-a7e08ad19850")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Note" "Последовательная защита линии SDA группы M1 со стороны клемм"
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "e4271263-b692-4cf0-b409-d94c83f22aae")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(path "/9d8ef1c1-4afd-4239-bcd6-c6dad673c124")
+		(sheetname "/")
+		(sheetfile "LR.kicad_sch")
+		(units
+			(unit
+				(name "A")
+				(pins "1" "2")
+			)
+		)
+		(attr through_hole)
+		(duplicate_pad_numbers_are_jumpers no)
+		(fp_rect
+			(start -1.4 -3.4)
+			(end 1.4 3.4)
+			(stroke
+				(width 0.15)
+				(type default)
+			)
+			(fill no)
+			(layer "F.SilkS")
+			(uuid "9ba7622f-3d9a-466e-b576-8e6d0a324076")
+		)
+		(fp_rect
+			(start -1.2 -6.28)
+			(end 1.2 6.28)
+			(stroke
+				(width 0.05)
+				(type default)
+			)
+			(fill no)
+			(layer "F.CrtYd")
+			(uuid "122b7bbc-564c-4b53-b298-3519ea00c6b6")
+		)
+		(fp_rect
+			(start -1.2 -3.2)
+			(end 1.2 3.2)
+			(stroke
+				(width 0.1)
+				(type default)
+			)
+			(fill no)
+			(layer "F.Fab")
+			(uuid "947df2ad-d211-4b5b-a018-3cdb9ff49578")
+		)
+		(pad "1" thru_hole circle
+			(at 0 5.08)
+			(size 1.8 1.8)
+			(drill 0.9)
+			(layers "*.Cu" "*.Mask")
+			(remove_unused_layers no)
+			(net "Net-(VD13-IN)")
+			(pintype "passive")
+			(uuid "a9534b98-7141-4fe9-85ce-0165a484e2c1")
+		)
+		(pad "2" thru_hole circle
+			(at 0 -5.08)
+			(size 1.8 1.8)
+			(drill 0.9)
+			(layers "*.Cu" "*.Mask")
+			(remove_unused_layers no)
+			(net "Net-(X7-M3_SDA)")
+			(pintype "passive")
+			(uuid "7fdba015-7a56-45eb-a178-64b95b4564c3")
+		)
+		(embedded_fonts no)
+		(model "${KIPRJMOD}/../../lib/3dmodels/R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal.step"
+			(offset
+				(xyz 0 -5.08 0)
+			)
+			(scale
+				(xyz 1 1 1)
+			)
+			(rotate
+				(xyz 0 0 -90)
+			)
+		)
+	)
+	(footprint "manipulator:LED_Bicolor_5mm"
+		(layer "F.Cu")
+		(uuid "a265df01-5f9d-421a-9fbb-99ce7f9185a9")
+		(at 134.025 66.985)
+		(descr "Светодиод двухцветный 5 мм, общий анод, 3 вывода 2,54; порядок выводов сверить")
+		(tags "led bicolor 5mm")
+		(property "Reference" "HL4"
+			(at 0 4.2 0)
+			(layer "F.SilkS")
+			(uuid "1e3355a7-3637-45eb-a992-f82dedd86e38")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Value" "зел/красн"
+			(at 0 5.8 0)
+			(layer "F.Fab")
+			(uuid "b0833b35-d2df-4f39-ad6f-b428eeef9e78")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "3cd7a6b7-7045-41e5-86c3-62ebc17531de")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Description" ""
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "884f13ce-cc50-4bd0-8dcb-98ea9117f678")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "BaseID" "E-061"
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "b09448fc-f515-4e7a-88f1-fd2a2ed74cfc")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Status" "Утверждено"
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "520c9d60-908c-4048-8a31-09f619c84413")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Note" "Состояние звена M4: зелёный — норма, красный — авария (цоколёвку сверить)"
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "6cfee9e9-331b-4a2d-b8ff-d8ae3920833b")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(path "/76e80ac7-5c00-5af4-8a00-927c6383f593")
+		(sheetname "/")
+		(sheetfile "LR.kicad_sch")
+		(units
+			(unit
+				(name "A")
+				(pins "2" "1" "3")
+			)
+		)
+		(attr through_hole)
+		(duplicate_pad_numbers_are_jumpers no)
+		(fp_circle
+			(center 0 0)
+			(end 2.7 0)
+			(stroke
+				(width 0.15)
+				(type default)
+			)
+			(fill no)
+			(layer "F.SilkS")
+			(uuid "9f9fb257-97c9-4c44-86d9-951581bb9aba")
+		)
+		(fp_rect
+			(start -3.6 -3.1)
+			(end 3.6 3.1)
+			(stroke
+				(width 0.05)
+				(type default)
+			)
+			(fill no)
+			(layer "F.CrtYd")
+			(uuid "61d4eba0-0158-40ec-8c5f-55d0a27052f4")
+		)
+		(fp_circle
+			(center 0 0)
+			(end 2.5 0)
+			(stroke
+				(width 0.1)
+				(type default)
+			)
+			(fill no)
+			(layer "F.Fab")
+			(uuid "7fa7881f-7c6c-4b6d-8a31-f73116b970bc")
+		)
+		(fp_text user "A"
+			(at 0 -3.6 0)
+			(layer "F.SilkS")
+			(uuid "493926b2-e302-43aa-a8a0-a2dfca9861dc")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(pad "1" thru_hole rect
+			(at 0 0)
+			(size 1.8 1.8)
+			(drill 0.9)
+			(layers "*.Cu" "*.Mask")
+			(remove_unused_layers no)
+			(net "3V3")
+			(pinfunction "A_1")
+			(pintype "passive")
+			(uuid "58f88729-ca0a-4ac4-a8ff-900df4e1556e")
+		)
+		(pad "2" thru_hole circle
+			(at -2.54 0)
+			(size 1.8 1.8)
+			(drill 0.9)
+			(layers "*.Cu" "*.Mask")
+			(remove_unused_layers no)
+			(net "Net-(HL4-K1)")
+			(pinfunction "K1_2")
+			(pintype "passive")
+			(uuid "9cfeed2c-3f2b-42b2-8fbb-8a881b799368")
+		)
+		(pad "3" thru_hole circle
+			(at 2.54 0)
+			(size 1.8 1.8)
+			(drill 0.9)
+			(layers "*.Cu" "*.Mask")
+			(remove_unused_layers no)
+			(net "Net-(HL4-K2)")
+			(pinfunction "K2_3")
+			(pintype "passive")
+			(uuid "645e5b97-5fe7-4300-ae4b-ca30ca92c508")
+		)
+		(embedded_fonts no)
+		(model "${KIPRJMOD}/../../lib/3dmodels/LED_D5.0mm-3.step"
+			(offset
+				(xyz -2.54 0 0)
+			)
+			(scale
+				(xyz 1 1 1)
+			)
+			(rotate
+				(xyz 0 0 0)
+			)
+		)
+	)
+	(footprint "manipulator:SOT-23"
+		(layer "F.Cu")
+		(uuid "aa6dbfdd-f056-4690-9d91-0cde680c7c97")
+		(at 105.975 76.235)
+		(descr "Корпус SOT-23 (BAT54S): 1 — анод D1, 2 — катод D2, 3 — средняя точка")
+		(tags "sot-23 bat54s")
+		(property "Reference" "VD16"
+			(at 0 -2.7 0)
+			(layer "F.SilkS")
+			(uuid "5213dfbd-0ce3-4e16-9d7a-9ea69a50e927")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Value" "BAT54S"
+			(at 0 2.7 0)
+			(layer "F.Fab")
+			(uuid "bd54aefc-e278-4ce6-ba15-0864c1f1eda3")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "38c5ff97-c0a0-4f1a-9610-9a0eaa8cc1ca")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Description" ""
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "55c3c60f-8258-445c-872b-a272a7cc5ca3")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "BaseID" "E-053"
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "38300474-75d1-4c91-8a6f-69777af5fc72")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Status" "Утверждено"
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "5f7c7530-a2a6-4144-b975-41a8f94ef6c1")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Note" "Ограничитель линии SCL группы M1 на 3,3 В и GND_L"
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "3b27a1c8-2571-43fc-9df7-dfe90f55cfe4")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(path "/e2276f50-34f7-4a06-b56f-a23ab0f693a2")
+		(sheetname "/")
+		(sheetfile "LR.kicad_sch")
+		(units
+			(unit
+				(name "A")
+				(pins "3" "2" "1")
+			)
+		)
+		(attr smd)
+		(duplicate_pad_numbers_are_jumpers no)
+		(fp_line
+			(start -1.7 -0.3)
+			(end -1.7 0.3)
+			(stroke
+				(width 0.15)
+				(type default)
+			)
+			(layer "F.SilkS")
+			(uuid "c1e8476c-7b60-4112-9687-a99734c476d0")
+		)
+		(fp_rect
+			(start -1.9 -2)
+			(end 1.9 2)
+			(stroke
+				(width 0.05)
+				(type default)
+			)
+			(fill no)
+			(layer "F.CrtYd")
+			(uuid "4dda43d5-ae53-46ae-bbc4-522756b8f942")
+		)
+		(fp_rect
+			(start -0.8 -0.65)
+			(end 0.8 0.65)
+			(stroke
+				(width 0.1)
+				(type default)
+			)
+			(fill no)
+			(layer "F.Fab")
+			(uuid "c820bd89-93f6-4d4d-8fda-d7538dcc5e9d")
+		)
+		(pad "1" smd roundrect
+			(at -0.95 1.1)
+			(size 1 1.2)
+			(layers "F.Cu" "F.Mask" "F.Paste")
+			(roundrect_rratio 0.2)
+			(net "GND_L")
+			(pinfunction "A_1")
+			(pintype "passive")
+			(uuid "b522c163-c6b9-4895-8b68-9f7dc7f5ee7d")
+		)
+		(pad "2" smd roundrect
+			(at 0.95 1.1)
+			(size 1 1.2)
+			(layers "F.Cu" "F.Mask" "F.Paste")
+			(roundrect_rratio 0.2)
+			(net "3V3")
+			(pinfunction "K_2")
+			(pintype "passive")
+			(uuid "bb97dc6f-2c55-48ae-a281-d8f63f137e91")
+		)
+		(pad "3" smd roundrect
+			(at 0 -1.1)
+			(size 1 1.2)
+			(layers "F.Cu" "F.Mask" "F.Paste")
+			(roundrect_rratio 0.2)
+			(net "Net-(VD16-IN)")
+			(pinfunction "IN_3")
+			(pintype "passive")
+			(uuid "4c64658a-adec-4cd1-a90e-a4415c41e4c5")
+		)
+		(embedded_fonts no)
+		(model "${KIPRJMOD}/../../lib/3dmodels/SOT-23.step"
+			(offset
+				(xyz 0 0 0)
+			)
+			(scale
+				(xyz 1 1 1)
+			)
+			(rotate
+				(xyz 0 0 0)
+			)
+		)
+	)
+	(footprint "manipulator:LED_Bicolor_5mm"
+		(layer "F.Cu")
+		(uuid "ab22b73d-6912-49e0-b439-2cd298a304c4")
+		(at 134.025 45.235)
+		(descr "Светодиод двухцветный 5 мм, общий анод, 3 вывода 2,54; порядок выводов сверить")
+		(tags "led bicolor 5mm")
+		(property "Reference" "HL1"
+			(at 0 4.2 0)
+			(layer "F.SilkS")
+			(uuid "f877ede7-57c2-410b-90a7-9c420d58d44e")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Value" "зел/красн"
+			(at 0 5.8 0)
+			(layer "F.Fab")
+			(uuid "981bae6d-baaa-440e-9d80-7f71795e97f2")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "c6911b7c-4087-4f63-b2ae-bdc7c19bfd4d")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Description" ""
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "08d57fed-e042-4e0e-bf75-b53031d4e751")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "BaseID" "E-061"
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "9e8ba81c-d676-4358-819b-40830eba1f05")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Status" "Утверждено"
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "5729a428-a32f-4fb1-8735-eb840757a7b3")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Note" "Состояние звена M1: зелёный — норма, красный — авария (цоколёвку сверить)"
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "e55ff028-b6fd-4b27-a0be-dc05917149bb")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(path "/1aa9308c-4222-5c05-8735-fae1ceee73a2")
+		(sheetname "/")
+		(sheetfile "LR.kicad_sch")
+		(units
+			(unit
+				(name "A")
+				(pins "2" "1" "3")
+			)
+		)
+		(attr through_hole)
+		(duplicate_pad_numbers_are_jumpers no)
+		(fp_circle
+			(center 0 0)
+			(end 2.7 0)
+			(stroke
+				(width 0.15)
+				(type default)
+			)
+			(fill no)
+			(layer "F.SilkS")
+			(uuid "0e3b49a2-6d9d-4a76-a3ea-7d7d486c491a")
+		)
+		(fp_rect
+			(start -3.6 -3.1)
+			(end 3.6 3.1)
+			(stroke
+				(width 0.05)
+				(type default)
+			)
+			(fill no)
+			(layer "F.CrtYd")
+			(uuid "e63dfc1a-bc69-4715-9f23-f23f1ef44fb1")
+		)
+		(fp_circle
+			(center 0 0)
+			(end 2.5 0)
+			(stroke
+				(width 0.1)
+				(type default)
+			)
+			(fill no)
+			(layer "F.Fab")
+			(uuid "3af3e597-ead0-4d8c-a0c2-1160fdd79712")
+		)
+		(fp_text user "A"
+			(at 0 -3.6 0)
+			(layer "F.SilkS")
+			(uuid "2ff25dbc-c754-47c0-8677-1e8002de5bc2")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(pad "1" thru_hole rect
+			(at 0 0)
+			(size 1.8 1.8)
+			(drill 0.9)
+			(layers "*.Cu" "*.Mask")
+			(remove_unused_layers no)
+			(net "3V3")
+			(pinfunction "A_1")
+			(pintype "passive")
+			(uuid "14b17afb-c2e8-45eb-8f06-1c013c2e1294")
+		)
+		(pad "2" thru_hole circle
+			(at -2.54 0)
+			(size 1.8 1.8)
+			(drill 0.9)
+			(layers "*.Cu" "*.Mask")
+			(remove_unused_layers no)
+			(net "Net-(HL1-K1)")
+			(pinfunction "K1_2")
+			(pintype "passive")
+			(uuid "862f97eb-37e4-44bc-8346-dac3f9e99cf5")
+		)
+		(pad "3" thru_hole circle
+			(at 2.54 0)
+			(size 1.8 1.8)
+			(drill 0.9)
+			(layers "*.Cu" "*.Mask")
+			(remove_unused_layers no)
+			(net "Net-(HL1-K2)")
+			(pinfunction "K2_3")
+			(pintype "passive")
+			(uuid "7593a8ca-cd79-4b9b-b77a-e92c9ea8c0a0")
+		)
+		(embedded_fonts no)
+		(model "${KIPRJMOD}/../../lib/3dmodels/LED_D5.0mm-3.step"
+			(offset
+				(xyz -2.54 0 0)
+			)
+			(scale
+				(xyz 1 1 1)
+			)
+			(rotate
+				(xyz 0 0 0)
+			)
+		)
+	)
+	(footprint "manipulator:D_DO-35_P7.62mm"
+		(layer "F.Cu")
+		(uuid "ac9bedd8-70d6-4593-8689-24d0a96723f7")
+		(at 93.175 71.835)
+		(descr "Диод 1N4148 в корпусе DO-35, шаг 7,62 мм; вывод 1 — катод")
+		(tags "diode do-35 1n4148")
+		(property "Reference" "VD7"
+			(at 0 -2.6 0)
+			(layer "F.SilkS")
+			(uuid "8aa25aab-3890-4827-8a80-5efd43986dc9")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Value" "1N4148"
+			(at 0 2.6 0)
+			(layer "F.Fab")
+			(uuid "2d052963-02e9-4b54-b1b2-a33bdc91ff09")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "93e0a9ea-dcb8-4ac8-a90a-9ac42d09c92d")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Description" ""
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "a5351e4b-4026-475f-acde-c4f1b542af2a")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "BaseID" "E-054"
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "b8b51178-c39d-4790-a44d-30c44c19fecf")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Status" "Утверждено"
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "0bd97092-042a-44cb-aec0-6bd91894c82e")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Note" "Встречный диод линии IN1 группы M1: ограничивает отрицательное напряжение с клеммы"
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "13d0e828-1d21-4c36-83bb-c63332ffdd6b")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(path "/546fc925-a9f0-4804-98e4-22c665022d05")
+		(sheetname "/")
+		(sheetfile "LR.kicad_sch")
+		(units
+			(unit
+				(name "A")
+				(pins "1" "2")
+			)
+		)
+		(attr through_hole)
+		(duplicate_pad_numbers_are_jumpers no)
+		(fp_line
+			(start -1.4 -1.2)
+			(end -1.4 1.2)
+			(stroke
+				(width 0.15)
+				(type default)
+			)
+			(layer "F.SilkS")
+			(uuid "69e8a3c1-7c82-4188-9907-5997c2c0bffd")
+		)
+		(fp_rect
+			(start -2.2 -1.2)
+			(end 2.2 1.2)
+			(stroke
+				(width 0.15)
+				(type default)
+			)
+			(fill no)
+			(layer "F.SilkS")
+			(uuid "9e357448-425b-438f-9835-9e6257dcc375")
+		)
+		(fp_rect
+			(start -5 -1.8)
+			(end 5 1.8)
+			(stroke
+				(width 0.05)
+				(type default)
+			)
+			(fill no)
+			(layer "F.CrtYd")
+			(uuid "43a5afd4-2b39-45a6-952e-445efe88879b")
+		)
+		(fp_rect
+			(start -2 -1)
+			(end 2 1)
+			(stroke
+				(width 0.1)
+				(type default)
+			)
+			(fill no)
+			(layer "F.Fab")
+			(uuid "06990d10-8d16-499c-b3aa-74d54553349d")
+		)
+		(pad "1" thru_hole rect
+			(at -3.81 0)
+			(size 1.6 1.6)
+			(drill 0.8)
+			(layers "*.Cu" "*.Mask")
+			(remove_unused_layers no)
+			(net "Net-(VD7-K)")
+			(pinfunction "K_1")
+			(pintype "passive")
+			(uuid "d26b69df-9b90-41a9-b8ff-5393027bae8c")
+		)
+		(pad "2" thru_hole circle
+			(at 3.81 0)
+			(size 1.6 1.6)
+			(drill 0.8)
+			(layers "*.Cu" "*.Mask")
+			(remove_unused_layers no)
+			(net "GND_L")
+			(pinfunction "A_2")
+			(pintype "passive")
+			(uuid "694dafd1-f0e2-4b3b-9e4c-520924b35c2d")
+		)
+		(embedded_fonts no)
+		(model "${KIPRJMOD}/../../lib/3dmodels/D_DO-35_SOD27_P7.62mm_Horizontal.step"
+			(offset
+				(xyz -3.81 0 0)
+			)
+			(scale
+				(xyz 1 1 1)
+			)
+			(rotate
+				(xyz 0 0 0)
+			)
+		)
+	)
+	(footprint "manipulator:D_DO-35_P7.62mm"
+		(layer "F.Cu")
+		(uuid "ada0b76e-e878-4705-b36a-13c82f1ee201")
+		(at 93.175 57.885)
+		(descr "Диод 1N4148 в корпусе DO-35, шаг 7,62 мм; вывод 1 — катод")
+		(tags "diode do-35 1n4148")
+		(property "Reference" "VD4"
+			(at 0 -2.6 0)
+			(layer "F.SilkS")
+			(uuid "d0280d10-801b-4c02-a04d-4375daac2df4")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Value" "1N4148"
+			(at 0 2.6 0)
+			(layer "F.Fab")
+			(uuid "2cf9fbc0-4723-4ba1-bfb1-700b6f3a5f56")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "9c02a448-e924-41c8-ad82-9fb21956c4eb")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Description" ""
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "8d724281-f5bb-4939-a58b-3c67a7319c18")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "BaseID" "E-054"
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "80032a0c-49b9-425f-b22e-31a76c871421")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Status" "Утверждено"
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "e0169721-ce72-4212-b5a1-c8c2ef5f39ad")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Note" "Встречный диод линии IN2 группы M1: ограничивает отрицательное напряжение с клеммы"
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "29bdcc63-ce2b-43af-ae4f-00e15f6e4fac")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(path "/03f2ad38-987c-47a4-95e3-8151e6c93e80")
+		(sheetname "/")
+		(sheetfile "LR.kicad_sch")
+		(units
+			(unit
+				(name "A")
+				(pins "1" "2")
+			)
+		)
+		(attr through_hole)
+		(duplicate_pad_numbers_are_jumpers no)
+		(fp_line
+			(start -1.4 -1.2)
+			(end -1.4 1.2)
+			(stroke
+				(width 0.15)
+				(type default)
+			)
+			(layer "F.SilkS")
+			(uuid "fe21a244-007a-4877-9aaf-e7ae5bfe57e5")
+		)
+		(fp_rect
+			(start -2.2 -1.2)
+			(end 2.2 1.2)
+			(stroke
+				(width 0.15)
+				(type default)
+			)
+			(fill no)
+			(layer "F.SilkS")
+			(uuid "5bd9e0d0-8e73-48df-bfd5-f8768191d2f4")
+		)
+		(fp_rect
+			(start -5 -1.8)
+			(end 5 1.8)
+			(stroke
+				(width 0.05)
+				(type default)
+			)
+			(fill no)
+			(layer "F.CrtYd")
+			(uuid "fd5f1228-705f-4332-9c50-dcd29d6a5a4b")
+		)
+		(fp_rect
+			(start -2 -1)
+			(end 2 1)
+			(stroke
+				(width 0.1)
+				(type default)
+			)
+			(fill no)
+			(layer "F.Fab")
+			(uuid "ef519e8a-6f31-4359-8069-76e1ef1ff6d9")
+		)
+		(pad "1" thru_hole rect
+			(at -3.81 0)
+			(size 1.6 1.6)
+			(drill 0.8)
+			(layers "*.Cu" "*.Mask")
+			(remove_unused_layers no)
+			(net "Net-(VD4-K)")
+			(pinfunction "K_1")
+			(pintype "passive")
+			(uuid "d2a237ca-1884-4023-8954-1498716218cd")
+		)
+		(pad "2" thru_hole circle
+			(at 3.81 0)
+			(size 1.6 1.6)
+			(drill 0.8)
+			(layers "*.Cu" "*.Mask")
+			(remove_unused_layers no)
+			(net "GND_L")
+			(pinfunction "A_2")
+			(pintype "passive")
+			(uuid "cb2ce086-4fdb-46e6-a28b-722c726aa1df")
+		)
+		(embedded_fonts no)
+		(model "${KIPRJMOD}/../../lib/3dmodels/D_DO-35_SOD27_P7.62mm_Horizontal.step"
+			(offset
+				(xyz -3.81 0 0)
+			)
+			(scale
+				(xyz 1 1 1)
+			)
+			(rotate
+				(xyz 0 0 0)
+			)
+		)
+	)
+	(footprint "manipulator:R_Axial_P10.16mm_V"
+		(layer "F.Cu")
+		(uuid "b3128438-d03f-4920-a55f-75646278e7b1")
+		(at 121.225 34.805)
+		(descr "Резистор 0,25 Вт, выводной, шаг 10,16")
+		(tags "resistor axial")
+		(property "Reference" "R9"
+			(at 2.6 0 0)
+			(layer "F.SilkS")
+			(uuid "86fc39ea-ca99-48ac-af72-351331aae216")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Value" "150 Ом"
+			(at -2.6 0 0)
+			(layer "F.Fab")
+			(uuid "4573a783-87ef-41ad-ba4e-2918f05e0810")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "458fd78f-6478-4d88-b0d5-1653f01b99e7")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Description" ""
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "3eaac587-a261-4af8-bf76-86788f877bc4")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "BaseID" "E-062"
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "75be4c60-42eb-44e4-98e2-ac2dbccad6a7")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Status" "Утверждено"
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "f7e9766f-85d4-47b7-9039-23a240af8eed")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Note" "Ток зелёного светодиода HL1"
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "a98d6de4-a464-42cf-938d-ce9379d7f3d0")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(path "/740942e8-cef7-534f-86eb-685b09cf204c")
+		(sheetname "/")
+		(sheetfile "LR.kicad_sch")
+		(units
+			(unit
+				(name "A")
+				(pins "1" "2")
+			)
+		)
+		(attr through_hole)
+		(duplicate_pad_numbers_are_jumpers no)
+		(fp_rect
+			(start -1.4 -3.4)
+			(end 1.4 3.4)
+			(stroke
+				(width 0.15)
+				(type default)
+			)
+			(fill no)
+			(layer "F.SilkS")
+			(uuid "4981324d-9852-4011-9f9e-72f1169118db")
+		)
+		(fp_rect
+			(start -1.2 -6.28)
+			(end 1.2 6.28)
+			(stroke
+				(width 0.05)
+				(type default)
+			)
+			(fill no)
+			(layer "F.CrtYd")
+			(uuid "3a01ab27-d551-46db-9278-a65bdd0be8d7")
+		)
+		(fp_rect
+			(start -1.2 -3.2)
+			(end 1.2 3.2)
+			(stroke
+				(width 0.1)
+				(type default)
+			)
+			(fill no)
+			(layer "F.Fab")
+			(uuid "9a21708d-ee8e-4d53-9b1a-0b06eaea218b")
+		)
+		(pad "1" thru_hole circle
+			(at 0 5.08)
+			(size 1.8 1.8)
+			(drill 0.9)
+			(layers "*.Cu" "*.Mask")
+			(remove_unused_layers no)
+			(net "Net-(HL1-K1)")
+			(pintype "passive")
+			(uuid "78550967-1510-4ba2-a135-4d0babf591d6")
+		)
+		(pad "2" thru_hole circle
+			(at 0 -5.08)
+			(size 1.8 1.8)
+			(drill 0.9)
+			(layers "*.Cu" "*.Mask")
+			(remove_unused_layers no)
+			(net "Net-(DD1-P1)")
+			(pintype "passive")
+			(uuid "ed004104-2527-4746-8451-383abc84893a")
+		)
+		(embedded_fonts no)
+		(model "${KIPRJMOD}/../../lib/3dmodels/R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal.step"
+			(offset
+				(xyz 0 -5.08 0)
+			)
+			(scale
+				(xyz 1 1 1)
+			)
+			(rotate
+				(xyz 0 0 -90)
+			)
+		)
+	)
+	(footprint "manipulator:R_Axial_P10.16mm_V"
+		(layer "F.Cu")
+		(uuid "b840756c-bd49-4093-8c90-89855f5d44aa")
+		(at 93.575 34.805)
+		(descr "Резистор 0,25 Вт, выводной, шаг 10,16")
+		(tags "resistor axial")
+		(property "Reference" "R2"
+			(at 2.6 0 0)
+			(layer "F.SilkS")
+			(uuid "7b65a4f7-be8f-4820-b432-ffac039f40da")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Value" "100 Ом"
+			(at -2.6 0 0)
+			(layer "F.Fab")
+			(uuid "83f58bbd-13ac-4076-b902-a17732eb7745")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "e59dfbe1-40fc-407f-b769-26690c14965e")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Description" ""
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "357ca389-a126-4fff-8adb-273df70ed5f8")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "BaseID" "E-052"
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "87d09cc1-7499-4a0e-ab13-b4c41f8727ee")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Status" "Утверждено"
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "7a70e427-a8e1-46b6-9f0f-0cf137d56053")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Note" "Последовательная защита линии SDA группы M1 со стороны клемм"
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "57c821f7-69d1-46ac-ae01-a09bec6ffa07")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(path "/038d05ae-a4b9-49ba-872b-1fcfe2a2434f")
+		(sheetname "/")
+		(sheetfile "LR.kicad_sch")
+		(units
+			(unit
+				(name "A")
+				(pins "1" "2")
+			)
+		)
+		(attr through_hole)
+		(duplicate_pad_numbers_are_jumpers no)
+		(fp_rect
+			(start -1.4 -3.4)
+			(end 1.4 3.4)
+			(stroke
+				(width 0.15)
+				(type default)
+			)
+			(fill no)
+			(layer "F.SilkS")
+			(uuid "7a9e33cf-2fe7-4922-8523-e82dd8fb6f6b")
+		)
+		(fp_rect
+			(start -1.2 -6.28)
+			(end 1.2 6.28)
+			(stroke
+				(width 0.05)
+				(type default)
+			)
+			(fill no)
+			(layer "F.CrtYd")
+			(uuid "ed6ae016-3e12-42e1-b303-86ba5908ac88")
+		)
+		(fp_rect
+			(start -1.2 -3.2)
+			(end 1.2 3.2)
+			(stroke
+				(width 0.1)
+				(type default)
+			)
+			(fill no)
+			(layer "F.Fab")
+			(uuid "34bf24ca-0c02-45a9-a3b1-ca69fda42981")
+		)
+		(pad "1" thru_hole circle
+			(at 0 5.08)
+			(size 1.8 1.8)
+			(drill 0.9)
+			(layers "*.Cu" "*.Mask")
+			(remove_unused_layers no)
+			(net "Net-(VD11-IN)")
+			(pintype "passive")
+			(uuid "9a2909b6-3b24-41d5-a50a-3deb5b885827")
+		)
+		(pad "2" thru_hole circle
+			(at 0 -5.08)
+			(size 1.8 1.8)
+			(drill 0.9)
+			(layers "*.Cu" "*.Mask")
+			(remove_unused_layers no)
+			(net "Net-(X6-M2_SDA)")
+			(pintype "passive")
+			(uuid "d2da7fc5-cf98-44c9-aeb8-4ca3c2c253af")
+		)
+		(embedded_fonts no)
+		(model "${KIPRJMOD}/../../lib/3dmodels/R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal.step"
+			(offset
+				(xyz 0 -5.08 0)
+			)
+			(scale
+				(xyz 1 1 1)
+			)
+			(rotate
+				(xyz 0 0 -90)
+			)
+		)
+	)
+	(footprint "manipulator:R_Axial_P10.16mm_V"
+		(layer "F.Cu")
+		(uuid "ca234839-0f05-4eef-b829-f81a8eabb3d0")
+		(at 148.875 34.805)
+		(descr "Резистор 0,25 Вт, выводной, шаг 10,16")
+		(tags "resistor axial")
+		(property "Reference" "R16"
+			(at 2.6 0 0)
+			(layer "F.SilkS")
+			(uuid "3140263f-d8f4-43b0-a7b1-e547b7b86013")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Value" "150 Ом"
+			(at -2.6 0 0)
+			(layer "F.Fab")
+			(uuid "92ae4915-8e2e-4c30-809c-f6391def9cf1")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "74146fbc-a6cc-4a06-9f19-1108709f6abd")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Description" ""
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "c39088c1-ddf4-4b4a-90aa-81db42c070b9")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "BaseID" "E-062"
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "cd5097a2-61ff-4c0c-b913-dd54b3a4245d")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Status" "Утверждено"
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "1e564cba-f67e-4f10-bb77-5ce8851f298f")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Note" "Ток красного светодиода HL4"
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "9d814b56-a8cd-4677-9e5d-543e6d36cce6")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(path "/3ebd2aa1-27ad-5d19-aa98-53bcf73e6ffb")
+		(sheetname "/")
+		(sheetfile "LR.kicad_sch")
+		(units
+			(unit
+				(name "A")
+				(pins "1" "2")
+			)
+		)
+		(attr through_hole)
+		(duplicate_pad_numbers_are_jumpers no)
+		(fp_rect
+			(start -1.4 -3.4)
+			(end 1.4 3.4)
+			(stroke
+				(width 0.15)
+				(type default)
+			)
+			(fill no)
+			(layer "F.SilkS")
+			(uuid "99a00e7e-602b-4b8b-b1b9-1698f7652c2c")
+		)
+		(fp_rect
+			(start -1.2 -6.28)
+			(end 1.2 6.28)
+			(stroke
+				(width 0.05)
+				(type default)
+			)
+			(fill no)
+			(layer "F.CrtYd")
+			(uuid "a1bb344c-effe-4ade-87d7-a2de90462af0")
+		)
+		(fp_rect
+			(start -1.2 -3.2)
+			(end 1.2 3.2)
+			(stroke
+				(width 0.1)
+				(type default)
+			)
+			(fill no)
+			(layer "F.Fab")
+			(uuid "1f60173f-5d71-4df8-a5b3-54f8a5acb060")
+		)
+		(pad "1" thru_hole circle
+			(at 0 5.08)
+			(size 1.8 1.8)
+			(drill 0.9)
+			(layers "*.Cu" "*.Mask")
+			(remove_unused_layers no)
+			(net "Net-(HL4-K2)")
+			(pintype "passive")
+			(uuid "df9f482a-2e0f-4ad9-a4f2-3bcda1ae57c8")
+		)
+		(pad "2" thru_hole circle
+			(at 0 -5.08)
+			(size 1.8 1.8)
+			(drill 0.9)
+			(layers "*.Cu" "*.Mask")
+			(remove_unused_layers no)
+			(net "Net-(DD1-P6)")
+			(pintype "passive")
+			(uuid "41df0d11-ce1a-418c-80ad-510cabd5a657")
+		)
+		(embedded_fonts no)
+		(model "${KIPRJMOD}/../../lib/3dmodels/R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal.step"
+			(offset
+				(xyz 0 -5.08 0)
+			)
+			(scale
+				(xyz 1 1 1)
+			)
+			(rotate
+				(xyz 0 0 -90)
+			)
+		)
+	)
+	(footprint "manipulator:D_DO-35_P7.62mm"
+		(layer "F.Cu")
+		(uuid "ccbe8189-245e-4590-a804-df460a3ebfd6")
+		(at 93.175 43.935)
+		(descr "Диод 1N4148 в корпусе DO-35, шаг 7,62 мм; вывод 1 — катод")
+		(tags "diode do-35 1n4148")
+		(property "Reference" "VD1"
+			(at 0 -2.6 0)
+			(layer "F.SilkS")
+			(uuid "235612fa-d69c-4f18-b080-f9024dfd9a35")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Value" "1N4148"
+			(at 0 2.6 0)
+			(layer "F.Fab")
+			(uuid "c04eb21c-c193-4d27-af3b-1e7feadcd169")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "ff8d6669-8e57-4c3f-a0e9-100ffd3c2bfc")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Description" ""
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "10c7a444-65b5-4b4c-be86-8c18b81aabdd")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "BaseID" "E-054"
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "80ae626e-ebc0-45f8-806e-d9c9b3fad573")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Status" "Утверждено"
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "b156f71b-b787-4d5e-9d73-daba29338611")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Note" "Встречный диод линии IN1 группы M1: ограничивает отрицательное напряжение с клеммы"
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "8674f341-034b-46b4-acfa-19c54541724e")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(path "/823ed60b-00cc-590c-ba32-6a9490d285f8")
+		(sheetname "/")
+		(sheetfile "LR.kicad_sch")
+		(units
+			(unit
+				(name "A")
+				(pins "1" "2")
+			)
+		)
+		(attr through_hole)
+		(duplicate_pad_numbers_are_jumpers no)
+		(fp_line
+			(start -1.4 -1.2)
+			(end -1.4 1.2)
+			(stroke
+				(width 0.15)
+				(type default)
+			)
+			(layer "F.SilkS")
+			(uuid "366252ca-aa15-4594-9ef9-3d0221d853cf")
+		)
+		(fp_rect
+			(start -2.2 -1.2)
+			(end 2.2 1.2)
+			(stroke
+				(width 0.15)
+				(type default)
+			)
+			(fill no)
+			(layer "F.SilkS")
+			(uuid "ff9901a5-070c-48e6-88cc-3c68b6498386")
+		)
+		(fp_rect
+			(start -5 -1.8)
+			(end 5 1.8)
+			(stroke
+				(width 0.05)
+				(type default)
+			)
+			(fill no)
+			(layer "F.CrtYd")
+			(uuid "02b0f33e-122e-44cb-82e0-5eb579a4b049")
+		)
+		(fp_rect
+			(start -2 -1)
+			(end 2 1)
+			(stroke
+				(width 0.1)
+				(type default)
+			)
+			(fill no)
+			(layer "F.Fab")
+			(uuid "b71a8d08-9dc7-4645-a169-7e7563e986fd")
+		)
+		(pad "1" thru_hole rect
+			(at -3.81 0)
+			(size 1.6 1.6)
+			(drill 0.8)
+			(layers "*.Cu" "*.Mask")
+			(remove_unused_layers no)
+			(net "Net-(VD1-K)")
+			(pinfunction "K_1")
+			(pintype "passive")
+			(uuid "8fd1ce18-74d3-4d59-beb3-c1676d25a5c3")
+		)
+		(pad "2" thru_hole circle
+			(at 3.81 0)
+			(size 1.6 1.6)
+			(drill 0.8)
+			(layers "*.Cu" "*.Mask")
+			(remove_unused_layers no)
+			(net "GND_L")
+			(pinfunction "A_2")
+			(pintype "passive")
+			(uuid "02daf21c-6f76-4e57-95f7-004259355a25")
+		)
+		(embedded_fonts no)
+		(model "${KIPRJMOD}/../../lib/3dmodels/D_DO-35_SOD27_P7.62mm_Horizontal.step"
+			(offset
+				(xyz -3.81 0 0)
+			)
+			(scale
+				(xyz 1 1 1)
+			)
+			(rotate
+				(xyz 0 0 0)
+			)
+		)
+	)
+	(footprint "manipulator:DIP-16_W7.62mm"
+		(layer "F.Cu")
+		(uuid "d0211219-0e69-4104-a41d-9d1e8d90ec88")
+		(at 143.26 53.025)
+		(descr "Корпус DIP-16 (PCF8574P), ряды 7,62 мм; ключ у вывода 1")
+		(tags "dip-16 pcf8574")
+		(property "Reference" "DD1"
+			(at 0 -11.89 0)
+			(layer "F.SilkS")
+			(uuid "4ad091fb-19fb-49fb-b3fe-f50e9de18c17")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Value" "PCF8574"
+			(at 0 11.89 0)
+			(layer "F.Fab")
+			(uuid "d6c22ac2-c11e-4b93-a6b0-ae2cd123d7be")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "311897ba-df8e-4d2d-8e3b-18d6516fecc2")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Description" ""
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "bf567199-7c74-44ca-a047-6da4e2f34ae6")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "BaseID" "E-060"
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "9b717302-d2a1-4dd7-913d-ad9fef8fe6ff")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Status" "Утверждено"
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "86aa3bf3-62e3-4220-a8d5-3e84b11c0ab3")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Note" "Расширитель портов индикации, адрес 0x20 (A0…A2 на GND_L); выходы зажигают светодиоды нулём"
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "f222af2e-6c35-40b3-9731-aa4840482f32")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(path "/32e8a000-96e5-5dc6-b361-ce05bdabc3e6")
+		(sheetname "/")
+		(sheetfile "LR.kicad_sch")
+		(units
+			(unit
+				(name "A")
+				(pins "4" "5" "6" "7" "9" "10" "11" "12" "16" "14" "15" "13" "1" "2"
+					"3" "8"
+				)
+			)
+		)
+		(attr through_hole)
+		(duplicate_pad_numbers_are_jumpers no)
+		(fp_rect
+			(start -3.5 -10.59)
+			(end 3.5 10.59)
+			(stroke
+				(width 0.15)
+				(type default)
+			)
+			(fill no)
+			(layer "F.SilkS")
+			(uuid "baf205a0-8940-4c0c-a90d-f731680d23f4")
+		)
+		(fp_rect
+			(start -3.8 -10.89)
+			(end 3.8 10.89)
+			(stroke
+				(width 0.05)
+				(type default)
+			)
+			(fill no)
+			(layer "F.CrtYd")
+			(uuid "53a6ac98-311c-4bf0-be75-f65a03138093")
+		)
+		(fp_rect
+			(start -3.3 -10.39)
+			(end 3.3 10.39)
+			(stroke
+				(width 0.1)
+				(type default)
+			)
+			(fill no)
+			(layer "F.Fab")
+			(uuid "5e39df10-3dcc-4d79-9483-977748adb87d")
+		)
+		(fp_text user "1"
+			(at -6 -8.89 0)
+			(layer "F.SilkS")
+			(uuid "c8d59288-6483-4bea-bdc6-45e391ece45f")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(pad "1" thru_hole rect
+			(at -3.81 -8.89)
+			(size 1.6 1.6)
+			(drill 0.8)
+			(layers "*.Cu" "*.Mask")
+			(remove_unused_layers no)
+			(net "GND_L")
+			(pinfunction "A0_1")
+			(pintype "passive")
+			(uuid "76311567-c2de-454c-98eb-76ee419d3188")
+		)
+		(pad "2" thru_hole circle
+			(at -3.81 -6.35)
+			(size 1.6 1.6)
+			(drill 0.8)
+			(layers "*.Cu" "*.Mask")
+			(remove_unused_layers no)
+			(net "GND_L")
+			(pinfunction "A1_2")
+			(pintype "passive")
+			(uuid "0504cb60-781c-41da-bd34-9dd33f642098")
+		)
+		(pad "3" thru_hole circle
+			(at -3.81 -3.81)
+			(size 1.6 1.6)
+			(drill 0.8)
+			(layers "*.Cu" "*.Mask")
+			(remove_unused_layers no)
+			(net "GND_L")
+			(pinfunction "A2_3")
+			(pintype "passive")
+			(uuid "46d73a6a-3147-46e3-9bee-c99eeb5bf023")
+		)
+		(pad "4" thru_hole circle
+			(at -3.81 -1.27)
+			(size 1.6 1.6)
+			(drill 0.8)
+			(layers "*.Cu" "*.Mask")
+			(remove_unused_layers no)
+			(net "Net-(DD1-P0)")
+			(pinfunction "P0_4")
+			(pintype "passive")
+			(uuid "03fa14bd-f2f8-4763-afe2-57954417b013")
+		)
+		(pad "5" thru_hole circle
+			(at -3.81 1.27)
+			(size 1.6 1.6)
+			(drill 0.8)
+			(layers "*.Cu" "*.Mask")
+			(remove_unused_layers no)
+			(net "Net-(DD1-P1)")
+			(pinfunction "P1_5")
+			(pintype "passive")
+			(uuid "b54ca75d-9bf2-496e-9ac3-58253a50d870")
+		)
+		(pad "6" thru_hole circle
+			(at -3.81 3.81)
+			(size 1.6 1.6)
+			(drill 0.8)
+			(layers "*.Cu" "*.Mask")
+			(remove_unused_layers no)
+			(net "Net-(DD1-P2)")
+			(pinfunction "P2_6")
+			(pintype "passive")
+			(uuid "37f3062b-9fdf-4a62-a97a-ffc10cd37fac")
+		)
+		(pad "7" thru_hole circle
+			(at -3.81 6.35)
+			(size 1.6 1.6)
+			(drill 0.8)
+			(layers "*.Cu" "*.Mask")
+			(remove_unused_layers no)
+			(net "Net-(DD1-P3)")
+			(pinfunction "P3_7")
+			(pintype "passive")
+			(uuid "492e74e1-675c-46a7-b0ad-3a1e1b5b21f8")
+		)
+		(pad "8" thru_hole circle
+			(at -3.81 8.89)
+			(size 1.6 1.6)
+			(drill 0.8)
+			(layers "*.Cu" "*.Mask")
+			(remove_unused_layers no)
+			(net "GND_L")
+			(pinfunction "VSS_8")
+			(pintype "power_in")
+			(uuid "2ad13299-b410-40da-ab2a-50276cbff8ac")
+		)
+		(pad "9" thru_hole circle
+			(at 3.81 8.89)
+			(size 1.6 1.6)
+			(drill 0.8)
+			(layers "*.Cu" "*.Mask")
+			(remove_unused_layers no)
+			(net "Net-(DD1-P4)")
+			(pinfunction "P4_9")
+			(pintype "passive")
+			(uuid "58d6ea35-ef55-4a54-9b27-d072657c5e20")
+		)
+		(pad "10" thru_hole circle
+			(at 3.81 6.35)
+			(size 1.6 1.6)
+			(drill 0.8)
+			(layers "*.Cu" "*.Mask")
+			(remove_unused_layers no)
+			(net "Net-(DD1-P5)")
+			(pinfunction "P5_10")
+			(pintype "passive")
+			(uuid "887701cd-f951-4a98-8b02-ade170309df1")
+		)
+		(pad "11" thru_hole circle
+			(at 3.81 3.81)
+			(size 1.6 1.6)
+			(drill 0.8)
+			(layers "*.Cu" "*.Mask")
+			(remove_unused_layers no)
+			(net "Net-(DD1-P6)")
+			(pinfunction "P6_11")
+			(pintype "passive")
+			(uuid "cf00f319-e84a-489f-b0f0-28737fbaf05b")
+		)
+		(pad "12" thru_hole circle
+			(at 3.81 1.27)
+			(size 1.6 1.6)
+			(drill 0.8)
+			(layers "*.Cu" "*.Mask")
+			(remove_unused_layers no)
+			(net "Net-(DD1-P7)")
+			(pinfunction "P7_12")
+			(pintype "passive")
+			(uuid "800d553a-50ad-41ea-9396-c55facca104b")
+		)
+		(pad "13" thru_hole circle
+			(at 3.81 -1.27)
+			(size 1.6 1.6)
+			(drill 0.8)
+			(layers "*.Cu" "*.Mask")
+			(remove_unused_layers no)
+			(net "unconnected-(DD1-INT-Pad13)")
+			(pinfunction "INT_13")
+			(pintype "passive+no_connect")
+			(uuid "181ebef9-75b9-434f-8977-9c049d4de406")
+		)
+		(pad "14" thru_hole circle
+			(at 3.81 -3.81)
+			(size 1.6 1.6)
+			(drill 0.8)
+			(layers "*.Cu" "*.Mask")
+			(remove_unused_layers no)
+			(net "SCL")
+			(pinfunction "SCL_14")
+			(pintype "passive")
+			(uuid "f965d17f-594a-4aa2-8cd5-0aa2fcb1c054")
+		)
+		(pad "15" thru_hole circle
+			(at 3.81 -6.35)
+			(size 1.6 1.6)
+			(drill 0.8)
+			(layers "*.Cu" "*.Mask")
+			(remove_unused_layers no)
+			(net "SDA")
+			(pinfunction "SDA_15")
+			(pintype "passive")
+			(uuid "35512142-ee64-46ca-8d80-afb8e53eb964")
+		)
+		(pad "16" thru_hole circle
+			(at 3.81 -8.89)
+			(size 1.6 1.6)
+			(drill 0.8)
+			(layers "*.Cu" "*.Mask")
+			(remove_unused_layers no)
+			(net "3V3")
+			(pinfunction "VDD_16")
+			(pintype "power_in")
+			(uuid "7e4d1332-708e-4c3e-a8cd-1bd2d8d22a38")
+		)
+		(embedded_fonts no)
+		(model "${KIPRJMOD}/../../lib/3dmodels/DIP-16_W7.62mm.step"
+			(offset
+				(xyz -3.81 8.89 0)
+			)
+			(scale
+				(xyz 1 1 1)
+			)
+			(rotate
+				(xyz 0 0 0)
+			)
+		)
+	)
+	(footprint "manipulator:D_DO-35_P7.62mm"
+		(layer "F.Cu")
+		(uuid "d0d2ebd5-6d6e-4571-80a2-2b2fab2e165d")
+		(at 93.175 48.585)
+		(descr "Диод 1N4148 в корпусе DO-35, шаг 7,62 мм; вывод 1 — катод")
+		(tags "diode do-35 1n4148")
+		(property "Reference" "VD2"
+			(at 0 -2.6 0)
+			(layer "F.SilkS")
+			(uuid "1969c9c1-eb81-49ed-a01a-b362f4160704")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Value" "1N4148"
+			(at 0 2.6 0)
+			(layer "F.Fab")
+			(uuid "5fe372d0-edf9-4af9-b88e-22d7990ea97b")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "d04115c9-979b-4e65-b303-7b03291fa974")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Description" ""
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "dae9533e-dd8d-4a38-b71f-fdc85783c04a")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "BaseID" "E-054"
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "4382eb0b-45af-48aa-bdc3-95cce4b6ac98")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Status" "Утверждено"
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "f39f1348-587f-4f48-818f-42d4a0fc0e8f")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Note" "Встречный диод линии IN2 группы M1: ограничивает отрицательное напряжение с клеммы"
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "7ce69241-f9b0-49bc-b9ae-28e6e24439af")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(path "/6362a218-e416-55ba-956f-a510aea00138")
+		(sheetname "/")
+		(sheetfile "LR.kicad_sch")
+		(units
+			(unit
+				(name "A")
+				(pins "1" "2")
+			)
+		)
+		(attr through_hole)
+		(duplicate_pad_numbers_are_jumpers no)
+		(fp_line
+			(start -1.4 -1.2)
+			(end -1.4 1.2)
+			(stroke
+				(width 0.15)
+				(type default)
+			)
+			(layer "F.SilkS")
+			(uuid "c7a24a9c-33f3-4fab-b1dd-6f5bc53acd55")
+		)
+		(fp_rect
+			(start -2.2 -1.2)
+			(end 2.2 1.2)
+			(stroke
+				(width 0.15)
+				(type default)
+			)
+			(fill no)
+			(layer "F.SilkS")
+			(uuid "bb92faa5-45f2-488e-9e40-55d8aeb3698a")
+		)
+		(fp_rect
+			(start -5 -1.8)
+			(end 5 1.8)
+			(stroke
+				(width 0.05)
+				(type default)
+			)
+			(fill no)
+			(layer "F.CrtYd")
+			(uuid "ece09f37-aff5-454a-b24c-261867d3b909")
+		)
+		(fp_rect
+			(start -2 -1)
+			(end 2 1)
+			(stroke
+				(width 0.1)
+				(type default)
+			)
+			(fill no)
+			(layer "F.Fab")
+			(uuid "76e82ce0-2b4a-441a-8eed-5015501785c4")
+		)
+		(pad "1" thru_hole rect
+			(at -3.81 0)
+			(size 1.6 1.6)
+			(drill 0.8)
+			(layers "*.Cu" "*.Mask")
+			(remove_unused_layers no)
+			(net "Net-(VD2-K)")
+			(pinfunction "K_1")
+			(pintype "passive")
+			(uuid "7a70ded4-0041-44ff-9b68-e5e27221ba3d")
+		)
+		(pad "2" thru_hole circle
+			(at 3.81 0)
+			(size 1.6 1.6)
+			(drill 0.8)
+			(layers "*.Cu" "*.Mask")
+			(remove_unused_layers no)
+			(net "GND_L")
+			(pinfunction "A_2")
+			(pintype "passive")
+			(uuid "50894f1e-2867-454e-8729-9eb441a37bdd")
+		)
+		(embedded_fonts no)
+		(model "${KIPRJMOD}/../../lib/3dmodels/D_DO-35_SOD27_P7.62mm_Horizontal.step"
+			(offset
+				(xyz -3.81 0 0)
+			)
+			(scale
+				(xyz 1 1 1)
+			)
+			(rotate
+				(xyz 0 0 0)
+			)
+		)
+	)
+	(footprint "manipulator:SOT-23"
+		(layer "F.Cu")
+		(uuid "d832e950-e518-40f5-b936-15b43ef26375")
+		(at 105.975 61.085)
+		(descr "Корпус SOT-23 (BAT54S): 1 — анод D1, 2 — катод D2, 3 — средняя точка")
+		(tags "sot-23 bat54s")
+		(property "Reference" "VD10"
+			(at 0 -2.7 0)
+			(layer "F.SilkS")
+			(uuid "ae36bd26-51b2-4e61-9480-e0f3ee1e1b74")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Value" "BAT54S"
+			(at 0 2.7 0)
+			(layer "F.Fab")
+			(uuid "a318a13a-066c-4e67-a364-e76447b86517")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "4baa8c8c-0424-43b3-884e-7f4b08a4f942")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Description" ""
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "71c30fa3-8019-4cb4-bd5d-c040e2c98548")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "BaseID" "E-053"
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "1cac141b-9cf8-45c4-a959-44de96bee240")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Status" "Утверждено"
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "b367d6cf-e61a-4815-88ef-8ae3442ee5ff")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Note" "Ограничитель линии SCL группы M1 на 3,3 В и GND_L"
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "70a1f04b-b819-4d1b-bc15-434a28cabe75")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(path "/ba876e41-5df9-5749-8948-7482d9c6d9e6")
+		(sheetname "/")
+		(sheetfile "LR.kicad_sch")
+		(units
+			(unit
+				(name "A")
+				(pins "3" "2" "1")
+			)
+		)
+		(attr smd)
+		(duplicate_pad_numbers_are_jumpers no)
+		(fp_line
+			(start -1.7 -0.3)
+			(end -1.7 0.3)
+			(stroke
+				(width 0.15)
+				(type default)
+			)
+			(layer "F.SilkS")
+			(uuid "5e855880-2234-48eb-b9fd-9856653d5fa4")
+		)
+		(fp_rect
+			(start -1.9 -2)
+			(end 1.9 2)
+			(stroke
+				(width 0.05)
+				(type default)
+			)
+			(fill no)
+			(layer "F.CrtYd")
+			(uuid "c1afbed6-c3a2-4887-ad8b-a560ff767c6c")
+		)
+		(fp_rect
+			(start -0.8 -0.65)
+			(end 0.8 0.65)
+			(stroke
+				(width 0.1)
+				(type default)
+			)
+			(fill no)
+			(layer "F.Fab")
+			(uuid "43ffac39-c4e9-450a-bce5-d2179c086a42")
+		)
+		(pad "1" smd roundrect
+			(at -0.95 1.1)
+			(size 1 1.2)
+			(layers "F.Cu" "F.Mask" "F.Paste")
+			(roundrect_rratio 0.2)
+			(net "GND_L")
+			(pinfunction "A_1")
+			(pintype "passive")
+			(uuid "51d69760-7204-4bf3-9af7-595015ce9932")
+		)
+		(pad "2" smd roundrect
+			(at 0.95 1.1)
+			(size 1 1.2)
+			(layers "F.Cu" "F.Mask" "F.Paste")
+			(roundrect_rratio 0.2)
+			(net "3V3")
+			(pinfunction "K_2")
+			(pintype "passive")
+			(uuid "fdc13db8-660a-446d-868b-8679a00264b6")
+		)
+		(pad "3" smd roundrect
+			(at 0 -1.1)
+			(size 1 1.2)
+			(layers "F.Cu" "F.Mask" "F.Paste")
+			(roundrect_rratio 0.2)
+			(net "Net-(VD10-IN)")
+			(pinfunction "IN_3")
+			(pintype "passive")
+			(uuid "cd42aa61-9633-4215-9fab-f5257eda29d0")
+		)
+		(embedded_fonts no)
+		(model "${KIPRJMOD}/../../lib/3dmodels/SOT-23.step"
+			(offset
+				(xyz 0 0 0)
+			)
+			(scale
+				(xyz 1 1 1)
+			)
+			(rotate
+				(xyz 0 0 0)
+			)
+		)
+	)
+	(footprint "manipulator:SOT-23"
+		(layer "F.Cu")
+		(uuid "dac0b748-417b-494e-b674-0bee89c246ae")
+		(at 105.975 66.135)
+		(descr "Корпус SOT-23 (BAT54S): 1 — анод D1, 2 — катод D2, 3 — средняя точка")
+		(tags "sot-23 bat54s")
+		(property "Reference" "VD12"
+			(at 0 -2.7 0)
+			(layer "F.SilkS")
+			(uuid "1115c0a0-ef0e-4ee2-a5ad-e6f575726d0c")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Value" "BAT54S"
+			(at 0 2.7 0)
+			(layer "F.Fab")
+			(uuid "fec1dff8-d14b-4e28-9558-3a5e50f09642")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "f3414e7b-21fe-4473-aafa-634d1fcfda57")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Description" ""
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "2e856d44-74a8-48b4-8ad0-e90150b43fe4")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "BaseID" "E-053"
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "848660c5-5534-4791-aef7-1e4142846096")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Status" "Утверждено"
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "88a0c8ff-bc68-4d71-ba9f-858c0516d9d0")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Note" "Ограничитель линии SCL группы M1 на 3,3 В и GND_L"
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "29f232d7-48a6-4be0-96b3-52c347a0662b")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(path "/bebc1803-ee6b-4b28-a049-01c5aeb5bb14")
+		(sheetname "/")
+		(sheetfile "LR.kicad_sch")
+		(units
+			(unit
+				(name "A")
+				(pins "3" "2" "1")
+			)
+		)
+		(attr smd)
+		(duplicate_pad_numbers_are_jumpers no)
+		(fp_line
+			(start -1.7 -0.3)
+			(end -1.7 0.3)
+			(stroke
+				(width 0.15)
+				(type default)
+			)
+			(layer "F.SilkS")
+			(uuid "3c80c1af-089d-4171-be96-d985938703e9")
+		)
+		(fp_rect
+			(start -1.9 -2)
+			(end 1.9 2)
+			(stroke
+				(width 0.05)
+				(type default)
+			)
+			(fill no)
+			(layer "F.CrtYd")
+			(uuid "260f1b00-dc80-4cec-a758-83fa12f1b920")
+		)
+		(fp_rect
+			(start -0.8 -0.65)
+			(end 0.8 0.65)
+			(stroke
+				(width 0.1)
+				(type default)
+			)
+			(fill no)
+			(layer "F.Fab")
+			(uuid "57861f9e-3caa-405b-b46c-41f50ebd9d31")
+		)
+		(pad "1" smd roundrect
+			(at -0.95 1.1)
+			(size 1 1.2)
+			(layers "F.Cu" "F.Mask" "F.Paste")
+			(roundrect_rratio 0.2)
+			(net "GND_L")
+			(pinfunction "A_1")
+			(pintype "passive")
+			(uuid "ff75fba9-3ef9-45ec-b47d-3450b446b7e7")
+		)
+		(pad "2" smd roundrect
+			(at 0.95 1.1)
+			(size 1 1.2)
+			(layers "F.Cu" "F.Mask" "F.Paste")
+			(roundrect_rratio 0.2)
+			(net "3V3")
+			(pinfunction "K_2")
+			(pintype "passive")
+			(uuid "e2cecd6a-848f-494a-83f7-2d4e78a08a3a")
+		)
+		(pad "3" smd roundrect
+			(at 0 -1.1)
+			(size 1 1.2)
+			(layers "F.Cu" "F.Mask" "F.Paste")
+			(roundrect_rratio 0.2)
+			(net "Net-(VD12-IN)")
+			(pinfunction "IN_3")
+			(pintype "passive")
+			(uuid "605c10a1-af85-4e90-ae4c-dae724a1e43b")
+		)
+		(embedded_fonts no)
+		(model "${KIPRJMOD}/../../lib/3dmodels/SOT-23.step"
+			(offset
+				(xyz 0 0 0)
+			)
+			(scale
+				(xyz 1 1 1)
+			)
+			(rotate
+				(xyz 0 0 0)
+			)
+		)
+	)
+	(footprint "manipulator:TermGroup_5x_Banana4"
+		(layer "F.Cu")
+		(uuid "db0a14ee-be52-42e3-a9fb-c7bc3b2b7e8b")
+		(at 61.575 77.65)
+		(descr "Группа из 5 комбинированных приборных клемм E-051 (винт + гнездо 4 мм), раскладка 3 × 2: ПРЕДВАРИТЕЛЬНОЕ место, модель клеммы не выбрана — сверить шаг и отверстие")
+		(tags "terminal banana 4mm")
+		(property "Reference" "X6"
+			(at 0 -17.325 0)
+			(layer "F.SilkS")
+			(uuid "f280f3ca-ca01-4e78-8cb8-b2b63cbd1848")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Value" "клеммы"
+			(at 0 17.325 0)
+			(layer "F.Fab")
+			(uuid "6fdaef1c-1d5d-48a0-aa0c-9cdb7ec69dd7")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "b314aeba-53f2-4f2b-bb09-2bbde38a29d4")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Description" ""
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "9e909a17-580e-4bdb-b487-f7f580a3b8db")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "BaseID" "E-051"
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "21035603-9437-4414-a6ba-ae47e23ac173")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Status" "Предложение"
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "d802e1be-8111-4440-8bdd-7e6dbdfb9c44")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Назначение" "Клеммы группы M2 (5 шт. E-051, винт + гнездо «банан» 4 мм): 1 IN1, 2 IN2, 3 SDA, 4 SCL, 5 GND_L"
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "0d4a13e6-1b8c-4b43-8995-5a3aa2e620e3")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(path "/798e5dbf-fc07-546d-b928-08bf34bc255b")
+		(sheetname "/")
+		(sheetfile "LR.kicad_sch")
+		(units
+			(unit
+				(name "A")
+				(pins "1" "2" "3" "4" "5")
+			)
+		)
+		(attr through_hole)
+		(duplicate_pad_numbers_are_jumpers no)
+		(fp_circle
+			(center -19.05 -9.525)
+			(end -13.05 -9.525)
+			(stroke
+				(width 0.15)
+				(type default)
+			)
+			(fill no)
+			(layer "F.SilkS")
+			(uuid "e6db1cb3-3a26-4110-9c1a-029038d64518")
+		)
+		(fp_circle
+			(center -19.05 9.525)
+			(end -13.05 9.525)
+			(stroke
+				(width 0.15)
+				(type default)
+			)
+			(fill no)
+			(layer "F.SilkS")
+			(uuid "b087e5d0-1c17-4703-9a17-b934b7849524")
+		)
+		(fp_circle
+			(center 0 -9.525)
+			(end 6 -9.525)
+			(stroke
+				(width 0.15)
+				(type default)
+			)
+			(fill no)
+			(layer "F.SilkS")
+			(uuid "cf3cb352-dff5-4a80-be3d-891108b05294")
+		)
+		(fp_circle
+			(center 0 9.525)
+			(end 6 9.525)
+			(stroke
+				(width 0.15)
+				(type default)
+			)
+			(fill no)
+			(layer "F.SilkS")
+			(uuid "0017881d-3e10-4016-9048-9ce983f6b675")
+		)
+		(fp_circle
+			(center 19.05 -9.525)
+			(end 25.05 -9.525)
+			(stroke
+				(width 0.15)
+				(type default)
+			)
+			(fill no)
+			(layer "F.SilkS")
+			(uuid "0fe7139a-f5c9-47eb-ad26-7611be4b6aba")
+		)
+		(fp_circle
+			(center -19.05 -9.525)
+			(end -12.55 -9.525)
+			(stroke
+				(width 0.05)
+				(type default)
+			)
+			(fill no)
+			(layer "F.CrtYd")
+			(uuid "6bc59353-65a6-4ffc-9ab7-bb78e87a025e")
+		)
+		(fp_circle
+			(center -19.05 9.525)
+			(end -12.55 9.525)
+			(stroke
+				(width 0.05)
+				(type default)
+			)
+			(fill no)
+			(layer "F.CrtYd")
+			(uuid "b80b9c3a-c6dc-4ae6-bfcf-9b6fd2799610")
+		)
+		(fp_circle
+			(center 0 -9.525)
+			(end 6.5 -9.525)
+			(stroke
+				(width 0.05)
+				(type default)
+			)
+			(fill no)
+			(layer "F.CrtYd")
+			(uuid "0e543a2d-922d-4ef4-9749-aba7a699413e")
+		)
+		(fp_circle
+			(center 0 9.525)
+			(end 6.5 9.525)
+			(stroke
+				(width 0.05)
+				(type default)
+			)
+			(fill no)
+			(layer "F.CrtYd")
+			(uuid "70eed5f4-9581-4acb-8dd7-beb16cfd2678")
+		)
+		(fp_circle
+			(center 19.05 -9.525)
+			(end 25.55 -9.525)
+			(stroke
+				(width 0.05)
+				(type default)
+			)
+			(fill no)
+			(layer "F.CrtYd")
+			(uuid "4490a771-6983-4487-82ce-db39d8ec59e9")
+		)
+		(pad "1" thru_hole rect
+			(at -19.05 9.525)
+			(size 8.5 8.5)
+			(drill 6.5)
+			(layers "*.Cu" "*.Mask")
+			(remove_unused_layers no)
+			(net "Net-(VD3-K)")
+			(pinfunction "M2_IN1_1")
+			(pintype "passive")
+			(uuid "653611bb-3f94-494e-a4d7-3060633fed2f")
+		)
+		(pad "2" thru_hole circle
+			(at 0 9.525)
+			(size 8.5 8.5)
+			(drill 6.5)
+			(layers "*.Cu" "*.Mask")
+			(remove_unused_layers no)
+			(net "Net-(VD4-K)")
+			(pinfunction "M2_IN2_2")
+			(pintype "passive")
+			(uuid "2015c94a-e18f-41c0-9c7a-7e5aee3d27e7")
+		)
+		(pad "3" thru_hole circle
+			(at 0 -9.525)
+			(size 8.5 8.5)
+			(drill 6.5)
+			(layers "*.Cu" "*.Mask")
+			(remove_unused_layers no)
+			(net "Net-(X6-M2_SDA)")
+			(pinfunction "M2_SDA_3")
+			(pintype "passive")
+			(uuid "c5447847-d157-4a8c-a8bb-45f39915abc6")
+		)
+		(pad "4" thru_hole circle
+			(at -19.05 -9.525)
+			(size 8.5 8.5)
+			(drill 6.5)
+			(layers "*.Cu" "*.Mask")
+			(remove_unused_layers no)
+			(net "Net-(X6-M2_SCL)")
+			(pinfunction "M2_SCL_4")
+			(pintype "passive")
+			(uuid "2d9e6f38-cabe-4585-8b62-6b9bd0e44de6")
+		)
+		(pad "5" thru_hole circle
+			(at 19.05 -9.525)
+			(size 8.5 8.5)
+			(drill 6.5)
+			(layers "*.Cu" "*.Mask")
+			(remove_unused_layers no)
+			(net "GND_L")
+			(pinfunction "GND_L_5")
+			(pintype "passive")
+			(uuid "5cd3a918-ece5-4f37-90f7-1d44faf9064a")
+		)
+		(embedded_fonts no)
+	)
+	(footprint "manipulator:JST_XH_B5B-XH-A_L"
+		(layer "F.Cu")
+		(uuid "dd68be89-7b1d-425e-a520-65cb9c66aa6d")
+		(at 102.075 50.085)
+		(descr "Вилка JST B5B-XH-A, 5 конт., шаг 2,5 мм, 3 А (размеры KiCad — проверить по JST)")
+		(tags "connector jst xh")
+		(property "Reference" "X1"
+			(at 0 -8.95 0)
+			(layer "F.SilkS")
+			(uuid "e8075b8f-a6ca-4111-bfe5-fa814ecce869")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Value" "B5B-XH-A"
+			(at 0 8.95 0)
+			(layer "F.Fab")
+			(uuid "e0fe58c4-b9fc-4236-a6c6-73143fe154b5")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "b0d11869-5d61-4aa1-9525-eef3fbb7992b")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Description" ""
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "445d1d2c-c140-4a57-bd1a-10c487eba655")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "BaseID" "—"
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "3fcefaf4-0cab-4f12-8059-636008276d88")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Status" "Предложение"
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "d1a79b52-ae3a-49aa-9481-73bef2c9a80c")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Назначение" "К плате CH1 (ответная часть X2 CH): 1 IN1, 2 IN2, 3 SDA, 4 SCL, 5 GND_L"
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "ae46011f-7542-4c1a-a2c4-a9658b47a613")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(path "/fff35741-3f8d-5f93-8602-95ecb8778e0a")
+		(sheetname "/")
+		(sheetfile "LR.kicad_sch")
+		(units
+			(unit
+				(name "A")
+				(pins "1" "2" "3" "4" "5")
+			)
+		)
+		(attr through_hole)
+		(duplicate_pad_numbers_are_jumpers no)
+		(fp_rect
+			(start -2.55 -7.65)
+			(end 3.6 7.65)
+			(stroke
+				(width 0.15)
+				(type default)
+			)
+			(fill no)
+			(layer "F.SilkS")
+			(uuid "9af9de73-e479-49fa-baad-560ad9d14089")
+		)
+		(fp_rect
+			(start -2.85 -7.95)
+			(end 3.9 7.95)
+			(stroke
+				(width 0.05)
+				(type default)
+			)
+			(fill no)
+			(layer "F.CrtYd")
+			(uuid "f93dde6e-a45d-476b-9ef1-30bb483342e5")
+		)
+		(fp_rect
+			(start -2.35 -7.45)
+			(end 3.4 7.45)
+			(stroke
+				(width 0.1)
+				(type default)
+			)
+			(fill no)
+			(layer "F.Fab")
+			(uuid "327c182b-2b4d-425b-aab6-956fef9d9d00")
+		)
+		(fp_text user "1"
+			(at 0 7.4 0)
+			(layer "F.SilkS")
+			(uuid "3e5b5e29-1bd0-4b60-8cc8-83994a3b03f0")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(pad "1" thru_hole rect
+			(at 0 5)
+			(size 1.8 1.8)
+			(drill 1)
+			(layers "*.Cu" "*.Mask")
+			(remove_unused_layers no)
+			(net "Net-(VD1-K)")
+			(pinfunction "M1_IN1_1")
+			(pintype "passive")
+			(uuid "ef38af47-6613-4604-9db1-1ca161504ecf")
+		)
+		(pad "2" thru_hole circle
+			(at 0 2.5)
+			(size 1.8 1.8)
+			(drill 1)
+			(layers "*.Cu" "*.Mask")
+			(remove_unused_layers no)
+			(net "Net-(VD2-K)")
+			(pinfunction "M1_IN2_2")
+			(pintype "passive")
+			(uuid "4cffbace-dc19-4f2d-9de9-40b12f1d9a35")
+		)
+		(pad "3" thru_hole circle
+			(at 0 0)
+			(size 1.8 1.8)
+			(drill 1)
+			(layers "*.Cu" "*.Mask")
+			(remove_unused_layers no)
+			(net "Net-(VD9-IN)")
+			(pinfunction "M1_SDA_3")
+			(pintype "passive")
+			(uuid "f098c348-8029-4c19-adf2-a906bbbd7441")
+		)
+		(pad "4" thru_hole circle
+			(at 0 -2.5)
+			(size 1.8 1.8)
+			(drill 1)
+			(layers "*.Cu" "*.Mask")
+			(remove_unused_layers no)
+			(net "Net-(VD10-IN)")
+			(pinfunction "M1_SCL_4")
+			(pintype "passive")
+			(uuid "94aee17e-cb25-439e-941b-7f807d5bf1f7")
+		)
+		(pad "5" thru_hole circle
+			(at 0 -5)
+			(size 1.8 1.8)
+			(drill 1)
+			(layers "*.Cu" "*.Mask")
+			(remove_unused_layers no)
+			(net "GND_L")
+			(pinfunction "GND_L_5")
+			(pintype "passive")
+			(uuid "4e97c77f-649a-4bd0-8ef7-8598ab7ea86e")
+		)
+		(embedded_fonts no)
+		(model "${KIPRJMOD}/../../lib/3dmodels/JST_XH_B5B-XH-A_1x05_P2.50mm_Vertical.step"
+			(offset
+				(xyz 0 -5 0)
+			)
+			(scale
+				(xyz 1 1 1)
+			)
+			(rotate
+				(xyz 0 0 -90)
+			)
+		)
+	)
+	(footprint "manipulator:D_DO-35_P7.62mm"
+		(layer "F.Cu")
+		(uuid "fcb399a4-f34f-4842-b1f2-017ecf85866d")
+		(at 93.175 67.185)
+		(descr "Диод 1N4148 в корпусе DO-35, шаг 7,62 мм; вывод 1 — катод")
+		(tags "diode do-35 1n4148")
+		(property "Reference" "VD6"
+			(at 0 -2.6 0)
+			(layer "F.SilkS")
+			(uuid "5003414a-4f44-43a8-be48-66ebc2624f99")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Value" "1N4148"
+			(at 0 2.6 0)
+			(layer "F.Fab")
+			(uuid "147b1adf-af72-4d1a-878c-f09ff3156dfb")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "93ff1444-9d57-47ef-b721-6f08d03fe44e")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Description" ""
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "41ac232e-eb7a-4c18-984a-2835bbf62382")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "BaseID" "E-054"
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "3bb5d304-6f97-4520-aa9f-ea84225d38a3")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Status" "Утверждено"
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "6a3fb94a-b491-4e7d-ad8f-0b4cadef2d0d")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Note" "Встречный диод линии IN2 группы M1: ограничивает отрицательное напряжение с клеммы"
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "262045e7-c469-4cc4-bf36-40a38f0f2233")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(path "/e4ace6e7-aad5-431c-b41c-0c8e3607c863")
+		(sheetname "/")
+		(sheetfile "LR.kicad_sch")
+		(units
+			(unit
+				(name "A")
+				(pins "1" "2")
+			)
+		)
+		(attr through_hole)
+		(duplicate_pad_numbers_are_jumpers no)
+		(fp_line
+			(start -1.4 -1.2)
+			(end -1.4 1.2)
+			(stroke
+				(width 0.15)
+				(type default)
+			)
+			(layer "F.SilkS")
+			(uuid "e081f9be-cddb-4827-af99-a29f4d73aa83")
+		)
+		(fp_rect
+			(start -2.2 -1.2)
+			(end 2.2 1.2)
+			(stroke
+				(width 0.15)
+				(type default)
+			)
+			(fill no)
+			(layer "F.SilkS")
+			(uuid "3edfa029-e3d7-4750-a2b3-848a092d15c2")
+		)
+		(fp_rect
+			(start -5 -1.8)
+			(end 5 1.8)
+			(stroke
+				(width 0.05)
+				(type default)
+			)
+			(fill no)
+			(layer "F.CrtYd")
+			(uuid "c30dd9cf-b96e-46da-b410-78ee2b88ea4a")
+		)
+		(fp_rect
+			(start -2 -1)
+			(end 2 1)
+			(stroke
+				(width 0.1)
+				(type default)
+			)
+			(fill no)
+			(layer "F.Fab")
+			(uuid "af01bf9a-7ab6-4506-bf3c-030e4caee626")
+		)
+		(pad "1" thru_hole rect
+			(at -3.81 0)
+			(size 1.6 1.6)
+			(drill 0.8)
+			(layers "*.Cu" "*.Mask")
+			(remove_unused_layers no)
+			(net "Net-(VD6-K)")
+			(pinfunction "K_1")
+			(pintype "passive")
+			(uuid "5809fcd7-9448-4ccb-baec-f57b326d4216")
+		)
+		(pad "2" thru_hole circle
+			(at 3.81 0)
+			(size 1.6 1.6)
+			(drill 0.8)
+			(layers "*.Cu" "*.Mask")
+			(remove_unused_layers no)
+			(net "GND_L")
+			(pinfunction "A_2")
+			(pintype "passive")
+			(uuid "17b9e81f-f57d-4ae4-8046-cbe6ee447c60")
+		)
+		(embedded_fonts no)
+		(model "${KIPRJMOD}/../../lib/3dmodels/D_DO-35_SOD27_P7.62mm_Horizontal.step"
+			(offset
+				(xyz -3.81 0 0)
+			)
+			(scale
+				(xyz 1 1 1)
+			)
+			(rotate
+				(xyz 0 0 0)
+			)
+		)
+	)
+	(embedded_fonts no)
+)

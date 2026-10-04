@@ -9,6 +9,16 @@
   6. нормы Резонита (базовый уровень): отверстия ≥ 0,3 / NPTH ≥ 0,5, поясок ≥ 0,2, медь до NPTH ≥ 0,2,
      отверстие–отверстие ≥ 0,2, шелкография: линия ≥ 0,15, текст ≥ 1,0.
 
+Технологические проверки сверх DRC (нормы — pcb_common.DFM; САПР их не контролирует):
+  7. углы изломов дорожек: острее DFM["min_angle"] — ошибка (кислотная ловушка), круче 45° — предупреждение;
+  8. крепёж: вокруг винта не более DFM["hole_nets"] цепи и медь не ближе DFM["hole_to_copper"];
+  9. шелкография: наложение надписи на контактную площадку — ошибка (завод срежет надпись),
+     зазор меньше DFM["silk_to_pad"] и наложение на переход — предупреждение.
+ 10. компоновка: конструктивно привязанные компоненты (FIXED) на своих местах, функциональные узлы
+     (UNITS) собраны и не перемешаны, каналы трасс (CHANNELS) свободны, таблица длин связей (HPWL);
+ 11. разводка: переходов на цепь и изломов на дорожку не больше нормы — иначе виновата расстановка;
+ 12. высота компонентов (MAX_H) и доступ паяльником между низким и высоким корпусом.
+
 Запуск: python3 scripts/check_pcb.py [КОД]   (по умолчанию PS; читает scripts/gen_<КОД>_pcb.py как модуль)
 Дополнительно рисует boards/<КОД>/<КОД>_preview.png (не для репозитория — файл в .gitignore).
 Переходные отверстия (via) учитываются как площадки своей цепи на обоих слоях.
@@ -349,8 +359,255 @@ for sgr in g.gr_items():
             problems.append(f"Резонит: линия шелкографии {m.group(1)}: {sgr[:60]}")
 # ссылки Reference на шелкографии — размер 1,0 / 0,15 задан в FP.sexpr
 
+# ---- 7. геометрия меди: углы изломов (DFM: только 45°; острый угол — кислотная ловушка при травлении) ----
+DFM = getattr(g, "DFM", {})
+MIN_ANGLE = DFM.get("min_angle", 90.0)
+not45 = []
+for net, layer, w, pts in g.tracks:
+    for a, b, c in zip(pts, pts[1:], pts[2:]):
+        v1 = (b[0] - a[0], b[1] - a[1]); v2 = (c[0] - b[0], c[1] - b[1])
+        l1 = math.hypot(*v1); l2 = math.hypot(*v2)
+        if l1 < 1e-9 or l2 < 1e-9:
+            continue
+        cosv = max(-1.0, min(1.0, (v1[0] * v2[0] + v1[1] * v2[1]) / (l1 * l2)))
+        inner = 180.0 - math.degrees(math.acos(cosv))          # угол между звеньями дорожки
+        if inner < MIN_ANGLE - 0.1:
+            problems.append(f"угол {inner:.0f} град < {MIN_ANGLE:.0f} (кислотная ловушка): {net} в точке {b}")
+        elif inner < 134.9:
+            not45.append((net, b, inner))
+if not45:
+    ex = "; ".join(f"{n} {b} {a:.0f} град" for n, b, a in not45[:5])
+    warnings.append(f"изломов круче 45 град: {len(not45)} — скосить chamfer_tracks() [{ex}]")
+
+# ---- 8. крепёж: вокруг винта не более одной цепи, медь не ближе нормы DFM ----------------------------------
+H2C = DFM.get("hole_to_copper", 1.0)
+HOLE_NETS = DFM.get("hole_nets", 1)
+for i, (hx, hy) in enumerate(g.HOLES):
+    near = {}
+    for pd in pads:
+        if pd.kind == "np_thru_hole" or not pd.net:
+            continue
+        d = math.hypot(pd.x - hx, pd.y - hy) - pd.r - 1.6
+        if d < H2C:
+            near.setdefault(pd.net, []).append((str(pd), d))
+    for net, layer, w, a, b in segs:
+        d = seg_pt_dist(a, b, (hx, hy)) - w / 2 - 1.6
+        if d < H2C:
+            near.setdefault(net, []).append((f"дорожка {a}-{b}", d))
+    for zname, znet, zlayer, poly in ZONES:
+        d = copper_dist((hx, hy), poly) - 1.6
+        if d < H2C:
+            near.setdefault(znet, []).append((f"зона {zname} ({zlayer})", d))
+    if not near:
+        continue
+    det = "; ".join(f"{n}: " + ", ".join(f"{w} {dd:.2f}" for w, dd in sorted(v, key=lambda t: t[1])[:2]) for n, v in sorted(near.items()))
+    if len(near) > HOLE_NETS:
+        problems.append(f"крепёж H{i + 1} ({hx},{hy}): вокруг винта {len(near)} цепи ({', '.join(sorted(near))}) — "
+                        f"металлическая стойка их соединит [{det}]")
+    else:
+        problems.append(f"крепёж H{i + 1} ({hx},{hy}): медь ближе {H2C} мм [{det}]")
+
+# ---- 9. сборка: шелкография не наезжает на контактные площадки ----------------------------------------------
+# Ширина знака штрихового шрифта KiCad — примерно 0,62 высоты; оценка сверху, спорные случаи смотреть в KiCad.
+SILK_PAD = DFM.get("silk_to_pad", 0.2)
+GLYPH_W, GLYPH_H = 0.62, 0.75
+silk_boxes = []                       # (подпись, x, y, полуширина, полувысота)
+for t, x, y, sz in g.TEXTS:
+    sz = max(sz, 1.0)
+    silk_boxes.append((f'надпись "{t}"', x, y, len(t) * sz * GLYPH_W / 2, sz * GLYPH_H))
+for ref, fpname, value, x0, y0, nets in g.PLACE:
+    fp = g.FPS[fpname]
+    silk_boxes.append((f"обозначение {ref}", x0 + fp.ref_at[0], y0 + fp.ref_at[1], len(ref) * 1.0 * GLYPH_W / 2, 1.0 * GLYPH_H))
+    for sgr in fp.gr:
+        if '"F.SilkS"' not in sgr or "(hide yes)" in sgr:
+            continue
+        m = re.search(r'fp_text \w+ "([^"]*)" \(at ([-\d.]+) ([-\d.]+)', sgr)
+        if not m:
+            continue
+        hm = re.search(r"\(size ([\d.]+)", sgr)
+        h = float(hm.group(1)) if hm else 1.0
+        txt = m.group(1)
+        silk_boxes.append((f'{ref}: "{txt}"', x0 + float(m.group(2)), y0 + float(m.group(3)),
+                           len(txt) * h * GLYPH_W / 2, h * GLYPH_H))
+silk_bad, silk_near = [], []
+for label, sx, sy, hw, hh in silk_boxes:
+    for pd in pads:
+        if pd.kind == "np_thru_hole":
+            continue
+        d = max(abs(sx - pd.x) - (hw + pd.r), abs(sy - pd.y) - (hh + pd.r))
+        if d >= SILK_PAD:
+            continue
+        if pd.kind == "via" or d >= 0:         # переход закрыт маской; зазор меньше нормы — ещё не наложение
+            silk_near.append((label, str(pd), d))
+        else:
+            silk_bad.append((label, str(pd), d))
+for label, pdn, d in silk_bad[:20]:
+    problems.append(f"шелкография поверх площадки ({-d:.2f} мм перекрытия): {label} — {pdn}; завод срежет надпись")
+for label, pdn, d in silk_near[:20]:
+    how = f"перекрывает на {-d:.2f} мм" if d < 0 else f"в {d:.2f} мм (норма {SILK_PAD})"
+    warnings.append(f"шелкография {how}: {label} — {pdn}")
+if len(silk_bad) > 20 or len(silk_near) > 20:
+    warnings.append(f"шелкография: всего наложений {len(silk_bad)}, близких {len(silk_near)} (показаны первые 20)")
+
+# ---- 10. компоновка: конструктивная привязка, функциональные узлы, длины связей --------------------------
+# Качество платы задаётся расстановкой: узел ставится целиком, узлы — в порядке по числу связей.
+infos = []
+for ref, (fx, fy, src) in sorted(getattr(g, "FIXED", {}).items()):
+    cur = [(x, y) for r, fp, v, x, y, n in g.PLACE if r == ref]
+    if not cur:
+        problems.append(f"компоновка: {ref} объявлен конструктивно привязанным, но его нет в PLACE")
+    elif abs(cur[0][0] - fx) > 1e-6 or abs(cur[0][1] - fy) > 1e-6:
+        problems.append(f"компоновка: {ref} сдвинут с конструктивного места ({fx},{fy}) на {cur[0]} — источник: {src}")
+
+UNITS = getattr(g, "UNITS", {})
+POS = {r: (x, y) for r, fp, v, x, y, n in g.PLACE}
+if not UNITS:
+    warnings.append("компоновка: UNITS не заполнены — функциональные узлы не объявлены, группировку проверить нечем")
+else:
+    def u_refs(v):
+        return list(v["refs"]) if isinstance(v, dict) else list(v)
+
+    def u_radius(v):
+        return v.get("radius", DFM.get("unit_radius", 25.0)) if isinstance(v, dict) else DFM.get("unit_radius", 25.0)
+
+    covered = {r for v in UNITS.values() for r in u_refs(v)}
+    lost = sorted(set(POS) - covered)
+    dup = sorted(r for r in covered if sum(r in u_refs(v) for v in UNITS.values()) > 1)
+    if lost:
+        warnings.append(f"компоновка: вне функциональных узлов {len(lost)} компонентов: {', '.join(lost)}")
+    if dup:
+        problems.append(f"компоновка: компонент числится в двух узлах: {', '.join(dup)}")
+    boxes = {}
+    for name, v in UNITS.items():
+        refs, rad = u_refs(v), u_radius(v)
+        pts = [POS[r] for r in refs if r in POS]
+        if not pts:
+            continue
+        xs = [q[0] for q in pts]; ys = [q[1] for q in pts]
+        cx, cy = sum(xs) / len(xs), sum(ys) / len(ys)
+        boxes[name] = (min(xs), min(ys), max(xs), max(ys))
+        far = [(r, math.hypot(POS[r][0] - cx, POS[r][1] - cy)) for r in refs if r in POS]
+        far = [(r, d) for r, d in far if d > rad]
+        if far:
+            det = ", ".join(f"{r} {d:.0f} мм" for r, d in sorted(far, key=lambda t: -t[1])[:3])
+            warnings.append(f"компоновка: узел «{name}» растащен по плате — от центра дальше {rad:.0f} мм: {det}")
+    names = sorted(boxes)
+    for i, n1 in enumerate(names):
+        a = boxes[n1]
+        for n2 in names[i + 1:]:
+            b = boxes[n2]
+            if a[0] <= b[2] and b[0] <= a[2] and a[1] <= b[3] and b[1] <= a[3]:
+                warnings.append(f"компоновка: прямоугольники узлов «{n1}» и «{n2}» перекрываются — узлы перемешаны")
+
+for x1, y1, x2, y2, what in getattr(g, "CHANNELS", []):
+    inside = [r for r, (x, y) in POS.items() if x1 <= x <= x2 and y1 <= y <= y2]
+    if inside:
+        problems.append(f"компоновка: в канале трасс «{what}» стоят компоненты: {', '.join(sorted(inside))}")
+
+netpads = {}
+for pd in pads:
+    if pd.net:
+        netpads.setdefault(pd.net, []).append((pd.x, pd.y))
+hp = []
+for n, ps in netpads.items():
+    if len(ps) < 2:
+        continue
+    xs = [q[0] for q in ps]; ys = [q[1] for q in ps]
+    hp.append(((max(xs) - min(xs)) + (max(ys) - min(ys)), n, len(ps)))
+hp.sort(reverse=True)
+if hp:
+    tot = sum(h for h, n, k in hp)
+    infos.append(f"длины связей (HPWL): всего {tot:.0f} мм на {len(hp)} цепей, в среднем {tot / len(hp):.0f} мм; "
+                 "длиннее всех — " + ", ".join(f"{n} {h:.0f} мм" for h, n, k in hp[:4]))
+
+# ---- 11. разводка: переходы и изломы как признак неудачной компоновки ------------------------------------
+VIA_N = DFM.get("via_per_net", 4)
+BENDS_N = DFM.get("bends_max", 3)
+pervia = {}
+for net, vx, vy in getattr(g, "vias", []):
+    pervia[net] = pervia.get(net, 0) + 1
+heavy = sorted(((k, n) for n, k in pervia.items() if k > VIA_N), reverse=True)
+if heavy:
+    warnings.append(f"разводка: цепей с числом переходов больше {VIA_N}: {len(heavy)} — "
+                    + ", ".join(f"{n} ({k})" for k, n in heavy[:6]) + "; это признак компоновки, а не трассировки")
+def corners(pts):
+    """Число поворотов в пересчёте на прямые углы: скос 45° + 45° считается одним поворотом,
+    поэтому chamfer_tracks() число поворотов не увеличивает."""
+    t = 0.0
+    for a, b, c in zip(pts, pts[1:], pts[2:]):
+        v1 = (b[0] - a[0], b[1] - a[1]); v2 = (c[0] - b[0], c[1] - b[1])
+        l1 = math.hypot(*v1); l2 = math.hypot(*v2)
+        if l1 < 1e-9 or l2 < 1e-9:
+            continue
+        cs = max(-1.0, min(1.0, (v1[0] * v2[0] + v1[1] * v2[1]) / (l1 * l2)))
+        t += math.degrees(math.acos(cs))
+    return t / 90.0
+
+
+long_tracks = [(round(corners(pts), 1), net) for net, layer, w, pts in g.tracks if corners(pts) > BENDS_N]
+if long_tracks:
+    long_tracks.sort(reverse=True)
+    warnings.append(f"разводка: дорожек с числом поворотов больше {BENDS_N}: {len(long_tracks)} — "
+                    + ", ".join(f"{n} ({k:g})" for k, n in long_tracks[:6])
+                    + "; трасса обходит узлы — переставить компоненты")
+total_len = sum(math.hypot(b[0] - a[0], b[1] - a[1]) for net, layer, w, pts in g.tracks for a, b in zip(pts, pts[1:]))
+infos.append(f"разводка: меди {total_len:.0f} мм, переходов {len(getattr(g, 'vias', []))}, "
+             f"стратегия слоёв «{getattr(g, 'ROUTER_STRATEGY', 'hv')}»")
+
+# ---- 12. высота компонентов и доступ при ручной сборке ---------------------------------------------------
+MAX_H = getattr(g, "MAX_H", None)
+H = {}
+for ref, fpname, value, x0, y0, nets in g.PLACE:
+    H[ref] = getattr(g.FPS[fpname], "height", None)
+unknown = sorted(r for r, h in H.items() if h is None)
+if unknown:
+    infos.append(f"высота корпуса не задана у {len(unknown)} компонентов (требует уточнения): "
+                 + ", ".join(unknown[:10]) + ("…" if len(unknown) > 10 else ""))
+if MAX_H is None:
+    infos.append("ограничение по высоте (MAX_H) не задано — требует уточнения по чертежу корпуса")
+else:
+    for r, h in sorted(H.items()):
+        if h is not None and h > MAX_H:
+            problems.append(f"высота: {r} — {h} мм над платой при ограничении {MAX_H} мм")
+known_h = {r: h for r, h in H.items() if h is not None}
+if known_h:
+    rmax = max(known_h, key=known_h.get)
+    infos.append(f"высота: максимальная над платой {known_h[rmax]} мм ({rmax}) — передать в mechanics"
+                 + (f"; у {len(unknown)} компонентов высота не задана" if unknown else ""))
+# компоненты под модулем на гнёздах (например, ESP32 на MC): не выше изолятора гнёзд
+MODULE = getattr(g, "MODULE", None)
+MODULE_REFS = getattr(g, "MODULE_REFS", ("XS1", "XS2"))
+if MODULE is not None:
+    sock_h = [H.get(r) for r in MODULE_REFS if r in H]
+    sock_h = min((h for h in sock_h if h is not None), default=None)
+    under = [r for r, (x, y) in POS.items()
+             if r not in MODULE_REFS and MODULE[0] < x < MODULE[2] and MODULE[1] < y < MODULE[3]]
+    if sock_h is None:
+        infos.append("модуль на гнёздах: высота гнёзд не задана — проверка компонентов под модулем пропущена")
+    else:
+        for r in sorted(under):
+            h = H.get(r)
+            if h is None:
+                warnings.append(f"модуль: {r} стоит под модулем, высота не задана — должна быть ≤ {sock_h} мм (гнёзда)")
+            elif h > sock_h:
+                problems.append(f"модуль: {r} — {h} мм под модулем выше гнёзд {sock_h} мм")
+        infos.append(f"модуль на гнёздах: под контуром {len(under)} компонентов, предел {sock_h} мм")
+TALL, LOW, ACC = DFM.get("tall", 8.0), DFM.get("low", 3.0), DFM.get("solder_access", 3.0)
+for r1, h1 in sorted(H.items()):
+    if h1 is None or h1 < TALL:
+        continue
+    for r2, h2 in sorted(H.items()):
+        if h2 is None or h2 > LOW or r1 == r2:
+            continue
+        d = math.hypot(POS[r1][0] - POS[r2][0], POS[r1][1] - POS[r2][1])
+        if d < ACC:
+            warnings.append(f"сборка: {r2} ({h2} мм) в {d:.1f} мм от высокого {r1} ({h1} мм) — "
+                            f"паяльником не подлезть, феном поплавит соседа")
+
 # ---- отчёт и превью ---------------------------------------------------------------------------------------------------
 print(f"площадок {len(pads)}, сегментов {len(segs)}, зон {len(ZONES)}")
+for t in infos:
+    print("  сведения:", t)
 for w in warnings:
     print("  предупреждение:", w)
 for p in problems:
