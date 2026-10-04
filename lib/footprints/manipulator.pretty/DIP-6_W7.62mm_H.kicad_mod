@@ -17,5 +17,10 @@
   (pad "4" thru_hole circle (at 2.54 -3.81 0) (size 1.6 1.6) (drill 0.8) (layers "*.Cu" "*.Mask") (uuid "9f48752b-b03f-5d06-9fea-2676c354d8e4"))
   (pad "5" thru_hole circle (at 0.0 -3.81 0) (size 1.6 1.6) (drill 0.8) (layers "*.Cu" "*.Mask") (uuid "998b0ff2-c76d-5777-822e-8edd20437873"))
   (pad "6" thru_hole circle (at -2.54 -3.81 0) (size 1.6 1.6) (drill 0.8) (layers "*.Cu" "*.Mask") (uuid "4d3922c6-e089-5531-b1ac-76f71e252c31"))
+  (model "${KIPRJMOD}/../../lib/3dmodels/DIP-6_W7.62mm.step"
+    (offset (xyz -2.54 -3.81 0.0))
+    (scale (xyz 1 1 1))
+    (rotate (xyz 0 0 -90.0))
+  )
   (embedded_fonts no)
 )

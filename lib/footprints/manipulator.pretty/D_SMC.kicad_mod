@@ -14,5 +14,10 @@
   (fp_rect (start -5.5 -3.5) (end 5.5 3.5) (stroke (width 0.05) (type default)) (fill no) (layer "F.CrtYd") (uuid "1dbb977b-ba44-5fb0-8821-15c34f0c0e79"))
   (pad "1" smd roundrect (at -3.55 0.0 0) (size 2.9 3.0) (layers "F.Cu" "F.Paste" "F.Mask") (roundrect_rratio 0.2) (uuid "92fe3c12-3ded-5aa8-95ce-2a5d48cca805"))
   (pad "2" smd roundrect (at 3.55 0.0 0) (size 2.9 3.0) (layers "F.Cu" "F.Paste" "F.Mask") (roundrect_rratio 0.2) (uuid "282f2162-22f7-5e75-93e6-83268f7e95af"))
+  (model "${KIPRJMOD}/../../lib/3dmodels/D_SMC.step"
+    (offset (xyz 0.0 0.0 0.0))
+    (scale (xyz 1 1 1))
+    (rotate (xyz 0 0 0.0))
+  )
   (embedded_fonts no)
 )

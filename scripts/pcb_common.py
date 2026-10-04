@@ -34,6 +34,23 @@ VIA_D, VIA_DRILL = 1.2, 0.6  # переходное отверстие (Резо
 LAYERS_THT = '(layers "*.Cu" "*.Mask")'
 F, B = "F.Cu", "B.Cu"
 
+# ---- технологические нормы сверх DRC (DFM) ---------------------------------------------------------
+# САПР проверяет математику (соединения, зазоры), завод — физику (биение сверла, подтрав, трафарет
+# шелкографии, реальный стек). Эти нормы DRC не контролирует; их проверяет check_pcb.py, п. 7–9.
+DFM = dict(
+    hole_to_copper=1.0,    # медь (площадки, дорожки, заливка) до крепёжного NPTH: 0,2…0,5 съедает биение сверла
+    hole_keepout_d=8.0,    # вырез заливки вокруг крепежа М3 на обоих слоях: шайба DIN 125 ⌀7 + запас
+    hole_nets=1,           # сколько цепей допускается вокруг одного винта (стойка соединяет F.Cu и B.Cu)
+    silk_to_pad=0.2,       # шелкография до края площадки и окна маски: ближе — завод срежет надпись
+    min_angle=90.0,        # минимальный угол между звеньями дорожки; острее — кислотная ловушка
+    chamfer=1.27,          # длина скоса прямого угла под 45° (2 клетки сетки трассировщика 0,635)
+    via_per_net=4,         # переходов на цепь; больше — признак неудачной компоновки, а не трассировки
+    bends_max=3,           # изломов на дорожку; больше — трасса обходит узел, переставить компоненты
+    unit_radius=25.0,      # радиус функционального узла: компонент дальше — узел растащен по плате
+    tall=8.0, low=3.0,     # высокий / низкий компонент, мм (ручная сборка паяльником и феном)
+    solder_access=3.0,     # зазор между низким и высоким корпусом, чтобы подлезть паяльником, мм
+)
+
 
 def r3(v):
     return round(v + 0.0, 3)
@@ -64,12 +81,30 @@ def rot(px, py, ang):
 
 
 class FP:
-    def __init__(self, name, descr, tags="", smd=False):
+    def __init__(self, name, descr, tags="", smd=False, height=None):
         self.name, self.descr, self.tags, self.is_smd = name, descr, tags, smd
+        self.height = height    # высота корпуса над платой, мм; None — требует уточнения (datasheet/замер)
+        self.model = None       # 3D-модель: (файл в lib/3dmodels, (dx, dy, dz), rz) — см. set_model()
         self.pads = []      # (num, kind, shape, x, y, sx, sy, drill, rotdeg)
         self.gr = []        # s-выражения графики
         self.ref_at = (0, -4.0)
         self.val_at = (0, 4.0)
+
+    def set_model(self, file, dx=0.0, dy=0.0, rz=0.0, dz=0.0):
+        """3D-модель из lib/3dmodels (путь через ${KIPRJMOD}/../../lib/3dmodels — правило CLAUDE.md «только общие библиотеки»).
+        Модели KiCad выровнены по СВОЕМУ footprint'у (начало — вывод 1), поэтому offset — положение вывода 1 нашего
+        места в системе 3D (x как на плате, y с обратным знаком: в 3D ось y вверх), rz — поворот вокруг z.
+        ЗНАК: положительный rz поворачивает модель ПО часовой стрелке при взгляде сверху (проверено в 3D-виде KiCad 10
+        на плате CH 04.10.2026: при обратном знаке X1 уехал на 12,7 мм, резисторы _V — на 10,16 вниз)."""
+        self.model = (file, (dx, dy, dz), rz)
+
+    def model_sexpr(self, indent="    "):
+        if not self.model:
+            return ""
+        file, (dx, dy, dz), rz = self.model
+        return (f'{indent}(model "${{KIPRJMOD}}/../../lib/3dmodels/{file}"\n'
+                f'{indent}  (offset (xyz {r3(dx)} {r3(dy)} {r3(dz)}))\n{indent}  (scale (xyz 1 1 1))\n'
+                f'{indent}  (rotate (xyz 0 0 {r3(rz)}))\n{indent})\n')
 
     # --- контактные площадки
     def tht(self, num, x, y, drill, size, shape="circle"):
@@ -149,7 +184,7 @@ class FP:
         gr = "\n".join("    " + g for g in self.gr)
         return (f'  (footprint "{LIB}:{self.name}" (layer "F.Cu") (uuid "{U(self.name, ref, "fp")}"){at}\n'
                 f'    (descr "{self.descr}")\n    (tags "{self.tags}")\n' + "\n".join(props) + "\n" + path +
-                f'    (attr {attr})\n{gr}\n{self.pad_sexpr(ref, nets)}\n    (embedded_fonts no)\n  )')
+                f'    (attr {attr})\n{gr}\n{self.pad_sexpr(ref, nets)}\n{self.model_sexpr("    ")}    (embedded_fonts no)\n  )')
 
     def lib_file(self):
         gr = "\n".join("  " + g for g in self.gr)
@@ -161,7 +196,7 @@ class FP:
                 f'  (property "Footprint" "" (at 0 0 0) (layer "F.Fab") (hide yes) (uuid "{U(self.name, "lib", "Footprint")}") (effects (font (size 1.27 1.27) (thickness 0.15))))\n'
                 f'  (property "Datasheet" "" (at 0 0 0) (layer "F.Fab") (hide yes) (uuid "{U(self.name, "lib", "Datasheet")}") (effects (font (size 1.27 1.27) (thickness 0.15))))\n'
                 f'  (property "Description" "{self.descr}" (at 0 0 0) (layer "F.Fab") (hide yes) (uuid "{U(self.name, "lib", "Description")}") (effects (font (size 1.27 1.27) (thickness 0.15))))\n'
-                f'  (attr {attr})\n{gr}\n' + self.pad_sexpr("lib", None, "  ") + f'\n  (embedded_fonts no)\n)\n')
+                f'  (attr {attr})\n{gr}\n' + self.pad_sexpr("lib", None, "  ") + f'\n{self.model_sexpr("  ")}  (embedded_fonts no)\n)\n')
 
 
 # ---- библиотека посадочных мест ----------------------------------------------------------------------
@@ -192,12 +227,16 @@ def tb_dg301(vertical=False):
 
 
 def _orient(pts, body, orient):
-    """Поворот ряда выводов и корпуса: "" — выводы вдоль x, замок/ввод к +y; "R" — выводы вдоль y, ввод к +x
-    (правый край платы); "L" — выводы вдоль y, ввод к −x (левый край). Вывод 1 — сверху при R/L."""
+    """Поворот ряда выводов и корпуса (только повороты, без зеркала — физический разъём отразить нельзя):
+    "" — выводы вдоль x, защёлка (сторона +y корпуса) к +y, вывод 1 слева;
+    "R" — поворот на 90° по часовой: выводы вдоль y, защёлка к −x, вывод 1 СВЕРХУ;
+    "L" — поворот на 90° против часовой: выводы вдоль y, защёлка к +x, вывод 1 СНИЗУ.
+    До 04.10.2026 "L" был перестановкой осей (x, y) → (y, x) — зеркалом с выводом 1 сверху: контур и нумерация
+    не соответствовали реальному разъёму (на MC X2/X5 это переполюсовка питания). Решение Mikhail: вариант (а)."""
     if orient == "R":
         pts = [(-y, x, n) for x, y, n in pts]; body = (-body[3], body[0], -body[1], body[2])
     elif orient == "L":
-        pts = [(y, x, n) for x, y, n in pts]; body = (body[1], body[0], body[3], body[2])
+        pts = [(y, -x, n) for x, y, n in pts]; body = (body[1], -body[2], body[3], -body[0])
     return pts, body
 
 
@@ -214,11 +253,14 @@ def jst_xh(n, orient=""):
         f.tht(num, x, y, 1.0, 1.8, "circle" if i else "rect")
     f.outline(*body)
     if orient:
-        f.text("F.SilkS", "1", pts[0][0], pts[0][1] - 2.4, 0.8)
+        f.text("F.SilkS", "1", pts[0][0], pts[0][1] + (2.4 if orient == "L" else -2.4), 0.8)   # у L вывод 1 снизу
         f.ref_at = (0, body[1] - 1.5); f.val_at = (0, body[3] + 1.5)
     else:
         f.text("F.SilkS", "1", x0, 4.6, 0.8)
         f.ref_at = (0, -3.6); f.val_at = (0, 4.6)
+    # модель KiCad (вывод 1 в начале, ряд вдоль +x, защёлка к −y в 3D); R — поворот по часовой (+90), L — против (−90)
+    if n in (2, 4, 5):
+        f.set_model(f"JST_XH_B{n}B-XH-A_1x0{n}_P2.50mm_Vertical.step", pts[0][0], -pts[0][1], {"": 0, "R": 90, "L": -90}[orient])
     FPS[name] = f
 
 
@@ -283,6 +325,7 @@ def mornsun_ymd():
 def d_smc():
     """SMC (DO-214AB): площадки 2,9 × 3,0 в ±3,55; вывод 1 — катод (полоса)."""
     f = FP("D_SMC", "Диод SMC (DO-214AB), катод — вывод 1 (полоса)", "diode smc tvs", smd=True)
+    f.set_model("D_SMC.step")                                   # KiCad: центр корпуса, вывод 1 (катод) слева — как у нас
     f.smd("1", -3.55, 0, 2.9, 3.0)
     f.smd("2", 3.55, 0, 2.9, 3.0)
     f.rect("F.Fab", -3.45, -2.95, 3.45, 2.95, 0.1)
@@ -295,6 +338,7 @@ def d_smc():
 
 def d_do41():
     f = FP("D_DO-41_P10.16mm", "Диод DO-41, шаг 10,16; вывод 1 — катод (полоса)", "diode do-41")
+    f.set_model("D_DO-41_SOD81_P10.16mm_Horizontal.step", -5.08, 0)   # KiCad: вывод 1 (катод) в начале, вывод 2 в +x
     f.tht("1", -5.08, 0, 1.1, 2.2, "rect"); f.tht("2", 5.08, 0, 1.1, 2.2)
     f.rect("F.Fab", -2.6, -1.35, 2.6, 1.35, 0.1)
     f.rect("F.SilkS", -2.8, -1.55, 2.8, 1.55, 0.15)
@@ -308,6 +352,10 @@ def d_do41():
 def r_axial(vertical=False):
     name = "R_Axial_P10.16mm" + ("_V" if vertical else "")
     f = FP(name, "Резистор 0,25 Вт, выводной, шаг 10,16", "resistor axial")
+    if vertical:   # у нас вывод 1 снизу (0, +5,08), ряд вверх (к −y платы) → против часовой, rz = −90
+        f.set_model("R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal.step", 0, -5.08, -90)
+    else:
+        f.set_model("R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal.step", -5.08, 0)
     pts = [(-5.08, 0, "1"), (5.08, 0, "2")]
     body = (-3.2, -1.2, 3.2, 1.2)
     if vertical:
@@ -323,6 +371,7 @@ def r_axial(vertical=False):
 
 def cp_radial():
     f = FP("CP_Radial_D8.0mm_P3.50mm", "Конденсатор электролитический ⌀8, шаг 3,5; вывод 1 — «+»", "capacitor electrolytic")
+    f.set_model("CP_Radial_D8.0mm_P3.50mm.step", -1.75, 0)      # KiCad: вывод 1 («+») в начале, вывод 2 в +x
     f.tht("1", -1.75, 0, 1.0, 1.8, "rect"); f.tht("2", 1.75, 0, 1.0, 1.8)
     f.circle("F.Fab", 0, 0, 4.0, 0.1); f.circle("F.SilkS", 0, 0, 4.2, 0.15)
     f.text("F.SilkS", "+", -3.2, -3.4, 1.0)
@@ -333,6 +382,7 @@ def cp_radial():
 
 def c_disc():
     f = FP("C_Disc_P5.00mm", "Конденсатор керамический выводной, шаг 5,0", "capacitor ceramic")
+    f.set_model("C_Disc_D6.0mm_W2.5mm_P5.00mm.step", -2.5, 0)   # KiCad: вывод 1 в начале; диск ⌀6 × 2,5 — под наш контур 6,4 × 2,4
     f.tht("1", -2.5, 0, 0.9, 1.8); f.tht("2", 2.5, 0, 0.9, 1.8)
     f.rect("F.Fab", -3.0, -1.25, 3.0, 1.25, 0.1); f.rect("F.SilkS", -3.2, -1.45, 3.2, 1.45, 0.15)
     f.rect("F.CrtYd", -3.7, -1.7, 3.7, 1.7, 0.05)
@@ -371,12 +421,14 @@ def module_zone():
 def pin_socket_1x22():
     """Гнездовая линейка 1 × 22, шаг 2,54 (PBS-22): отверстие 1,0, площадка 1,7; корпус 2,54 × 55,88; вывод 1 — сверху.
     Под модуль YD-ESP32-S3: ряды J1/J3 на расстоянии 25,4 мм (чертёж Espressif ESP32-S3-DevKitC-1: 25.40)."""
-    f = FP("PinSocket_1x22_P2.54mm_Vertical", "Гнездовая линейка PBS-22 (1 × 22, 2,54 мм) под ряд модуля YD-ESP32-S3", "socket header pbs")
+    f = FP("PinSocket_1x22_P2.54mm_Vertical", "Гнездовая линейка PBS-22 (1 × 22, 2,54 мм) под ряд модуля YD-ESP32-S3", "socket header pbs",
+           height=8.5)   # высота изолятора PBS-xx по datasheet серии — 8,5 мм; сверить с купленной линейкой
     for i in range(22):
         f.tht(str(i + 1), 0.0, i * 2.54, 1.0, 1.7, "rect" if i == 0 else "circle")
     f.outline(-1.27, -1.27, 1.27, 21 * 2.54 + 1.27, cy_margin=0.25)
     f.text("F.SilkS", "1", -2.8, 0.0, 0.8)
     f.ref_at = (0, -2.8); f.val_at = (0, 21 * 2.54 + 2.8)
+    f.set_model("PinSocket_1x22_P2.54mm_Vertical.step")          # KiCad: вывод 1 в начале, ряд вдоль +y — как у нас
     FPS[f.name] = f
 
 
@@ -409,6 +461,10 @@ def dip6(horizontal=False):
     вверх. horizontal — корпус повёрнут: выводы 1–3 — нижний ряд слева направо, 4–6 — верхний справа налево."""
     name = "DIP-6_W7.62mm" + ("_H" if horizontal else "")
     f = FP(name, "Корпус DIP-6 (КР293КП2Б), ряды 7,62 мм; ключ у вывода 1", "dip-6 optorelay")
+    if horizontal:  # вывод 1 в (−2,54; +3,81), ряд вдоль +x — модель KiCad (ряд вдоль +y платы) повёрнута против часовой, rz = −90
+        f.set_model("DIP-6_W7.62mm.step", -2.54, -3.81, -90)
+    else:
+        f.set_model("DIP-6_W7.62mm.step", -3.81, 2.54)
     pts = [(-3.81, -2.54, "1"), (-3.81, 0.0, "2"), (-3.81, 2.54, "3"), (3.81, 2.54, "4"), (3.81, 0.0, "5"), (3.81, -2.54, "6")]
     body = (-3.3, -4.0, 3.3, 4.0)
     if horizontal:                                     # выводы 1–3 — нижний ряд слева направо, 4–6 — верхний справа налево
@@ -422,18 +478,93 @@ def dip6(horizontal=False):
     FPS[name] = f
 
 
-def idc_2x06():
+def dip16():
+    """DIP-16 (PCF8574P), ряды 7,62, шаг 2,54: отверстие 0,8, площадка 1,6.
+    Выводы 1–8 — левый ряд сверху вниз, 9–16 — правый снизу вверх (стандартная нумерация DIP)."""
+    name = "DIP-16_W7.62mm"
+    f = FP(name, "Корпус DIP-16 (PCF8574P), ряды 7,62 мм; ключ у вывода 1", "dip-16 pcf8574", height=4.5)
+    f.set_model("DIP-16_W7.62mm.step", -3.81, 8.89)
+    y0 = -3.5 * 2.54
+    for i in range(8):
+        f.tht(str(i + 1), -3.81, y0 + i * 2.54, 0.8, 1.6, "rect" if i == 0 else "circle")
+        f.tht(str(16 - i), 3.81, y0 + i * 2.54, 0.8, 1.6)
+    f.outline(-3.3, y0 - 1.5, 3.3, -y0 + 1.5)
+    f.text("F.SilkS", "1", -6.0, y0, 0.8)
+    f.ref_at = (0, y0 - 3.0); f.val_at = (0, -y0 + 3.0)
+    FPS[name] = f
+
+
+def d_do35():
+    """Диод DO-35 (1N4148), выводной, шаг 7,62: отверстие 0,8, площадка 1,6; вывод 1 — катод (полоска)."""
+    name = "D_DO-35_P7.62mm"
+    f = FP(name, "Диод 1N4148 в корпусе DO-35, шаг 7,62 мм; вывод 1 — катод", "diode do-35 1n4148", height=2.5)
+    f.set_model("D_DO-35_SOD27_P7.62mm_Horizontal.step", -3.81, 0)
+    f.tht("1", -3.81, 0.0, 0.8, 1.6, "rect")
+    f.tht("2", 3.81, 0.0, 0.8, 1.6)
+    f.rect("F.Fab", -2.0, -1.0, 2.0, 1.0, 0.1)
+    f.rect("F.SilkS", -2.2, -1.2, 2.2, 1.2, 0.15)
+    f.line("F.SilkS", -1.4, -1.2, -1.4, 1.2, 0.15)       # полоска катода
+    f.rect("F.CrtYd", -5.0, -1.8, 5.0, 1.8, 0.05)
+    f.ref_at = (0, -2.6); f.val_at = (0, 2.6)
+    FPS[name] = f
+
+
+def sot23():
+    """SOT-23 (BAT54S), шаг 0,95, ряды 2,2 между центрами площадок; площадки 1,2 × 1,0 (под ручную пайку феном).
+    Размеры — типовые для SOT-23 (JEDEC TO-236AB); сверить по datasheet заказанной сборки."""
+    name = "SOT-23"
+    f = FP(name, "Корпус SOT-23 (BAT54S): 1 — анод D1, 2 — катод D2, 3 — средняя точка", "sot-23 bat54s", smd=True, height=1.3)
+    f.set_model("SOT-23.step")                                  # KiCad: центр корпуса, выводы 1, 2 снизу (+y платы), 3 сверху — как у нас
+    f.smd("1", -0.95, 1.1, 1.0, 1.2)
+    f.smd("2", 0.95, 1.1, 1.0, 1.2)
+    f.smd("3", 0.0, -1.1, 1.0, 1.2)
+    f.rect("F.Fab", -0.8, -0.65, 0.8, 0.65, 0.1)
+    f.line("F.SilkS", -1.7, -0.3, -1.7, 0.3, 0.15)
+    f.rect("F.CrtYd", -1.9, -2.0, 1.9, 2.0, 0.05)
+    f.ref_at = (0, -2.7); f.val_at = (0, 2.7)
+    FPS[name] = f
+
+
+def led_bicolor_5mm():
+    """Двухцветный светодиод 5 мм с общим анодом, 3 вывода в ряд с шагом 2,54: отверстие 0,9, площадка 1,8.
+    Вывод 1 — общий анод (средний), 2 и 3 — катоды. ПОРЯДОК ВЫВОДОВ СВЕРИТЬ по datasheet заказанного прибора."""
+    name = "LED_Bicolor_5mm"
+    f = FP(name, "Светодиод двухцветный 5 мм, общий анод, 3 вывода 2,54; порядок выводов сверить",
+           "led bicolor 5mm", height=8.6)
+    for num, x in (("2", -2.54), ("1", 0.0), ("3", 2.54)):
+        f.tht(num, x, 0.0, 0.9, 1.8, "rect" if num == "1" else "circle")
+    f.circle("F.Fab", 0, 0, 2.5, 0.1)
+    f.circle("F.SilkS", 0, 0, 2.7, 0.15)
+    f.rect("F.CrtYd", -3.6, -3.1, 3.6, 3.1, 0.05)
+    f.text("F.SilkS", "A", 0.0, -3.6, 0.8)
+    f.ref_at = (0, 4.2); f.val_at = (0, 5.8)
+    f.set_model("LED_D5.0mm-3.step", -2.54, 0)                  # KiCad: три вывода 0 / 2,54 / 5,08, средний — наш «1»; форму сверить
+    FPS[name] = f
+
+
+def idc_2x06(orient=""):
     """Вилка IDC BH-12 (2 × 6, шаг 2,54) с кожухом: отверстие 1,0, площадка 1,7; кожух 20,32 × 8,9 (стандарт).
-    Нумерация IDC: нечётные — верхний ряд слева направо (1, 3, … 11), чётные — нижний (2, 4, … 12); ключ (паз) — сверху."""
-    f = FP("IDC-Header_2x06_P2.54mm_Vertical", "Вилка IDC BH-12 (2 × 6, 2,54 мм) с кожухом 20,32 × 8,9; ключ сверху", "connector idc bh-12")
+    Ключ (паз) — в длинной стенке со стороны НЕЧЁТНОГО ряда (сверено по модели KiCad IDC-Header_2x06: паз в стенке
+    x = −3,15 у ряда 1, 3, 5…; площадка 1 в начале координат, 3 — дальше вдоль ряда, 2 — напротив через 2,54).
+    Базовый вариант: ряд вдоль x, ключ сверху (−y), нечётный ряд верхний, вывод 1 — СПРАВА (x = +6,35), нумерация
+    нечётных справа налево; чётные — под нечётными. Это поворот места KiCad на 90° по часовой стрелке.
+    orient="D" — поворот на 180° (имя _D): ключ снизу, нечётный ряд нижний, вывод 1 — слева внизу.
+    До 04.10.2026 вывод 1 стоял слева при ключе сверху — зеркально реальной вилке (нумерация ряда шла не в ту сторону)."""
+    k = -1.0 if orient == "D" else 1.0
+    name = "IDC-Header_2x06_P2.54mm_Vertical" + ("_D" if orient == "D" else "")
+    f = FP(name, "Вилка IDC BH-12 (2 × 6, 2,54 мм) с кожухом 20,32 × 8,9; ключ " + ("снизу (повёрнута на 180°)" if orient == "D" else "сверху"),
+           "connector idc bh-12")
     for c in range(6):
-        x = -6.35 + c * 2.54
-        f.tht(str(2 * c + 1), x, -1.27, 1.0, 1.7, "rect" if c == 0 else "circle")
-        f.tht(str(2 * c + 2), x, 1.27, 1.0, 1.7)
+        x = k * (6.35 - c * 2.54)
+        f.tht(str(2 * c + 1), x, k * -1.27, 1.0, 1.7, "rect" if c == 0 else "circle")
+        f.tht(str(2 * c + 2), x, k * 1.27, 1.0, 1.7)
     f.outline(-10.16, -4.45, 10.16, 4.45)
-    f.line("F.SilkS", -2.5, -4.65, -2.5, -3.6, 0.15); f.line("F.SilkS", 2.5, -4.65, 2.5, -3.6, 0.15)   # ключ
-    f.text("F.SilkS", "1", -8.9, -3.0, 0.8)
+    f.line("F.SilkS", -2.5, k * -4.65, -2.5, k * -3.6, 0.15); f.line("F.SilkS", 2.5, k * -4.65, 2.5, k * -3.6, 0.15)   # ключ
+    f.text("F.SilkS", "1", k * 8.9, k * -3.0, 0.8)
     f.ref_at = (0, -6.0); f.val_at = (0, 6.0)
+    # модель KiCad: вывод 1 в начале, 2 — в +x, 3 — в +y платы, паз в стенке −x; наше базовое место — её поворот
+    # на 90° по часовой (rz = +90), _D — против часовой (rz = −90); offset — вывод 1 в 3D-осях
+    f.set_model("IDC-Header_2x06_P2.54mm_Vertical.step", k * 6.35, k * 1.27, 90 * k)
     FPS[f.name] = f
 
 
@@ -515,7 +646,12 @@ class Router:
     уже проложенные дорожки и переходы, край платы, запретные зоны. Стоимость шага: «свой» слой/направление 1,
     «чужое» направление 4, переход 8. Результат — сегменты и переходы через seg()/via()."""
 
-    def __init__(self, w_default=0.8, keepouts=()):
+    STRATEGY = {"hv": dict(via=8, same=1, other=4),      # F.Cu — горизонтали, B.Cu — вертикали
+                "plane": dict(via=20, same=1, other=3)}     # сигналы по F.Cu, B.Cu отдан земле
+
+    def __init__(self, w_default=0.8, keepouts=(), strategy="hv"):
+        assert strategy in self.STRATEGY, strategy
+        self.strategy = strategy
         self.nx = int(BOARD_W / GRID) + 1
         self.ny = int(BOARD_H / GRID) + 1
         self.occ = [{}, {}]                     # слой → {(i, j): net}
@@ -532,9 +668,9 @@ class Router:
                 layers = (0,) if kind == "smd" else (0, 1)
                 self.block(x0 + x, y0 + y, r + CLR + w_default / 2, net or "#pad", layers)
                 self.novia.update(self.cells_near(x0 + x, y0 + y, r + CLR + VIA_D / 2 + 0.3))
-        for hx, hy in HOLES:
-            self.block(hx, hy, 1.6 + 0.2 + w_default / 2, "#hole", (0, 1))
-            self.novia.update(self.cells_near(hx, hy, 1.6 + 0.2 + VIA_D / 2 + 0.3))
+        for hx, hy in HOLES:                                   # отступ от крепежа — по норме DFM
+            self.block(hx, hy, 1.6 + DFM["hole_to_copper"] + w_default / 2, "#hole", (0, 1))
+            self.novia.update(self.cells_near(hx, hy, 1.6 + DFM["hole_to_copper"] + VIA_D / 2 + 0.3))
         for poly in self.keepouts:
             xs = [p[0] for p in poly]; ys = [p[1] for p in poly]
             for i in range(int(min(xs) / GRID), int(max(xs) / GRID) + 2):
@@ -569,6 +705,15 @@ class Router:
             return False
         if i * GRID - w / 2 < EDGE_MIN or j * GRID - w / 2 < EDGE_MIN or BOARD_W - i * GRID - w / 2 < EDGE_MIN or BOARD_H - j * GRID - w / 2 < EDGE_MIN:
             return False
+        if not self._free1(L, i, j, net):
+            return False
+        # Площадки и чужие дорожки заблокированы с запасом под w_default; дорожке шире нужен лишний зазор —
+        # требуем свободными и четыре соседние клетки (+0,635 мм с каждой стороны), иначе DRC покажет 0,3–0,4 вместо 0,5.
+        if w > self.w_default + 1e-9:
+            return all(self._free1(L, i + di, j + dj, net) for di, dj in ((1, 0), (-1, 0), (0, 1), (0, -1)))
+        return True
+
+    def _free1(self, L, i, j, net):
         cur = self.occ[L].get((i, j))
         return cur is None or cur == net
 
@@ -577,24 +722,42 @@ class Router:
         ci, cj = round(x / GRID), round(y / GRID)
         return [(i, j) for i in range(ci - n, ci + n + 1) for j in range(cj - n, cj + n + 1) if math.hypot(i * GRID - x, j * GRID - y) <= r]
 
+    @staticmethod
+    def _xyl(q):
+        """Точка цепи: (x, y) — сквозная площадка, доступна с обоих слоёв; (x, y, L) — только слой L
+        (площадка SMD лежит на одном слое, и подойти к ней по другому нельзя)."""
+        return (q[0], q[1], (q[2],) if len(q) > 2 else (0, 1))
+
     def route(self, net, pads_xy, w=None, pad_r=0.85):
-        """Соединить площадки цепи (список (x, y)) деревом: каждая следующая — к ближайшей уже проложенной меди."""
+        """Соединить площадки цепи деревом: каждая следующая — к ближайшей уже проложенной меди.
+        Элемент списка — (x, y) или (x, y, слой) для односторонней площадки."""
         w = w or self.w_default
         done = set()                                          # клетки (L, i, j), принадлежащие цепи
-        starts = pads_xy[0]
-        for L in (0, 1):
-            for c in self.cells_near(*starts, pad_r):
-                done.add((L,) + c)
-        for tx, ty in pads_xy[1:]:
+        anchor = {}                                           # клетка → точка реальной меди, которая её обосновала
+        sx, sy, slay = self._xyl(pads_xy[0])
+        starts = (sx, sy)
+        for L in slay:
+            for c in self.cells_near(sx, sy, pad_r):
+                done.add((L,) + c); anchor[(L,) + c] = (sx, sy)
+        for q in pads_xy[1:]:
+            tx, ty, tlay = self._xyl(q)
             targets = set()
-            for L in (0, 1):
+            for L in tlay:
                 for c in self.cells_near(tx, ty, pad_r):
-                    targets.add((L,) + c)
+                    targets.add((L,) + c); anchor.setdefault((L,) + c, (tx, ty))
             path = self._search(net, done, targets, w)
             if path is None:
                 self.fail.append((net, (tx, ty)))
                 continue
             self._emit(net, path, w, (tx, ty), pads_xy[0])
+            # Начало пути может лежать в клетке, отстоящей от площадки на pad_r: меди там ещё нет.
+            # Без этой подводки ветка повисает в воздухе, а fail пуст — связность ломается молча.
+            st0 = path[0]
+            if st0 in anchor:
+                ax, ay = anchor[st0]
+                bx, by = r3(st0[1] * GRID), r3(st0[2] * GRID)
+                if math.hypot(ax - bx, ay - by) > 1e-6:
+                    seg(net, F if st0[0] == 0 else B, w, (ax, ay), (bx, by))
             for k, st in enumerate(path):
                 done.add(st)
                 self.block(st[1] * GRID, st[2] * GRID, w / 2 + CLR + self.w_default / 2, net, (st[0],))
@@ -625,15 +788,18 @@ class Router:
                 ni, nj = i + di, j + dj
                 if not self.free(nL, ni, nj, net, w):
                     continue
+                c = self.STRATEGY[self.strategy]
                 if dL:
                     if not self.free(L ^ 1, i, j, net, w) or (i, j) in self.novia:
                         continue
                     if min(i * GRID, j * GRID, BOARD_W - i * GRID, BOARD_H - j * GRID) < EDGE_MIN + VIA_D / 2:
                         continue
-                    cost = 8
+                    cost = c["via"]
+                elif self.strategy == "plane":
+                    cost = c["same"] if L == 0 else c["other"]        # дорого уходить на слой земли
                 else:
                     horiz = di != 0
-                    cost = 1 if (horiz == (L == 0)) else 4
+                    cost = c["same"] if (horiz == (L == 0)) else c["other"]
                 nd = d + cost
                 ns = (nL, ni, nj)
                 if nd < dist.get(ns, 1e18):
@@ -695,6 +861,16 @@ def zone_sexpr(name, net, layer, poly, kind):
             f'    (fill yes (thermal_gap 0.6) (thermal_bridge_width 1.0))\n    (polygon (pts {pts}))\n  )')
 
 
+# ---- компоновка: функциональные узлы и конструктивная привязка ---------------------------------------------
+# Расстановка идёт узлами, а не поштучно: сначала узел собирается компактно, потом ставится на плату целиком.
+# Порядок установки — по числу связей: первым узел с наибольшим числом связей со всеми, далее тот, у кого
+# больше связей с уже установленными. Проверяется check_pcb.py, блок 10.
+UNITS = {}        # "имя узла": [ref, …] — функциональные узлы платы
+FIXED = {}        # ref: (x, y, "источник") — конструктивно привязанные компоненты; сдвигать нельзя
+CHANNELS = []     # (x1, y1, x2, y2, "назначение") — каналы межузловых трасс; компоненты туда не ставить
+MAX_H = None      # ограничение по высоте компонентов над платой, мм; None — требует уточнения
+
+
 # ---- контур, крепёж, надписи ------------------------------------------------------------------------------
 HOLES = []        # (x, y) — М3 ⌀3,2
 TEXTS = []        # (текст, x, y, размер) на F.SilkS
@@ -725,6 +901,68 @@ def gr_items():
         for a, b in zip(r, r[1:] + r[:1]):
             out.append(f'  (gr_line (start {r3(a[0] + OBX)} {r3(a[1] + OBY)}) (end {r3(b[0] + OBX)} {r3(b[1] + OBY)}) (stroke (width 0.2) (type dash_dot)) (layer "F.SilkS") (uuid "{U("iso", a, b)}"))')
     return out
+
+
+def hole_keepouts(d=None):
+    """Вырез заливки вокруг каждого крепёжного отверстия на обоих слоях: винт М3 с шайбой не должен
+    касаться меди, а биение сверла не должно оголять её торец в отверстии (DFM, п. 2 скилла).
+    Идемпотентна; вызывать после HOLES.extend(...), до write(). Возвращает число добавленных зон."""
+    d = DFM["hole_keepout_d"] if d is None else d
+    if d <= 0:
+        return 0
+    r, added = d / 2, 0
+    for i, (x, y) in enumerate(HOLES):
+        name = f"hole_nopour_{i + 1}"
+        if name in ZONES:
+            continue
+        poly = [(r3(x + r * math.cos(math.radians(a))), r3(y + r * math.sin(math.radians(a)))) for a in range(0, 360, 30)]
+        ZONES[name] = ("", "F&B.Cu", poly, "keepout_pour")
+        added += 1
+    return added
+
+
+def chamfer_points(pts, d):
+    """Скосить изломы ломаной: вместо вершины — две точки на расстоянии d по каждому звену.
+    Прямой угол превращается в два поворота по 45°. Скос ограничен половиной звена, поэтому
+    соседние скосы не накладываются. Концы (площадки, переходы) не трогаются."""
+    pts = list(pts)
+    if len(pts) < 3:
+        return pts
+    out = [pts[0]]
+    for a, b, c in zip(pts, pts[1:], pts[2:]):
+        l1 = math.hypot(b[0] - a[0], b[1] - a[1])
+        l2 = math.hypot(c[0] - b[0], c[1] - b[1])
+        if l1 < 1e-9 or l2 < 1e-9:
+            continue
+        cosv = ((b[0] - a[0]) * (c[0] - b[0]) + (b[1] - a[1]) * (c[1] - b[1])) / (l1 * l2)
+        if cosv > 0.999:                       # звенья соосны — излома нет
+            continue
+        k = min(d, l1 / 2, l2 / 2)
+        if k < 0.05:                           # скашивать нечего
+            out.append(b)
+            continue
+        out.append((r3(b[0] - (b[0] - a[0]) / l1 * k), r3(b[1] - (b[1] - a[1]) / l1 * k)))
+        out.append((r3(b[0] + (c[0] - b[0]) / l2 * k), r3(b[1] + (c[1] - b[1]) / l2 * k)))
+    out.append(pts[-1])
+    return out
+
+
+def chamfer_tracks(d=None):
+    """Скосить прямые углы всех дорожек под 45°: Router ортогональный и 90° даёт всегда.
+    Вызывать один раз после всей трассировки, до write(); перестраивает items/tracks/vias.
+    Возвращает число добавленных вершин. После вызова обязательно прогнать check_pcb.py:
+    скос переносит медь в вогнутую сторону угла, зазоры там надо перепроверить."""
+    d = DFM["chamfer"] if d is None else d
+    old_t, old_v = list(tracks), list(vias)
+    items.clear(); tracks.clear(); vias.clear()
+    added = 0
+    for net, layer, w, pts in old_t:
+        new = chamfer_points(pts, d)
+        added += len(new) - len(pts)
+        seg(net, layer, w, *new)
+    for net, x, y in old_v:
+        via(net, x, y)
+    return added
 
 
 # ---- сборка -----------------------------------------------------------------------------------------------
@@ -792,10 +1030,15 @@ def pro_rules(classes):
     import json
     path = ROOT / "boards" / PROJECT / f"{PROJECT}.kicad_pro"
     d = json.loads(path.read_text(encoding="utf-8")) if path.exists() else {"meta": {"filename": path.name, "version": 3}}
-    d.setdefault("board", {}).setdefault("design_settings", {})["rules"] = {
-        "min_clearance": 0.3, "min_connection": 0.3, "min_copper_edge_clearance": 0.5, "min_hole_clearance": 0.3,
+    # правила — обновлением существующего словаря: ключи, которые пишет KiCad (max_error, microvia, min_groove_width,
+    # use_height_for_length_calcs …), сохраняются, наши значения перекрывают одноимённые
+    d.setdefault("board", {}).setdefault("design_settings", {}).setdefault("rules", {}).update({
+        "min_clearance": 0.3, "min_connection": 0.3, "min_copper_edge_clearance": 0.5, "min_hole_clearance": 0.5,
         "min_hole_to_hole": 0.5, "min_through_hole_diameter": 0.3, "min_track_width": 0.3, "min_via_annular_width": 0.2,
-        "min_via_diameter": 1.0, "min_text_height": 1.0, "min_text_thickness": 0.15, "solder_mask_to_copper_clearance": 0.0}
+        "min_via_diameter": 1.0, "min_text_height": 1.0, "min_text_thickness": 0.15, "solder_mask_to_copper_clearance": 0.0,
+        "min_silk_clearance": DFM["silk_to_pad"]})
+    # шелкография поверх меди — ошибка, а не предупреждение: завод вырежет кусок надписи молча
+    d["board"]["design_settings"].setdefault("rule_severities", {})["silk_over_copper"] = "error"
     cls, pats = [], []
     for name, w, clr, nets in classes:
         cls.append({"name": name, "clearance": clr, "track_width": w, "via_diameter": VIA_D, "via_drill": VIA_DRILL,
@@ -821,5 +1064,8 @@ def write():
     (OUT_FP / "MountingHole_3.2mm_M3.kicad_mod").write_text(hole.lib_file(), encoding="utf-8")
     gk = OUT_FP / ".gitkeep"
     if gk.exists():
-        gk.unlink()
+        try:
+            gk.unlink()                      # .gitkeep удаляется тем же коммитом, что добавляет первый файл (CLAUDE.md)
+        except PermissionError:
+            print("предупреждение: .gitkeep в manipulator.pretty не удалён (нет прав на удаление) — убрать из Git руками")
     print(f"{PROJECT}.kicad_pcb: {len(PLACE)} компонентов, {len(items)} сегментов/переходов, {len(ZONES)} зон; footprint'ов: {len(FPS) + 1}")

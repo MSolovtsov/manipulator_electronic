@@ -15,5 +15,10 @@
   (pad "2" thru_hole circle (at 0.0 -1.25 0) (size 1.8 1.8) (drill 1.0) (layers "*.Cu" "*.Mask") (uuid "2ccda403-619c-50ec-a695-5bdf5b5dc18c"))
   (pad "3" thru_hole circle (at 0.0 1.25 0) (size 1.8 1.8) (drill 1.0) (layers "*.Cu" "*.Mask") (uuid "3c25d76b-889c-5936-a8a8-36653c7897be"))
   (pad "4" thru_hole circle (at 0.0 3.75 0) (size 1.8 1.8) (drill 1.0) (layers "*.Cu" "*.Mask") (uuid "becb1d05-931c-55e1-96f4-c39725894649"))
+  (model "${KIPRJMOD}/../../lib/3dmodels/JST_XH_B4B-XH-A_1x04_P2.50mm_Vertical.step"
+    (offset (xyz 0.0 3.75 0.0))
+    (scale (xyz 1 1 1))
+    (rotate (xyz 0 0 90.0))
+  )
   (embedded_fonts no)
 )

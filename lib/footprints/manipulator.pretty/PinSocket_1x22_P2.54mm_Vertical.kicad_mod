@@ -33,5 +33,10 @@
   (pad "20" thru_hole circle (at 0.0 48.26 0) (size 1.7 1.7) (drill 1.0) (layers "*.Cu" "*.Mask") (uuid "5b858c59-e6af-5680-9afd-f441c4c98f09"))
   (pad "21" thru_hole circle (at 0.0 50.8 0) (size 1.7 1.7) (drill 1.0) (layers "*.Cu" "*.Mask") (uuid "615af597-e879-5334-914e-67d9f2bdf997"))
   (pad "22" thru_hole circle (at 0.0 53.34 0) (size 1.7 1.7) (drill 1.0) (layers "*.Cu" "*.Mask") (uuid "d3fd6d6a-f7d6-5a97-ba10-00880c41f259"))
+  (model "${KIPRJMOD}/../../lib/3dmodels/PinSocket_1x22_P2.54mm_Vertical.step"
+    (offset (xyz 0.0 0.0 0.0))
+    (scale (xyz 1 1 1))
+    (rotate (xyz 0 0 0.0))
+  )
   (embedded_fonts no)
 )

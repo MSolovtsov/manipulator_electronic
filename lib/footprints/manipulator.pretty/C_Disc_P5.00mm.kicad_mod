@@ -12,5 +12,10 @@
   (fp_rect (start -3.7 -1.7) (end 3.7 1.7) (stroke (width 0.05) (type default)) (fill no) (layer "F.CrtYd") (uuid "a5c1ecdd-1f1f-5120-ab04-1a85ac867dea"))
   (pad "1" thru_hole circle (at -2.5 0.0 0) (size 1.8 1.8) (drill 0.9) (layers "*.Cu" "*.Mask") (uuid "a3b882ef-538b-55ac-ae37-0737999ece81"))
   (pad "2" thru_hole circle (at 2.5 0.0 0) (size 1.8 1.8) (drill 0.9) (layers "*.Cu" "*.Mask") (uuid "4e668558-1bf7-50f0-aa5d-b8e6cbfb9296"))
+  (model "${KIPRJMOD}/../../lib/3dmodels/C_Disc_D6.0mm_W2.5mm_P5.00mm.step"
+    (offset (xyz -2.5 0.0 0.0))
+    (scale (xyz 1 1 1))
+    (rotate (xyz 0 0 0.0))
+  )
   (embedded_fonts no)
 )

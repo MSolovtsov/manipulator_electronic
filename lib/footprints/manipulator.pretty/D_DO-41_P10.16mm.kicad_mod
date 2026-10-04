@@ -15,5 +15,10 @@
   (fp_rect (start -6.4 -1.8) (end 6.4 1.8) (stroke (width 0.05) (type default)) (fill no) (layer "F.CrtYd") (uuid "f26f147d-d952-53c4-915b-55101aca8d7d"))
   (pad "1" thru_hole rect (at -5.08 0.0 0) (size 2.2 2.2) (drill 1.1) (layers "*.Cu" "*.Mask") (uuid "1c1b7042-ae8b-5102-94b5-17f24329a94b"))
   (pad "2" thru_hole circle (at 5.08 0.0 0) (size 2.2 2.2) (drill 1.1) (layers "*.Cu" "*.Mask") (uuid "4ced595f-0170-5bd6-b2d0-5fe8f46c782a"))
+  (model "${KIPRJMOD}/../../lib/3dmodels/D_DO-41_SOD81_P10.16mm_Horizontal.step"
+    (offset (xyz -5.08 0.0 0.0))
+    (scale (xyz 1 1 1))
+    (rotate (xyz 0 0 0.0))
+  )
   (embedded_fonts no)
 )
