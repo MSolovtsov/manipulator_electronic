@@ -584,6 +584,22 @@
       {
         "netclass": "Power24",
         "pattern": "+24V_M"
+      },
+      {
+        "netclass": "Power5",
+        "pattern": "3V3"
+      },
+      {
+        "netclass": "Power24",
+        "pattern": "Net-(DA1-OUT1)"
+      },
+      {
+        "netclass": "Power24",
+        "pattern": "Net-(DA1-OUT2)"
+      },
+      {
+        "netclass": "Power24",
+        "pattern": "Net-(DA2-IP-)"
       }
     ]
   },

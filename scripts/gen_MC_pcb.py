@@ -92,7 +92,7 @@ set_place([
     ("R5", "R_Axial_P10.16mm_V", "470 Ом", 13.5, 76.0, {"1": "Net-(R5-Pad1)", "2": "KH"}),
     ("X2", "JST_VH_B2P-VH_L", "B2P-VH", 6.0, 76.0, {"1": "+5P", "2": "GND_P"}),
     ("R4", "R_Axial_P10.16mm_V", "1 кОм", 18.0, 82.0, {"1": "KH", "2": "GND_P"}),
-    ("X3", "JST_XH_B2B-XH-A_L", "B2B-XH-A", 6.0, 88.0, {"1": "+5P", "2": "KH"}),
+    ("X3", "JST_XH_B4B-XH-A_L", "B4B-XH-A", 6.0, 88.0, {"1": "+5P", "2": "KH", "3": "KH", "4": "GND_P"}),
     # модуль ESP32
     ("XS1", "PinSocket_1x22_P2.54mm_Vertical", "PBS-22", XS1_X, XS_Y, J1),
     ("XS2", "PinSocket_1x22_P2.54mm_Vertical", "PBS-22", XS2_X, XS_Y, J3),

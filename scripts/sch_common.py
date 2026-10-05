@@ -856,13 +856,32 @@ def pro_text(project):
 '''
 
 
+def saved_by_kicad_ok(path):
+    """Предохранитель (CLAUDE.md «Главный файл — тот, что сохранил Mikhail в KiCad»): файл с заголовком
+    generator "eeschema"/"pcbnew" содержит ручную работу — поверх него генератор не пишет без --force.
+    Возвращает True, если писать можно."""
+    import sys
+    if not path.exists() or "--force" in sys.argv:
+        return True
+    head = path.read_text(encoding="utf-8", errors="ignore")[:400]
+    if '(generator "eeschema")' in head or '(generator "pcbnew")' in head:
+        print(f"ОТКАЗ: {path} сохранён KiCad (ручная компоновка Mikhail) — генератор поверх не пишет.\n"
+              f"       Правки вносятся точечно в файл; перегенерация — только по команде: добавьте --force,\n"
+              f"       предварительно отложив копию файла вне репозитория.")
+        return False
+    return True
+
+
 def write_project(project, paper, title_block, write_pro=True):
     """Записать boards/<project>/*.kicad_sch (+ .kicad_pro и таблицы, если их нет) и общую библиотеку символов.
     Библиотека пишется полностью (все символы всех плат), поэтому генераторы должны импортировать общий модуль."""
     board = ROOT / "boards" / project
     board.mkdir(parents=True, exist_ok=True)
     OUT_LIB.parent.mkdir(parents=True, exist_ok=True)
-    (board / f"{project}.kicad_sch").write_text(sch_text(paper, title_block), encoding="utf-8")
+    out_sch = board / f"{project}.kicad_sch"
+    if not saved_by_kicad_ok(out_sch):
+        return
+    out_sch.write_text(sch_text(paper, title_block), encoding="utf-8")
     if write_pro and not (board / f"{project}.kicad_pro").exists():
         (board / f"{project}.kicad_pro").write_text(pro_text(project), encoding="utf-8")
     for name, text_ in (("sym-lib-table", SYM_LIB_TABLE), ("fp-lib-table", FP_LIB_TABLE)):

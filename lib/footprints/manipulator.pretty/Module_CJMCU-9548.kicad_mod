@@ -51,5 +51,15 @@
   (pad "15" thru_hole circle (at 8.89 8.89 0) (size 1.7 1.7) (drill 1.0) (layers "*.Cu" "*.Mask") (uuid "01e9fcfa-d352-5b83-b388-858cd4a70576"))
   (pad "14" thru_hole circle (at 8.89 11.43 0) (size 1.7 1.7) (drill 1.0) (layers "*.Cu" "*.Mask") (uuid "afe5b85c-e9c6-56e6-8642-fbeb7bbec936"))
   (pad "13" thru_hole circle (at 8.89 13.97 0) (size 1.7 1.7) (drill 1.0) (layers "*.Cu" "*.Mask") (uuid "32524676-d4a2-55cf-a7c2-ede549686104"))
+  (model "${KIPRJMOD}/../../lib/3dmodels/PinSocket_1x12_P2.54mm_Vertical.step"
+    (offset (xyz -8.89 13.97 0.0))
+    (scale (xyz 1 1 1))
+    (rotate (xyz 0 0 0.0))
+  )
+  (model "${KIPRJMOD}/../../lib/3dmodels/PinSocket_1x12_P2.54mm_Vertical.step"
+    (offset (xyz 8.89 13.97 0.0))
+    (scale (xyz 1 1 1))
+    (rotate (xyz 0 0 0.0))
+  )
   (embedded_fonts no)
 )

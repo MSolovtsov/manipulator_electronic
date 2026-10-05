@@ -9887,7 +9887,7 @@
 			(in_pos_files yes)
 			(duplicate_pin_numbers_are_jumpers no)
 			(property "Reference" "X"
-				(at -38.1 -9.62 0)
+				(at -38.1 -19.78 0)
 				(show_name no)
 				(do_not_autoplace no)
 				(effects
@@ -9899,7 +9899,7 @@
 				)
 			)
 			(property "Value" "Tbl_X3_MC"
-				(at 0 -12.12 0)
+				(at 0 -22.28 0)
 				(show_name no)
 				(do_not_autoplace no)
 				(effects
@@ -9936,7 +9936,7 @@
 					)
 				)
 			)
-			(property "Description" "Разъём, 2 контактов, таблицей (ГОСТ 2.702): колонки «Контакт», «Цепь»; выводы справа"
+			(property "Description" "Разъём, 4 контактов, таблицей (ГОСТ 2.702): колонки «Контакт», «Цепь»; выводы справа"
 				(at 0 0 0)
 				(show_name no)
 				(do_not_autoplace no)
@@ -9952,7 +9952,7 @@
 			(symbol "Tbl_X3_MC_0_1"
 				(polyline
 					(pts
-						(xy -17.78 7.62) (xy -17.78 -7.62)
+						(xy -17.78 7.62) (xy -17.78 -17.78)
 					)
 					(stroke
 						(width 0.1524)
@@ -9964,7 +9964,7 @@
 				)
 				(polyline
 					(pts
-						(xy 0 7.62) (xy -38.1 7.62) (xy -38.1 -7.62) (xy 0 -7.62) (xy 0 7.62)
+						(xy 0 7.62) (xy -38.1 7.62) (xy -38.1 -17.78) (xy 0 -17.78) (xy 0 7.62)
 					)
 					(stroke
 						(width 0.1524)
@@ -10010,6 +10010,30 @@
 						(type none)
 					)
 				)
+				(polyline
+					(pts
+						(xy 0 -12.7) (xy -38.1 -12.7)
+					)
+					(stroke
+						(width 0.1524)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0 -17.78) (xy -38.1 -17.78)
+					)
+					(stroke
+						(width 0.1524)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
 				(text "Цепь"
 					(at -27.94 5.08 0)
 					(effects
@@ -10040,6 +10064,26 @@
 						)
 					)
 				)
+				(text "KH"
+					(at -27.94 -10.16 0)
+					(effects
+						(font
+							(face "GOST 2.304")
+							(size 2.5 2.5)
+							(italic yes)
+						)
+					)
+				)
+				(text "GND_P"
+					(at -27.94 -15.24 0)
+					(effects
+						(font
+							(face "GOST 2.304")
+							(size 2.5 2.5)
+							(italic yes)
+						)
+					)
+				)
 				(text "Контакт"
 					(at -8.89 5.08 0)
 					(effects
@@ -10062,6 +10106,26 @@
 				)
 				(text "2"
 					(at -8.89 -5.08 0)
+					(effects
+						(font
+							(face "GOST 2.304")
+							(size 2.5 2.5)
+							(italic yes)
+						)
+					)
+				)
+				(text "3"
+					(at -8.89 -10.16 0)
+					(effects
+						(font
+							(face "GOST 2.304")
+							(size 2.5 2.5)
+							(italic yes)
+						)
+					)
+				)
+				(text "4"
+					(at -8.89 -15.24 0)
 					(effects
 						(font
 							(face "GOST 2.304")
@@ -10101,6 +10165,42 @@
 						)
 					)
 					(number "2"
+						(effects
+							(font
+								(size 2.5 2.5)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 2.54 -10.16 180)
+					(length 2.54)
+					(name "KH"
+						(effects
+							(font
+								(size 2.5 2.5)
+							)
+						)
+					)
+					(number "3"
+						(effects
+							(font
+								(size 2.5 2.5)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 2.54 -15.24 180)
+					(length 2.54)
+					(name "GND_P"
+						(effects
+							(font
+								(size 2.5 2.5)
+							)
+						)
+					)
+					(number "4"
 						(effects
 							(font
 								(size 2.5 2.5)
@@ -13559,6 +13659,12 @@
 		(uuid "131b8134-11a5-4d54-9053-aac19d4cc504")
 	)
 	(junction
+		(at 91.44 102.87)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "4c8e9014-9cc5-4dd5-bb15-ba969d9a2796")
+	)
+	(junction
 		(at 215.9 147.32)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -13897,6 +14003,16 @@
 			(type default)
 		)
 		(uuid "1a65217e-b752-412b-99c6-b57a1068e75e")
+	)
+	(wire
+		(pts
+			(xy 78.74 113.03) (xy 81.28 113.03)
+		)
+		(stroke
+			(width 0.3048)
+			(type default)
+		)
+		(uuid "1b6d7b10-3684-40d4-a154-b7db26ce256a")
 	)
 	(wire
 		(pts
@@ -14530,6 +14646,16 @@
 	)
 	(wire
 		(pts
+			(xy 81.28 107.95) (xy 81.28 102.87)
+		)
+		(stroke
+			(width 0.3048)
+			(type default)
+		)
+		(uuid "7feaaf59-dc7d-4f0f-9a0e-b6a72875f8be")
+	)
+	(wire
+		(pts
 			(xy 215.9 149.86) (xy 215.9 154.94)
 		)
 		(stroke
@@ -14660,6 +14786,16 @@
 	)
 	(wire
 		(pts
+			(xy 78.74 107.95) (xy 81.28 107.95)
+		)
+		(stroke
+			(width 0.3048)
+			(type default)
+		)
+		(uuid "8ff7fb40-b8f3-46bf-8e2d-815ad08e54ae")
+	)
+	(wire
+		(pts
 			(xy 300.99 109.22) (xy 300.99 226.06)
 		)
 		(stroke
@@ -14710,7 +14846,7 @@
 	)
 	(wire
 		(pts
-			(xy 81.28 118.11) (xy 81.28 123.19)
+			(xy 91.44 118.11) (xy 91.44 123.19)
 		)
 		(stroke
 			(width 0.3048)
@@ -14857,6 +14993,16 @@
 			(type default)
 		)
 		(uuid "acf62811-6e5c-46ae-a6cc-1730b0707643")
+	)
+	(wire
+		(pts
+			(xy 81.28 113.03) (xy 81.28 123.19)
+		)
+		(stroke
+			(width 0.3048)
+			(type default)
+		)
+		(uuid "ad190164-57e5-47fc-8a71-755fb0c34367")
 	)
 	(wire
 		(pts
@@ -18423,7 +18569,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "B2P-VH"
+		(property "Value" "DG301-5.0-02P"
 			(at 36.83 192.46 0)
 			(hide yes)
 			(show_name no)
@@ -18437,7 +18583,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "manipulator:JST_VH_B2P-VH_L"
+		(property "Footprint" "manipulator:TB_DG301-5.0_2P_R"
 			(at 77.47 180.34 0)
 			(hide yes)
 			(show_name no)
@@ -19638,6 +19784,93 @@
 		)
 	)
 	(symbol
+		(lib_id "manipulator:GND_P")
+		(at 91.44 123.19 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "63bb47d8-f187-4c03-8828-b90f6e455ff4")
+		(property "Reference" "#PWR076"
+			(at 83.82 119.38 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(face "GOST 2.304")
+					(size 3.5 3.5)
+					(italic yes)
+				)
+			)
+		)
+		(property "Value" "GND_P"
+			(at 91.44 128.27 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(face "GOST 2.304")
+					(size 2.5 2.5)
+					(italic yes)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 91.44 123.19 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(face "GOST 2.304")
+					(size 2.5 2.5)
+					(italic yes)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 91.44 123.19 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(face "GOST 2.304")
+					(size 2.5 2.5)
+					(italic yes)
+				)
+			)
+		)
+		(property "Description" ""
+			(at 91.44 123.19 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(face "GOST 2.304")
+					(size 2.5 2.5)
+					(italic yes)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "308d495f-9882-4e79-a7ff-c9be01ba2cfc")
+		)
+		(instances
+			(project "MC"
+				(path "/3c7e9a10-5b2d-4e8f-9a61-0d4c2b7f6e55"
+					(reference "#PWR076")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "manipulator:3V3")
 		(at 271.78 38.1 0)
 		(unit 1)
@@ -20518,7 +20751,7 @@
 		(dnp no)
 		(uuid "77392cfe-3c94-5069-8032-3a4d35eecb63")
 		(property "Reference" "X2"
-			(at 38.354 109.474 0)
+			(at 38.354 119.63 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -20530,7 +20763,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "B2B-XH-A"
+		(property "Value" "B4B-XH-A"
 			(at 35.56 109.91 0)
 			(hide yes)
 			(show_name no)
@@ -20544,7 +20777,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "manipulator:JST_XH_B2B-XH-A_L"
+		(property "Footprint" "manipulator:JST_XH_B4B-XH-A_L"
 			(at 76.2 97.79 0)
 			(hide yes)
 			(show_name no)
@@ -20627,6 +20860,12 @@
 		)
 		(pin "2"
 			(uuid "04ac3c1f-9212-47e9-8a94-9438a5612e56")
+		)
+		(pin "3"
+			(uuid "63038671-d8c7-40ac-8405-78259f8e519f")
+		)
+		(pin "4"
+			(uuid "e750cf09-0f1c-4488-ae85-bf44a95b0571")
 		)
 		(instances
 			(project "MC"
@@ -23702,7 +23941,7 @@
 	)
 	(symbol
 		(lib_id "manipulator:R")
-		(at 81.28 110.49 0)
+		(at 91.44 110.49 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -23712,7 +23951,7 @@
 		(dnp no)
 		(uuid "d3d9bff8-865f-5d5c-97c2-bf660bf82c2a")
 		(property "Reference" "R1"
-			(at 90.932 109.22 0)
+			(at 101.092 109.22 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -23725,7 +23964,7 @@
 			)
 		)
 		(property "Value" "1 кОм"
-			(at 94.742 114.3 0)
+			(at 104.902 114.3 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -23738,7 +23977,7 @@
 			)
 		)
 		(property "Footprint" "manipulator:R_Axial_P10.16mm_V"
-			(at 81.28 110.49 0)
+			(at 91.44 110.49 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -23751,7 +23990,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 81.28 110.49 0)
+			(at 91.44 110.49 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -23764,7 +24003,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 81.28 110.49 0)
+			(at 91.44 110.49 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -23777,7 +24016,7 @@
 			)
 		)
 		(property "BaseID" "E-025"
-			(at 81.28 110.49 0)
+			(at 91.44 110.49 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -23790,7 +24029,7 @@
 			)
 		)
 		(property "Status" "Утверждено"
-			(at 81.28 110.49 0)
+			(at 91.44 110.49 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -23803,7 +24042,7 @@
 			)
 		)
 		(property "Note" "Подтяжка шины KH на GND_P"
-			(at 81.28 110.49 0)
+			(at 91.44 110.49 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -25220,7 +25459,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "B2P-VH"
+		(property "Value" "DG301-5.0-02P"
 			(at 36.83 225.48 0)
 			(hide yes)
 			(show_name no)
@@ -25234,7 +25473,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "manipulator:JST_VH_B2P-VH_L"
+		(property "Footprint" "manipulator:TB_DG301-5.0_2P_R"
 			(at 77.47 213.36 0)
 			(hide yes)
 			(show_name no)

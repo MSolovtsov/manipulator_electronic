@@ -7,6 +7,7 @@ seg()/via(), заполняет ZONES, HOLES, TEXTS, ISO_RECTS и вызывае
 Правила — electronics/CLAUDE.md, «Генерация платы».
 """
 import math
+import sys
 import uuid
 from pathlib import Path
 
@@ -85,6 +86,7 @@ class FP:
         self.name, self.descr, self.tags, self.is_smd = name, descr, tags, smd
         self.height = height    # высота корпуса над платой, мм; None — требует уточнения (datasheet/замер)
         self.model = None       # 3D-модель: (файл в lib/3dmodels, (dx, dy, dz), rz) — см. set_model()
+        self.models_extra = []  # дополнительные модели того же места (гнёзда под модулем) — см. add_model()
         self.pads = []      # (num, kind, shape, x, y, sx, sy, drill, rotdeg)
         self.gr = []        # s-выражения графики
         self.ref_at = (0, -4.0)
@@ -98,13 +100,18 @@ class FP:
         на плате CH 04.10.2026: при обратном знаке X1 уехал на 12,7 мм, резисторы _V — на 10,16 вниз)."""
         self.model = (file, (dx, dy, dz), rz)
 
+    def add_model(self, file, dx=0.0, dy=0.0, rz=0.0, dz=0.0):
+        """Ещё одна модель того же места (например, второе гнездо под модулем); смещение и поворот — как в set_model()."""
+        self.models_extra.append((file, (dx, dy, dz), rz))
+
     def model_sexpr(self, indent="    "):
-        if not self.model:
-            return ""
-        file, (dx, dy, dz), rz = self.model
-        return (f'{indent}(model "${{KIPRJMOD}}/../../lib/3dmodels/{file}"\n'
-                f'{indent}  (offset (xyz {r3(dx)} {r3(dy)} {r3(dz)}))\n{indent}  (scale (xyz 1 1 1))\n'
-                f'{indent}  (rotate (xyz 0 0 {r3(rz)}))\n{indent})\n')
+        out = ""
+        for m in ([self.model] if self.model else []) + self.models_extra:
+            file, (dx, dy, dz), rz = m
+            out += (f'{indent}(model "${{KIPRJMOD}}/../../lib/3dmodels/{file}"\n'
+                    f'{indent}  (offset (xyz {r3(dx)} {r3(dy)} {r3(dz)}))\n{indent}  (scale (xyz 1 1 1))\n'
+                    f'{indent}  (rotate (xyz 0 0 {r3(rz)}))\n{indent})\n')
+        return out
 
     # --- контактные площадки
     def tht(self, num, x, y, drill, size, shape="circle"):
@@ -203,12 +210,16 @@ class FP:
 FPS = {}
 
 
-def tb_dg301(vertical=False):
+def tb_dg301(vertical=False, rev=False):
     """Degson DG301-5.0 2P: шаг 5,0, вывод ⌀1,0 → отверстие 1,3; корпус 10,0 × 7,6 (+0,6 выступ), ряд выводов
-    в 4,5 мм от стороны ввода провода. vertical — выводы вдоль y, ввод провода в +x (правый край платы)."""
-    name = "TB_DG301-5.0_2P" + ("_V" if vertical else "")
+    в 4,5 мм от стороны ввода провода. vertical — выводы вдоль y, ввод провода в +x (правый край платы).
+    rev — тот же клеммник с обратной нумерацией (вывод 1 справа, ввод провода по-прежнему к −y): клеммник
+    симметричен, нумерация — наша; нужен там, где «+» уже разведён справа (X4, X5 платы MC, бывшие JST VH).
+    3D — модель KiCad Phoenix MKDS-1,5-2 (шаг 5,0; DG301 и KF301 — её аналоги): у модели вывод «1» в начале, ряд
+    вдоль +x, ввод провода к +y платы, корпус 9,8 мм против 7,6 у DG301 — заходит за контур на 1,9 мм с тыльной стороны."""
+    name = "TB_DG301-5.0_2P" + ("_V" if vertical else "") + ("_R" if rev and not vertical else "")
     f = FP(name, "Клеммник винтовой Degson DG301-5.0-02P-12, шаг 5,0 мм, 15 А (чертёж 200102539)", "terminal block degson")
-    pts = [(-2.5, 0.0, "1"), (2.5, 0.0, "2")]
+    pts = [(-2.5, 0.0, "1"), (2.5, 0.0, "2")] if not rev else [(2.5, 0.0, "1"), (-2.5, 0.0, "2")]
     body = (-5.0, -4.5, 5.0, 3.1)
     if vertical:
         # поворот на -90°: (x, y) -> (-y, x): ввод (−y) → +x, вывод 1 сверху
@@ -220,9 +231,11 @@ def tb_dg301(vertical=False):
     if vertical:
         f.text("F.SilkS", "+", body[0] - 1.2, pts[0][1], 1.0)
         f.ref_at = (0, body[1] - 1.5); f.val_at = (0, body[3] + 1.5)
+        f.set_model("TerminalBlock_Phoenix_MKDS-1,5-2_1x02_P5.00mm_Horizontal.step", 0.0, -2.5, -90)   # ввод к +x
     else:
         f.text("F.SilkS", "+", pts[0][0], body[3] + 1.2, 1.0)
         f.ref_at = (body[2] + 3.0, 0); f.val_at = (0, body[3] + 1.5)
+        f.set_model("TerminalBlock_Phoenix_MKDS-1,5-2_1x02_P5.00mm_Horizontal.step", 2.5, 0.0, 180)    # ввод к −y
     FPS[name] = f
 
 
@@ -265,15 +278,19 @@ def jst_xh(n, orient=""):
 
 
 def jst_vh(n, vertical=False, orient=None):
-    """JST VH B{n}P-VH: шаг 3,96; отверстие 1,7; корпус (n−1)·3,96 + 6,0 × 7,0 (по KiCad; сверить с чертежом JST eVH).
-    vertical=True — то же, что orient="R" (имя _V, плата PS)."""
+    """JST VH B{n}P-VH (top entry), по каталогу JST eVH, «Header (Standard type)»: шаг A = 3,96; корпус B = A·(n−1) + 3,9
+    (7,86 для 2 конт.), глубина 8,5, высота 10,9, выводы 3,7 ниже платы; отверстие φ1,65⁺⁰·¹ — берём 1,7.
+    Ряд выводов в 3,5 мм от наружной стороны задней стенки с защёлкой (оценка по чертежу — сверить); защёлка — к +y
+    (правило _orient). vertical=True — то же, что orient="R" (имя _V)."""
     if orient is None:
         orient = "R" if vertical else ""
     name = f"JST_VH_B{n}P-VH" + ("_V" if vertical else (f"_{orient}" if orient else ""))
-    f = FP(name, f"Вилка JST B{n}P-VH, {n} конт., шаг 3,96 мм, 10 А (размеры KiCad — проверить по JST)", "connector jst vh")
+    f = FP(name, f"Вилка JST B{n}P-VH, {n} конт., шаг 3,96 мм, 10 А; корпус {(n - 1) * 3.96 + 3.9:.2f} × 8,5 × 10,9 (JST eVH)",
+           "connector jst vh", height=10.9)
     x0 = -(n - 1) * 3.96 / 2
     pts = [(x0 + i * 3.96, 0.0, str(i + 1)) for i in range(n)]
-    body = (x0 - 3.0, -3.0, x0 + (n - 1) * 3.96 + 3.0, 4.0)
+    half = ((n - 1) * 3.96 + 3.9) / 2
+    body = (-half, -5.0, half, 3.5)
     pts, body = _orient(pts, body, orient)
     vertical = bool(orient)
     for i, (x, y, num) in enumerate(pts):
@@ -285,13 +302,17 @@ def jst_vh(n, vertical=False, orient=None):
     else:
         f.text("F.SilkS", "1", pts[0][0], body[3] + 1.2, 0.8)
         f.ref_at = (0, body[1] - 1.5); f.val_at = (0, body[3] + 1.5)
+    if n == 2:   # упрощённая модель по каталогу JST (корпус + выводы); положительный rz — по часовой при виде сверху
+        f.set_model("JST_VH_B2P-VH_simplified.step", 0.0, 0.0, {"": 0, "R": 90, "L": -90}[orient])
     FPS[name] = f
 
 
 def relay_nrp15():
     """NCR NRP-15 1C (6 отверстий — подходит и 5-выводному варианту). Вид сверху получен зеркалированием
     «PCB layout» datasheet (вид снизу). Номера площадок = выводы символа: 1 A1, 2 A2, 3 COM (две), 4 NO, 5 NC."""
-    f = FP("Relay_NRP-15_1C", "Реле NCR NRP-15-C (1C, SPDT 20 А/28 В DC), корпус 27,5 × 32 × 20; вид снизу datasheet зеркалирован", "relay ncr nrp15")
+    f = FP("Relay_NRP-15_1C", "Реле NCR NRP-15-C (1C, SPDT 20 А/28 В DC), корпус 27,5 × 32 × 20; вид снизу datasheet зеркалирован", "relay ncr nrp15",
+           height=20.0)
+    f.set_model("Relay_NCR_NRP-15_simplified.step")   # упрощённая: только корпус, выводы — по чертежу NCR (нет данных)
     f.tht("5", 8.65, -13.5, 2.1, 3.5)      # NC
     f.tht("4", 8.65, -5.9, 2.1, 3.5)       # NO
     f.tht("3", -9.15, -3.36, 2.1, 3.5)     # COM
@@ -308,7 +329,9 @@ def relay_nrp15():
 def mornsun_ymd():
     """Mornsun VRA(B)_YMD-10WR3: 25,4 × 25,4 × 11,7, вывод ⌀1,0, сетка 2,54; вид сверху (PCB layout datasheet):
     1 Ctrl, 2 GND, 3 Vin — левый ряд; 6 0V (верх), 5 нет, 4 +Vo (низ) — правый ряд. Отверстие 1,4 (datasheet 1,5)."""
-    f = FP("DCDC_Mornsun_YMD_25.4x25.4", "Mornsun VRB2405YMD-10WR3, DIP 25,4 × 25,4, выводы по datasheet 2026.03", "dcdc mornsun ymd")
+    f = FP("DCDC_Mornsun_YMD_25.4x25.4", "Mornsun VRB2405YMD-10WR3, DIP 25,4 × 25,4, выводы по datasheet 2026.03", "dcdc mornsun ymd",
+           height=11.0)   # 11,0 — купленный K-CUT URB2405YMD-10WR3 (фото продавца); Mornsun VRB — 11,7
+    f.set_model("DCDC_KCUT_URB2405YMD-10WR3_simplified.step")   # 25,4 × 24,5 × 11,0 по фото; выводы ⌀1,0 × 4,1 — по Mornsun
     f.tht("1", -10.16, -10.16, 1.4, 2.4, "rect")
     f.tht("2", -10.16, -2.54, 1.4, 2.4)
     f.tht("3", -10.16, 2.54, 1.4, 2.4)
@@ -391,7 +414,9 @@ def c_disc():
 
 
 def l_toroid():
-    f = FP("L_Toroid_D20_P10.16mm", "Дроссель тороидальный Talema DPO-3.0 (⌀14–20, h 8), выводы 0,5 мм, шаг 10,16 (гибкие)", "inductor toroid talema")
+    f = FP("L_Toroid_D20_P10.16mm", "Дроссель тороидальный Talema DPO-3.0 (⌀14–20, h 8), выводы 0,5 мм, шаг 10,16 (гибкие)", "inductor toroid talema",
+           height=8.0)    # DPO-3.0-22: O.D. 14 × Ht 8 (Talema DP Series), кольцо лежит
+    f.set_model("L_Toroid_Talema_DPO-3.0-22_flat_simplified.step")
     f.tht("1", -5.08, 0, 1.1, 2.2); f.tht("2", 5.08, 0, 1.1, 2.2)
     f.circle("F.Fab", 0, 0, 10.0, 0.1); f.circle("F.SilkS", 0, 0, 10.2, 0.15)
     f.circle("F.CrtYd", 0, 0, 10.5, 0.05)
@@ -400,22 +425,23 @@ def l_toroid():
 
 
 def module_zone():
-    """Посадочная зона модуля XL4015E: 60 × 32 мм, четыре паза 3,2 × 10 под 45° (винты М3 в любом положении
-    в пределах ±3,5 мм от типового шага 44 × 20), четыре проводных пятака IN+/IN−/OUT+/OUT− справа."""
-    f = FP("Module_XL4015E_zone", "Зона под модуль XL4015E (60 × 32, пазы М3 ×4) с пятаками для проводов; сам модуль — E-007", "module zone xl4015e")
-    for x, y, a in ((-22, -10, 45), (22, -10, 135), (-22, 10, 135), (22, 10, 45)):
-        f.npth_slot(x, y, 3.2, 10.0, a)
-    for num, y, t in (("1", -9.0, "IN+"), ("2", -3.0, "IN-"), ("3", 3.0, "OUT+"), ("4", 9.0, "OUT-")):
-        f.tht(num, 36.0, y, 1.5, 3.0, "rect" if num == "1" else "circle")
-        f.text("F.SilkS", t, 39.5, y, 0.8)
-    f.rect("F.SilkS", -30, -16, 30, 16, 0.2)
-    f.rect("F.Fab", -30, -16, 30, 16, 0.1)
-    f.rect("F.CrtYd", -30.5, -16.5, 38.0, 16.5, 0.05)
-    f.text("F.SilkS", "XL4015E  24 -> 5,0 V  (провода к пятакам)", 0, -13.5, 1.0)
-    f.ref_at = (0, -17.5); f.val_at = (0, 17.5)
+    """Посадочное место модуля XL4015E «5A XL4015 Adjustable Buck Module» (синий, 54 × 24 × 15, 2 отверстия ⌀3 под винт),
+    чертёж продавца (ChipDip DOC072262485, стр. 1): размеры 54, 24, 9, 10, 2,6, D = 3. Остальное снято с чертежа
+    по пикселям (±0,2 мм, сверить по модулю): пятаки IN+/IN−/OUT+/OUT− — в 2,0 мм от краёв (шаг 50 × 20),
+    отверстие у IN+ — 9 от левого края и ≈2,6 от верхнего (по чертежу не проставлено, принято как у второго).
+    Монтаж (решение Mikhail 05.10.2026): модуль на штырях, впаянных в пятаки модуля и в площадки этого места,
+    плюс стойки М3 в его отверстия. Начало — центр модуля; IN — слева (−x), IN+ сверху. 3D-модели нет (не нужна)."""
+    f = FP("Module_XL4015E_zone", "Модуль XL4015E 54 × 24 × 15 на штырях в пятаки IN/OUT, 2 стойки М3 (чертёж продавца)",
+           "module xl4015e buck", height=15.0)
+    for num, x, y, t in (("1", -25.0, -10.0, "IN+"), ("2", -25.0, 10.0, "IN-"), ("3", 25.0, -10.0, "OUT+"), ("4", 25.0, 10.0, "OUT-")):
+        f.tht(num, x, y, 1.5, 3.0, "rect" if num == "1" else "circle")
+        f.text("F.SilkS", t, x + (4.2 if x < 0 else -4.6), y + (2.6 if y < 0 else -2.6), 1.0)
+    for x, y in ((-18.0, -9.4), (17.0, 9.4)):      # отверстия модуля ⌀3: (9; 2,6) от левого верхнего и (10; 2,6) от правого нижнего углов
+        f.pads.append(("", "np_thru_hole", "circle", x, y, 3.2, 3.2, (3.2, 3.2), 0))
+    f.outline(-27.0, -12.0, 27.0, 12.0)
+    f.text("F.SilkS", "XL4015E  24 -> 5,0 V", 0, 0, 1.0)
+    f.ref_at = (0, -13.5); f.val_at = (0, 13.5)
     FPS[f.name] = f
-
-
 
 
 def pin_socket_1x22():
@@ -437,7 +463,7 @@ def module_cjmcu9548():
     (protosupplies.com: «DIP row spacing 17.8 mm»); ряды вдоль длинной стороны. Левый ряд сверху вниз: VIN, GND, SDA,
     SCL, RST, A0, A1, A2, SD0, SC0, SD1, SC1; правый ряд сверху вниз: SC7, SD7, SC6, SD6, SC5, SD5, SC4, SD4, SC3, SD3,
     SC2, SD2. Номера площадок = номера выводов символа Module_TCA9548 (1 VIN, 2 SDA, 3 SCL, 4 RST, 5 A0, 6 A1,
-    7 A2, 8 GND, 9 SD0, 10 SC0, … 24 SC7). Модуль вставляется в гнёзда PBS-12 или паяется штырями."""
+    7 A2, 8 GND, 9 SD0, 10 SC0, … 24 SC7). Модуль вставляется в два гнезда PBS-12 (2,54) — на 3D-виде они показаны."""
     f = FP("Module_CJMCU-9548", "Модуль CJMCU-9548 (TCA9548A), 31 × 21, 2 × 12 штырей 2,54, ряды 17,78 (protosupplies.com)", "module tca9548a i2c mux")
     left = ["1", "8", "2", "3", "4", "5", "6", "7", "9", "10", "11", "12"]
     right = ["24", "23", "22", "21", "20", "19", "18", "17", "16", "15", "14", "13"]
@@ -453,6 +479,10 @@ def module_cjmcu9548():
         f.text("F.Fab", t, x, y, 0.8)
     f.text("F.SilkS", "CJMCU-9548", 0, -12.0, 1.0)
     f.ref_at = (0, -17.0); f.val_at = (0, 17.0)
+    # модуль вставляется в два гнезда PBS-12 (как модуль ESP32 в XS1/XS2): модели KiCad PinSocket_1x12 —
+    # вывод 1 в начале, ряд вдоль +y, как наши ряды
+    f.set_model("PinSocket_1x12_P2.54mm_Vertical.step", -8.89, 13.97)
+    f.add_model("PinSocket_1x12_P2.54mm_Vertical.step", 8.89, 13.97)
     FPS[f.name] = f
 
 
@@ -569,12 +599,13 @@ def idc_2x06(orient=""):
 
 
 def fuse_ptc_radial():
-    """Предохранитель самовосстанавливающийся радиальный (серия MF-R/RUEF ~1 А): шаг 5,08, отверстие 1,0; корпус
-    ≈ 8 × 3,5 — модель не выбрана (E-083, «кандидат»), размеры уточнить по datasheet выбранной модели."""
-    f = FP("Fuse_PTC_Radial_P5.08mm", "Предохранитель PTC радиальный, шаг 5,08 (модель E-083 уточняется)", "fuse ptc polyfuse")
+    """Предохранитель самовосстанавливающийся радиальный Bourns MF-R110 (E-083): шаг 5,08 (datasheet: C 5,1 ± 0,7),
+    отверстие 1,0 под вывод ⌀0,51; корпус A 8,9 × E 3,0, высота B 14,0 (datasheet MF-R, rev. Z 06/13, Style 1)."""
+    f = FP("Fuse_PTC_Radial_P5.08mm", "Предохранитель PTC радиальный Bourns MF-R110, шаг 5,08, корпус 8,9 × 3,0 × 14,0", "fuse ptc polyfuse",
+           height=14.0)   # Bourns MF-R110: B max 14,0 (datasheet MF-R, rev. Z 06/13)
+    f.set_model("Fuse_PTC_Bourns_MF-R110_simplified.step")   # упрощённая: 8,9 × 3,0 × 14,0, выводы ⌀0,51
     f.tht("1", -2.54, 0, 1.0, 1.8); f.tht("2", 2.54, 0, 1.0, 1.8)
-    f.rect("F.Fab", -4.0, -1.75, 4.0, 1.75, 0.1); f.rect("F.SilkS", -4.2, -1.95, 4.2, 1.95, 0.15)
-    f.rect("F.CrtYd", -4.5, -2.2, 4.5, 2.2, 0.05)
+    f.outline(-4.45, -1.5, 4.45, 1.5)          # корпус MF-R110 8,9 × 3,0
     f.ref_at = (0, -3.0); f.val_at = (0, 3.0)
     FPS[f.name] = f
 
@@ -1055,6 +1086,14 @@ def pro_rules(classes):
 def write():
     out_pcb = ROOT / "boards" / PROJECT / f"{PROJECT}.kicad_pcb"
     OUT_FP.mkdir(parents=True, exist_ok=True)
+    # предохранитель (CLAUDE.md «Главный файл — тот, что сохранил Mikhail в KiCad»): поверх платы,
+    # сохранённой pcbnew, генератор не пишет без --force — там ручная компоновка и трассировка
+    if out_pcb.exists() and "--force" not in sys.argv:
+        head = out_pcb.read_text(encoding="utf-8", errors="ignore")[:400]
+        if '(generator "pcbnew")' in head:
+            print(f"ОТКАЗ: {out_pcb} сохранён KiCad (ручная работа Mikhail) — генератор поверх не пишет.\n"
+                  f"       Правки — точечно в файле или в KiCad; перегенерация только по команде, с --force и копией файла.")
+            return
     out_pcb.write_text(build(), encoding="utf-8")
     for name, f in FPS.items():
         (OUT_FP / f"{name}.kicad_mod").write_text(f.lib_file(), encoding="utf-8")

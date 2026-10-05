@@ -549,13 +549,21 @@
       {
         "netclass": "Power5",
         "pattern": "GND_P"
+      },
+      {
+        "netclass": "Power5",
+        "pattern": "3V3"
+      },
+      {
+        "netclass": "Power5",
+        "pattern": "KH"
       }
     ]
   },
   "pcbnew": {
     "last_paths": {
       "idf": "",
-      "netlist": "",
+      "netlist": "./",
       "plot": "",
       "specctra_dsn": "",
       "vrml": ""

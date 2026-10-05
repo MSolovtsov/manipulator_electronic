@@ -43,7 +43,7 @@ sc.OX = 30.48        # таблицы разъёмов выросли до 38,1 
 sc.FOOTPRINTS.clear()
 sc.FOOTPRINTS.update({                     # имена — те же, что будут в scripts/gen_LR_pcb.py (PLACE)
     **{f"X{k}": "manipulator:JST_XH_B5B-XH-A_L" for k in range(1, 5)},
-    **{f"X{k}": "manipulator:TermGroup_5x_Banana4" for k in range(5, 9)},
+    **{f"X{k}": "manipulator:JST_XH_B5B-XH-A_L" for k in range(5, 9)},       # как X1…X4 (решение Mikhail 05.10.2026)
     "X9": "manipulator:JST_XH_B4B-XH-A_R", "DD1": "manipulator:DIP-16_W7.62mm",
     **{f"R{i}": "manipulator:R_Axial_P10.16mm_V" for i in range(1, 17)},
     **{f"VD{i}": ("manipulator:D_DO-35_P7.62mm" if i % 4 in (1, 2) else "manipulator:SOT-23") for i in range(1, 17)},

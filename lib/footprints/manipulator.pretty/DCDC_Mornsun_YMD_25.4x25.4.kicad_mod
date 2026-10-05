@@ -21,5 +21,10 @@
   (pad "3" thru_hole circle (at -10.16 2.54 0) (size 2.4 2.4) (drill 1.4) (layers "*.Cu" "*.Mask") (uuid "50f7f755-b5cd-59db-ae58-69a422de6365"))
   (pad "4" thru_hole circle (at 10.16 10.16 0) (size 2.4 2.4) (drill 1.4) (layers "*.Cu" "*.Mask") (uuid "03df3c15-a8da-5abe-a4e8-54851b26c5b5"))
   (pad "6" thru_hole circle (at 10.16 -10.16 0) (size 2.4 2.4) (drill 1.4) (layers "*.Cu" "*.Mask") (uuid "c0b60745-0757-5d44-9347-c40289e39e95"))
+  (model "${KIPRJMOD}/../../lib/3dmodels/DCDC_KCUT_URB2405YMD-10WR3_simplified.step"
+    (offset (xyz 0.0 0.0 0.0))
+    (scale (xyz 1 1 1))
+    (rotate (xyz 0 0 0.0))
+  )
   (embedded_fonts no)
 )
