@@ -5,16 +5,13 @@
 	(uuid "5a1f7c42-9e38-4b61-8d07-3c52a9f1b6d4")
 	(paper "A3")
 	(title_block
-		(title "Манипулятор учебный. Плата канала привода CH. Схема электрическая принципиальная")
+		(title "Манипулятор для лабораторных работ.\\nПлата силовой части.\\nСхема электрическая принципиальная")
 		(date "2026-09-17")
 		(rev "CH-A1")
-		(company "МГТУ им. Н.Э. Баумана, группа СМ7-21М")
-		(comment 1 "--- Э3")
-		(comment 2 "Соловцов")
-		(comment 3 "---")
-		(comment 4 "---")
-		(comment 5 "---")
-		(comment 6 "Большаков")
+		(company "МГТУ им. Н.Э. Баумана\\n группа СМ7-21М")
+		(comment 1 "СМ7.02.03.00.00 Э3")
+		(comment 2 "Соловцов М.А.")
+		(comment 3 "Большаков А.А.")
 	)
 	(lib_symbols
 		(symbol "manipulator:+24V"
@@ -2770,6 +2767,134 @@
 			)
 			(embedded_fonts no)
 		)
+		(symbol "manipulator:SIG_+24V_M_L_in"
+			(power global)
+			(pin_numbers
+				(hide yes)
+			)
+			(pin_names
+				(offset 0)
+				(hide yes)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(in_pos_files yes)
+			(duplicate_pin_numbers_are_jumpers no)
+			(property "Reference" "#PWR"
+				(at 0 3.81 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(face "GOST 2.304")
+						(size 2.5 2.5)
+						(italic yes)
+					)
+				)
+			)
+			(property "Value" "+24V_M"
+				(at -3.175 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(face "GOST 2.304")
+						(size 2.5 2.5)
+						(italic yes)
+					)
+					(justify right)
+				)
+			)
+			(property "Footprint" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(face "GOST 2.304")
+						(size 2.5 2.5)
+						(italic yes)
+					)
+				)
+			)
+			(property "Datasheet" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(face "GOST 2.304")
+						(size 2.5 2.5)
+						(italic yes)
+					)
+				)
+			)
+			(property "Description" "Порт сигнала: глобальная цепь +24V_M"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(face "GOST 2.304")
+						(size 2.5 2.5)
+						(italic yes)
+					)
+				)
+			)
+			(symbol "SIG_+24V_M_L_in_0_1"
+				(polyline
+					(pts
+						(xy -2.54 0) (xy 0 0)
+					)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy -1.27 0.635) (xy 0 0) (xy -1.27 -0.635)
+					)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+			)
+			(symbol "SIG_+24V_M_L_in_1_1"
+				(pin power_in line
+					(at 0 0 0)
+					(length 0)
+					(hide yes)
+					(name "+24V_M"
+						(effects
+							(font
+								(size 2.5 2.5)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 2.5 2.5)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
 		(symbol "manipulator:SIG_+24V_R_out"
 			(power global)
 			(pin_numbers
@@ -3905,6 +4030,134 @@
 					(length 0)
 					(hide yes)
 					(name "GND_L"
+						(effects
+							(font
+								(size 2.5 2.5)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 2.5 2.5)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
+		(symbol "manipulator:SIG_GND_P_L_out"
+			(power global)
+			(pin_numbers
+				(hide yes)
+			)
+			(pin_names
+				(offset 0)
+				(hide yes)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(in_pos_files yes)
+			(duplicate_pin_numbers_are_jumpers no)
+			(property "Reference" "#PWR"
+				(at 0 3.81 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(face "GOST 2.304")
+						(size 2.5 2.5)
+						(italic yes)
+					)
+				)
+			)
+			(property "Value" "GND_P"
+				(at -3.175 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(face "GOST 2.304")
+						(size 2.5 2.5)
+						(italic yes)
+					)
+					(justify right)
+				)
+			)
+			(property "Footprint" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(face "GOST 2.304")
+						(size 2.5 2.5)
+						(italic yes)
+					)
+				)
+			)
+			(property "Datasheet" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(face "GOST 2.304")
+						(size 2.5 2.5)
+						(italic yes)
+					)
+				)
+			)
+			(property "Description" "Порт сигнала: глобальная цепь GND_P"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(face "GOST 2.304")
+						(size 2.5 2.5)
+						(italic yes)
+					)
+				)
+			)
+			(symbol "SIG_GND_P_L_out_0_1"
+				(polyline
+					(pts
+						(xy -1.27 0.635) (xy -2.54 0) (xy -1.27 -0.635)
+					)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0 0) (xy -2.54 0)
+					)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+			)
+			(symbol "SIG_GND_P_L_out_1_1"
+				(pin power_in line
+					(at 0 0 0)
+					(length 0)
+					(hide yes)
+					(name "GND_P"
 						(effects
 							(font
 								(size 2.5 2.5)
@@ -7526,412 +7779,244 @@
 			)
 			(embedded_fonts no)
 		)
-  (symbol "manipulator:SIG_+24V_M_L_in" (power global) (pin_numbers (hide yes)) (pin_names (offset 0) (hide yes)) (exclude_from_sim no) (in_bom yes) (on_board yes) (in_pos_files yes) (duplicate_pin_numbers_are_jumpers no)
-    (property "Reference" "#PWR" (at 0 3.81 0) (show_name no) (do_not_autoplace no) (hide yes) (effects (font (face "GOST 2.304") (size 2.5 2.5) (italic yes))))
-    (property "Value" "+24V_M" (at -3.175 0 0) (show_name no) (do_not_autoplace no) (effects (font (face "GOST 2.304") (size 2.5 2.5) (italic yes)) (justify right)))
-    (property "Footprint" "" (at 0 0 0) (show_name no) (do_not_autoplace no) (hide yes) (effects (font (face "GOST 2.304") (size 2.5 2.5) (italic yes))))
-    (property "Datasheet" "" (at 0 0 0) (show_name no) (do_not_autoplace no) (hide yes) (effects (font (face "GOST 2.304") (size 2.5 2.5) (italic yes))))
-    (property "Description" "Порт сигнала: глобальная цепь +24V_M" (at 0 0 0) (show_name no) (do_not_autoplace no) (hide yes) (effects (font (face "GOST 2.304") (size 2.5 2.5) (italic yes))))
-    (symbol "SIG_+24V_M_L_in_0_1"
-      (polyline (pts (xy -2.54 0) (xy 0 0)) (stroke (width 0.254) (type default)) (fill (type none)))
-      (polyline (pts (xy -1.27 0.635) (xy 0 0) (xy -1.27 -0.635)) (stroke (width 0.254) (type default)) (fill (type none)))
-    )
-    (symbol "SIG_+24V_M_L_in_1_1"
-      (pin power_in line (at 0 0 0) (length 0) (hide yes) (name "+24V_M" (effects (font (size 2.5 2.5)))) (number "1" (effects (font (size 2.5 2.5)))))
-    )
-    (embedded_fonts no)
-  )
-  (symbol "manipulator:Tbl_X5_CH_VH" (pin_numbers (hide yes)) (pin_names (offset 0) (hide yes)) (exclude_from_sim no) (in_bom yes) (on_board yes) (in_pos_files yes) (duplicate_pin_numbers_are_jumpers no)
-    (property "Reference" "X" (at 0.0 -9.620000000000001 0) (show_name no) (do_not_autoplace no) (effects (font (face "GOST 2.304") (size 2.5 2.5) (italic yes))))
-    (property "Value" "Tbl_X5_CH_VH" (at 0 -12.120000000000001 0) (show_name no) (do_not_autoplace no) (effects (font (face "GOST 2.304") (size 2.5 2.5) (italic yes))))
-    (property "Footprint" "" (at 0 0 0) (show_name no) (do_not_autoplace no) (hide yes) (effects (font (face "GOST 2.304") (size 2.5 2.5) (italic yes))))
-    (property "Datasheet" "" (at 0 0 0) (show_name no) (do_not_autoplace no) (hide yes) (effects (font (face "GOST 2.304") (size 2.5 2.5) (italic yes))))
-    (property "Description" "Разъём, 2 контактов, таблицей (ГОСТ 2.702): колонки «Контакт», «Цепь»; выводы слева" (at 0 0 0) (show_name no) (do_not_autoplace no) (hide yes) (effects (font (face "GOST 2.304") (size 2.5 2.5) (italic yes))))
-    (symbol "Tbl_X5_CH_VH_0_1"
-      (polyline (pts (xy 0.0 7.62) (xy 38.1 7.62) (xy 38.1 -7.62) (xy 0.0 -7.62) (xy 0.0 7.62)) (stroke (width 0.1524) (type default)) (fill (type none)))
-      (polyline (pts (xy 17.78 7.62) (xy 17.78 -7.62)) (stroke (width 0.1524) (type default)) (fill (type none)))
-      (polyline (pts (xy 0.0 2.54) (xy 38.1 2.54)) (stroke (width 0.1524) (type default)) (fill (type none)))
-      (polyline (pts (xy 0.0 -2.54) (xy 38.1 -2.54)) (stroke (width 0.1524) (type default)) (fill (type none)))
-      (polyline (pts (xy 0.0 -7.62) (xy 38.1 -7.62)) (stroke (width 0.1524) (type default)) (fill (type none)))
-      (text "Контакт" (at 8.89 5.08 0) (effects (font (face "GOST 2.304") (size 2.5 2.5) (italic yes))))
-      (text "Цепь" (at 27.94 5.08 0) (effects (font (face "GOST 2.304") (size 2.5 2.5) (italic yes))))
-      (text "1" (at 8.89 0.0 0) (effects (font (face "GOST 2.304") (size 2.5 2.5) (italic yes))))
-      (text "+24V_M" (at 27.94 0.0 0) (effects (font (face "GOST 2.304") (size 2.5 2.5) (italic yes))))
-      (text "2" (at 8.89 -5.08 0) (effects (font (face "GOST 2.304") (size 2.5 2.5) (italic yes))))
-      (text "GND_P" (at 27.94 -5.08 0) (effects (font (face "GOST 2.304") (size 2.5 2.5) (italic yes))))
-    )
-    (symbol "Tbl_X5_CH_VH_1_1"
-      (pin passive line (at -2.54 0.0 0) (length 2.54) (name "+24V_M" (effects (font (size 2.5 2.5)))) (number "1" (effects (font (size 2.5 2.5)))))
-      (pin passive line (at -2.54 -5.08 0) (length 2.54) (name "GND_P" (effects (font (size 2.5 2.5)))) (number "2" (effects (font (size 2.5 2.5)))))
-    )
-    (embedded_fonts no)
-  )
-  (symbol "manipulator:SIG_GND_P_L_out" (power global) (pin_numbers (hide yes)) (pin_names (offset 0) (hide yes)) (exclude_from_sim no) (in_bom yes) (on_board yes) (in_pos_files yes) (duplicate_pin_numbers_are_jumpers no)
-    (property "Reference" "#PWR" (at 0 3.81 0) (show_name no) (do_not_autoplace no) (hide yes) (effects (font (face "GOST 2.304") (size 2.5 2.5) (italic yes))))
-    (property "Value" "GND_P" (at -3.175 0 0) (show_name no) (do_not_autoplace no) (effects (font (face "GOST 2.304") (size 2.5 2.5) (italic yes)) (justify right)))
-    (property "Footprint" "" (at 0 0 0) (show_name no) (do_not_autoplace no) (hide yes) (effects (font (face "GOST 2.304") (size 2.5 2.5) (italic yes))))
-    (property "Datasheet" "" (at 0 0 0) (show_name no) (do_not_autoplace no) (hide yes) (effects (font (face "GOST 2.304") (size 2.5 2.5) (italic yes))))
-    (property "Description" "Порт сигнала: глобальная цепь GND_P" (at 0 0 0) (show_name no) (do_not_autoplace no) (hide yes) (effects (font (face "GOST 2.304") (size 2.5 2.5) (italic yes))))
-    (symbol "SIG_GND_P_L_out_0_1"
-      (polyline (pts (xy 0 0) (xy -2.54 0)) (stroke (width 0.254) (type default)) (fill (type none)))
-      (polyline (pts (xy -1.27 0.635) (xy -2.54 0) (xy -1.27 -0.635)) (stroke (width 0.254) (type default)) (fill (type none)))
-    )
-    (symbol "SIG_GND_P_L_out_1_1"
-      (pin power_in line (at 0 0 0) (length 0) (hide yes) (name "GND_P" (effects (font (size 2.5 2.5)))) (number "1" (effects (font (size 2.5 2.5)))))
-    )
-    (embedded_fonts no)
-  )
-	)
-	(text "3. Реле режима K1…K4: при обесточенных катушках управление звеном идёт с платы MC (контакты NC); при подаче"
-		(exclude_from_sim no)
-		(at -246.38 117.856 0)
-		(effects
-			(font
-				(face "GOST 2.304")
-				(size 2.5 2.5)
-				(italic yes)
+		(symbol "manipulator:Tbl_X5_CH_VH"
+			(pin_numbers
+				(hide yes)
 			)
-			(justify left bottom)
-		)
-		(uuid "03b19b7a-33fd-4e54-808b-37079d77523a")
-	)
-	(text "   часть разъёмов X6…X9 платы MC; X2 — JST B5B-XH-A; X3 — клеммник DG301-5.0-02P; X4 — JST B4B-XH-A; X5 — JST B2P-VH."
-		(exclude_from_sim no)
-		(at -246.38 193.421 0)
-		(effects
-			(font
-				(face "GOST 2.304")
-				(size 2.5 2.5)
-				(italic yes)
+			(pin_names
+				(offset 0)
+				(hide yes)
 			)
-			(justify left bottom)
-		)
-		(uuid "043662b6-1e7e-4a16-a1f8-e57d29c224e7")
-	)
-	(text "   вывод 7 (VE) соединён с +5P, выводы 1 и 4 свободны. R1, R2 220 Ом дают 8,6 мА при 3,3 В; «Аккуратно!»: при"
-		(exclude_from_sim no)
-		(at -246.38 135.636 0)
-		(effects
-			(font
-				(face "GOST 2.304")
-				(size 2.5 2.5)
-				(italic yes)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(in_pos_files yes)
+			(duplicate_pin_numbers_are_jumpers no)
+			(property "Reference" "X"
+				(at 0 -9.62 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(face "GOST 2.304")
+						(size 2.5 2.5)
+						(italic yes)
+					)
+				)
 			)
-			(justify left bottom)
-		)
-		(uuid "0647f271-8964-499e-96ae-a8729beb7ace")
-	)
-	(text "   на 5 % смещает ноль на 1,25 А — нужна калибровка нуля в ПО при разомкнутом реле K5."
-		(exclude_from_sim no)
-		(at -246.38 166.751 0)
-		(effects
-			(font
-				(face "GOST 2.304")
-				(size 2.5 2.5)
-				(italic yes)
+			(property "Value" "Tbl_X5_CH_VH"
+				(at 0 -12.12 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(face "GOST 2.304")
+						(size 2.5 2.5)
+						(italic yes)
+					)
+				)
 			)
-			(justify left bottom)
-		)
-		(uuid "1049fce9-ed0a-46fc-9ccc-e1cb57940cbd")
-	)
-	(text "   контактам реле K1…K4 (катушки — от шины KH относительно GND_P, контакты — в цепях острова). Силовая сторона:"
-		(exclude_from_sim no)
-		(at -246.38 100.076 0)
-		(effects
-			(font
-				(face "GOST 2.304")
-				(size 2.5 2.5)
-				(italic yes)
+			(property "Footprint" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(face "GOST 2.304")
+						(size 2.5 2.5)
+						(italic yes)
+					)
+				)
 			)
-			(justify left bottom)
-		)
-		(uuid "15a9438a-bdce-4037-a959-df5cdfdfce8b")
-	)
-	(text "   C1 (100 нФ, E-095) стоит за R6: у ACS712 допустимая ёмкость нагрузки не более 10 нФ, поэтому прямо на выход"
-		(exclude_from_sim no)
-		(at -246.38 153.416 0)
-		(effects
-			(font
-				(face "GOST 2.304")
-				(size 2.5 2.5)
-				(italic yes)
+			(property "Datasheet" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(face "GOST 2.304")
+						(size 2.5 2.5)
+						(italic yes)
+					)
+				)
 			)
-			(justify left bottom)
-		)
-		(uuid "1f50d9bc-ef32-4ce2-a0a1-9a4b77fb473d")
-	)
-	(text "   датчика конденсатор не ставится. C1 снижает сопротивление источника для АЦП (6,7 кОм) и усредняет ШИМ:"
-		(exclude_from_sim no)
-		(at -246.38 157.861 0)
-		(effects
-			(font
-				(face "GOST 2.304")
-				(size 2.5 2.5)
-				(italic yes)
+			(property "Description" "Разъём, 2 контактов, таблицей (ГОСТ 2.702): колонки «Контакт», «Цепь»; выводы слева"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(face "GOST 2.304")
+						(size 2.5 2.5)
+						(italic yes)
+					)
+				)
 			)
-			(justify left bottom)
-		)
-		(uuid "2091b42c-c633-4e1d-8e75-a272e3ed6696")
-	)
-	(text "4. U1, U2 (6N137): выход с открытым коллектором, подтяжки R4, R5 к +5P, выход инвертирующий (инверсия — в ПО);"
-		(exclude_from_sim no)
-		(at -246.38 131.191 0)
-		(effects
-			(font
-				(face "GOST 2.304")
-				(size 2.5 2.5)
-				(italic yes)
+			(symbol "Tbl_X5_CH_VH_0_1"
+				(polyline
+					(pts
+						(xy 0 7.62) (xy 38.1 7.62) (xy 38.1 -7.62) (xy 0 -7.62) (xy 0 7.62)
+					)
+					(stroke
+						(width 0.1524)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0 2.54) (xy 38.1 2.54)
+					)
+					(stroke
+						(width 0.1524)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0 -2.54) (xy 38.1 -2.54)
+					)
+					(stroke
+						(width 0.1524)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0 -7.62) (xy 38.1 -7.62)
+					)
+					(stroke
+						(width 0.1524)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 17.78 7.62) (xy 17.78 -7.62)
+					)
+					(stroke
+						(width 0.1524)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(text "Контакт"
+					(at 8.89 5.08 0)
+					(effects
+						(font
+							(face "GOST 2.304")
+							(size 2.5 2.5)
+							(italic yes)
+						)
+					)
+				)
+				(text "1"
+					(at 8.89 0 0)
+					(effects
+						(font
+							(face "GOST 2.304")
+							(size 2.5 2.5)
+							(italic yes)
+						)
+					)
+				)
+				(text "2"
+					(at 8.89 -5.08 0)
+					(effects
+						(font
+							(face "GOST 2.304")
+							(size 2.5 2.5)
+							(italic yes)
+						)
+					)
+				)
+				(text "Цепь"
+					(at 27.94 5.08 0)
+					(effects
+						(font
+							(face "GOST 2.304")
+							(size 2.5 2.5)
+							(italic yes)
+						)
+					)
+				)
+				(text "+24V_M"
+					(at 27.94 0 0)
+					(effects
+						(font
+							(face "GOST 2.304")
+							(size 2.5 2.5)
+							(italic yes)
+						)
+					)
+				)
+				(text "GND_P"
+					(at 27.94 -5.08 0)
+					(effects
+						(font
+							(face "GOST 2.304")
+							(size 2.5 2.5)
+							(italic yes)
+						)
+					)
+				)
 			)
-			(justify left bottom)
-		)
-		(uuid "2c0e2736-a814-4319-a68a-117ecb3020a4")
-	)
-	(text "   GND_L (контакты 1, 2, 4, 12 разъёма X1, разъёмы X2, X4, светодиоды U1…U3, сигнальная часть DA2, R6, R7, C1)."
-		(exclude_from_sim no)
-		(at -246.38 108.966 0)
-		(effects
-			(font
-				(face "GOST 2.304")
-				(size 2.5 2.5)
-				(italic yes)
+			(symbol "Tbl_X5_CH_VH_1_1"
+				(pin passive line
+					(at -2.54 0 0)
+					(length 2.54)
+					(name "+24V_M"
+						(effects
+							(font
+								(size 2.5 2.5)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 2.5 2.5)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at -2.54 -5.08 0)
+					(length 2.54)
+					(name "GND_P"
+						(effects
+							(font
+								(size 2.5 2.5)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 2.5 2.5)
+							)
+						)
+					)
+				)
 			)
-			(justify left bottom)
+			(embedded_fonts no)
 		)
-		(uuid "4cfa0326-2097-4a03-93b8-2094b41d78fe")
-	)
-	(text "   на канал, 640 мА на четыре канала — учесть при расчёте нагрузки +5P."
-		(exclude_from_sim no)
-		(at -246.38 126.746 0)
-		(effects
-			(font
-				(face "GOST 2.304")
-				(size 2.5 2.5)
-				(italic yes)
-			)
-			(justify left bottom)
-		)
-		(uuid "59975e70-b36e-4a29-92b5-dfdbda911246")
-	)
-	(text "   постоянная времени около 0,67 мс, полоса около 240 Гц. «Аккуратно!»: ноль привязан к +5V_L, уход питания"
-		(exclude_from_sim no)
-		(at -246.38 162.306 0)
-		(effects
-			(font
-				(face "GOST 2.304")
-				(size 2.5 2.5)
-				(italic yes)
-			)
-			(justify left bottom)
-		)
-		(uuid "5bbf4669-15a8-421e-b4dd-3f642f6ca273")
-	)
-	(text "   Цепи IN1, IN2, RELE, CURR, SDA, SCL на плате MC имеют префикс канала (M1_IN1 и так далее)."
-		(exclude_from_sim no)
-		(at -246.38 91.186 0)
-		(effects
-			(font
-				(face "GOST 2.304")
-				(size 2.5 2.5)
-				(italic yes)
-			)
-			(justify left bottom)
-		)
-		(uuid "67b6bb06-485c-4f09-9633-4eb73e3ecd91")
-	)
-	(text "   даёт 1,67 В покоя, 3,0 В при +20 А и 0,33 В при минус 20 А; при номинальном токе канала 1,2 А — 1,75 В."
-		(exclude_from_sim no)
-		(at -246.38 148.971 0)
-		(effects
-			(font
-				(face "GOST 2.304")
-				(size 2.5 2.5)
-				(italic yes)
-			)
-			(justify left bottom)
-		)
-		(uuid "6b1f52ff-01c2-4a8b-92fe-6ec3243859b6")
-	)
-	(text "   datasheet 6N137) — таких позиций в базе компонентов нет."
-		(exclude_from_sim no)
-		(at -246.38 202.311 0)
-		(effects
-			(font
-				(face "GOST 2.304")
-				(size 2.5 2.5)
-				(italic yes)
-			)
-			(justify left bottom)
-		)
-		(uuid "7eef04d4-a9e0-497b-aec1-bef396c6cae8")
-	)
-	(text "8. Требует уточнения: диоды, шунтирующие катушки K1…K5, и конденсаторы 0,1 мкФ по питанию U1, U2 (рекомендация"
-		(exclude_from_sim no)
-		(at -246.38 197.866 0)
-		(effects
-			(font
-				(face "GOST 2.304")
-				(size 2.5 2.5)
-				(italic yes)
-			)
-			(justify left bottom)
-		)
-		(uuid "8b868036-a0eb-44e7-8a3e-57fc7489d018")
-	)
-	(text "   и на плату не выводится: у платы Adafruit это 30 кОм (предел около 2 А), у клона номинал проверить —"
-		(exclude_from_sim no)
-		(at -246.38 180.086 0)
-		(effects
-			(font
-				(face "GOST 2.304")
-				(size 2.5 2.5)
-				(italic yes)
-			)
-			(justify left bottom)
-		)
-		(uuid "9f00c962-ff9b-4ed6-b6dc-2f3c3b1d6b95")
-	)
-	(text "7. Типы разъёмов X1…X5 в базе отсутствуют и показаны как предложение: X1 — IDC BH-12 (2 × 6) под ответную"
-		(exclude_from_sim no)
-		(at -246.38 188.976 0)
-		(effects
-			(font
-				(face "GOST 2.304")
-				(size 2.5 2.5)
-				(italic yes)
-			)
-			(justify left bottom)
-		)
-		(uuid "ba34bef3-7a9b-48b6-90c3-261f15972047")
-	)
-	(text "6. Нумерация выводов покупных модулей DA1, DA2 и реле K1…K5 условная, нумерация U3 — по ТУ; сверить по"
-		(exclude_from_sim no)
-		(at -246.38 171.196 0)
-		(effects
-			(font
-				(face "GOST 2.304")
-				(size 2.5 2.5)
-				(italic yes)
-			)
-			(justify left bottom)
-		)
-		(uuid "bf22198f-d630-456a-b1da-234482c0143f")
-	)
-	(text "   5 В со стороны панели ЛР ток составит 16 мА — предел для 6N137 (15 мА), номинал требует уточнения."
-		(exclude_from_sim no)
-		(at -246.38 140.081 0)
-		(effects
-			(font
-				(face "GOST 2.304")
-				(size 2.5 2.5)
-				(italic yes)
-			)
-			(justify left bottom)
-		)
-		(uuid "bfeaa18c-fca4-4886-b385-b0095cc2697e")
-	)
-	(text "2. Граница гальванической развязки проходит внутри U1, U2 (6N137), U3 (КР293КП2Б) и DA2 (ACS712), а также по"
-		(exclude_from_sim no)
-		(at -246.38 95.631 0)
-		(effects
-			(font
-				(face "GOST 2.304")
-				(size 2.5 2.5)
-				(italic yes)
-			)
-			(justify left bottom)
-		)
-		(uuid "c1abb119-be1b-4b55-bc79-da38aab637c6")
-	)
-	(text "   от него зависит пусковой ток двигателя (datasheet TI: R_ILIM не менее 15 кОм)."
-		(exclude_from_sim no)
-		(at -246.38 184.531 0)
-		(effects
-			(font
-				(face "GOST 2.304")
-				(size 2.5 2.5)
-				(italic yes)
-			)
-			(justify left bottom)
-		)
-		(uuid "c536d669-33da-4426-8862-b152f2068dac")
-	)
-	(text "   GND_P и GND_L на плате не соединять. +24V_M — питание двигателя после контакта реле K5."
-		(exclude_from_sim no)
-		(at -246.38 113.411 0)
-		(effects
-			(font
-				(face "GOST 2.304")
-				(size 2.5 2.5)
-				(italic yes)
-			)
-			(justify left bottom)
-		)
-		(uuid "cc624115-7ac5-4abd-87b9-e2cf338ab964")
-	)
-	(text "   +24V, +24V_M, +5P, GND_P (контакты 6, 10 разъёма X1, разъёмы X3, X5, выходы U1…DA1, K5); остров: +5V_L, 3V3,"
-		(exclude_from_sim no)
-		(at -246.38 104.521 0)
-		(effects
-			(font
-				(face "GOST 2.304")
-				(size 2.5 2.5)
-				(italic yes)
-			)
-			(justify left bottom)
-		)
-		(uuid "cdee037b-5a1b-4e7e-abe4-9bbb6e21cc73")
-	)
-	(text "   шелкографии и datasheet до разводки платы. Резистор ограничения тока ILIM распаян на самом модуле DA1"
-		(exclude_from_sim no)
-		(at -246.38 175.641 0)
-		(effects
-			(font
-				(face "GOST 2.304")
-				(size 2.5 2.5)
-				(italic yes)
-			)
-			(justify left bottom)
-		)
-		(uuid "d46d88aa-b045-4385-ad99-b1eae8d33459")
-	)
-	(text "5. DA2 (ACS712-20A): 100 мВ/А, покой VCC/2 = 2,5 В, выход ратиометричен питанию. Делитель R6/R7 (10 к / 20 к)"
-		(exclude_from_sim no)
-		(at -246.38 144.526 0)
-		(effects
-			(font
-				(face "GOST 2.304")
-				(size 2.5 2.5)
-				(italic yes)
-			)
-			(justify left bottom)
-		)
-		(uuid "e232cfac-912a-4640-8263-b0574ddfa62d")
-	)
-	(text "1. Плата канала привода CH изготавливается в 4 экземплярах (M1…M4) плюс один запасной; все экземпляры одинаковы."
-		(exclude_from_sim no)
-		(at -246.38 86.741 0)
-		(effects
-			(font
-				(face "GOST 2.304")
-				(size 2.5 2.5)
-				(italic yes)
-			)
-			(justify left bottom)
-		)
-		(uuid "ed13ba43-1b26-4527-8719-805c30db5d77")
-	)
-	(text "   шины KH (+5P, замкнута кнопкой режима на MC) — с панели ЛР (контакты NO). Ток катушек 4 × 40 мА = 160 мА"
-		(exclude_from_sim no)
-		(at -246.38 122.301 0)
-		(effects
-			(font
-				(face "GOST 2.304")
-				(size 2.5 2.5)
-				(italic yes)
-			)
-			(justify left bottom)
-		)
-		(uuid "fe47b924-2038-423c-af1d-d7db79d865df")
 	)
 	(junction
 		(at 241.3 52.07)
@@ -7950,6 +8035,22 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "fdc5d2aa-bfbe-40e0-859f-8cf5f7c415a3")
+	)
+	(no_connect
+		(at 292.1 52.07)
+		(uuid "0fdc60ed-f09d-59ce-b507-cf3bdfa16284")
+	)
+	(no_connect
+		(at 292.1 57.15)
+		(uuid "65d2062a-350a-570e-8aea-b466b21342f8")
+	)
+	(no_connect
+		(at 339.09 71.12)
+		(uuid "92be9aa6-c723-52b2-a988-919eca6b225f")
+	)
+	(no_connect
+		(at 303.53 71.12)
+		(uuid "b5af100a-0587-5a5a-a0f9-d49f8a441aed")
 	)
 	(wire
 		(pts
@@ -8193,6 +8294,16 @@
 	)
 	(wire
 		(pts
+			(xy 303.53 71.12) (xy 308.61 71.12)
+		)
+		(stroke
+			(width 0.3048)
+			(type default)
+		)
+		(uuid "33df435a-1bb6-489e-8042-6c7559c52e91")
+	)
+	(wire
+		(pts
 			(xy 323.85 125.73) (xy 339.09 125.73)
 		)
 		(stroke
@@ -8270,6 +8381,16 @@
 			(type default)
 		)
 		(uuid "43f200f8-7f05-4562-9e55-efffc034da4b")
+	)
+	(wire
+		(pts
+			(xy 314.96 175.26) (xy 320.04 175.26)
+		)
+		(stroke
+			(width 0.3048)
+			(type default)
+		)
+		(uuid "450829e3-9785-4dc6-b7dd-8febd01a6152")
 	)
 	(wire
 		(pts
@@ -8483,6 +8604,16 @@
 	)
 	(wire
 		(pts
+			(xy 350.52 55.88) (xy 355.6 55.88)
+		)
+		(stroke
+			(width 0.3048)
+			(type default)
+		)
+		(uuid "7e111aa5-07b0-4ff5-b310-4b444d280b95")
+	)
+	(wire
+		(pts
 			(xy 121.92 119.38) (xy 121.92 124.46)
 		)
 		(stroke
@@ -8510,6 +8641,16 @@
 			(type default)
 		)
 		(uuid "81f3f99a-8a0c-43fc-af96-47cbc73aba91")
+	)
+	(wire
+		(pts
+			(xy 314.96 170.18) (xy 320.04 170.18)
+		)
+		(stroke
+			(width 0.3048)
+			(type default)
+		)
+		(uuid "864b6044-4efb-4692-9abf-d6b30a82200c")
 	)
 	(wire
 		(pts
@@ -8560,6 +8701,16 @@
 			(type default)
 		)
 		(uuid "8b926784-f48d-4a72-b5be-c13f8784b8c7")
+	)
+	(wire
+		(pts
+			(xy 350.52 71.12) (xy 350.52 55.88)
+		)
+		(stroke
+			(width 0.3048)
+			(type default)
+		)
+		(uuid "8cfa32e9-0148-417b-b834-40ca8e9ae597")
 	)
 	(wire
 		(pts
@@ -8683,6 +8834,26 @@
 	)
 	(wire
 		(pts
+			(xy 355.6 52.07) (xy 292.1 52.07)
+		)
+		(stroke
+			(width 0.3048)
+			(type default)
+		)
+		(uuid "abeac604-2583-4e2a-940a-19bda116aa8f")
+	)
+	(wire
+		(pts
+			(xy 339.09 71.12) (xy 350.52 71.12)
+		)
+		(stroke
+			(width 0.3048)
+			(type default)
+		)
+		(uuid "ac6a5b25-e799-48a6-b3b2-8c88689e99a8")
+	)
+	(wire
+		(pts
 			(xy 71.12 106.68) (xy 76.2 106.68)
 		)
 		(stroke
@@ -8730,6 +8901,16 @@
 			(type default)
 		)
 		(uuid "b5693215-4ddc-4df2-9b6f-3abd6c44515d")
+	)
+	(wire
+		(pts
+			(xy 303.53 57.15) (xy 303.53 71.12)
+		)
+		(stroke
+			(width 0.3048)
+			(type default)
+		)
+		(uuid "b66471ab-e14e-4717-9422-1949aa1b7040")
 	)
 	(wire
 		(pts
@@ -8960,6 +9141,16 @@
 			(type default)
 		)
 		(uuid "eb593ab0-6efd-401d-b4a5-f6d4f814d1b5")
+	)
+	(wire
+		(pts
+			(xy 292.1 57.15) (xy 303.53 57.15)
+		)
+		(stroke
+			(width 0.3048)
+			(type default)
+		)
+		(uuid "eb90c0f9-edd4-44c7-8e8e-2480af06ede6")
 	)
 	(wire
 		(pts
@@ -9956,6 +10147,93 @@
 		)
 	)
 	(symbol
+		(lib_id "manipulator:GND_L")
+		(at 355.6 55.88 90)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "197915a9-f223-4537-b5ea-c2fbcc42be2d")
+		(property "Reference" "#PWR055"
+			(at 351.79 53.34 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(face "GOST 2.304")
+					(size 3.5 3.5)
+					(italic yes)
+				)
+			)
+		)
+		(property "Value" "MOTOR-"
+			(at 363.982 55.88 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(face "GOST 2.304")
+					(size 2.5 2.5)
+					(italic yes)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 355.6 55.88 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(face "GOST 2.304")
+					(size 2.5 2.5)
+					(italic yes)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 355.6 55.88 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(face "GOST 2.304")
+					(size 2.5 2.5)
+					(italic yes)
+				)
+			)
+		)
+		(property "Description" ""
+			(at 355.6 55.88 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(face "GOST 2.304")
+					(size 2.5 2.5)
+					(italic yes)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "c544fe18-7ad5-4a66-be07-543f6a4c868d")
+		)
+		(instances
+			(project "CH"
+				(path "/5a1f7c42-9e38-4b61-8d07-3c52a9f1b6d4"
+					(reference "#PWR055")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "manipulator:Tbl_X2_CH")
 		(at 68.58 106.68 0)
 		(unit 1)
@@ -10353,6 +10631,95 @@
 			(project "CH"
 				(path "/5a1f7c42-9e38-4b61-8d07-3c52a9f1b6d4"
 					(reference "#PWR034")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "manipulator:SIG_GND_P_L_out")
+		(at 314.96 175.26 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "246b3521-8dc4-5aa6-a64c-44c30a478bad")
+		(property "Reference" "#PWR054"
+			(at 317.5 171.45 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(face "GOST 2.304")
+					(size 3.5 3.5)
+					(italic yes)
+				)
+				(justify right)
+			)
+		)
+		(property "Value" "GND_P"
+			(at 311.785 175.26 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(face "GOST 2.304")
+					(size 2.5 2.5)
+					(italic yes)
+				)
+				(justify right)
+			)
+		)
+		(property "Footprint" ""
+			(at 314.96 175.26 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(face "GOST 2.304")
+					(size 2.5 2.5)
+					(italic yes)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 314.96 175.26 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(face "GOST 2.304")
+					(size 2.5 2.5)
+					(italic yes)
+				)
+			)
+		)
+		(property "Description" ""
+			(at 314.96 175.26 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(face "GOST 2.304")
+					(size 2.5 2.5)
+					(italic yes)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "31093127-1607-47f9-8efd-e8d82add0864")
+		)
+		(instances
+			(project "CH"
+				(path "/5a1f7c42-9e38-4b61-8d07-3c52a9f1b6d4"
+					(reference "#PWR054")
 					(unit 1)
 				)
 			)
@@ -10933,6 +11300,137 @@
 			(project "CH"
 				(path "/5a1f7c42-9e38-4b61-8d07-3c52a9f1b6d4"
 					(reference "#PWR039")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "manipulator:Tbl_X5_CH_VH")
+		(at 322.58 170.18 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "34b470ee-cc9f-5a11-958d-a90b25617f02")
+		(property "Reference" "X5"
+			(at 325.62 179.7 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(face "GOST 2.304")
+					(size 3.5 3.5)
+					(italic yes)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "B2P-VH"
+			(at 325.12 182.3 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(face "GOST 2.304")
+					(size 2.5 2.5)
+					(italic yes)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "manipulator:JST_VH_B2P-VH_V"
+			(at 322.58 170.18 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(face "GOST 2.304")
+					(size 2.5 2.5)
+					(italic yes)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 322.58 170.18 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(face "GOST 2.304")
+					(size 2.5 2.5)
+					(italic yes)
+				)
+			)
+		)
+		(property "Description" ""
+			(at 322.58 170.18 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(face "GOST 2.304")
+					(size 2.5 2.5)
+					(italic yes)
+				)
+			)
+		)
+		(property "BaseID" "—"
+			(at 322.58 170.18 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(face "GOST 2.304")
+					(size 2.5 2.5)
+					(italic yes)
+				)
+			)
+		)
+		(property "Status" "Предложение"
+			(at 322.58 170.18 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(face "GOST 2.304")
+					(size 2.5 2.5)
+					(italic yes)
+				)
+			)
+		)
+		(property "Назначение" "Питание драйвера DA1 проводом на клеммник POWER модуля: 1 — +24V_M, 2 — GND_P"
+			(at 322.58 170.18 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(face "GOST 2.304")
+					(size 2.5 2.5)
+					(italic yes)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "f09fb600-8d9f-4da1-bd98-7c1c839dcb0b")
+		)
+		(pin "2"
+			(uuid "041f19af-d200-4e64-bb1a-0599b8f312b2")
+		)
+		(instances
+			(project "CH"
+				(path "/5a1f7c42-9e38-4b61-8d07-3c52a9f1b6d4"
+					(reference "X5")
 					(unit 1)
 				)
 			)
@@ -12539,6 +13037,93 @@
 			(project "CH"
 				(path "/5a1f7c42-9e38-4b61-8d07-3c52a9f1b6d4"
 					(reference "#PWR050")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "manipulator:GND_L")
+		(at 355.6 52.07 90)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "6a931f45-80fe-486b-9ee0-27c6c1ed6003")
+		(property "Reference" "#PWR056"
+			(at 351.79 49.53 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(face "GOST 2.304")
+					(size 3.5 3.5)
+					(italic yes)
+				)
+			)
+		)
+		(property "Value" "MOTOR+"
+			(at 363.982 51.816 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(face "GOST 2.304")
+					(size 2.5 2.5)
+					(italic yes)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 355.6 52.07 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(face "GOST 2.304")
+					(size 2.5 2.5)
+					(italic yes)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 355.6 52.07 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(face "GOST 2.304")
+					(size 2.5 2.5)
+					(italic yes)
+				)
+			)
+		)
+		(property "Description" ""
+			(at 355.6 52.07 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(face "GOST 2.304")
+					(size 2.5 2.5)
+					(italic yes)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "0623c985-142a-4085-badd-9d01dd664e69")
+		)
+		(instances
+			(project "CH"
+				(path "/5a1f7c42-9e38-4b61-8d07-3c52a9f1b6d4"
+					(reference "#PWR056")
 					(unit 1)
 				)
 			)
@@ -14853,6 +15438,95 @@
 		)
 	)
 	(symbol
+		(lib_id "manipulator:SIG_+24V_M_L_in")
+		(at 314.96 170.18 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "b6ed185a-d6d5-53cd-af58-cbeae64f77c1")
+		(property "Reference" "#PWR053"
+			(at 317.5 166.37 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(face "GOST 2.304")
+					(size 3.5 3.5)
+					(italic yes)
+				)
+				(justify right)
+			)
+		)
+		(property "Value" "+24V_M"
+			(at 311.785 170.18 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(face "GOST 2.304")
+					(size 2.5 2.5)
+					(italic yes)
+				)
+				(justify right)
+			)
+		)
+		(property "Footprint" ""
+			(at 314.96 170.18 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(face "GOST 2.304")
+					(size 2.5 2.5)
+					(italic yes)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 314.96 170.18 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(face "GOST 2.304")
+					(size 2.5 2.5)
+					(italic yes)
+				)
+			)
+		)
+		(property "Description" ""
+			(at 314.96 170.18 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(face "GOST 2.304")
+					(size 2.5 2.5)
+					(italic yes)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "e81e0f3f-2b91-4a87-83e1-b14c5b790bec")
+		)
+		(instances
+			(project "CH"
+				(path "/5a1f7c42-9e38-4b61-8d07-3c52a9f1b6d4"
+					(reference "#PWR053")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "manipulator:R")
 		(at 166.37 73.66 90)
 		(unit 1)
@@ -16594,94 +17268,6 @@
 			)
 		)
 	)
-	(no_connect
-		(at 292.1 52.07)
-		(uuid "0fdc60ed-f09d-59ce-b507-cf3bdfa16284")
-	)
-	(no_connect
-		(at 292.1 57.15)
-		(uuid "65d2062a-350a-570e-8aea-b466b21342f8")
-	)
-	(no_connect
-		(at 308.61 71.12)
-		(uuid "b5af100a-0587-5a5a-a0f9-d49f8a441aed")
-	)
-	(no_connect
-		(at 339.09 71.12)
-		(uuid "92be9aa6-c723-52b2-a988-919eca6b225f")
-	)
-	(text "9. Двигатель подключается проводами прямо к винтовым клеммникам модулей, мимо платы: OUT2 (DA1) → IP+ (DA2) —"
-		(exclude_from_sim no)
-		(at -246.38 206.756 0)
-		(effects
-			(font
-				(face "GOST 2.304")
-				(size 2.5 2.5)
-				(italic yes)
-			)
-			(justify left bottom)
-		)
-		(uuid "e4ae3c66-7664-597d-b559-b960a10056d7")
-	)
-	(text "   перемычкой, IP− (DA2) → двигатель → OUT1 (DA1). Выводы OUT1, OUT2, IP+, IP− на плате не подключены; +24V_M и GND_P"
-		(exclude_from_sim no)
-		(at -246.38 211.201 0)
-		(effects
-			(font
-				(face "GOST 2.304")
-				(size 2.5 2.5)
-				(italic yes)
-			)
-			(justify left bottom)
-		)
-		(uuid "2bde2dd1-3246-5596-9617-afa047557628")
-	)
-	(text "   подаются проводом с разъёма X5 (у K5) на клеммник POWER модуля DA1 и параллельно через VM, GND гребёнки."
-		(exclude_from_sim no)
-		(at -246.38 215.646 0)
-		(effects
-			(font
-				(face "GOST 2.304")
-				(size 2.5 2.5)
-				(italic yes)
-			)
-			(justify left bottom)
-		)
-		(uuid "ecfe0263-1e87-5d21-beeb-525866db6270")
-	)
-  (symbol (lib_id "manipulator:Tbl_X5_CH_VH") (at 322.58 170.18 0) (unit 1) (body_style 1) (exclude_from_sim no) (in_bom yes) (on_board yes) (in_pos_files yes) (dnp no) (uuid "34b470ee-cc9f-5a11-958d-a90b25617f02")
-    (property "Reference" "X5" (at 325.62 179.7 0) (show_name no) (do_not_autoplace no) (effects (font (face "GOST 2.304") (size 3.5 3.5) (italic yes)) (justify left)))
-    (property "Value" "B2P-VH" (at 325.12 182.3 0) (show_name no) (do_not_autoplace no) (hide yes) (effects (font (face "GOST 2.304") (size 2.5 2.5) (italic yes)) (justify left)))
-    (property "Footprint" "manipulator:JST_VH_B2P-VH_V" (at 322.58 170.18 0) (show_name no) (do_not_autoplace no) (hide yes) (effects (font (face "GOST 2.304") (size 2.5 2.5) (italic yes))))
-    (property "Datasheet" "" (at 322.58 170.18 0) (show_name no) (do_not_autoplace no) (hide yes) (effects (font (face "GOST 2.304") (size 2.5 2.5) (italic yes))))
-    (property "Description" "" (at 322.58 170.18 0) (show_name no) (do_not_autoplace no) (hide yes) (effects (font (face "GOST 2.304") (size 2.5 2.5) (italic yes))))
-    (property "BaseID" "—" (at 322.58 170.18 0) (show_name no) (do_not_autoplace no) (hide yes) (effects (font (face "GOST 2.304") (size 2.5 2.5) (italic yes))))
-    (property "Status" "Предложение" (at 322.58 170.18 0) (show_name no) (do_not_autoplace no) (hide yes) (effects (font (face "GOST 2.304") (size 2.5 2.5) (italic yes))))
-    (property "Назначение" "Питание драйвера DA1 проводом на клеммник POWER модуля: 1 — +24V_M, 2 — GND_P" (at 322.58 170.18 0) (show_name no) (do_not_autoplace no) (hide yes) (effects (font (face "GOST 2.304") (size 2.5 2.5) (italic yes))))
-    (pin "1" (uuid "f09fb600-8d9f-4da1-bd98-7c1c839dcb0b"))
-    (pin "2" (uuid "041f19af-d200-4e64-bb1a-0599b8f312b2"))
-    (instances (project "CH" (path "/5a1f7c42-9e38-4b61-8d07-3c52a9f1b6d4" (reference "X5") (unit 1))))
-  )
-  (wire (pts (xy 314.96 170.18) (xy 320.04 170.18)) (stroke (width 0.3048) (type default)) (uuid "864b6044-4efb-4692-9abf-d6b30a82200c"))
-  (symbol (lib_id "manipulator:SIG_+24V_M_L_in") (at 314.96 170.18 0) (unit 1) (body_style 1) (exclude_from_sim no) (in_bom yes) (on_board yes) (in_pos_files yes) (dnp no) (uuid "b6ed185a-d6d5-53cd-af58-cbeae64f77c1")
-    (property "Reference" "#PWR053" (at 317.5 166.37 0) (show_name no) (do_not_autoplace no) (hide yes) (effects (font (face "GOST 2.304") (size 3.5 3.5) (italic yes)) (justify right)))
-    (property "Value" "+24V_M" (at 311.785 170.18 0) (show_name no) (do_not_autoplace no) (effects (font (face "GOST 2.304") (size 2.5 2.5) (italic yes)) (justify right)))
-    (property "Footprint" "" (at 314.96 170.18 0) (show_name no) (do_not_autoplace no) (hide yes) (effects (font (face "GOST 2.304") (size 2.5 2.5) (italic yes))))
-    (property "Datasheet" "" (at 314.96 170.18 0) (show_name no) (do_not_autoplace no) (hide yes) (effects (font (face "GOST 2.304") (size 2.5 2.5) (italic yes))))
-    (property "Description" "" (at 314.96 170.18 0) (show_name no) (do_not_autoplace no) (hide yes) (effects (font (face "GOST 2.304") (size 2.5 2.5) (italic yes))))
-    (pin "1" (uuid "e81e0f3f-2b91-4a87-83e1-b14c5b790bec"))
-    (instances (project "CH" (path "/5a1f7c42-9e38-4b61-8d07-3c52a9f1b6d4" (reference "#PWR053") (unit 1))))
-  )
-  (wire (pts (xy 314.96 175.26) (xy 320.04 175.26)) (stroke (width 0.3048) (type default)) (uuid "450829e3-9785-4dc6-b7dd-8febd01a6152"))
-  (symbol (lib_id "manipulator:SIG_GND_P_L_out") (at 314.96 175.26 0) (unit 1) (body_style 1) (exclude_from_sim no) (in_bom yes) (on_board yes) (in_pos_files yes) (dnp no) (uuid "246b3521-8dc4-5aa6-a64c-44c30a478bad")
-    (property "Reference" "#PWR054" (at 317.5 171.45 0) (show_name no) (do_not_autoplace no) (hide yes) (effects (font (face "GOST 2.304") (size 3.5 3.5) (italic yes)) (justify right)))
-    (property "Value" "GND_P" (at 311.785 175.26 0) (show_name no) (do_not_autoplace no) (effects (font (face "GOST 2.304") (size 2.5 2.5) (italic yes)) (justify right)))
-    (property "Footprint" "" (at 314.96 175.26 0) (show_name no) (do_not_autoplace no) (hide yes) (effects (font (face "GOST 2.304") (size 2.5 2.5) (italic yes))))
-    (property "Datasheet" "" (at 314.96 175.26 0) (show_name no) (do_not_autoplace no) (hide yes) (effects (font (face "GOST 2.304") (size 2.5 2.5) (italic yes))))
-    (property "Description" "" (at 314.96 175.26 0) (show_name no) (do_not_autoplace no) (hide yes) (effects (font (face "GOST 2.304") (size 2.5 2.5) (italic yes))))
-    (pin "1" (uuid "31093127-1607-47f9-8efd-e8d82add0864"))
-    (instances (project "CH" (path "/5a1f7c42-9e38-4b61-8d07-3c52a9f1b6d4" (reference "#PWR054") (unit 1))))
-  )
 	(sheet_instances
 		(path "/"
 			(page "1")

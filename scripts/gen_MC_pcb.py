@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Генератор печатной платы MC (контроллер) учебного манипулятора.
+"""Генератор печатной платы MC (микроконтроллер) манипулятора для лабораторных работ.
 
 Создаёт boards/MC/MC.kicad_pcb (формат KiCad 9, читается KiCad 10) и footprint'ы в lib/footprints/manipulator.pretty.
 Общая часть (класс FP, библиотека посадочных мест, трассировщик, зоны, сборка) — scripts/pcb_common.py.
@@ -28,13 +28,14 @@ import sys
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
+import doc_titles as dt                 # noqa: E402  наименования и обозначения
 import pcb_common as pc                    # noqa: E402
 from pcb_common import *                   # noqa: E402,F401,F403
 
 pc.PROJECT = PROJECT = "MC"
 pc.ROOT_UUID = ROOT_UUID = "3c7e9a10-5b2d-4e8f-9a61-0d4c2b7f6e55"
 pc.BOARD_W, pc.BOARD_H = BOARD_W, BOARD_H = 120.0, 102.0
-pc.TITLE, pc.REV = "Манипулятор учебный. Плата контроллера MC", "MC-A1"
+pc.TITLE, pc.REV = dt.item("MC"), "MC-A1"
 
 # ---- цепи ------------------------------------------------------------------------------------------
 SIG = [f"M{m}_{s}" for m in range(1, 5) for s in ("CURR", "RELE", "IN1", "IN2", "SDA", "SCL")]
@@ -162,7 +163,7 @@ POWER_ZONE = None
 # ---- контур, надписи --------------------------------------------------------------------------------------
 GR_RECTS.extend([("F.Fab", *MODULE, 0.1), ("F.SilkS", MODULE[0] - 0.2, MODULE[1] - 0.2, MODULE[2] + 0.2, MODULE[3] + 0.2, 0.15)])
 ISO_RECTS.append(P_CORNER)
-TEXTS.extend([("Манипулятор учебный — плата MC rev A1", 70, 70.5, 1.2),
+TEXTS.extend([(dt.silk("MC", "A1"), 70, 70.5, 1.2),
               ("A1: YD-ESP32-S3, антенна ↑, USB ↓", 46.7, 1.6, 1.0),
               ("схват", 11.5, 23.5, 1.0), ("+5V_L PS", 12.5, 36.0, 1.0), ("концевик", 11.5, 47.0, 1.0),
               ("+5P PS", 12.5, 82.5, 1.0), ("кнопка KH", 12.5, 94.5, 1.0),

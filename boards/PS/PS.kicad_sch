@@ -5,16 +5,13 @@
 	(uuid "9d3a5f2c-4b1e-4f0a-8c6d-2e7b1a9f0c11")
 	(paper "A3")
 	(title_block
-		(title "Манипулятор учебный. Плата питания PS. Схема электрическая принципиальная")
+		(title "Манипулятор для лабораторных работ.\\n Плата питания.\\n Схема электрическая принципиальная")
 		(date "2026-09-17")
 		(rev "PS-A1")
-		(company "МГТУ им. Н.Э. Баумана, группа СМ7-21М")
-		(comment 1 "--- Э3")
-		(comment 2 "Соловцов")
-		(comment 3 "---")
-		(comment 4 "---")
-		(comment 5 "---")
-		(comment 6 "Большаков")
+		(company "МГТУ им. Н.Э. Баумана\\n группа СМ7-21М")
+		(comment 1 "СМ7.02.01.00.00 Э3")
+		(comment 2 "Соловцов М.А.")
+		(comment 3 "Большаков А.А.")
 	)
 	(lib_symbols
 		(symbol "manipulator:+24V"
@@ -5100,149 +5097,6 @@
 			(embedded_fonts no)
 		)
 	)
-	(text "6. Типы разъёмов (перечень элементов): X1, X6…X10 — DG301-5.0-02P-12 (E-017); X2, X5, X11, X12 — JST B2B-XH-A (E-018);"
-		(exclude_from_sim no)
-		(at -289.814 209.042 0)
-		(effects
-			(font
-				(face "GOST 2.304")
-				(size 2.5 2.5)
-				(italic yes)
-			)
-			(justify left bottom)
-		)
-		(uuid "1780940e-f812-4cb0-9a58-f813e5278fae")
-	)
-	(text "1. Вне платы: адаптер GST220A24-R7B (E-001) → гнездо KPJX-PM-4S (E-014) → предохранитель ATO 10 А (E-003) в проводе 18 AWG → X1."
-		(exclude_from_sim no)
-		(at -289.814 177.927 0)
-		(effects
-			(font
-				(face "GOST 2.304")
-				(size 2.5 2.5)
-				(italic yes)
-			)
-			(justify left bottom)
-		)
-		(uuid "25920679-f27e-46b1-ab2d-a9359347acdc")
-	)
-	(text "4. Фильтр +5P: L1 — Talema DPO-3.0-22 (E-012), C1 — 470 мкФ 16 В (E-093), C2 — 100 нФ X7R (E-094); f0 около 1,6 кГц."
-		(exclude_from_sim no)
-		(at -289.814 195.707 0)
-		(effects
-			(font
-				(face "GOST 2.304")
-				(size 2.5 2.5)
-				(italic yes)
-			)
-			(justify left bottom)
-		)
-		(uuid "28c063a1-23bd-459d-9ef5-930e7347ce7f")
-	)
-	(text "2. Граница гальванической развязки — U2: цепи GND_P и GND_L на плате не соединять."
-		(exclude_from_sim no)
-		(at -289.814 186.817 0)
-		(effects
-			(font
-				(face "GOST 2.304")
-				(size 2.5 2.5)
-				(italic yes)
-			)
-			(justify left bottom)
-		)
-		(uuid "35eedc3f-5aa2-4778-8390-5c7dd38a4e41")
-	)
-	(text "   кабелем к кнопке, минуя LR. Индикатор «+5P есть» E-008 — на панели, на плате R2 и X5."
-		(exclude_from_sim no)
-		(at -289.814 204.597 0)
-		(effects
-			(font
-				(face "GOST 2.304")
-				(size 2.5 2.5)
-				(italic yes)
-			)
-			(justify left bottom)
-		)
-		(uuid "5563e48b-94df-4698-a76d-e33e498d0795")
-	)
-	(text "   Контакты гнезда: 1+2 — +24, 3+4 — GND, каждая пара параллельно (7,5 А/контакт при токе до 9,2 А); распайку сверить с datasheet R7B."
-		(exclude_from_sim no)
-		(at -289.814 182.372 0)
-		(effects
-			(font
-				(face "GOST 2.304")
-				(size 2.5 2.5)
-				(italic yes)
-			)
-			(justify left bottom)
-		)
-		(uuid "a5a51b4d-6b15-475c-aa04-faadb4d8cc50")
-	)
-	(text "5. Подсветка кнопок — встроенные индикаторы 24 В, резисторов нет: кнопка питания E-002 — от X12, кнопка KH E-024 — от X11"
-		(exclude_from_sim no)
-		(at -289.814 200.152 0)
-		(effects
-			(font
-				(face "GOST 2.304")
-				(size 2.5 2.5)
-				(italic yes)
-			)
-			(justify left bottom)
-		)
-		(uuid "cd57101a-afb6-4ccd-8d82-7ed6085c3dc8")
-	)
-	(text "   расположение выводов принято по виду снизу из datasheet."
-		(exclude_from_sim no)
-		(at -289.814 222.377 0)
-		(effects
-			(font
-				(face "GOST 2.304")
-				(size 2.5 2.5)
-				(italic yes)
-			)
-			(justify left bottom)
-		)
-		(uuid "cffd0410-5e52-4100-b886-cb5fac01aefa")
-	)
-	(text "7. K1: контакт 1C — 20 А при 28 В DC (datasheet NCR); NC (вывод 5) не используется. Перед пайкой прозвонить COM–NC обесточенного реле:"
-		(exclude_from_sim no)
-		(at -289.814 217.932 0)
-		(effects
-			(font
-				(face "GOST 2.304")
-				(size 2.5 2.5)
-				(italic yes)
-			)
-			(justify left bottom)
-		)
-		(uuid "e80eeaf0-9373-480a-afff-16dcff33460d")
-	)
-	(text "   X3, X4 — B2P-VH (E-019)."
-		(exclude_from_sim no)
-		(at -289.814 213.487 0)
-		(effects
-			(font
-				(face "GOST 2.304")
-				(size 2.5 2.5)
-				(italic yes)
-			)
-			(justify left bottom)
-		)
-		(uuid "f07adb84-4a41-4193-9006-8d5f88210665")
-	)
-	(text "3. Выходы +24: X6…X9 — платы каналов CH1…CH4, X10 — схват; провод 20–22 AWG (E-081)."
-		(exclude_from_sim no)
-		(at -289.814 191.262 0)
-		(effects
-			(font
-				(face "GOST 2.304")
-				(size 2.5 2.5)
-				(italic yes)
-			)
-			(justify left bottom)
-		)
-		(uuid "fe390a72-de2d-4c2c-8085-6a5608c3dd19")
-	)
 	(junction
 		(at 172.72 100.33)
 		(diameter 0)
@@ -7759,7 +7613,7 @@
 				)
 			)
 		)
-		(property "BaseID" "E-018"
+		(property "BaseID" "E-092"
 			(at 180.34 66.04 0)
 			(hide yes)
 			(show_name no)

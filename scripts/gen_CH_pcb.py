@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Генератор печатной платы CH (канал привода, 4 + 1 экземпляр) учебного манипулятора.
+"""Генератор печатной платы CH (силовая часть, 4 + 1 экземпляр) манипулятора для лабораторных работ.
 
 Создаёт boards/CH/CH.kicad_pcb (формат KiCad 9, читается KiCad 10) и footprint'ы в lib/footprints/manipulator.pretty.
 Общая часть (класс FP, библиотека посадочных мест, трассировщик, зоны, сборка) — scripts/pcb_common.py.
@@ -53,13 +53,14 @@ import sys
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
+import doc_titles as dt                 # noqa: E402  наименования и обозначения
 import pcb_common as pc                    # noqa: E402
 from pcb_common import *                   # noqa: E402,F401,F403
 
 pc.PROJECT = PROJECT = "CH"
 pc.ROOT_UUID = ROOT_UUID = "5a1f7c42-9e38-4b61-8d07-3c52a9f1b6d4"
 pc.BOARD_W, pc.BOARD_H = BOARD_W, BOARD_H = 100.0, 78.0
-pc.TITLE, pc.REV = "Манипулятор учебный. Плата канала привода CH", "CH-A1"
+pc.TITLE, pc.REV = dt.item("CH"), "CH-A1"
 
 # ---- цепи ------------------------------------------------------------------------------------------
 UNNAMED = ["Net-(K1-COM)", "Net-(K2-COM)", "Net-(K3-COM)", "Net-(K4-COM)",
@@ -279,7 +280,7 @@ POWER_ZONE = None
 
 # ---- контур, надписи --------------------------------------------------------------------------------------
 ISO_RECTS.append([(ISO_X1, 1), (ISO_X2, 1), (ISO_X2, 79), (ISO_X1, 79)])
-TEXTS.extend([("Манипулятор учебный — плата канала CH rev A1", 52, 71.0, 1.2),
+TEXTS.extend([(dt.silk("CH", "A1"), 52, 71.0, 1.2),
               ("к MC", 13.0, 1.7, 1.0), ("ЛР", 9.0, 19.5, 1.0), ("энкодер", 10.0, 45.0, 1.0),
               ("двигатель", 93.0, 52.5, 1.0), ("+24 с PS", 93.0, 21.0, 1.0),
               ("GND_L (остров)", 30.0, 72.0, 1.0), ("GND_P (силовая)", 80.0, 75.0, 1.0)])

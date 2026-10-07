@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Генератор схемы платы PS (питание) учебного манипулятора — формат KiCad 10.
+"""Генератор схемы платы PS (питание) манипулятора для лабораторных работ — формат KiCad 10.
 
 Создаёт:
   boards/PS/PS.kicad_sch                 — схема, один лист A3
@@ -27,6 +27,7 @@
 
 Запуск: python3 scripts/gen_PS_sch.py (из корня репозитория electronics)
 """
+import doc_titles as dt                 # noqa: E402  наименования и обозначения
 import sch_common as sc
 from sch_common import *   # noqa: F401,F403 — помощники рисования и символы
 
@@ -201,7 +202,4 @@ for i, t in enumerate(NOTES):
     note(t, 20.32, r2(184.15 + i * 4.445))
 
 if __name__ == "__main__":
-    write_project("PS", "A3", {
-        "title": "Манипулятор учебный. Плата питания PS. Схема электрическая принципиальная",
-        "rev": "PS-A1", "comment1": "--- Э3", "comment2": "Соловцов",
-        "comment6": "Большаков"})
+    write_project("PS", "A3", dt.title_block("PS", "Э3", "PS-A1"))

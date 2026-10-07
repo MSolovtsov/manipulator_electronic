@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Генератор схемы платы MC (главная, контроллер) учебного манипулятора — формат KiCad 10.
+"""Генератор схемы платы MC (микроконтроллер) манипулятора для лабораторных работ — формат KiCad 10.
 
 Создаёт boards/MC/MC.kicad_sch (+ .kicad_pro и таблицы библиотек, если их нет) и обновляет общую
 библиотеку символов lib/symbols/manipulator.kicad_sym. Общие помощники — scripts/sch_common.py.
@@ -30,6 +30,7 @@ import sys
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
+import doc_titles as dt                 # noqa: E402  наименования и обозначения
 import sch_common as sc                    # noqa: E402
 from sch_common import *                   # noqa: E402,F401,F403
 
@@ -316,7 +317,4 @@ for i, t in enumerate(NOTES):
     note(t, 7.62, r2(335.28 + i * 4.064))
 
 if __name__ == "__main__":
-    write_project("MC", "A2", {
-        "title": "Манипулятор учебный. Плата контроллера MC. Схема электрическая принципиальная",
-        "rev": "MC-A1", "comment1": "--- Э3", "comment2": "Соловцов",
-        "comment6": "Большаков"})
+    write_project("MC", "A2", dt.title_block("MC", "Э3", "MC-A1"))

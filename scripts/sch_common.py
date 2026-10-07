@@ -821,12 +821,12 @@ def lib_text():
 
 SYM_LIB_TABLE = f'''(sym_lib_table
   (version 7)
-  (lib (name "{LIB}")(type "KiCad")(uri "${{KIPRJMOD}}/../../lib/symbols/{LIB}.kicad_sym")(options "")(descr "Общая библиотека символов проекта «Учебный манипулятор»"))
+  (lib (name "{LIB}")(type "KiCad")(uri "${{KIPRJMOD}}/../../lib/symbols/{LIB}.kicad_sym")(options "")(descr "Общая библиотека символов проекта «Манипулятор для лабораторных работ»"))
 )
 '''
 FP_LIB_TABLE = f'''(fp_lib_table
   (version 7)
-  (lib (name "{LIB}")(type "KiCad")(uri "${{KIPRJMOD}}/../../lib/footprints/{LIB}.pretty")(options "")(descr "Общая библиотека footprint'ов проекта «Учебный манипулятор»"))
+  (lib (name "{LIB}")(type "KiCad")(uri "${{KIPRJMOD}}/../../lib/footprints/{LIB}.pretty")(options "")(descr "Общая библиотека footprint'ов проекта «Манипулятор для лабораторных работ»"))
 )
 '''
 
